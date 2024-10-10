@@ -3,20 +3,20 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Hgraph Docs',
+  tagline: 'Official documentation for Hgraph SDKs, APIs and other services.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.hgraph.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'hgraph-io', // Usually your GitHub org/user name.
+  projectName: 'hgraph-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -66,9 +66,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Hgraph Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Hgraph Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -134,6 +134,11 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    colorMode: {
+      defaultMode: 'dark', // Set default mode to dark
+      disableSwitch: false, // Allows the user to switch between dark and light modes
+      respectPrefersColorScheme: false, // Ignores the user's system preference for dark/light mode
     },
   } satisfies Preset.ThemeConfig,
 };
