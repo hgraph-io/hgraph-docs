@@ -35,10 +35,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Update this to your repo
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/hgraph-io/hgraph-docs/edit/main/', // Points to your repository for editing
         },
         blog: {
           showReadingTime: true,
@@ -46,10 +45,9 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Update this to your repo
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/hgraph-io/hgraph-docs/edit/main/', // Points to your repository for editing
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -61,11 +59,13 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  
 
   themeConfig: {
     // Replace with your project's social card
     image: 'img/Hgraph-Docs-Card.png',
     navbar: {
+      hideOnScroll: true,
       title: 'Hgraph Docs',
       logo: {
         alt: 'Hgraph Logo',
@@ -90,6 +90,7 @@ const config: Config = {
           label: 'Account Dashboard',
           position: 'right',
         },
+        
       ],
     },
     footer: {
