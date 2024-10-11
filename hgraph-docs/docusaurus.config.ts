@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Hgraph Docs',
   tagline: 'Official documentation for Hgraph SDKs, APIs and other services.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favico.png',
 
   // Set the production url of your site here
   url: 'https://docs.hgraph.com',
@@ -64,24 +64,30 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/Hgraph-Docs-Card.png',
     navbar: {
       title: 'Hgraph Docs',
       logo: {
         alt: 'Hgraph Logo',
-        src: 'img/logo.svg',
+        src: 'img/Hgraph-Logomark_Dark.svg',
+        srcDark: 'img/Hgraph-Logomark_White.svg'
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Getting started',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'FAQ', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          label: 'Support',
+          href: 'https://discord.gg/dwxpRHHVWX',
+          position: 'left'
+        },
+        {
+          href: 'https://dashboard.hgraph.com',
+          label: 'Account Dashboard',
           position: 'right',
         },
       ],
@@ -93,7 +99,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Getting started',
               to: '/docs/intro',
             },
           ],
@@ -102,16 +108,20 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/hgraph-io',
+            },
+            {
+              label: 'X (Twitter)',
+              href: 'https://x.com/hgraph_io',
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.gg/dwxpRHHVWX',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/hgraph_io',
             },
           ],
         },
@@ -120,16 +130,20 @@ const config: Config = {
           items: [
             {
               label: 'Blog',
-              to: '/blog',
+              href: 'https://www.hgraph.com/blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Pricing',
+              href: 'https://www.hgraph.com/pricing',
+            },
+            {
+              label: 'Contact',
+              href: 'https://form.typeform.com/to/LUnKkmRL',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Hgraph LLC.`,
     },
     prism: {
       theme: prismThemes.github,
