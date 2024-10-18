@@ -5,30 +5,30 @@ body {
 }
 
 :root {
-  --ifm-color-primary: #6f47c0;
-  --ifm-color-primary-dark: #633cb0;
-  --ifm-color-primary-darker: #5d39a7;
-  --ifm-color-primary-darkest: #4d2f89;
-  --ifm-color-primary-light: #7e5bc7;
-  --ifm-color-primary-lighter: #8664ca;
-  --ifm-color-primary-lightest: #9d82d4;
-  --ifm-background-color: #fbfaff;
+  --ifm-color-primary: #6f47c0 !important;
+  --ifm-color-primary-dark: #633cb0 !important;
+  --ifm-color-primary-darker: #5d39a7 !important;
+  --ifm-color-primary-darkest: #4d2f89 !important;
+  --ifm-color-primary-light: #7e5bc7 !important;
+  --ifm-color-primary-lighter: #8664ca !important;
+  --ifm-color-primary-lightest: #9d82d4 !important;
+  --ifm-background-color: #fbfaff !important;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  .navbar { background-color: #fff; }
-  .footer { background-color: #1d1924; }
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1) !important;
+  .navbar { background-color: #fff !important; }
+  .footer { background-color: #1d1924 !important; }
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #9c7fd7;
-  --ifm-color-primary-dark: #9272d3;
-  --ifm-color-primary-darker: #8865cf;
-  --ifm-color-primary-darkest: #7e58cb;
-  --ifm-color-primary-light: #b099df;
-  --ifm-color-primary-lighter: #baa6e3;
-  --ifm-color-primary-lightest: #cec0eb;
+  --ifm-color-primary: #9c7fd7 !important;
+  --ifm-color-primary-dark: #9272d3 !important;
+  --ifm-color-primary-darker: #8865cf !important;
+  --ifm-color-primary-darkest: #7e58cb !important;
+  --ifm-color-primary-light: #b099df !important;
+  --ifm-color-primary-lighter: #baa6e3 !important;
+  --ifm-color-primary-lightest: #cec0eb !important;
   --ifm-background-color: #1d1924 !important;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  .navbar { background-color: #272130; }
-  .footer { background-color: #15111e; }
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3) !important;
+  .navbar { background-color: #272130 !important; }
+  .footer { background-color: #15111e !important; }
 }
