@@ -12,4 +12,4 @@ After years serving the Hedera community and developing robust mirror node capab
 
 ## Our team
 
-*ADD INFO HERE*
+*WIP*
