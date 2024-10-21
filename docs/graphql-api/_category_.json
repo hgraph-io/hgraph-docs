@@ -1,0 +1,8 @@
+{
+  "label": "GraphQL API",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Information about our Hedera GraphQL API"
+  }
+}
