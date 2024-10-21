@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Contact
 
+Need support? [Use the info on this page](/support).
+
 - Email: contact@hgraph.com
 - [Join the Discord →](https://discord.gg/dwxpRHHVWX)
 - [Follow on 𝕏 (Twitter) →](https://x.com/hgraph_io)

@@ -3,6 +3,6 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Information about our Hedera GraphQL API"
+    "description": "Information about Hgraph's Hedera mirror node GraphQL API"
   }
 }
