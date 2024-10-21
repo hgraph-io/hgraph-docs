@@ -61,20 +61,11 @@ const config: Config = {
         srcDark: 'img/Hgraph-Logomark_White.svg'
       },
       items: [
+        {to: '/category/faqs', label: 'FAQ', position: 'left'},
+        {to: '/support', label: 'Support', position: 'left'},
+        {to: '/overview/contact', label: 'Contact', position: 'left'},
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Getting started',
-        },
-        {to: '/blog', label: 'FAQ', position: 'left'},
-        {
-          label: 'Support',
-          href: 'https://discord.gg/dwxpRHHVWX',
-          position: 'left'
-        },
-        {
-          href: 'https://dashboard.hgraph.com',
+          href: 'https://console.hgraph.com',
           label: 'Account Dashboard',
           position: 'right',
         },

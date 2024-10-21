@@ -17,7 +17,7 @@ Hedera, the open-source, leaderless “hashgraph” DLT employs a unique archite
 Hgraph owns and operates it’s own bare-metal hardware infrastructure. We utilize cloud technology for enhanced data analytics.
 
 **What other services does Hgraph provide?**\
-You can learn more about our services [on this page](/docs/overview/services). If you need software engineering services, [use this form](https://form.typeform.com/to/LUnKkmRL).
+You can learn more about our services [on this page](/overview/services). If you need software engineering services, [use this form](https://form.typeform.com/to/LUnKkmRL).
 
 **I need support!**\
-Not to worry, you can learn more about how to contact us and open a ticket [on this page](/docs/support).
+Not to worry, you can learn more about how to contact us and open a ticket [on this page](/support).
