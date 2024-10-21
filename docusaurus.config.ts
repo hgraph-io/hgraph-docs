@@ -34,25 +34,13 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           // Update this to your repo
           editUrl:
             'https://github.com/hgraph-io/hgraph-docs/edit/main/', // Points to your repository for editing
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Update this to your repo
-          editUrl:
-            'https://github.com/hgraph-io/hgraph-docs/edit/main/', // Points to your repository for editing
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
