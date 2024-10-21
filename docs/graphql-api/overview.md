@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # GraphQL API Overview
@@ -12,6 +12,6 @@ GraphQL is a query language for APIs that allows precise data fetching with a si
 
 Using Hgraph's GraphQL API, you can access our mirror nodes. We offer access to both mainnet and testnet mirror nodes.
 
-# Playground access
+## Playground access
 
 To explore the API schema and try out different queries, you can [access our playground console here](https://console.hgraph.io/).
