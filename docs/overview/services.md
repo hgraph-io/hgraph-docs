@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Services & features
 
-Hgraph's current services and features cater to the **Hedera network** and the **mirror node**. There are plans to expand service offerings.
+Hgraph's current services and features cater to the **Hedera network** and leverage Hgraph's **mirror node**:
 
 - Bare metal infrastructure
 - GraphQL API
@@ -17,3 +17,5 @@ Hgraph's current services and features cater to the **Hedera network** and the *
     - API playground
     - Schema explorer
 - Software engineering support
+
+ There are plans to continue expanding service offerings.
