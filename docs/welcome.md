@@ -5,7 +5,9 @@ slug: /
 
 # Welcome
 
-This is the official documentation for Hgraph, welcome everyone! Hgraph is a web3 data infrastructure company, focused on tooling for the Hedera network and beyond. Core offerings include: Hedera mirror node APIs (GraphQL & REST), bare metal infrastructure, SDKs, the Hedera JSON-RPC and bespoke software engineering services.
+Welcome to the official documentation for [Hgraph](https://hgraph.com)! Hgraph is a Web3 data infrastructure company focused on tooling for the Hedera network and beyond. Core offerings include Hedera mirror node APIs (GraphQL & REST), bare metal infrastructure, SDKs, the Hedera JSON-RPC, and bespoke software engineering services.
+
+The purpose of this documentation is to help developers fully leverage the capabilities of Hgraph's data tooling and APIs, and to help first-time users easily get started.
 
 ![image](../static/img/Hgraph-Docs-Card.png)
 

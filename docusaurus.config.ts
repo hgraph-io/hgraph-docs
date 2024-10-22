@@ -63,6 +63,11 @@ const config: Config = {
       items: [
         {to: '/category/faqs', label: 'FAQ', position: 'left'},
         {to: '/support', label: 'Support', position: 'left'},
+        {
+          href: 'https://hgraph.com/pricing',
+          label: 'Pricing',
+          position: 'left',
+        },
         {to: '/overview/contact', label: 'Contact', position: 'left'},
         {
           href: 'https://console.hgraph.com',

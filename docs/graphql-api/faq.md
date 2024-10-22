@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # GraphQL FAQ
@@ -28,11 +28,88 @@ Metadata values are returned in an encoded hex format. Decoding the metadata str
 ### Amount / Price Format
 All amount values returned are in tiny bars. Be sure to convert the tinybars to HBARs before executing logic or sending back to the user.
 
+```javascript
+const HBAR = amountReturnedFromQuery / 100000000
+```
+
 ## Timestamps
 
 Timestamps are returned in numeric form, `bigint`, and do not fit into the standard javascript `Number` type. One has to take explicit care in conserving the precision of nanoseconds.
 
 The adjacent example demonstrates getting the latest transaction from and fetching a corresponding REST API endpoint utilizing the `json-bigint` library.
+
+```javascript
+import fetch from 'isomorphic-fetch'
+import JSONBigInt from 'json-bigint'
+
+const API_KEY = '<HGRAPH_API_KEY>'
+
+const {parse, stringify} = JSONBigInt({
+  useNativeBigInt: true,
+  // alwaysParseAsBig: true,
+})
+
+BigInt.prototype.toJSON = function () {
+  if (Number.MIN_SAFE_INTEGER < this && this < Number.MAX_SAFE_INTEGER) return Number(this)
+  else return this.toString()
+}
+
+async function patchedFetch(...args) {
+  const response = await fetch(...args)
+  const text = await response.text()
+
+  const json = parse(text)
+  response.json = async () => json
+
+  return response
+}
+
+async function main() {
+  // return
+  const response = await patchedFetch('https://testnet.hedera.api.hgraph.io/v1/graphql', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': API_KEY,
+    },
+    // JSON.stringify is okay here because we have no BigInts that need special treatment
+    body: stringify({
+      query: `
+query LatestTransaction {
+  transaction(limit: 1, order_by: {consensus_timestamp: desc}) {
+    consensus_timestamp
+    valid_start_ns
+    payer_account_id
+  }
+}
+`,
+    }),
+  })
+
+  const json = await response.json()
+
+  console.dir(json, {depth: null})
+
+  console.log(stringify(json)) // can also use JSON.stringify because we declared the `.toJSON()` above
+
+  // Test
+  const {valid_start_ns, payer_account_id} = json.data.transaction[0]
+  const transactionId = `0.0.${payer_account_id}-${valid_start_ns
+    .toString()
+    .substring(0, 10)}-${valid_start_ns.toString().substring(10)}`
+
+  const restApiEndpoint = `https://mainnet-public.mirrornode.hedera.com/api/v1/transactions/${transactionId}`
+  if (restApiEndpoint) console.log('🤞')
+
+  const restResponse = await patchedFetch(restApiEndpoint)
+  if (restResponse.ok) console.log('✅', response.status)
+  else console.log('😕')
+
+  console.dir(await restResponse.json(), {depth: null})
+}
+
+main()
+```
 
 :::warning
 
@@ -44,6 +121,16 @@ Without special care, timestamps will be silently rounded!
 How do I construct a REST API `transactionId`?
 
 The transactionId follows the format `<entity_id>-<seconds>-<nanoseconds>`
+
+```javascript
+const {valid_start_ns, payer_account_id} = json.data.transaction[0]
+const transactionId = `0.0.${payer_account_id}-${valid_start_ns.substring(
+  0,
+  10
+)}-${valid_start_ns.substring(10)}`
+
+const restApiEndpoint = `https://mainnet-public.mirrornode.hedera.com/api/v1/transactions/${transactionId}`
+```
 
 :::warning
 
@@ -61,3 +148,24 @@ Supporting documentation:
 
 - https://docs.hedera.com/guides/core-concepts/transactions-and-queries
 - https://docs.hedera.com/guides/docs/mirror-node-api/rest-api#transaction-by-transaction-id
+
+## Query tips
+
+### Getting Transaction Values
+
+When getting transaction values and aggregate transaction sums, be sure to only get the negative values.
+
+If you don't specify only negative (HBAR leaving the account) the value will always be 0.
+
+This is because the API will total the amount leaving as negative and the amount being received as positive which will always be 0.
+
+In the example below, we remove all values under 1 HBAR (100,000,000 tiny bars). This is a good way to not have the fees of the transaction come back in the query.
+
+```javascript
+transactions {
+  crypto_transfer(where: {amount: {_lte: "-100000000"}}) {
+    amount
+  }
+  sender_account_id
+}
+```
