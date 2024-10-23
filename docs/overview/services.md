@@ -17,5 +17,6 @@ Hgraph's current services and features cater to the **Hedera network** and lever
     - API playground
     - Schema explorer
 - Software engineering support
+- Helpful SDKs
 
  There are plans to continue expanding service offerings.
