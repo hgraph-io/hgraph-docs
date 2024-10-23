@@ -78,7 +78,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      // style: 'dark',
       links: [
         {
           title: 'Docs',
@@ -138,6 +138,14 @@ const config: Config = {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: false,
+    },
+    announcementBar: {
+      id: 'support_us',
+      content:
+        'We are currently upgrading and enhancing our documentation.',
+      backgroundColor: '#6f47c0',
+      textColor: '#fbfaff',
+      isCloseable: false,
     },
   } satisfies Preset.ThemeConfig,
 };

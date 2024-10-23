@@ -12,11 +12,11 @@ body {
   --ifm-color-primary-light: #7e5bc7 !important;
   --ifm-color-primary-lighter: #8664ca !important;
   --ifm-color-primary-lightest: #9d82d4 !important;
-  --ifm-background-color: #fbfaff !important;
+  --ifm-background-color: #ffffff !important;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1) !important;
   .navbar { background-color: #fff !important; }
-  .footer { background-color: #1d1924 !important; }
+  .footer { background-color: #EDEAF3 !important; }
 }
 
 [data-theme='dark'] {
