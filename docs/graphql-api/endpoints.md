@@ -4,4 +4,8 @@ sidebar_position: 4
 
 # Endpoints
 
-*Note: Content to be added soon*
+:::note
+
+We are currently upgrading our systems and documentation. This page will be updated soon.
+
+:::
