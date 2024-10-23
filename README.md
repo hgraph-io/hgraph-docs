@@ -1,41 +1,15 @@
-# Website
+# Hgraph Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Hgraph is a Web3 data infrastructure company focused on tooling for the Hedera network and beyond. Core offerings include Hedera mirror node APIs (GraphQL & REST), bare metal infrastructure, SDKs, the Hedera JSON-RPC, and bespoke software engineering services.
 
-### Installation
+The purpose of this documentation is to help developers fully leverage the capabilities of Hgraph's data tooling and APIs, and to help first-time users easily get started.
 
-```
-$ yarn
-```
+Visit website: **[docs.hgraph.com →](https://docs.hgraph.com)**
 
-### Local Development
+## Quick links:
+- [FAQs](https://docs.hgraph.com/category/faqs)
+- [Support](https://docs.hgraph.com/support)
+- [Hgraph SDK](https://docs.hgraph.com/category/hgraph-sdk)
+- [GraphQL API](https://docs.hgraph.com/category/graphql-api)
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+*We are currently upgrading and enhancing our documentation.*
