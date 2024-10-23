@@ -12,3 +12,6 @@ REST (Representational State Transfer) is an architectural style for building AP
 
 **What is the JSON-RPC?**\
 JSON-RPC (JavaScript Object Notation - Remote Procedure Call) is a stateless protocol that uses JSON to encode remote procedure calls, allowing clients to send requests to servers and receive responses, typically over HTTP or WebSockets. It supports method calls with parameters and returns results or errors, making it a simple and flexible way to invoke remote services.
+
+**Does Hgraph have WebSocket Endpoints?**\
+Yes, Hgraph offers WebSocket endpoints through GraphQL [Subscriptions](/hgraph-sdk/subscriptions). Our GraphQL API implements Subscriptions over WebSockets, enabling clients to establish persistent connections for real-time data updates. This allows you to subscribe to specific events or data changes and receive asynchronous notifications as they occur.
