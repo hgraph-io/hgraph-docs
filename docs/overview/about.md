@@ -9,7 +9,3 @@ Hgraph is a trusted technology partner for developers, startups and enterprises 
 ## What’s next for Hgraph?
 
 After years serving the Hedera community and developing robust mirror node capabilities, Hgraph is well positioned for a new phase of discovery and innovation. We’re focused on data analytics, infrastructure management and tooling for web3 ecosystems.
-
-## Our team
-
-*WIP*
