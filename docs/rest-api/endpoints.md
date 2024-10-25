@@ -1,26 +1,13 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
-# GraphQL API Endpoints
+# REST API Endpoints
 
-Our GraphQL API endpoints are structured to support both `testnet` and `mainnet` access.
-
-**Below is the standard format:**
+Our Hedera mirror node REST API follows this structure:
 
 ```
-https://<testnet|mainnet>.<network>.api.hgraph.<dev|io>/<pathname>
-```
-
-* For testing and development purposes, use `testnet`.
-* For live, production puroises, use `mainnet`.
-
-## Accessing the Hedera GraphQL API
-
-For accessing Hedera GraphQL endpoints, use the following pathname format:
-
-```
-/v1/<api-key>/graphql
+/api/v1/<api-key>/<rest-endpoint>
 ```
 
 > Alternatively, you may pass your API key in the Authorization header. If using this method, omit the `<api-key>` section from the URL pathname.
