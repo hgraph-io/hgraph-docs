@@ -12,7 +12,7 @@ We are currently upgrading our systems and documentation. This page will be upda
 
 All of our endpoints are constructed in the following manner:
 
-https://<testnet|mainnet>.<network>.api.hgraph.<dev|io>/<pathname>
+`https://<testnet|mainnet>.<network>.api.hgraph.<dev|io>/<pathname>`
 
 For our Hedera GraphQL endpoints, the pathname is `/v1/<api-key>/graphql`.
 
