@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Contact
+# Contact us
 
 Need support? [Use the info on this page](/support).
 
