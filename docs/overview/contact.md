@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Contact us
 
-Need support? [Use the info on this page](/support).
+If you have questions about Hgraph, looking to partner with us or are interested in signing up for our services or working with us, please reach out! Need support? [Use the info on this page](/support).
 
 - Email: contact@hgraph.com
 - [Join the Discord →](https://discord.gg/dwxpRHHVWX)
