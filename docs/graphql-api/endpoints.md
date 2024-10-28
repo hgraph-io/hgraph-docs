@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# GraphQL API Endpoints
+# API Endpoints
 
 Our GraphQL API endpoints are structured to support both `testnet` and `mainnet` access.
 
