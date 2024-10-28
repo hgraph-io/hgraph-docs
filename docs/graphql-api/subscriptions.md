@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# GraphQL Subscriptions
+# Subscriptions
 
 The Hgraph SDK includes built-in GraphQL subscription management capabilities, simplifying the process of handling and interacting with subscriptions. This feature encapsulates all active subscriptions and their lifecycle control within the `Client`. WebSockets are utilized by the GraphQL API to enable subscriptions.
 
