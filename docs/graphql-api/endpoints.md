@@ -12,8 +12,8 @@ Our GraphQL API endpoints are structured to support both `testnet` and `mainnet`
 https://<testnet|mainnet>.<network>.api.hgraph.<dev|io>/<pathname>
 ```
 
-* For testing and development purposes, use `testnet`.
-* For live, production puroises, use `mainnet`.
+* For testing and development purposes, use the `.dev` environment.
+* For live, production purposes, use `.io` environment.
 
 ## Accessing the Hedera GraphQL API
 

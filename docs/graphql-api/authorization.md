@@ -12,7 +12,7 @@ We are currently upgrading our account dashboard. This will make it easy to crea
 
 ## Developer playground
 
-The quickest way to get started is to use the GraphiQL editor on our [playground console](https://console.hgraph.io).
+The quickest way to get started is to use the GraphQL editor on our [playground console](https://console.hgraph.io).
 
 The editor in our developer portal to help you develop queries specifically for your use case. You can also use whichever GraphQL client you choose.
 
