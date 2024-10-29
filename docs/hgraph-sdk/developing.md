@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
-# Developing
+# Contributing
 
 If you're interested in contributing to this repository or experimenting with the codebase, follow the steps below to set up your local development environment.
 

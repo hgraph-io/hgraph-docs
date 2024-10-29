@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# Installation & Usage
+# Installation & usage
 
 To install the `@hgraph.io/sdk`, run the following command:
 
@@ -15,6 +15,18 @@ This command will add the latest version of the SDK to your project's dependenci
 ## Authenticating
 
 To interact with Hgraph's services, you'll need to authenticate your requests. There are currently two methods for authentication:
+
+### Using an API key
+
+To authenticate using an API key, include your API key in the `x-api-key header` of each request. Here's how you can set it up:
+
+```javascript
+const hgraph = new HGraphSDK({
+  headers: {
+    'x-api-key': 'your-api-key-here',
+  },
+});
+```
 
 ### Using a JSON Web Token (JWT)
 
@@ -36,22 +48,6 @@ import HGraphSDK from '@hgraph.io/sdk';
 const hgraph = new HGraphSDK({
   headers: {
     Authorization: `Bearer your-jwt-token-here`,
-  },
-});
-```
-
-### Using an API key
-
-:::note Deprecated
-The API key authentication method is deprecated and will be phased out in future releases. We recommend transitioning to JWT authentication for improved security and functionality.
-:::
-
-To authenticate using an API key, include your API key in the `x-api-key header` of each request. Here's how you can set it up:
-
-```javascript
-const hgraph = new HGraphSDK({
-  headers: {
-    'x-api-key': 'your-api-key-here',
   },
 });
 ```
