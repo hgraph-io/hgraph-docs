@@ -51,6 +51,10 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
+    gtag: {
+      trackingID: 'G-KPHT8JR9R3',
+      anonymizeIP: true,
+    },
     image: 'img/Hgraph-Docs-Card.png',
     navbar: {
       hideOnScroll: true,
