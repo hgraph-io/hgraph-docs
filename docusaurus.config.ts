@@ -36,25 +36,24 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          // Update this to your repo
-          editUrl:
-            'https://github.com/hgraph-io/hgraph-docs/edit/main/', // Points to your repository for editing
+          editUrl: 'https://github.com/hgraph-io/hgraph-docs/edit/main/',
         },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
+        gtag: {
+          trackingID: 'G-KPHT8JR9R3',
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
   
+  
 
   themeConfig: {
     // Replace with your project's social card
-    gtag: {
-      trackingID: 'G-KPHT8JR9R3',
-      anonymizeIP: true,
-    },
     image: 'img/Hgraph-Docs-Card.png',
     navbar: {
       hideOnScroll: true,
