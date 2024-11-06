@@ -24,8 +24,14 @@ Hgraph provides data infrastructure for web3 applications. Current services and 
 - Helpful SDKs
 - More
 
-## Pricing
+## Subscription pricing
 
 Hgraph offers affordable susbcription plans for API access and a high value subscription plan for premium service. Feel free to contact sales@hgraph.com with your questions.
 
 **[Hgraph pricing details →](https://hgraph.com/pricing)**
+
+## Enterprise
+
+Hgraph offers bespoke software engineering services and enterprise-grade support, powered by our advanced infrastructure and APIs. We provide comprehensive, customized solutions for companies integrating Web3 technologies into their digital transformation strategies.
+
+**[Work with us →](https://form.typeform.com/to/LUnKkmRL)**
