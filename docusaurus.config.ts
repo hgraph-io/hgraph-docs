@@ -84,11 +84,23 @@ const config: Config = {
       // style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Quick links',
           items: [
             {
-              label: 'Getting started',
-              to: '/docs/intro',
+              label: 'About',
+              to: '/overview/about',
+            },
+            {
+              label: 'Contact',
+              to: '/overview/contact',
+            },
+            {
+              label: 'Enterprise',
+              to: '/overview/services#enterprise',
+            },
+            {
+              label: 'Brand',
+              to: '/resources/brand',
             },
           ],
         },
@@ -117,16 +129,20 @@ const config: Config = {
           title: 'More',
           items: [
             {
+              label: 'Account dashboard',
+              href: 'https://console.hgraph.io',
+            },
+            {
+              label: 'Newsletter',
+              href: 'https://hgraph.beehiiv.com/subscribe',
+            },
+            {
               label: 'Blog',
               href: 'https://www.hgraph.com/blog',
             },
             {
               label: 'Pricing',
               href: 'https://www.hgraph.com/pricing',
-            },
-            {
-              label: 'Contact',
-              href: 'https://form.typeform.com/to/LUnKkmRL',
             },
           ],
         },
