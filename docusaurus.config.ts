@@ -73,7 +73,7 @@ const config: Config = {
         },
         {to: '/overview/contact', label: 'Contact', position: 'left'},
         {
-          href: 'https://console.hgraph.com',
+          href: 'https://console.hgraph.io',
           label: 'Account Dashboard',
           position: 'right',
         },
@@ -138,17 +138,9 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: false,
-    },
-    announcementBar: {
-      id: 'support_us',
-      content:
-        'We are currently upgrading and enhancing our documentation.',
-      backgroundColor: '#6f47c0',
-      textColor: '#fbfaff',
-      isCloseable: false,
     },
   } satisfies Preset.ThemeConfig,
 };
