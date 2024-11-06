@@ -8,6 +8,8 @@ sidebar_position: 1
 
 Hgraph is a trusted technology partner for developers, startups and enterprises looking to take advantage of web3 technologies. Major brands rely on Hgraph’s expert consultation, software development services, project risk management and custom solutions to accelerate their digital transformations and discover new opportunities! We’re proud to work with incredible teams.
 
+Learn more about Hgraph on our [official website](https://hgraph.com).
+
 ## Mission & vision
 
 The mission for Hgraph is simple: to make data access on the Hedera network (and beyond) as easy, flexible, and affordable as possible. This is achieved by focusing on the unique needs of customers and sharing those innovations with the broader ecosystem. This illustration showcases that vision:
