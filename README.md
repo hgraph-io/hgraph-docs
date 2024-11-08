@@ -11,5 +11,7 @@ Visit website: **[docs.hgraph.com →](https://docs.hgraph.com)**
 - [Support](https://docs.hgraph.com/support)
 - [Hgraph SDK](https://docs.hgraph.com/category/hgraph-sdk)
 - [GraphQL API](https://docs.hgraph.com/category/graphql-api)
+- [REST API](https://docs.hgraph.com/category/rest-api)
+- [Examples](https://docs.hgraph.com/hgraph-sdk/examples)
 
 *We are currently upgrading and enhancing our documentation.*
