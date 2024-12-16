@@ -12,7 +12,7 @@ Understanding the health of the Hedera network is important. To measure this, we
 
 ## Hedera Stats
 
-- Network latency
+- Time to consensus
 - Active accounts
 - Developer accounts
 - Retail accounts
