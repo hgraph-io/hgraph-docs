@@ -12,19 +12,26 @@ Hgraph calculates `ecosystem_title_here` every 5 minutes.
 
 ## Methodology
 
-### Definition of an Active Account:  
-   
-   An account is considered “active” if it **initiates (triggers)** at least one transaction within a given time period. The critical distinction here is that the account must be the originator of the transaction rather than a passive recipient.
+### Identify Smart Contract Accounts
+Begin by identifying all accounts that represent deployed smart contracts. This can typically be done by referencing the mirror node's contract-related tables (e.g., `contract` or `contract_result` tables) or by filtering transactions to those that create or associate an account with a contract.
+
+### Define the Activity Criteria
+A smart contract is considered "active" if it has executed at least one state-changing transaction within the specified time period. Here's how an "active contract" is qualified:
 
 **Inclusion Criteria:**
-   - Any account that sends a transaction, pays a transaction fee, or otherwise executes an operation that originates from that account’s private key or contract logic (if applicable) counts as active.
-   - If a transaction is recorded where the account is listed as the payer or the initiating entity, that account qualifies as active.
+
+    - Transactions that reflect a state change in the contract.
+    - Transactions that consume gas, indicating the contract executed logic beyond just reading data.
+    - Typical examples include `CONTRACTCALL` transactions that update contract state, mint tokens, transfer values, or perform other on-chain actions that alter the network's ledger.
 
 **Exclusion Criteria:**
-   - Accounts that only receive transactions and never initiate one are not counted as active.
-   - Receiving token transfers, HBAR deposits, or any other form of inbound-only transaction does not qualify the account as active.
 
-## Timeframe Consideration:
-   Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. An account must initiate at least one qualifying transaction within that period to be considered active for that timeframe.
-   
-   > Example: Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
+    - Read-only queries or calls that do not appear as transactions on the ledger. These often return contract state but do not consume gas or produce a transaction record in the mirror node.
+    - Any data retrieval operations or RPC queries that do not modify state.
+    - Failed transactions that do not lead to state changes (if such failures do not produce a recorded state-altering transaction) should also be excluded.
+
+## Code examples
+
+```
+some code example here
+```

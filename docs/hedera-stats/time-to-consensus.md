@@ -12,18 +12,18 @@ Hgraph calculates `ecosystem_title_here` every 5 minutes.
 
 ## Methodology
 
-### 1. Identify the Relevant Timestamps:
+### Identify the Relevant Timestamps:
 
     - **Consensus Timestamp (C):** This is the timestamp assigned to a transaction at the moment the network finalizes its order and deems the transaction valid. This timestamp comes from the consensus layer of the Hedera network.
     - **Record Creation Timestamp (RC):** After consensus is achieved, a transaction record is generated that details the outcome of the transaction (e.g., success, cost, updated balances). The time at which this final record is fully formed and made available is the Record Creation Timestamp.
 
-### 2. Data Source for Timestamps:
+### Data Source for Timestamps:
 
     - The SecC2RC (Seconds from Consensus to Record Creation) metric is derived from Hedera network telemetry data.
     - Consensus timestamps are obtained from the consensus topic stream or from the transaction's consensus status in the mirror node database.
     - Record creation timestamps are obtained from the same data source once the mirror node has received and processed the finalized transaction record.
 
-### 3. Calculating the Metric:
+### Calculating the Metric:
 
 The basic formula is:
 
@@ -33,7 +33,7 @@ Time to Consensus (SecC2RC) = Record Creation Timestamp (RC) - Consensus Timesta
 
 Both timestamps should be expressed in a common unit (e.g., seconds since epoch) to allow for a straightforward subtraction.
 
-### 4. Aggregation and Reporting:
+### Aggregation and Reporting:
 
 Once the difference is calculated for individual transactions, these values are:
 
