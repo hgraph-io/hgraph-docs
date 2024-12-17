@@ -7,7 +7,7 @@ sidebar_position: 5
 A "retail account" is essentially an active account that is neither a developer account nor a smart contract account. This category is determined after identifying active and developer accounts, as well as distinguishing active smart contracts.
 
 :::note Timeframes
-Hgraph calculates `ecosystem_title_here` every 5 minutes.
+Hgraph calculates `hedera_stats_retail_accounts` every 5 minutes.
 :::
 
 ## Methodology

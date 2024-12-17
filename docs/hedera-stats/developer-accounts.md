@@ -7,7 +7,7 @@ sidebar_position: 4
 A developer account is any account that performs at least one “creative” or infrastructure-oriented action over a specified period. Examples include deploying or updating smart contracts, creating or minting tokens, or setting up and modifying consensus topics. These accounts represent users who are actively building or expanding the network’s capabilities rather than simply consuming existing services.
 
 :::note Timeframes
-Hgraph calculates `ecosystem_title_here` every 5 minutes.
+Hgraph calculates `hedera_stats_developer_accounts` every 5 minutes.
 :::
 
 ## Methodology
