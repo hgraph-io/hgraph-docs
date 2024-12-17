@@ -37,3 +37,7 @@ body {
   .footer { background-color: #15111e !important; }
   */
 }
+
+.hedera-stats {
+  display: none !important;
+}
