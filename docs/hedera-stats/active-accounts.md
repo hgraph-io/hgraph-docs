@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Active accounts
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 An active account is any account that originates at least one transaction during a given timeframe. Unlike accounts that only receive value or tokens, active accounts must initiate an operation—such as sending a payment or interacting with a service—thus demonstrating direct network engagement.
 
 :::note Timeframes

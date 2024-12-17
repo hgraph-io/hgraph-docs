@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # Developer accounts
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 A developer account is any account that performs at least one “creative” or infrastructure-oriented action over a specified period. Examples include deploying or updating smart contracts, creating or minting tokens, or setting up and modifying consensus topics. These accounts represent users who are actively building or expanding the network’s capabilities rather than simply consuming existing services.
 
 :::note Timeframes

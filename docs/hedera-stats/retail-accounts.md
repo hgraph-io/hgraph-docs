@@ -4,6 +4,8 @@ sidebar_position: 5
 
 # Retail accounts
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 A "retail account" is essentially an active account that is neither a developer account nor a smart contract account. This category is determined after identifying active and developer accounts, as well as distinguishing active smart contracts.
 
 :::note Timeframes

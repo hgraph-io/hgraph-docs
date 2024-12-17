@@ -4,6 +4,12 @@ sidebar_position: 1
 
 # Introduction
 
+:::info Work in progress
+
+Documentation for these "Hedera Stats" are currently being developed.
+
+:::
+
 Hgraph offers API access to various quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. These statistics leverage Hedera mirror node data, data computation and Hgraph's GraphQL API and can be used for analysis in various metrics and KPIs. If you're looking to access the "Hedera Stats" APIs, you can [create an Hgraph account](https://dashboard.hgraph.com) and start querying data. If you're looking to contribute to the "Hedera Stats" project on GitHub, [check out the repository](/).
 
 ## Why create Hedera Stats?

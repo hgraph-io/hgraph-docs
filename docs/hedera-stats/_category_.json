@@ -1,6 +1,7 @@
 {
   "label": "Hedera Stats",
   "position": 10,
+  "className": "hedera-stats",
   "link": {
     "type": "generated-index",
     "description": "Quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation."

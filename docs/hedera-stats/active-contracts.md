@@ -4,6 +4,8 @@ sidebar_position: 6
 
 # Active contracts
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 The number of unique smart contracts that have been invoked through at least one state-changing (gas-consuming) transaction within a specified time window. This statistic highlights how many contracts are actively in use, rather than just deployed and idle, providing a snapshot of real engagement and activity in the ecosystem.
 
 :::note Timeframes
