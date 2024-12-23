@@ -7,7 +7,13 @@ sidebar_position: 2
 Our Hedera mirror node REST API follows this structure:
 
 ```
-/v1/<api-key>/<rest-endpoint>
+/v1/<api-key>/<full-rest-endpoint>
+```
+
+For example:
+
+```
+https://mainnet.hedera.api.hgraph.dev/v1/<api-key>/api/v1/transactions
 ```
 
 > Alternatively, you may pass your API key in the Authorization header. If using this method, omit the `<api-key>` section from the URL pathname.
