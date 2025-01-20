@@ -30,7 +30,7 @@ To calculate revenue, each transaction's fee distribution must be known. This in
 ### Calculating Total Revenue
 
 ```
-Total Revenue (HBAR) = Σ (Transaction Fees going to Consensus Nodes + Transaction Fees going to Staking Account + Transaction Fees going to Hedera Treasury)
+Total Revenue (HBAR) = Σ (Transaction Fees going to Consensus Nodes + Transaction Fees going to Staking Account + Transaction Fees going to Hedera Treasury + Transaction Fees going to Node Rewards)
 ```
 
 In other words, for each transaction:
