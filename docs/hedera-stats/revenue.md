@@ -6,7 +6,7 @@ sidebar_position: 6
 
 > *Note: Documentation for these "Hedera Stats" are currently being developed.*
 
-Hedera’s revenue is calculated by summing the transaction fees collected across the mainnet. Every transaction pays fees to the consensus nodes, the staking account (0.0.800), and the Hedera treasury (0.0.98). By examining each transaction, determining the total fee paid, and identifying which portions go to these accounts, Hedera can determine its total network revenue. This total can then be categorized by service type—Hedera Token Service (HTS), Hedera Smart Contract Service (HSCS), Hedera Consensus Service (HCS), and Other (including file and account operations)—providing a detailed breakdown of revenue sources.
+Hedera’s revenue is calculated by summing the transaction fees collected across the mainnet. Every transaction pays fees to the consensus nodes, the staking account (0.0.800), the node rewards account (0.0.801) and the Hedera treasury (0.0.98). By examining each transaction, determining the total fee paid, and identifying which portions go to these accounts, Hedera can determine its total network revenue. This total can then be categorized by service type—Hedera Token Service (HTS), Hedera Smart Contract Service (HSCS), Hedera Consensus Service (HCS), and Other (including file and account operations)—providing a detailed breakdown of revenue sources.
 
 :::note Timeframes
 Hgraph calculates `hedera_stats_revenue` every 1 hour.
@@ -20,6 +20,7 @@ Every transaction submitted to the Hedera mainnet incurs certain fees, which are
 
     - **Consensus Nodes**: Nodes that reach consensus on the order of transactions and earn a portion of the transaction fee.
     - **Staking Account (0.0.800)**: An account designated for staking rewards. A portion of the fee goes here.
+    - **Node Reward Account (0.0.801)**: An account designated for rewarding all active consensus nodes. A portion of the fee goes here.
     - **Hedera Treasury (0.0.98)**: The central treasury account on the network. Another portion of the fee is directed here.
 
 ### Data Inputs
@@ -29,7 +30,7 @@ To calculate revenue, each transaction's fee distribution must be known. This in
 ### Calculating Total Revenue
 
 ```
-Total Revenue (HBAR) = Σ (Transaction Fees going to Consensus Nodes + Transaction Fees going to Staking Account + Transaction Fees going to Hedera Treasury)
+Total Revenue (HBAR) = Σ (Transaction Fees going to Consensus Nodes + Transaction Fees going to Staking Account + Transaction Fees going to Hedera Treasury + Transaction Fees going to Node Rewards)
 ```
 
 In other words, for each transaction:
