@@ -4,10 +4,6 @@ sidebar_position: 1
 
 # General questions
 
-### How much does Hgraph cost?
-
-Production ready Hedera mirror node access starts at just $50/mo. You can learn more about our plans and pricing [on this page](https://www.hgraph.com/pricing).
-
 ### Do you offer a free plan?
 
 Yes. [Get started with our console](https://console.hgraph.io/).
