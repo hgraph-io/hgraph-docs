@@ -14,4 +14,4 @@ If you have questions about Hgraph, looking to partner with us or are interested
 - [Add Hgraph on LinkedIn →](https://www.linkedin.com/company/hgraph_io)
 - [Contribute on GitHub →](https://github.com/hgraph-io)
 
-Interested in working with Hgraph? [Please use this form →](https://form.typeform.com/to/LUnKkmRL)
+Interested in working with Hgraph? [Please use this form →](https://hgraph.com/contact)
