@@ -24,7 +24,7 @@ Hgraph calculates `hedera_stats_top_50_fungible-tokens` every 24 hours, with a 4
 3. **Normalized Transactions**:  
    - Total transactions involving the token, including transfers, mints, and burns.  
 
-*Normalization ensures that all values are scaled between 0 and 1 to make them comparable across contracts.*
+*Normalization ensures that all values are scaled between 0 and 1 to make them comparable across fungible tokens.*
 
 ### Exclusion Criteria  
 - Tokens with inflated market caps due to low liquidity.  
