@@ -75,6 +75,9 @@ This is the maximum number of Requests Per Second (RPS) that you can send to Hgr
 **What does "Surge Ready" mean?**\
 From time to time, customers expect surges in RPS. With surge support, Hgraph can provide custom solutions for expected surges.
 
+**How do I update or cancel my plan?**\
+Login to your [account dashboard](https://dashboard.hgraph.com) and click the button in the subscription area. On the Stripe customer page you will be able to update or cancel your subscription.
+
 **Questions or feedback?**\
 Please feel free to [contact our team](contact).
 
