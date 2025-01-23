@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 
-# Top 50 Tokens
+# Top 50 NFTs
