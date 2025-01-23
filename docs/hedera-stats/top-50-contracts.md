@@ -33,7 +33,7 @@ To calculate the rankings:
 2. Normalize and aggregate both metrics to assign a composite score.  
   
 ```
-Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Normalized Unique Callers * 0.5)
+Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Unique Callers * 0.5)
 ```
 
 #### Components:
