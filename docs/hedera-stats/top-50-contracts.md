@@ -4,19 +4,21 @@ sidebar_position: 8
 
 # Top 50 Contracts
 
-DRAFT
-
 ## Overview  
 The primary goal of this metric is to provide insights into the most heavily utilized or impactful smart contracts on the Hedera network. It evaluates both transaction volume and the diversity of interactions, ensuring that rankings highlight genuine usage while minimizing the effects of artificial inflation or spam.  
+
+:::note Timeframes
+Hgraph calculates `hedera_stats_top_50_contracts` every 24 hours with smoothing applied using a 48-hour rolling average to filter out short-term anomalies.
+:::
 
 ## Methodology  
 
 ### Inclusion Criteria  
-1. **Total Contract Calls**:  
+1. **Total Calls**:  
    - All transactions interacting with a smart contract via a `CONTRACTCALL` or similar Hedera Token Service interaction.  
    - Includes both successful and failed transactions.  
 
-2. **Unique Caller Diversity**:  
+2. **Unique Callers**:  
    - Measures how many distinct accounts (wallets or entities) interact with the contract.  
    - Helps reduce the impact of single wallets or bots inflating usage metrics.  
 
@@ -25,16 +27,25 @@ The primary goal of this metric is to provide insights into the most heavily uti
 
 ### Ranking Formula  
 To calculate the rankings:  
-1. Weight `Total Contract Calls` and `Unique Caller Diversity` equally.  
+1. Weight `Total Calls` and `Unique Callers` equally.  
 2. Normalize and aggregate both metrics to assign a composite score.  
-
-**Example Formula**:  
+  
 ```
-Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Caller Diversity * 0.5)
+Composite Score = (Total Calls * 0.5) + (Unique Callers * 0.5)
 ```
 
-### Data Sources  
-- Hedera Mirror Node data for contract call counts and unique interacting accounts.  
+#### Components:
+1. **Total Calls**: Measures the total interactions with a contract, reflecting its overall usage.
+2. **Unique Callers**: Tracks the number of unique accounts interacting with a contract, promoting authenticity.
 
-### Update Frequency  
-- Calculated every 24 hours with smoothing applied using a 48-hour rolling average to filter out short-term anomalies or gaming attempts.  
+#### Rationale:
+- Equal weighting ensures both raw usage and diverse participation are valued equally.
+- Caller diversity minimizes rankings being skewed by bots or a few accounts.
+- Normalization scales all contracts for fair ranking.
+- Rankings refresh daily with a rolling average to filter anomalies.   
+
+## Code examples
+
+```
+some code example here
+```
