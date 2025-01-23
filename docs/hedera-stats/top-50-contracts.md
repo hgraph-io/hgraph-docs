@@ -14,29 +14,31 @@ Hgraph calculates `hedera_stats_top_50_contracts` every 24 hours with smoothing 
 ## Methodology  
 
 ### Inclusion Criteria  
-1. **Total Calls**:  
+1. **Normalized Contract Calls**:  
    - All transactions interacting with a smart contract via a `CONTRACTCALL` or similar Hedera Token Service interaction.  
    - Includes both successful and failed transactions.  
 
-2. **Unique Callers**:  
+2. **Normalized Unique Callers**:  
    - Measures how many distinct accounts (wallets or entities) interact with the contract.  
-   - Helps reduce the impact of single wallets or bots inflating usage metrics.  
+   - Helps reduce the impact of single wallets or bots inflating usage metrics.
+
+*Normalization ensures that all values are scaled between 0 and 1 to make them comparable across contracts.*
 
 ### Exclusion Criteria  
 - Contracts where the majority of interactions (>90%) originate from a single wallet or small set of wallets, as these are likely attempts to manipulate rankings.  
 
 ### Ranking Formula  
 To calculate the rankings:  
-1. Weight `Total Calls` and `Unique Callers` equally.  
+1. Weight `Normalized Contract Calls` and `Normalized Unique Callers` equally.  
 2. Normalize and aggregate both metrics to assign a composite score.  
   
 ```
-Composite Score = (Total Calls * 0.5) + (Unique Callers * 0.5)
+Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Normalized Unique Callers * 0.5)
 ```
 
 #### Components:
-1. **Total Calls**: Measures the total interactions with a contract, reflecting its overall usage.
-2. **Unique Callers**: Tracks the number of unique accounts interacting with a contract, promoting authenticity.
+1. **Normalized Contract Calls**: Measures the total interactions with a contract, reflecting its overall usage.
+2. **Normalized Unique Callers**: Tracks the number of unique accounts interacting with a contract, promoting authenticity.
 
 #### Rationale:
 - Equal weighting ensures both raw usage and diverse participation are valued equally.

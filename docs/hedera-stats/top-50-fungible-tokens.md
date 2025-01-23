@@ -14,15 +14,17 @@ Hgraph calculates `hedera_stats_top_50_fungible-tokens` every 24 hours, with a 4
 ## Methodology  
 
 ### Inclusion Criteria  
-1. **Market Cap**:  
+1. **Normalized Market Cap**:  
    - Calculated as the product of circulating supply and token price.  
    - Prices sourced from DeFi platforms such as SaucerSwap and DeFi Llama.  
 
-2. **Volume**:  
+2. **Normalized Volume**:  
    - Aggregated daily trading volume for each token across supported exchanges.  
 
-3. **Transactions**:  
+3. **Normalized Transactions**:  
    - Total transactions involving the token, including transfers, mints, and burns.  
+
+*Normalization ensures that all values are scaled between 0 and 1 to make them comparable across contracts.*
 
 ### Exclusion Criteria  
 - Tokens with inflated market caps due to low liquidity.  
@@ -30,16 +32,16 @@ Hgraph calculates `hedera_stats_top_50_fungible-tokens` every 24 hours, with a 4
 ### Ranking Formula  
 
 ```
-Composite Score = (Market Cap * 0.4) + (Volume * 0.4) + (Transactions * 0.2)
+Composite Score = (Normalized Market Cap * 0.4) + (Normalized Volume * 0.4) + (Normalized Transactions * 0.2)
 ```
 
 #### Rationale:
 
-1. **Market Cap (40%)**: Reflects overall token value. Weighted lower to avoid overemphasis on tokens with inflated supply or speculative pricing.  
+1. **Normalized Market Cap (40%)**: Reflects overall token value. Weighted lower to avoid overemphasis on tokens with inflated supply or speculative pricing.  
 
-2. **Volume (40%)**: Indicates liquidity and trading activity, ensuring active demand for the token. Equal weight with market cap emphasizes dynamic usage.  
+2. **Normalized Volume (40%)**: Indicates liquidity and trading activity, ensuring active demand for the token. Equal weight with market cap emphasizes dynamic usage.  
 
-3. **Transaction Count (20%)**: Measures community engagement and utility. Weighted lower to mitigate spammy or artificially inflated activity.  
+3. **Normalized Transactions (20%)**: Measures community engagement and utility. Weighted lower to mitigate spammy or artificially inflated activity.  
 
 #### Purpose:  
 Balances long-term value (market cap) with real-time activity (volume, transactions) while minimizing manipulation. The formula ensures fair representation of impactful tokens in the Hedera ecosystem.
