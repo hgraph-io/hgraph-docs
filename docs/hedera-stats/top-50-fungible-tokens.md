@@ -26,7 +26,10 @@ This metric highlights the most significant fungible tokens in the Hedera ecosys
 - Tokens with inflated market caps due to low liquidity or artificial demand (flagged via outlier detection).  
 
 ### Ranking Formula  
-\[ Composite Score = (Normalized Market Cap \times 0.4) + (Normalized Volume \times 0.4) + (Normalized Transaction Count \times 0.2) \]  
+
+```
+Composite Score = (Normalized Market Cap * 0.4) + (Normalized Volume * 0.4) + (Normalized Transaction Count * 0.2)
+```
 
 ### Data Sources  
 - Hedera Mirror Node data for token transactions.  

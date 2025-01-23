@@ -29,7 +29,9 @@ To calculate the rankings:
 2. Normalize and aggregate both metrics to assign a composite score.  
 
 **Example Formula**:  
-\[ Composite Score = (Normalized Contract Calls \times 0.5) + (Normalized Caller Diversity \times 0.5) \]  
+```
+Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Caller Diversity * 0.5)
+```
 
 ### Data Sources  
 - Hedera Mirror Node data for contract call counts and unique interacting accounts.  

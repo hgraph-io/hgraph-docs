@@ -23,7 +23,9 @@ This metric focuses on collections of non-fungible tokens (NFTs) rather than ind
 - Collections with an unusually high number of transactions or sales volume from a small group of accounts, flagged as potential gaming attempts.  
 
 ### Ranking Formula  
-\[ Composite Score = (Normalized Sales Volume \times 0.6) + (Normalized Transaction Count \times 0.4) \]  
+```
+Composite Score = (Normalized Sales Volume * 0.6) + (Normalized Transaction Count * 0.4)
+```
 
 ### Data Sources  
 - Sales and transaction data from Hedera marketplaces (e.g., Kabila, SentX).  
