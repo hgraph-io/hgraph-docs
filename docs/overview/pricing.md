@@ -4,22 +4,27 @@ sidebar_position: 3
 
 # Hgraph pricing
 
+:::info Community notice
+
+Our new account dashboard will be launching very soon. When you're ready to [get started](https://hgraph.com/hedera), our team will set up your account and API key for you. When our account dashboard launches, you'll be able to easily log in. 
+
+:::
+
 Easy access to our powerful and flexible Hedera network APIs including GraphQL, REST and JSON-RPC relay. Our plans are structured to ensure every developer and startup has room to grow. This page contains all the details regarding our subscription pricing plans.
 
-
 Ready to get started? [Sign up now →](https://hgraph.com/hedera)
-Have Questions? [See FAQ](#pricing-faq)
 
+Have Questions? [See FAQ →](#pricing-faq)
 
 ## Pricing plan details
 
 |                         | Free API                                                                             | Basic API                                                                     | Developer API                                                               | Startup API                                                                | Premium API+                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 |                         | Get started with the Hedera network at no cost, perfect for exploration and testing. | Essential tools for developers to build and launch basic Hedera applications. | Robust API access and support tailored for small production-ready projects. | Scalable throughput and dedicated support for startups building on Hedera. | High-performance access, custom tooling, and priority support for advanced use cases. |
-| **Cost**                |                                                                                      |                                                                               |                                                                             |                                                                            |                                                                                       |
+| **Cost (Annual and Monthly)**                |                                                                                      |                                                                               |                                                                             |                                                                            |                                                                                       |
 | **Annual/mo** | -                                                                                    |**$ 15.30**                                                                      | **$ 42.50**                                                                   | **$ 297.50**                                                                  | **$ 1,275.00**                                                                           |
-| Annually            | -                                                                                    | $ 183.60                                                                     | $ 510.00                                                                   | $ 3,570.00                                                                | $ 15,300.00                                                                          |
-| Monthly                 | -                                                                                    | $ 18.00                                                                      | $ 50.00                                                                    | $ 350.00                                                                  | $ 1,500.00                                                                           |
+| Billed annually            | -                                                                                    | $ 183.60                                                                     | $ 510.00                                                                   | $ 3,570.00                                                                | $ 15,300.00                                                                          |
+| Billed monthly                 | -                                                                                    | $ 18.00                                                                      | $ 50.00                                                                    | $ 350.00                                                                  | $ 1,500.00                                                                           |
 | **Support**             |                                                                                      |                                                                               |                                                                             |                                                                            |                                                                                       |
 | Level                   | Community                                                                            | Basic                                                                         | Basic                                                                       | Standard                                                                   | Priority                                                                              |
 | Onboarding              | Self-service                                                                         | Self-service                                                                  | Self-service                                                                | Self-service                                                               | Guided                                                                                |
@@ -49,7 +54,9 @@ Commonly asked questions regarding our pricing. You can view [additional FAQs he
 Yes. Tailored enterprise-grade API access with custom usage limits, SLAs, and premium support. Hgraph also offers additional, bespoke consulting solutions. [Learn more here](https://hgraph.com/enterprise).
 
 **How do I sign up and get my API key?**\
-Create an account on our Account Dashboard and then click "view API keys" and you should see a pop-up with your keys. You can also manage your subscription and use our other tools. [Create your account →](https://dashboard.hgraph.com).
+Create an account on our Account Dashboard and then click "view API keys" and you should see a pop-up with your keys. You can also manage your subscription and use our other tools. [Create your account](https://hgraph.com/hedera).
+
+> *Account dashboard coming soon...*
 
 **How do I pay for my subscription plan?**\
 We use Stripe for billing and all pricing is in USD. We plan to add more payment methods in the future.
