@@ -2,20 +2,112 @@
 sidebar_position: 2
 ---
 
-# API questions
+# API FAQ
+
+Welcome to the Hedera API FAQ. Below, you'll find answers to common questions about our APIs, including GraphQL, REST, and JSON-RPC. Whether you're a developer or new to blockchain technology, this FAQ provides clarity on how to integrate, authenticate, and use Hgraph’s APIs effectively.
+
+---
+
+## Introduction to Hgraph APIs
+
+### What APIs does Hgraph offer?
+Hgraph provides fast, reliable access to Hedera network data through three APIs:
+- **GraphQL API** – A powerful query language that allows precise data fetching with flexible queries and real-time subscriptions.
+- **REST API** – A widely used interface with structured endpoints for retrieving Hedera network data.
+- **JSON-RPC Relay** – Enables direct interaction with the Hedera EVM for executing smart contract functions. *Coming soon.*
+
+### How does Hgraph ensure fast and scalable data access?
+Hgraph operates its own bare-metal hardware infrastructure, ensuring low-latency and high-reliability data delivery. Our APIs are designed for efficiency and can scale with your needs.
+
+---
+
+## Getting Started
+
+### How do I sign up and get API keys?
+1. Sign up [using this form](https://www.hgraph.com/hedera/signup-temp).
+2. Pay for your accoint via Stripe.
+3. We deliver your API key.
+
+### Where can I find example queries and integration guides?
+Hgraph’s documentation includes:
+- [GraphQL](/category/graphql-api)
+- [REST API](/category/rest-api)
+- JSON-RPC
+
+---
+
+## API Features & Use Cases
 
 ### What is the GraphQL API?
+GraphQL is a query language for APIs that allows precise data fetching with a single endpoint, reducing unnecessary data transfer. Its strong type system enables efficient, flexible queries and real-time updates, making it ideal for complex web and mobile applications.
 
-GraphQL is a query language for APIs that allows precise data fetching with a single endpoint, reducing unnecessary data transfer. Its strong type system enables efficient, flexible queries and real-time updates, making it ideal for complex web and mobile applications. This self-documenting approach simplifies development, allowing for rapid frontend changes without backend adjustments, streamlining the creation of responsive, data-driven applications.
+### What is the REST API?
+The REST API follows the Representational State Transfer (REST) architecture, using standard HTTP methods (GET, POST, PUT, DELETE) to interact with Hedera network data. It is best for developers looking for a simple, structured approach to retrieving data.
 
-### What is REST?
+### What is JSON-RPC?
+JSON-RPC (JavaScript Object Notation - Remote Procedure Call) is a stateless protocol that enables remote function calls using JSON. It allows developers to interact with the Hedera EVM and execute smart contract functions efficiently.
 
-REST (Representational State Transfer) is an architectural style for building APIs that uses standard HTTP methods (like GET, POST, PUT, DELETE) to interact with resources, which are represented by URLs. It emphasizes stateless communication, where each request from the client to the server contains all the information needed to process the request, allowing scalable and flexible web services.
+---
 
-### What is the JSON-RPC?
+## Real-Time Data & WebSockets
 
-JSON-RPC (JavaScript Object Notation - Remote Procedure Call) is a stateless protocol that uses JSON to encode remote procedure calls, allowing clients to send requests to servers and receive responses, typically over HTTP or WebSockets. It supports method calls with parameters and returns results or errors, making it a simple and flexible way to invoke remote services.
+### Does Hgraph support WebSocket connections?
+Yes! Hgraph offers WebSocket endpoints through GraphQL subscriptions, allowing applications to receive real-time updates on:
+- Transaction confirmations
+- Account balance changes
+- Smart contract events
 
-### Does Hgraph have WebSocket Endpoints?
+Learn more: [GraphQL Subscriptions](/graphql-api/subscriptions)
 
-Yes, Hgraph offers WebSocket endpoints through GraphQL [Subscriptions](/graphql-api/subscriptions). Our GraphQL API implements Subscriptions over WebSockets, enabling clients to establish persistent connections for real-time data updates. This allows you to subscribe to specific events or data changes and receive asynchronous notifications as they occur.
+---
+
+## Authentication & Security
+
+### How do I authenticate API requests?
+Each API request must include an API key in the `Authorization` header or in the URL, depending on which API you are using. Instructions: [GraphQL](/graphql-api/authorization), [REST](/rest-api/endpoints).
+
+### How can I protect my API key?
+- Keep your API key private.
+- Rotate keys periodically for security.
+- Use environment variables instead of hardcoding keys in applications.
+
+---
+
+## Infrastructure & Reliability
+
+### What makes Hgraph’s infrastructure unique?
+Hgraph operates its own bare-metal servers, optimizing for:
+- Low latency: Faster response times for API calls.
+- Reliability: Custom failover mechanisms ensure uptime.
+- Scalability: Designed to handle surges in traffic.
+
+---
+
+## Common API Usage Questions
+
+### How do I handle rate limits?
+Each plan has a set rate limit to ensure fair access. If you exceed your limit, consider:
+- Optimizing queries (GraphQL allows fetching only required data).
+- Batching requests to reduce API calls.
+- Using webhooks or subscriptions for event-driven updates.
+
+### What are some common API errors and how do I fix them?
+| Error Code | Meaning | Solution |
+|------------|---------|-----------|
+| 401 | Unauthorized | Check if your API key is correct. |
+| 403 | Forbidden | Ensure your plan includes the requested endpoint. |
+| 429 | Too Many Requests | Implement exponential backoff and retry. |
+| 500 | Server Error | Check Hgraph's status or try again later. |
+
+### Can I request new API features or endpoints?
+Yes! We actively take feedback from developers. Submit requests via our [Discord](https://discord.gg/dwxpRHHVWX) or email us at support@hgraph.com.
+
+---
+
+## Support & Resources
+
+### Where can I get help?
+Hgraph offers support through multiple channels:
+- Discord: [Join the community](https://discord.gg/dwxpRHHVWX)
+- Documentation: [Explore docs](https://docs.hgraph.com/)
+- Email Support: Contact us at support@hgraph.com
