@@ -4,7 +4,12 @@ sidebar_position: 1
 
 # General FAQ
 
-[Add Blurb]
+Welcome to the Hgraph FAQ! Below, you'll find answers to the most common questions about our services, APIs, and enterprise solutions. Whether you're a developer or new to blockchain technology, this FAQ provides clarity and support. If you have additional questions, feel free to contact support@hgraph.com.
+
+**Additional FAQs:**
+- [Hedera APIs](faq-api.md)
+- [Enterprise](faq-enterprise.md)
+- [Pricing](/overview/pricing#pricing-faq)
 
 ---
 
