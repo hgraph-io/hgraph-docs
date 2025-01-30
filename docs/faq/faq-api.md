@@ -85,6 +85,9 @@ Hgraph operates its own bare-metal servers, optimizing for:
 
 ## Common API Usage Questions
 
+### Does Hgraph enforce compute limits?
+Yes. Hgraph enforces a timeout of 10 seconds on calls to our API. If a request takes more than 10 seconds to process, it is removed. This can effect a small handful of of users from time to time. If you require accomodation, please contact support@hgraph.com.
+
 ### How do I handle rate limits?
 Each plan has a set rate limit to ensure fair access. If you exceed your limit, consider:
 - Optimizing queries (GraphQL allows fetching only required data).
