@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# API FAQ
+# Hedera API FAQ
 
 Welcome to the Hedera API FAQ. Below, you'll find answers to common questions about our APIs, including GraphQL, REST, and JSON-RPC. Whether you're a developer or new to blockchain technology, this FAQ provides clarity on how to integrate, authenticate, and use Hgraph’s APIs effectively.
 
