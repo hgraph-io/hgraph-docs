@@ -2,24 +2,54 @@
 sidebar_position: 1
 ---
 
-# General questions
+# General FAQ
 
-### Do you offer a free plan?
+[Add Blurb]
 
-Yes. [Get started with our console](https://console.hgraph.io/).
+---
+
+## **General Questions**
+
+### What is Hgraph?
+Hgraph is a company in the Hedera ecosystem that provides mirror node infrastructure, hosting solutions, and APIs (REST, GraphQL, and JSON-RPC) for developers, startups, and enterprises. We also host CDNs, applications, code bases, and backends, enabling seamless access to Hedera network data.
+
+### Who uses Hgraph?
+Our services cater to developers, startups, and enterprises in AI, blockchain, data and other exciting spaces. We work with builders looking for reliable data access, custom tooling, consulting services and a strong technology partner.
+
+### What is Hedera?
+Hedera is a decentralized, open-source public [Hiero ledger](https://github.com/hiero-ledger) that uses hashgraph consensus, offering fast, secure, and energy-efficient transactions for businesses and developers, governed by top organizations.
 
 ### What are Hedera mirror nodes?
+Hedera mirror nodes process and store historical transaction data, enabling applications to access and analyze Hedera network activity efficiently. Hgraph operates hardware mirror nodes, ensuring reliable data access for developers and businesses. [Learn more](https://www.hgraph.com/blog/hedera-mirror-node).
 
-Hedera, the open-source, leaderless “hashgraph” DLT employs a unique architecture. The network features separate node types for read and write, creating greater efficiency. Consensus nodes facilitate “write” transactions and mirror nodes facilitate “read” requests. Hgraph owns and operates hardware mirror nodes. [Read this article to learn more about Hedera mirror nodes](https://www.hgraph.com/blog/hedera-mirror-node) and how Hgraph empowers the "other half" of the Hedera network.
+### Is Hgraph cloud-based?
 
-### Is Hgraph cloud based?
+Hgraph owns and operates its own bare-metal hardware infrastructure but leverages cloud technology for enhanced data analytics and scalability.
 
-Hgraph owns and operates it’s own bare-metal hardware infrastructure. We utilize cloud technology for enhanced data analytics.
+### How do I get started with Hgraph?
 
-### What other services does Hgraph provide?
+For Hedera APIs:
+1. Sign up [using this form](https://www.hgraph.com/hedera/signup-temp).
+2. Pay for your accoint via Stripe.
+3. We deliver your API key.
 
-You can learn more about our services [on this page](/overview/services). If you need software engineering services, [use this form](https://form.typeform.com/to/LUnKkmRL).
+For enterprise:
+1. Explore our services [here](https://www.hgraph.com/enterprise).
+2. Contact us [using this form](https://www.hgraph.com/contact).
+3. We'll respond quickly.
 
-### I need support!
+### How can I stay updated?
 
-Not to worry, you can learn more about how to contact us and open a ticket [on this page](/support).
+Follow us on [LinkedIn](https://www.linkedin.com/company/hgraph_io), [X/Twitter](https://x.com/hgraph_io), [GitHub](https://github.com/hgraph-io), and [subscribe to our newsletter](https://hgraph.beehiiv.com/subscribe) for the latest updates.
+
+### How do I contact support?
+
+Visit our [support page](/support) for assistance or join our community on [Discord](https://discord.gg/dwxpRHHVWX).
+
+---
+
+## Pricing and Subscriptions
+
+Questions about our pricing? On [this page](/overview/pricing#pricing-faq), we outline every detail of our subscription plans and answer top questions from our customers.
+
+**[Pricing FAQ →](/overview/pricing#pricing-faq)**
