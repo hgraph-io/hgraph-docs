@@ -19,6 +19,12 @@ Hgraph provides fast, reliable access to Hedera network data through three APIs:
 ### How does Hgraph ensure fast and scalable data access?
 Hgraph operates its own bare-metal hardware infrastructure, ensuring low-latency and high-reliability data delivery. Our APIs are designed for efficiency and can scale with your needs.
 
+### What is Hedera?
+Hedera is a decentralized, open-source public [Hiero ledger](https://github.com/hiero-ledger) that uses hashgraph consensus, offering fast, secure, and energy-efficient transactions for businesses and developers, governed by top organizations.
+
+### What are Hedera mirror nodes?
+Hedera mirror nodes process and store historical transaction data, enabling applications to access and analyze Hedera network activity efficiently. Hgraph operates hardware mirror nodes, ensuring reliable data access for developers and businesses. [Learn more](https://www.hgraph.com/blog/hedera-mirror-node).
+
 ---
 
 ## Getting Started
@@ -92,7 +98,6 @@ Yes. Hgraph enforces a timeout of 10 seconds on calls to our API. If a request t
 Each plan has a set rate limit to ensure fair access. If you exceed your limit, consider:
 - Optimizing queries (GraphQL allows fetching only required data).
 - Batching requests to reduce API calls.
-- Using webhooks or subscriptions for event-driven updates.
 
 ### What are some common API errors and how do I fix them?
 | Error Code | Meaning | Solution |

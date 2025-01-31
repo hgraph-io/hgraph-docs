@@ -14,15 +14,16 @@ Welcome to the Enterprise FAQ for Hgraph. This section covers common questions a
 Hgraph provides enterprise-grade APIs, consulting, and infrastructure solutions tailored for businesses and governments. We offer:
 - Custom API access (GraphQL, REST, JSON-RPC)
 - 3rd party integrations like Grafana
-- Dedicated support with SLAs
+- Priority support with SLAs
 - Enterprise-grade infrastructure
 - Consulting and custom software engineering
 - Security and compliance solutions
+- Dedicated nodes
 
 ### Who should use Hgraph's Enterprise services?
 Hgraph is ideal for:
-- Enterprises with high API usage needs
 - Businesses requiring custom SLAs and priority support
+- Enterprises with high API usage needs
 - Government agencies and regulatory bodies needing blockchain solutions
 - Companies looking for dedicated consulting and software engineering
 
