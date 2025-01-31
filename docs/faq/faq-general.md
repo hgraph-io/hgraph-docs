@@ -16,20 +16,18 @@ Welcome to the Hgraph FAQ! Below, you'll find answers to the most common questio
 ## **General Questions**
 
 ### What is Hgraph?
-Hgraph is a company in the Hedera ecosystem that provides mirror node infrastructure, hosting solutions, and APIs (REST, GraphQL, and JSON-RPC) for developers, startups, and enterprises. We also host CDNs, applications, code bases, and backends, enabling seamless access to Hedera network data.
+Hgraph is a company that provides hosting solutions, and APIs (REST, GraphQL, and JSON-RPC) for developers, startups, and enterprises.
 
 ### Who uses Hgraph?
 Our services cater to developers, startups, and enterprises in AI, blockchain, data and other exciting spaces. We work with builders looking for reliable data access, custom tooling, consulting services and a strong technology partner.
 
-### What is Hedera?
-Hedera is a decentralized, open-source public [Hiero ledger](https://github.com/hiero-ledger) that uses hashgraph consensus, offering fast, secure, and energy-efficient transactions for businesses and developers, governed by top organizations.
-
-### What are Hedera mirror nodes?
-Hedera mirror nodes process and store historical transaction data, enabling applications to access and analyze Hedera network activity efficiently. Hgraph operates hardware mirror nodes, ensuring reliable data access for developers and businesses. [Learn more](https://www.hgraph.com/blog/hedera-mirror-node).
-
 ### Is Hgraph cloud-based?
 
 Hgraph owns and operates its own bare-metal hardware infrastructure but leverages cloud technology for enhanced data analytics and scalability.
+
+### Does Hgraph offer infrastructure management and hosting?
+
+Yes. Hgraph can help you save on cloud costs, manage your CDN and host your backend. Please [contact our team](https://www.hgraph.com/contact) for more information.
 
 ### How do I get started with Hgraph?
 
