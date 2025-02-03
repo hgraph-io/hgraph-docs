@@ -19,6 +19,8 @@ This page explains how to authenticate and access the different API endpoints, i
 
 You can include your API key in your API requests using one of the following methods. These methods work uniformly across GraphQL, REST, and JSON-RPC endpoints.
 
+We support multiple authentication methods to accommodate diverse environments and preferences. Whether you use headers or include your API key in the URL, our endpoints work seamlessly across GraphQL, REST, and JSON-RPC.
+
 ### 1. Authorization Header
 
 - **With Bearer Prefix:**
@@ -49,8 +51,10 @@ curl -s \
   https://mainnet.hedera.api.hgraph.dev/v1/<API-KEY>/api/v1/accounts
 ```
 
-:::note
-Path-based authentication is useful for simple, unauthenticated environments where embedding the key in the URL is acceptable. However, it is less secure than using headers.
+:::note Confirm proper URL
+
+When using URL-based authentication, please ensure you include the complete URL path after your API key. Even a small mistake in the path can lead to authentication errors.
+
 :::
 
 ---
@@ -112,7 +116,7 @@ Expected JSON response:
   "data": {
     "transaction": [
       {
-        "consensus_timestamp": "123456789.000000123"
+        "consensus_timestamp": "1738616017995472000"
       }
     ]
   }
@@ -196,7 +200,7 @@ Never expose your API key in publicly accessible repositories or frontend applic
 
 ### Environment Information
 
-- **Development & Testing:** Use the `.dev` domain (e.g., `https://testnet.hedera.api.hgraph.dev`)
-- **Production:** Use the `.io` domain (e.g., `https://mainnet.hedera.api.hgraph.io`)
+- **Development & Testing:** Use `hgraph.dev`
+- **Production:** Use `hgraph.io`
 
 By following these instructions, you can easily authenticate your requests across all of our endpoints. If you have any questions, please reach out to our [support team](/support).
