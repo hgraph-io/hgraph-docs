@@ -23,16 +23,20 @@ Hgraph calculates `hedera_stats_account_growth` every 5 minutes.
 ## Data Representation
 Each period represents the number of newly created accounts that meet the above criteria. This allows users to analyze trends in ecosystem adoption and growth over time.
 
+## Additional Notes
+- Account Growth provides an important metric for measuring ecosystem expansion and user adoption.
+- Since it excludes developer-related transactions, it focuses on real user activity.
+
+## References
+For further details on Hedera account creation and transaction types, refer to the [Hedera Documentation](https://docs.hedera.com).
+
 ## API Endpoint
 A dedicated API endpoint from Hgraph will be available.
 
 **Endpoint:** `[Placeholder for API]`
 
-## Additional Notes
-- Account Growth provides an important metric for measuring ecosystem expansion and user adoption.
-- Since it excludes developer-related transactions, it focuses on real user activity.
-- Future iterations may provide more granular breakdowns of account types.
+## Code examples
 
-## References
-For further details on Hedera account creation and transaction types, refer to the [Hedera Documentation](https://docs.hedera.com).
-
+```
+some code example here
+```
