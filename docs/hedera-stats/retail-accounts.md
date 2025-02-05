@@ -31,6 +31,11 @@ Formally:
 Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contracts)
 ```
 
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
 ## Code examples
 
 ```

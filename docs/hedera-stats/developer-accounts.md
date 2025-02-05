@@ -39,6 +39,11 @@ Developer accounts are identified by their involvement in one or more of the fol
 
 If you are measuring weekly developer accounts, review all transactions in the past seven days. If an account created a token, minted a new batch of tokens, or deployed a smart contract during that week, it is classified as a developer account for that period.
 
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
 ## Code examples
 
 ```

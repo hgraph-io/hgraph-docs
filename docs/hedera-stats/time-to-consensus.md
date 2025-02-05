@@ -42,6 +42,11 @@ Once the difference is calculated for individual transactions, these values are:
 - Averaged over a 24 hour time window to provide a stable metric.
 - Indexed for querying via Hgraph's GraphQL API
 
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
 ## Code examples
 
 ```

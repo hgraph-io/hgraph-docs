@@ -46,6 +46,11 @@ Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Unique Callers
 - Normalization scales all contracts for fair ranking.
 - Rankings refresh daily with a rolling average to filter anomalies.   
 
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
 ## Code examples
 
 ```

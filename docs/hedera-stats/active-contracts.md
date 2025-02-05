@@ -32,6 +32,11 @@ A smart contract is considered "active" if it has executed at least one state-ch
     - Any data retrieval operations or RPC queries that do not modify state.
     - Failed transactions that do not lead to state changes (if such failures do not produce a recorded state-altering transaction) should also be excluded.
 
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
 ## Code examples
 
 ```

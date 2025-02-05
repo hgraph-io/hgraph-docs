@@ -50,6 +50,11 @@ Balances long-term value (market cap) with real-time activity (volume, transacti
 - Hedera Mirror Node data for token transactions.  
 - Pricing data from SaucerSwap, DeFi Llama, and other DeFi platforms. 
 
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
 ## Code examples
 
 ```

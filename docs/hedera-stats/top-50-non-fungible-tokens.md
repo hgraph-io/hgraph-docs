@@ -44,7 +44,12 @@ This balanced approach highlights collections that combine market value with act
 
 ### Data Sources  
 - Sales and transaction data from Hedera marketplaces (e.g., Kabila, SentX).  
-- Additional transaction data from Hedera Mirror Nodes.    
+- Additional transaction data from Hedera Mirror Nodes.   
+
+## API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
 
 ## Code examples
 
