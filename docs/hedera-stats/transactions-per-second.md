@@ -7,6 +7,10 @@ sidebar_position: 14
 ## Overview
 Transactions Per Second (TPS) measures the number of transactions processed by the Hedera network within a given period. This metric provides insights into network activity, scalability, and overall transaction throughput.
 
+:::note Timeframes
+Hgraph calculates `hedera_stats_tps` every 1 second.
+:::
+
 ## Methodology
 - **Data Source:** Transactions are retrieved from the Hedera transaction dataset.
 - **Aggregation:**

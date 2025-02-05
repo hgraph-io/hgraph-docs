@@ -9,7 +9,7 @@ sidebar_position: 6
 The number of unique smart contracts that have been invoked through at least one state-changing (gas-consuming) transaction within a specified time window. This statistic highlights how many contracts are actively in use, rather than just deployed and idle, providing a snapshot of real engagement and activity in the ecosystem.
 
 :::note Timeframes
-Hgraph calculates `hedera_stats_active_contracts` every 5 minutes.
+Hgraph calculates `hedera_stats_active_contracts` every 1 day.
 :::
 
 ## Methodology
