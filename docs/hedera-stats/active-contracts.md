@@ -9,7 +9,7 @@ sidebar_position: 6
 The number of unique smart contracts that have been invoked through at least one state-changing (gas-consuming) transaction within a specified time window. This statistic highlights how many contracts are actively in use, rather than just deployed and idle, providing a snapshot of real engagement and activity in the ecosystem.
 
 :::note Timeframes
-Hgraph calculates `hedera_stats_active_contracts` every 5 minutes.
+Hgraph calculates `hedera_stats_active_contracts` every 1 day.
 :::
 
 ## Methodology
@@ -32,8 +32,30 @@ A smart contract is considered "active" if it has executed at least one state-ch
     - Any data retrieval operations or RPC queries that do not modify state.
     - Failed transactions that do not lead to state changes (if such failures do not produce a recorded state-altering transaction) should also be excluded.
 
-## Code examples
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

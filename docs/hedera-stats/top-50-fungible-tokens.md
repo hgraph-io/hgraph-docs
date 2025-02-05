@@ -4,6 +4,8 @@ sidebar_position: 9
 
 # Top 50 Fungible Tokens
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview  
 This metric highlights the most significant fungible tokens in the Hedera ecosystem. Rankings are based on market activity, volume, and token utility, aiming to balance accuracy with transparency.  
 
@@ -50,8 +52,30 @@ Balances long-term value (market cap) with real-time activity (volume, transacti
 - Hedera Mirror Node data for token transactions.  
 - Pricing data from SaucerSwap, DeFi Llama, and other DeFi platforms. 
 
-## Code examples
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

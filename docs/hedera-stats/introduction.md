@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::info Work in progress
 
-Documentation for these "Hedera Stats" are currently being developed.
+Documentation for these "Hedera Stats" are currently being developed and is subject to change. Please send any questions to: contact@hgraph.com
 
 :::
 
@@ -24,13 +24,13 @@ Understanding the health of the Hedera network is important. To measure this, we
 - [Retail accounts](retail-accounts)
 - [Active contracts](active-contracts)
 - [Revenue](revenue)
-- Total Value Locked
-- Stablecoin MC
-- Account growth
-- Top 50 contracts
-- Top 50 tokens
-- Transactions & TPS
-- HBAR Price
+- [Total value locked](tvl)
+- [Stablecoin market cap](stablecoin-market-cap)
+- [Account growth](account-growth)
+- [Top 50 contracts](top-50-contracts)
+- [Top 50 fungible tokens](top-50-fingible-tokens)
+- [Transaction volume](transaction-volume)
+- [HBAR Price](hbar-price)
 
 ## Examples
 

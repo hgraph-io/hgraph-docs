@@ -4,6 +4,8 @@ sidebar_position: 8
 
 # Top 50 Contracts
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview  
 The primary goal of this metric is to provide insights into the most heavily utilized or impactful smart contracts on the Hedera network. It evaluates both transaction volume and the diversity of interactions, ensuring that rankings highlight genuine usage while minimizing the effects of artificial inflation or spam.  
 
@@ -46,8 +48,30 @@ Composite Score = (Normalized Contract Calls * 0.5) + (Normalized Unique Callers
 - Normalization scales all contracts for fair ranking.
 - Rankings refresh daily with a rolling average to filter anomalies.   
 
-## Code examples
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

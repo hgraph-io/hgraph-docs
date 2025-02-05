@@ -54,8 +54,30 @@ Hedera offers multiple services, and transactions can be grouped based on the ty
     - Aggregate the fees across all transactions over the chosen time period (e.g., daily, weekly, monthly).
     - Sum the fees for each category to provide both a total revenue figure and a breakdown by service type.
 
-## Code examples
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

@@ -1,0 +1,55 @@
+---
+sidebar_position: 12
+---
+
+# Stablecoin Market Cap
+
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
+## Overview
+The Stablecoin Market Cap metric tracks the total market capitalization of stablecoins circulating on the Hedera network. This metric provides insight into the adoption and liquidity of stablecoins within the ecosystem.
+
+:::note Timeframes
+Hgraph calculates `hedera_stats_stablecoin_market_cap` every 1 day.
+:::
+
+## Methodology
+- **Data Source:** Stablecoin data is retrieved from [DeFiLlama](https://stablecoins.llama.fi/stablecoincharts/Hedera).
+- **Aggregation:**
+  - Market cap values are extracted from the API response.
+  - Timestamps are converted and grouped by the selected period (e.g., daily, weekly, monthly).
+  - The **average market cap** is calculated for each period.
+
+## Data Representation
+Each period represents the average stablecoin market capitalization recorded within that timeframe. The metric is useful for tracking trends in stablecoin adoption and liquidity over time.
+
+## Additional Notes
+- This metric relies on **third-party data from DeFiLlama**, which aggregates stablecoin circulation across various networks.
+
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
+
+```
+WILL BE ADDED SOON
+```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

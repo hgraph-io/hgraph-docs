@@ -9,7 +9,7 @@ sidebar_position: 3
 An active account is any account that originates at least one transaction during a given timeframe. Unlike accounts that only receive value or tokens, active accounts must initiate an operation—such as sending a payment or interacting with a service—thus demonstrating direct network engagement.
 
 :::note Timeframes
-Hgraph calculates `hedera_stats_active_accounts` every 5 minutes.
+Hgraph calculates `hedera_stats_active_accounts` every 1 day.
 :::
 
 ## Methodology
@@ -31,8 +31,30 @@ Hgraph calculates `hedera_stats_active_accounts` every 5 minutes.
    
    > Example: Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
 
-## Code examples
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

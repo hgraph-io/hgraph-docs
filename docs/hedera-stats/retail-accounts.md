@@ -9,7 +9,7 @@ sidebar_position: 5
 A "retail account" is essentially an active account that is neither a developer account nor a smart contract account. This category is determined after identifying active and developer accounts, as well as distinguishing active smart contracts.
 
 :::note Timeframes
-Hgraph calculates `hedera_stats_retail_accounts` every 5 minutes.
+Hgraph calculates `hedera_stats_retail_accounts` every 1 day.
 :::
 
 ## Methodology
@@ -31,8 +31,30 @@ Formally:
 Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contracts)
 ```
 
-## Code examples
+## Hgraph API Endpoint
+A dedicated API endpoint from Hgraph will be available.
+
+**Endpoint:** `[Placeholder for API]`
+
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node
