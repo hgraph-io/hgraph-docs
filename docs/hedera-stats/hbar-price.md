@@ -26,13 +26,30 @@ Each period represents the latest available HBAR price at the given timestamp. T
 - HBAR price fluctuations can be influenced by market conditions, trading volume, and broader crypto trends.
 - Future enhancements may include price history tracking, moving averages, and volatility analysis.
 
-## API Endpoint
+## Hgraph API Endpoint
 A dedicated API endpoint from Hgraph will be available.
 
 **Endpoint:** `[Placeholder for API]`
 
-## Code examples
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

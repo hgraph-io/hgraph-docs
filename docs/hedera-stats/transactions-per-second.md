@@ -24,13 +24,30 @@ Each period represents the average number of transactions processed per second w
 ## Additional Notes
 - TPS is a key performance indicator for blockchain networks, showing real-time processing capability.
 
-## API Endpoint
+## Hgraph API Endpoint
 A dedicated API endpoint from Hgraph will be available.
 
 **Endpoint:** `[Placeholder for API]`
 
-## Code examples
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

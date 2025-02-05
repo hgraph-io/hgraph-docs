@@ -7,7 +7,7 @@ sidebar_position: 13
 > *Note: Documentation for these "Hedera Stats" are currently being developed.*
 
 ## Overview
-Account Growth tracks the number of new accounts created in the Hedera ecosystem over a specified time period. This metric focuses on accounts that actively transact but excludes smart contracts and accounts engaging in developer-related transactions. The data provides insight into organic ecosystem growth by measuring new non-developer accounts.
+Account Growth tracks the number of new accounts created in the Hedera ecosystem over a specified time period. This metric focuses on accounts that actively transact but excludes smart contracts and accounts engaging in developer-related transactions. The data provides insight into organic ecosystem growth by measuring new **non-developer** accounts.
 
 :::note Timeframes
 Hgraph calculates `hedera_stats_account_growth` every 1 day.
@@ -32,13 +32,30 @@ Each period represents the number of newly created accounts that meet the above 
 ## References
 For further details on Hedera account creation and transaction types, refer to the [Hedera Documentation](https://docs.hedera.com).
 
-## API Endpoint
+## Hgraph API Endpoint
 A dedicated API endpoint from Hgraph will be available.
 
 **Endpoint:** `[Placeholder for API]`
 
-## Code examples
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node

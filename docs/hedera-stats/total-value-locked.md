@@ -27,13 +27,30 @@ Each period represents the average total value locked within the Hedera DeFi eco
 - TVL is a key indicator of DeFi activity and liquidity within the Hedera network.
 - Future enhancements may include breakdowns by protocol and asset type.
 
-## API Endpoint
+## Hgraph API Endpoint
 A dedicated API endpoint from Hgraph will be available.
 
 **Endpoint:** `[Placeholder for API]`
 
-## Code examples
+## Code & Examples
+
+The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
+
+### SQL Code
+
+This is the SQL code required to run these calculations.
 
 ```
-some code example here
+WILL BE ADDED SOON
 ```
+
+### GraphQL Example Query
+
+This is a GraphQL API query that can be tested using our console.
+
+```
+WILL BE ADDED SOON
+```
+
+## Dependancies
+* Hedera mirror node
