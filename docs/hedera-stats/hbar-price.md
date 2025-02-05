@@ -4,6 +4,8 @@ sidebar_position: 15
 
 # HBAR Price
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview
 The HBAR Price statistic provides the latest price of HBAR, aggregated from multiple sources. This statistic is essential for tracking the value of HBAR in real time and analyzing price trends over different timeframes.
 

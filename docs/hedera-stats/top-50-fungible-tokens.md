@@ -4,6 +4,8 @@ sidebar_position: 9
 
 # Top 50 Fungible Tokens
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview  
 This metric highlights the most significant fungible tokens in the Hedera ecosystem. Rankings are based on market activity, volume, and token utility, aiming to balance accuracy with transparency.  
 

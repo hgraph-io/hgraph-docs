@@ -4,6 +4,8 @@ sidebar_position: 16
 
 # Transaction Volume
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview
 The Transaction Volume metric measures the total number of transactions processed on the Hedera network over time, categorized by different services. This metric provides insight into network activity, adoption trends, and the usage of various services within the Hedera ecosystem.
 

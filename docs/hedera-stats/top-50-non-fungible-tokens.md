@@ -4,6 +4,8 @@ sidebar_position: 10
 
 # Top 50 Non-Fungible Tokens
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview  
 This metric focuses on collections of non-fungible tokens (NFTs) rather than individual serialized tokens. It evaluates sales and transaction data to showcase the most active and valuable collections in the Hedera ecosystem.  
 

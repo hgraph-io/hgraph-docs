@@ -4,6 +4,8 @@ sidebar_position: 8
 
 # Top 50 Contracts
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview  
 The primary goal of this metric is to provide insights into the most heavily utilized or impactful smart contracts on the Hedera network. It evaluates both transaction volume and the diversity of interactions, ensuring that rankings highlight genuine usage while minimizing the effects of artificial inflation or spam.  
 

@@ -4,6 +4,8 @@ sidebar_position: 12
 
 # Stablecoin Market Cap
 
+> *Note: Documentation for these "Hedera Stats" are currently being developed.*
+
 ## Overview
 The Stablecoin Market Cap metric tracks the total market capitalization of stablecoins circulating on the Hedera network. This metric provides insight into the adoption and liquidity of stablecoins within the ecosystem.
 
