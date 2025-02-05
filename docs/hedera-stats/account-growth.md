@@ -29,9 +29,6 @@ Each period represents the number of newly created accounts that meet the above 
 - Account Growth provides an important metric for measuring ecosystem expansion and user adoption.
 - Since it excludes developer-related transactions, it focuses on real user activity.
 
-## References
-For further details on Hedera account creation and transaction types, refer to the [Hedera Documentation](https://docs.hedera.com).
-
 ## Hgraph API Endpoint
 A dedicated API endpoint from Hgraph will be available.
 
