@@ -27,15 +27,6 @@ Each period represents the total number of transactions for each service type on
 - Transaction Volume is a key metric for assessing network scalability and user adoption.
 - Future enhancements may include breakdowns by transaction fee volume, average transaction size, and historical trend analysis.
 
-## Hgraph API Endpoint
-A dedicated API endpoint from Hgraph will be available.
-
-**Endpoint:** `[Placeholder for API]`
-
-## Code & Examples
-
-The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
-
 ### SQL Code
 
 This is the SQL code required to run these calculations.
@@ -44,13 +35,5 @@ This is the SQL code required to run these calculations.
 WILL BE ADDED SOON
 ```
 
-### GraphQL Example Query
-
-This is a GraphQL API query that can be tested using our console.
-
-```
-WILL BE ADDED SOON
-```
-
-## Dependancies
+## Dependencies
 * Hedera mirror node
