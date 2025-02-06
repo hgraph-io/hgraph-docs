@@ -37,41 +37,9 @@ Hgraph tracks active accounts in three main categories:
 - [Retail Accounts](retail-accounts)
 - [Smart Contracts](active-contracts) 
 
-The final count of active accounts in a given timeframe **unites** all three categories to form one consolidated total.
-
 ## SQL Implementation
 
-Below is the SQL function (`ecosystem.active_accounts`) that calculates the total number of active accounts across the above categories.
-
-### Function Parameters
-
-- **period (text)** – Indicates how to group or label intervals (e.g., `'daily'`, `'weekly'`).
-- **start_timestamp (bigint)** – The lower bound of the time window for measuring active accounts. Defaults to `0`.
-- **end_timestamp (bigint)** – The upper bound of the time window. Defaults to the current timestamp if not specified.
-
-### How It Works
-
-1. **Collect Active Accounts in Subfunctions**  
-   The function calls three subfunctions:
-   - `ecosystem.active_developer_accounts`
-   - `ecosystem.active_retail_accounts`
-   - `ecosystem.active_smart_contracts`
-   
-   Each subfunction identifies accounts that have initiated at least one transaction within the given time range.
-
-2. **Combine Results**  
-   The results are combined (`UNION ALL`) into a single set called `active_accounts`.
-
-3. **Aggregate the Counts**  
-   In `merged_data`, the total counts from all three categories are summed (`SUM(total)`) by their period start time.
-
-4. **Define Time Segments**  
-   The function uses `int8range` and the `LEAD()` window function to partition results into time intervals. Each row has:
-   - A time range (`int8range`) from one start timestamp to the next.
-   - A `total` indicating the sum of all active accounts within that interval.
-
-5. **Return Values**  
-   The function returns a `SETOF ecosystem.metric_total`, with one row per time interval. Being `STABLE`, it produces the same results for identical parameters.
+Below is the SQL function (`ecosystem.dashboard_active_accounts`) that calculates the total number of active accounts across the above categories.
 
 ## Code & Examples
 
@@ -80,33 +48,56 @@ The following code examples show how these calculations are performed. You can u
 ### SQL Code
 
 ```sql
-create or replace function ecosystem.active_accounts(
-    period text,
-    start_timestamp bigint default 0,
-    end_timestamp bigint default CURRENT_TIMESTAMP::timestamp9::bigint
+create or replace function ecosystem.dashboard_active_accounts(
+    _interval interval, change boolean = false
 )
-returns setof ecosystem.metric_total
-as $$
-with active_accounts as (
-  select *
-    from ecosystem.active_developer_accounts(period, start_timestamp, end_timestamp)
-  union all select *
-    from ecosystem.active_retail_accounts(period, start_timestamp, end_timestamp)
-  union all select *
-    from ecosystem.active_smart_contracts(period, start_timestamp, end_timestamp)
-),
-merged_data as (
-    select lower(int8range) as period_start_timestamp, sum(total) as total
-    from active_accounts d
-    group by 1
-    order by 1 desc
-)
-select
-    int8range(
-        period_start_timestamp::timestamp9::bigint,
-        (lead(period_start_timestamp) over (order by period_start_timestamp rows between current row and 1 following))::timestamp9::bigint
+returns decimal as $$
+declare total decimal;
+begin
+  -- get percent change
+  if change then
+    WITH time_bounds AS (
+        SELECT
+            (NOW() - _interval * 2)::timestamp9::bigint AS previous_period_start,
+            (NOW() - _interval)::timestamp9::bigint AS current_period_start
     ),
-    total
-from merged_data
-$$ language sql stable;
+    previous_period AS (
+        SELECT COUNT(e.id) AS total
+        FROM entity e
+        INNER JOIN
+          (select distinct payer_account_id, result, consensus_timestamp from transaction) t
+          ON t.payer_account_id = e.id
+          AND e.type = 'ACCOUNT'
+          and t.result = 22
+        JOIN time_bounds tb ON
+            t.consensus_timestamp BETWEEN tb.previous_period_start AND tb.current_period_start
+    ),
+    current_period AS (
+        SELECT COUNT(e.id) AS total
+        FROM entity e
+        INNER JOIN
+          (select distinct payer_account_id, result, consensus_timestamp from transaction) t
+          ON t.payer_account_id = e.id
+          AND e.type = 'ACCOUNT'
+          and t.result = 22 -- Success result
+        JOIN time_bounds tb ON
+            t.consensus_timestamp BETWEEN tb.previous_period_start AND tb.current_period_start
+    )
+    SELECT
+        ((current_period.total::DECIMAL / NULLIF(previous_period.total, 0)) - 1) * 100 into total
+    FROM current_period, previous_period;
+  --return total
+  else
+    select count(e.id) into total
+    FROM entity e
+    INNER JOIN
+      (select distinct payer_account_id, result, consensus_timestamp from transaction) t
+    ON t.payer_account_id = e.id
+      AND e.type = 'ACCOUNT'
+      and t.result = 22
+      and t.consensus_timestamp >= (now() - _interval::interval)::timestamp9::bigint;
+  end if;
+  return total;
+end;
+$$ language plpgsql;
 ```
