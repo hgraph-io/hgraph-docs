@@ -29,11 +29,6 @@ Each period represents the number of newly created accounts that meet the above 
 - Account Growth provides an important metric for measuring ecosystem expansion and user adoption.
 - Since it excludes developer-related transactions, it focuses on real user activity.
 
-## Hgraph API Endpoint
-A dedicated API endpoint from Hgraph will be available.
-
-**Endpoint:** `[Placeholder for API]`
-
 ## Code & Examples
 
 The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
@@ -46,13 +41,5 @@ This is the SQL code required to run these calculations.
 WILL BE ADDED SOON
 ```
 
-### GraphQL Example Query
-
-This is a GraphQL API query that can be tested using our console.
-
-```
-WILL BE ADDED SOON
-```
-
-## Dependancies
+## Dependencies
 * Hedera mirror node

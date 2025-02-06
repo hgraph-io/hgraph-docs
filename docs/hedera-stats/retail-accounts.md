@@ -31,15 +31,6 @@ Formally:
 Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contracts)
 ```
 
-## Hgraph API Endpoint
-A dedicated API endpoint from Hgraph will be available.
-
-**Endpoint:** `[Placeholder for API]`
-
-## Code & Examples
-
-The following code examples will allow you to perform these calculations and test retrieving data via our GraphQL API.
-
 ### SQL Code
 
 This is the SQL code required to run these calculations.
@@ -48,13 +39,5 @@ This is the SQL code required to run these calculations.
 WILL BE ADDED SOON
 ```
 
-### GraphQL Example Query
-
-This is a GraphQL API query that can be tested using our console.
-
-```
-WILL BE ADDED SOON
-```
-
-## Dependancies
+## Dependencies
 * Hedera mirror node
