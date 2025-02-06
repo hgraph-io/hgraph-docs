@@ -10,13 +10,19 @@ Documentation for these "Hedera Stats" are currently being developed and is subj
 
 :::
 
-Hgraph offers API access to various quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. These statistics leverage Hedera mirror node data, data computation and Hgraph's GraphQL API and can be used for analysis in various metrics and KPIs. If you're looking to access the "Hedera Stats" APIs, you can [create an Hgraph account](https://dashboard.hgraph.com) and start querying data. If you're looking to contribute to the "Hedera Stats" project on GitHub, [check out the repository](/).
+Hgraph offers API access to various quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. These statistics leverage Hedera mirror node data, data computation and Hgraph's GraphQL API and can be used for analysis in various metrics and KPIs. If you're looking to access the "Hedera Stats" APIs, you can [create an Hgraph account](/overview/pricing) and start querying data. If you're looking to contribute to the "Hedera Stats" project on GitHub, [check out the repository](https://github.com/hgraph-io/hedera-stats).
 
 ## Why create Hedera Stats?
 
 Understanding the health of the Hedera network is important. To measure this, we use things like TVL, revenue, active accounts, time to consensus and more. What's most important is ensuring the methodology used for these calculations are transparent and comprehensive to maintain consistency. It's also vital to ensure easy access to these data feeds via APIs. Hgraph's data infrastructure makes this possible.
 
-## Hedera Stats
+## GitHub Repository
+
+This repository contains the SQL code for these Hedera Stats queries as well as JSON to import a demo Grafana dashboard. It also has information regarding incremental update setup.
+
+**[View Hedera Stats on GitHub →](https://github.com/hgraph-io/hedera-stats)**
+
+## Supported stats
 
 - [Time to consensus](time-to-consensus)
 - [Active accounts](active-accounts)
