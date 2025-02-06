@@ -4,8 +4,6 @@ sidebar_position: 12
 
 # Stablecoin Market Cap
 
-> *Note: Documentation for these "Hedera Stats" is currently under development.*
-
 ## Overview
 The Stablecoin Market Cap metric tracks the total market capitalization of stablecoins circulating on the Hedera network as reported by DeFiLlama. This metric provides insight into the adoption and liquidity of stablecoins within the ecosystem.
 
@@ -25,7 +23,7 @@ Hgraph calculates `hedera_stats_stablecoin_market_cap` every 1 day, but the func
 1. Parse and Expand JSON: Each element in the returned JSON array is parsed. All pegged stablecoin amounts are summed in `totalCirculatingUSD` to derive a daily total market cap.  
 2. Convert Timestamps: The `date` field is in Unix time (seconds), which is converted via `to_timestamp(date_sec)`.  
 3. Group by Period: The data can be grouped into periods (e.g., daily, weekly, monthly) using `date_trunc(period, to_timestamp(date_sec))`.  
-4. Average Market Cap: For each period, Hgraph calculates the average of these summed market cap values.
+4. Average Market Cap: For each period, the average of these summed market cap values are calculated.
 
 ### Time Range Filtering
 - The SQL function accepts `start_timestamp` and `end_timestamp` in nanoseconds.  

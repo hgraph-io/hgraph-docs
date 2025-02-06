@@ -4,8 +4,6 @@ sidebar_position: 6
 
 # Active Contracts
 
-> *Note: Documentation for these "Hedera Stats" are currently being developed.*
-
 The Active Contracts statistic shows the number of unique smart contracts that have been successfully invoked at least once in a state-changing (gas-consuming) transaction within a specified time window. This highlights real engagement with the network, rather than just counting deployed but idle contracts.
 
 :::note Timeframes
@@ -15,7 +13,7 @@ Hgraph calculates `hedera_stats_active_contracts` every 1 day by default, but it
 ## Methodology
 
 ### Identify Smart Contract Accounts
-Active contracts are identified by querying the `contract_result` table for successful executions (`transaction_result = 22`). Each successful contract call reflects a state change, consuming gas and modifying on-chain data.
+Active contracts are identified by querying the `contract_result` table for successful executions (`transaction_result = 22` (success)). Each successful contract call reflects a state change, consuming gas and modifying on-chain data.
 
 ### Define the Activity Criteria
 A contract is considered "active" if it has executed at least one successful (state-changing) transaction within the specified time period.
@@ -65,10 +63,6 @@ select
 from smart_contracts_per_period
 $$ language sql stable;
 ```
-
-### Understanding the Output
-- **`period_range`:** A range of consensus timestamps marking the start and end of that aggregated period.
-- **`total`:** The count of distinct contracts with at least one successful, state-changing transaction within that time window.
 
 ## Dependencies
 * Hedera mirror node

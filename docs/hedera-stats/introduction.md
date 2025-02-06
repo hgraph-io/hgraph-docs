@@ -38,6 +38,11 @@ This repository contains the SQL code for these Hedera Stats queries as well as 
 - [Transaction volume](transaction-volume)
 - [HBAR Price](hbar-price)
 
+## Links
+
+- https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionResult.js
+- https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js
+
 ## Examples
 
 Hedera Stats APIs being used:

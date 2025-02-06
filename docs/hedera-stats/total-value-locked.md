@@ -4,8 +4,6 @@ sidebar_position: 11
 
 # Total Value Locked (TVL)
 
-> *Note: Documentation for these "Hedera Stats" is currently being developed and may evolve.*
-
 ## Overview
 Total Value Locked (TVL) represents the total amount of assets locked within decentralized finance (DeFi) protocols on the Hedera network. This metric provides insights into liquidity, ecosystem adoption, and capital efficiency within Hedera’s DeFi landscape.
 
