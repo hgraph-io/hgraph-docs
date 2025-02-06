@@ -6,9 +6,7 @@ sidebar_position: 5
 
 > **Note:** Documentation for these "Hedera Stats" is currently under development.
 
-A retail account is any *active account* (i.e., an account that has initiated at least one successful transaction within a given time period) that is neither:
-- A developer account (an account performing developer-level transaction types, such as creating/updating contracts, tokens, or topics)
-- A smart contract account (an account whose `entity.type` is `CONTRACT`)
+A retail account is any *active account* (i.e., an account that has initiated at least one successful retail oriented transaction within a given time period) that is not a smart contract account (an account whose `entity.type` is `CONTRACT`).
 
 This means that before we identify “retail accounts,” we first remove any smart contract payers and any accounts that performed developer-like actions.
 
