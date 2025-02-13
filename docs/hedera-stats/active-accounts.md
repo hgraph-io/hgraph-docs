@@ -36,7 +36,9 @@ Each sub-function applies the active account definition to its respective catego
 ## Timeframe Consideration:
 Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. An account must initiate at least one qualifying transaction within that period to be considered active for that timeframe.
 
-> **Example**: Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
+## Use Case Example
+
+Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
 
 ## Categories of Active Accounts
 Hgraph tracks active accounts in three main categories:

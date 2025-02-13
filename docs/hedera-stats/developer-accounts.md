@@ -2,12 +2,12 @@
 sidebar_position: 4
 ---
 
-# Developer Accounts
+# Active Developer Accounts
 
-A developer account is any account that performs at least one “creative” or infrastructure-oriented action over a specified period. Examples include deploying or updating smart contracts, creating or minting tokens, or setting up and modifying consensus topics. These accounts represent users who are actively building or expanding the network’s capabilities rather than simply consuming existing services.
+An active developer account is any account that performs at least one “creative” or infrastructure-oriented action over a specified period. Examples include deploying or updating smart contracts, creating or minting tokens, or setting up and modifying consensus topics. These accounts represent users who are actively building or expanding the network’s capabilities rather than simply consuming existing services.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_developer_accounts` every 1 day.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology
@@ -30,7 +30,9 @@ Hgraph calculates `hedera_stats_developer_accounts` every 1 day.
   - Minting new tokens (`TOKEN MINT` | type = `37`)
   - Token “airdrop” (if considered a “creative” transaction) (`TOKEN AIRDROP` | type = `58`)
 
+:::note Hedera Transaction Types
 [See this link](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js) for all Hedera transaction codes.
+:::
 
 ### Exclusion Criteria
 
@@ -38,63 +40,17 @@ Hgraph calculates `hedera_stats_developer_accounts` every 1 day.
 - Accounts that do not perform any of the above developer-oriented transactions are not considered developers.
 - Regular transactional activity like simple HBAR transfers, token transfers without creation/minting, or reading contract states does not qualify.
 
-## Use Case
+## Use Case Example
 
 If you are measuring weekly developer accounts, review all transactions in the past seven days. If an account created a token, minted a new batch of tokens, or deployed a smart contract during that week, it is classified as a developer account for that period.
 
-## Code & Examples
+## SQL Implementation
 
-The following code examples show how these calculations are performed. You can use this for reference and testing.
+Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Active Developer Accounts** statistic outlined in this methodology.
 
-### SQL Code
+SQL Function: `ecosystem.dashboard_active_developer_accounts`
 
-**Output Explanation**  
-- **Time Range**: `int8range` indicating the `[start_timestamp, end_timestamp)` range for each period.  
-- **total**: The distinct count of developer `payer_account_id` within that period.
+**[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
-```sql
-create or replace function ecosystem.dashboard_active_developer_accounts(_interval interval, change boolean = false)
-returns decimal as $$
-declare total decimal;
-begin
-  -- get percent change
-  if change then
-    WITH time_bounds AS (
-        SELECT
-            (NOW() - _interval * 2)::timestamp9::bigint AS previous_period_start,
-            (NOW() - _interval)::timestamp9::bigint AS current_period_start
-    ),
-    previous_period AS (
-        SELECT COUNT(distinct t.payer_account_id) AS total
-        FROM transaction t
-        JOIN entity e ON t.payer_account_id = e.id AND e.type = ‘ACCOUNT’
-        JOIN time_bounds tb ON
-            t.consensus_timestamp BETWEEN tb.previous_period_start AND tb.current_period_start
-        WHERE t.result = 22 -- Success result
-        AND t.type IN (8, 9, 24, 25, 29, 36, 37, 58) -- Smart Contract Create / Update Transaction, Token Create / Update / Mint (FT & NFT) Transaction / TokenAirdrop, Create / Update Topic Transaction
-    ),
-    current_period AS (
-        SELECT COUNT(distinct t.payer_account_id) AS total
-        FROM transaction t
-        JOIN entity e ON t.payer_account_id = e.id AND e.type = ‘ACCOUNT’
-        JOIN time_bounds tb ON
-            t.consensus_timestamp >= tb.current_period_start
-        WHERE t.result = 22 -- Success result
-        AND t.type IN (8, 9, 24, 25, 29, 36, 37, 58) -- Smart Contract Create / Update Transaction, Token Create / Update / Mint (FT & NFT) Transaction / TokenAirdrop, Create / Update Topic Transaction
-    )
-    SELECT
-        ((current_period.total::DECIMAL / NULLIF(previous_period.total, 0)) - 1) * 100 into total
-    FROM current_period, previous_period;
-  --return total
-  else
-    select count(distinct e.id) into total
-    from transaction as t
-    inner join entity as e on t.payer_account_id = e.id
-    where t.result = 22 and e.type = ‘ACCOUNT’
-      and t.consensus_timestamp >= (now() - _interval::interval)::timestamp9::bigint
-      and t.type IN (8, 9, 24, 25, 29, 36, 37, 58); -- Smart Contract Create / Update Transaction, Token Create / Update / Mint (FT & NFT) Transaction / TokenAirdrop, Create / Update Topic Transaction
-  end if;
-  return total;
-end;
-$$ language plpgsql;
-```
+## Dependencies
+* Hedera mirror node
