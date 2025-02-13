@@ -30,7 +30,7 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 # Use Case Example
 
-Monitoring TVL helps gauge overall network health by reflecting the amount of capital engaged in Hedera's DeFi ecosystem. For example, a rising TVL indicates increasing liquidity and user confidence, while a decline may prompt further investigation into network issues.
+Monitoring TVL helps gauge overall network health by reflecting the amount of capital engaged in Hedera's DeFi ecosystem. For example, a rising TVL indicates increasing liquidity and user confidence.
 
 ## SQL Implementation
 
