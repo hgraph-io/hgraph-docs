@@ -28,6 +28,10 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 5. **Final Output**
    - Each row represents a daily TVL measurement with its corresponding time range.
 
+# Use Case Example
+
+Monitoring TVL helps gauge overall network health by reflecting the amount of capital engaged in Hedera's DeFi ecosystem. For example, a rising TVL indicates increasing liquidity and user confidence, while a decline may prompt further investigation into network issues.
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Total Value Locked** statistic outlined in this methodology.
