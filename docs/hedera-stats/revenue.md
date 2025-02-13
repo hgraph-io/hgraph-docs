@@ -2,12 +2,12 @@
 sidebar_position: 7
 ---
 
-# Revenue
+# Network Revenue
 
 Hedera’s revenue is calculated by summing the total transaction fees collected across the mainnet. Every transaction pays fees to various recipients: consensus nodes, the staking account (`0.0.800`), the node rewards account (`0.0.801`), and the Hedera treasury (`0.0.98`). By examining each transaction, determining the total fee paid, and identifying which portions go to these accounts, Hedera can determine its total network revenue. This total can then be categorized by service type—Hedera Token Service (HTS), Hedera Smart Contract Service (HSCS), Hedera Consensus Service (HCS), and Other (including file and account operations)—to provide a detailed breakdown of revenue sources.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_revenue` every 1 hour.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology
@@ -21,17 +21,13 @@ Every transaction submitted to the Hedera mainnet incurs certain fees, which are
 - **Node Reward Account (0.0.801)**: An account designated for rewarding all active consensus nodes. A portion of the fee goes here.  
 - **Hedera Treasury (0.0.98)**: The central treasury account on the network. Another portion of the fee is directed here.
 
-> **Note**: While these recipients exist, the following SQL function **only** sums total transaction fees and does not break down how much of each fee goes to each specific account.
+> **Note**: While these recipients exist, the SQL implementation **only** sums total transaction fees and does not break down how much of each fee goes to each specific account.
 
 ### Data Inputs
 
 To calculate revenue at a high level, we only need to know the total fees charged per transaction. The distribution to each account can be derived from other data sources or additional queries, but is not part of the SQL function shown below.
 
 ### Calculating Total Revenue
-
-```
-Total Revenue (HBAR) = Σ (Charged Transaction Fees)
-```
 
 This is the sum of `charged_tx_fee` across all transactions. Conceptually, you can think of it as:
 
@@ -60,58 +56,17 @@ Hedera offers multiple services, and transactions can be grouped based on the ty
 
 > **Important**: The SQL function below **does not** categorize fees by transaction type. If you need the breakdown of total revenue by service type, you’ll need an additional query or post-processing step that segments transactions accordingly.
 
-### Aggregating and Presenting Revenue
+## Use Case Example
 
-Below is how the time-series aggregation works in the function provided:
+Network revenue serves as a proxy for overall transaction volume and network adoption, indicating that a healthy network sees consistent fee generation from active use. Sudden fluctuations in this metric can quickly alert operators to potential performance issues or shifts in user behavior.
 
-1. **Filter** transactions by `consensus_timestamp` so that only transactions within the specified `start_timestamp` and `end_timestamp` range are considered.  
-2. **Truncate** (i.e., group) each transaction’s timestamp to a specified “period” (e.g., `hour`, `day`, or `month`) via `date_trunc`.  
-3. **Sum** the `charged_tx_fee` column for each truncated time interval.  
-4. **Output** each interval as an `int8range` plus the total fees (`total`) in that interval.
+## SQL Implementation
 
-### SQL Code
+Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Network Revenue** statistic outlined in this methodology.
 
-```sql
-create or replace function ecosystem.network_fee(
-    period text,
-    start_timestamp bigint default 0,
-    end_timestamp bigint default CURRENT_TIMESTAMP::timestamp9::bigint
-)
-returns setof ecosystem . metric_total
-as $$
-with transactions_fee as (
-        select
-            consensus_timestamp,
-            charged_tx_fee
-        from public.transaction
-        where consensus_timestamp between start_timestamp and end_timestamp
-    ),
-transactions_fee_per_period as (
-    select
-        date_trunc(period, consensus_timestamp::timestamp9::timestamp) as period_start_timestamp,
-        sum(charged_tx_fee) as total
-    from transactions_fee
-    group by 1
-    order by 1 desc
-)
-select
-    int8range(
-        period_start_timestamp::timestamp9::bigint,
-        (lead(period_start_timestamp) over (order by period_start_timestamp rows between current row and 1 following))::timestamp9::bigint
-    ),
-    total
-from transactions_fee_per_period
-$$ language sql stable;
-```
+SQL Function: `ecosystem.dashboard_network_fee`
 
-### Output Details
-
-Each row in the output represents a time interval and the total fees within that interval:
-
-- **period_range**: An `int8range` capturing the start and end timestamp (in bigint format) for the interval.  
-- **total**: The sum of `charged_tx_fee` for that interval, representing total fees (in tinybars) charged across all transactions that occurred in the period.
-
-If you need daily aggregates, you would pass `period => 'day'`; for hourly, `period => 'hour'`, and so on.
+**[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
 ## Dependencies
-- Hedera mirror node.
+* Hedera mirror node

@@ -4,20 +4,18 @@ sidebar_position: 2
 
 # Time to consensus
 
-> *Note: Documentation for these "Hedera Stats" are currently being developed.*
-
 Below is a methodology based on the SecC2RC metric, which stands for measuring the elapsed time from when a transaction reaches consensus until its corresponding record is created and available. In practice, this statistic is used as a proxy for "time to consensus" or "network latency" on the Hedera network.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_ttc` every 5 minutes.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology
 
 ### Identify the Relevant Timestamps:
 
-    - **Consensus Timestamp (C):** This is the timestamp assigned to a transaction at the moment the network finalizes its order and deems the transaction valid. This timestamp comes from the consensus layer of the Hedera network.
-    - **Record Creation Timestamp (RC):** After consensus is achieved, a transaction record is generated that details the outcome of the transaction (e.g., success, cost, updated balances). The time at which this final record is fully formed and made available is the Record Creation Timestamp.
+    - **Consensus Timestamp:** This is the timestamp assigned to a transaction at the moment the network finalizes its order and deems the transaction valid. This timestamp comes from the consensus layer of the Hedera network.
+    - **Record Creation Timestamp:** After consensus is achieved, a transaction record is generated that details the outcome of the transaction (e.g., success, cost, updated balances). The time at which this final record is fully formed and made available is the Record Creation Timestamp.
 
 ### Data Source for Timestamps:
 
@@ -30,7 +28,7 @@ Hgraph calculates `hedera_stats_ttc` every 5 minutes.
 The basic formula is:
 
 ```
-Time to Consensus (SecC2RC) = Record Creation Timestamp (RC) - Consensus Timestamp (C)
+Time to Consensus (SecC2RC) = Record Creation Timestamp - Consensus Timestamp
 ```
 
 Both timestamps should be expressed in a common unit (e.g., seconds since epoch) to allow for a straightforward subtraction.
@@ -46,9 +44,7 @@ Once the difference is calculated for individual transactions, these values are:
 
 This is the SQL code required to run these calculations.
 
-```
-WILL BE ADDED SOON
-```
+
 
 ## Dependencies
 * Hedera mirror node

@@ -9,8 +9,8 @@ sidebar_position: 8
 ## Overview  
 The primary goal of this metric is to provide insights into the most heavily utilized or impactful smart contracts on the Hedera network. It evaluates both transaction volume and the diversity of interactions, ensuring that rankings highlight genuine usage while minimizing the effects of artificial inflation or spam.  
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_top_50_contracts` every 24 hours with smoothing applied using a 48-hour rolling average to filter out short-term anomalies.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology  

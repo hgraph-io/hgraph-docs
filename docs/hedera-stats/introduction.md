@@ -4,13 +4,11 @@ sidebar_position: 1
 
 # Introduction
 
-:::info Work in progress
+Hgraph offers API access to various quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. These statistics leverage Hedera mirror node data, data computation, 3rd party data sources and Hgraph's GraphQL API and can be used for analysis in various metrics and KPIs. If you're looking to access the "Hedera Stats" via Hgraph's APIs, you can [get started here](https://hgraph.com/hedera). If you're looking to contribute to the "Hedera Stats" project on GitHub, [check out the repository](https://github.com/hgraph-io/hedera-stats).
 
-Documentation for these "Hedera Stats" are currently being developed and is subject to change. Please send any questions to: contact@hgraph.com
-
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
-
-Hgraph offers API access to various quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. These statistics leverage Hedera mirror node data, data computation and Hgraph's GraphQL API and can be used for analysis in various metrics and KPIs. If you're looking to access the "Hedera Stats" APIs, you can [create an Hgraph account](/overview/pricing) and start querying data. If you're looking to contribute to the "Hedera Stats" project on GitHub, [check out the repository](https://github.com/hgraph-io/hedera-stats).
 
 ## Why create Hedera Stats?
 
@@ -24,31 +22,24 @@ This repository contains the SQL code for these Hedera Stats queries as well as 
 
 ## Supported stats
 
-- [Time to consensus](time-to-consensus)
-- [Active accounts](active-accounts)
-- [Developer accounts](developer-accounts)
-- [Retail accounts](retail-accounts)
-- [Active contracts](active-contracts)
-- [Revenue](revenue)
-- [Total value locked](tvl)
-- [Stablecoin market cap](stablecoin-market-cap)
-- [Account growth](account-growth)
-- [Top 50 contracts](top-50-contracts)
-- [Top 50 fungible tokens](top-50-fingible-tokens)
-- [Transaction volume](transaction-volume)
-- [HBAR Price](hbar-price)
+- **[Time to consensus](time-to-consensus)**
+- **[Active accounts](active-accounts)**
+- **[Developer accounts](developer-accounts)**
+- **[Retail accounts](retail-accounts)**
+- **[Active contracts](active-contracts)**
+- **[Revenue](revenue)**
+- **[Total value locked](tvl)**
+- **[Stablecoin market cap](stablecoin-market-cap)**
+- **Account growth** (in development)
+- **Top 50 contracts** (in development)
+- **Top 50 fungible tokens** (in development)
+- **Transaction volume** (in development)
+- **HBAR Price** (in development)
 
-## Links
+## Additional Links
 
-- https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionResult.js
-- https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js
-
-## Examples
-
-Hedera Stats APIs being used:
-
-- Hedera website
-- ...
+- [Hedera Transaction Result Codes](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionResult.js)
+- [Hedera Transaction Types](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js)
 
 ## Key Terms
 
@@ -56,3 +47,8 @@ Hedera Stats APIs being used:
 - **Statistic:** Describes or summarizes data, often for analysis.
 - **KPI:** A measurable value that tracks progress toward a specific goal, indicating how effectively something is performing.
 - **Quantitative measurement:** Focuses on numerical, measurable, and objective data. It answers questions like how much, how many, how often, or to what extent.
+- **Composite Statistic:** A summarization of data aggrigated from other pre-calculated data.
+
+## Additional Notes
+
+This open source **Hedera Stats** project is developed and maintained by [Hgraph](https://hgraph.com). Do you have questions or feedback? Contact us [here](/overview/contact).

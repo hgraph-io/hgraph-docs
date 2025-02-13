@@ -9,8 +9,8 @@ sidebar_position: 10
 ## Overview  
 This metric focuses on collections of non-fungible tokens (NFTs) rather than individual serialized tokens. It evaluates sales and transaction data to showcase the most active and valuable collections in the Hedera ecosystem.  
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_top_50_non-fungible-tokens` every 24 hours with a 72-hour rolling average applied for smoothing.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology  

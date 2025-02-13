@@ -9,8 +9,8 @@ sidebar_position: 15
 ## Overview
 The HBAR Price statistic provides the latest price of HBAR, aggregated from multiple sources. This statistic is essential for tracking the value of HBAR in real time and analyzing price trends over different timeframes.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_hbar_price` every 1 second.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology
