@@ -7,8 +7,8 @@ sidebar_position: 12
 ## Overview
 The Stablecoin Market Cap metric tracks the total market capitalization of stablecoins circulating on the Hedera network as reported by DeFiLlama. This metric provides insight into the adoption and liquidity of stablecoins within the ecosystem.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_stablecoin_market_cap` every 1 day, but the function itself can group data in different timeframes (daily, weekly, monthly, etc.).
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology
