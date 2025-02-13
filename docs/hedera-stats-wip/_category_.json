@@ -1,6 +1,6 @@
 {
-  "label": "Hedera Stats",
-  "position": 10,
+  "label": "Hedera Stats WIP",
+  "className": "hedera-stats",
   "link": {
     "type": "generated-index",
     "description": "Statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. Leveraging the Hedera mirror node and 3rd party data sources. Read the introduction for more information."
