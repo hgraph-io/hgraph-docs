@@ -24,14 +24,11 @@ An account is considered “active” if it pays for at least one transaction wi
 - Accounts that only receive transactions and never initiate one are not counted as active.
 - Receiving token transfers, HBAR deposits, or any other form of inbound-only transaction does not qualify the account as active.
 
-### Combining Sub-functions:
-
-The overall active accounts metric is calculated by combining the results from three specialized sub-functions:
-- **Developer Accounts:** Captured by `ecosystem.dashboard_active_developer_accounts`
-- **Retail Accounts:** Captured by `ecosystem.dashboard_active_retail_accounts`
-- **Smart Contracts:** Captured by `ecosystem.dashboard_active_smart_contracts`
-
-Each sub-function applies the active account definition to its respective category. The final metric aggregates these counts to provide a comprehensive measure of network activity across all account types.
+## Sub-Functions
+The overall active accounts metric is broken down into sub-functions:
+- [Developer Accounts](developer-accounts) - `ecosystem.dashboard_active_developer_accounts`
+- [Retail Accounts](retail-accounts) - `ecosystem.dashboard_active_retail_accounts`
+- [Smart Contracts](active-contracts) - `ecosystem.dashboard_active_smart_contracts`
 
 ## Timeframe Consideration:
 Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. An account must initiate at least one qualifying transaction within that period to be considered active for that timeframe.
@@ -39,12 +36,6 @@ Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. A
 ## Use Case Example
 
 Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
-
-## Categories of Active Accounts
-Hgraph tracks active accounts in three main categories:
-- [Developer Accounts](developer-accounts)
-- [Retail Accounts](retail-accounts)
-- [Smart Contracts](active-contracts) 
 
 ## SQL Implementation
 
