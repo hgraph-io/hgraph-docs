@@ -9,8 +9,8 @@ sidebar_position: 13
 ## Overview
 Account Growth tracks the number of new accounts created in the Hedera ecosystem over a specified time period. This metric focuses on accounts that actively transact but excludes smart contracts and accounts engaging in developer-related transactions. The data provides insight into organic ecosystem growth by measuring new **non-developer** accounts.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_account_growth` every 1 day.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology

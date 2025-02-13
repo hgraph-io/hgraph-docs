@@ -9,8 +9,8 @@ sidebar_position: 9
 ## Overview  
 This metric highlights the most significant fungible tokens in the Hedera ecosystem. Rankings are based on market activity, volume, and token utility, aiming to balance accuracy with transparency.  
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_top_50_fungible-tokens` every 24 hours, with a 48-hour rolling average applied for smoothing.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology  

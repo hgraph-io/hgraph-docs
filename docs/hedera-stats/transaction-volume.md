@@ -9,8 +9,8 @@ sidebar_position: 16
 ## Overview
 The Transaction Volume metric measures the total number of transactions processed on the Hedera network over time, categorized by different services. This metric provides insight into network activity, adoption trends, and the usage of various services within the Hedera ecosystem.
 
-:::note Timeframes
-Hgraph calculates `hedera_stats_transaction_volume` every 1 hour.
+:::note Hedera Data Access
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
 ## Methodology
