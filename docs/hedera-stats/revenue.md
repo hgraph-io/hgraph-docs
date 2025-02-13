@@ -29,10 +29,6 @@ To calculate revenue at a high level, we only need to know the total fees charge
 
 ### Calculating Total Revenue
 
-```
-Total Revenue (HBAR) = Σ (Charged Transaction Fees)
-```
-
 This is the sum of `charged_tx_fee` across all transactions. Conceptually, you can think of it as:
 
 ```
@@ -59,6 +55,10 @@ Hedera offers multiple services, and transactions can be grouped based on the ty
 - **Other Services**: Revenue from all other transaction types.
 
 > **Important**: The SQL function below **does not** categorize fees by transaction type. If you need the breakdown of total revenue by service type, you’ll need an additional query or post-processing step that segments transactions accordingly.
+
+## Use Case Example
+
+Network revenue serves as a proxy for overall transaction volume and network adoption, indicating that a healthy network sees consistent fee generation from active use. Sudden fluctuations in this metric can quickly alert operators to potential performance issues or shifts in user behavior.
 
 ## SQL Implementation
 

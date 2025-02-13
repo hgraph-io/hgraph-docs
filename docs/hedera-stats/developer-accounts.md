@@ -36,7 +36,6 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 ### Exclusion Criteria
 
-- **Contract payers are excluded**. If the transaction payer is itself a smart contract (`e.type = 'CONTRACT'`), it is not counted as a developer account.
 - Accounts that do not perform any of the above developer-oriented transactions are not considered developers.
 - Regular transactional activity like simple HBAR transfers, token transfers without creation/minting, or reading contract states does not qualify.
 

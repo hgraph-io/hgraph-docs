@@ -4,9 +4,9 @@ sidebar_position: 5
 
 # Active Retail accounts
 
-Active retail accounts is a composite statistic derived from active accounts by filtering out those that have engaged in developer-oriented transactions or represent smart contracts. This metric identifies the subset of active accounts that have performed successful transactions without any developer-related activity.
+Active retail accounts is a composite statistic calculated using the data from *Active Accounts*, *Active Developer Accounts* and *Active Smart Contracts*. This composite statistic exposes a sub-group of *Active Accounts* which are accounts that display no developer related transactions and are not smart contracts.
 
-Before identifying retail accounts, the function removes accounts that either correspond to smart contracts or have executed any transaction types associated with developer activities.
+This means that before “retail accounts” are identified, any smart contract payers and any accounts that performed developer-like actions.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
@@ -15,29 +15,27 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 ## Methodology
 
 ### Prerequisites
-1. **Active Accounts:** This metric represents the number of unique accounts that initiate *successful* transactions within a given timeframe.
-2. **Developer Transaction Filter:** The function identifies developer-related transactions using specific transaction types (8, 9, 29, 36, 37, 58, 24, 25) that indicate actions such as creating or updating contracts, tokens, or topics (see all Hedera transaction types [here](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js)).
-3. **Smart Contract Exclusion:** Accounts associated with smart contracts (where `entity.type` is `CONTRACT`) are excluded from consideration.
+1. **[Active Accounts](active-accounts):** The number of unique accounts that initiate *successful* transactions within a timeframe.
+2. **[Developer Accounts](developer-accounts):** The number of unique accounts that perform developer-oriented transactions (e.g., creating/updating contracts, tokens, or topics).
+3. **[Active Smart Contracts](active-contracts):** The number of unique contract entities that perform at least one action (such as contract calls) during the same timeframe.
 
 ### Calculation Overview
 
-1. **Exclude Smart Contracts:** Any account with an `entity.type` of `CONTRACT` is omitted.
-2. **Exclude Developer Transactions:** Accounts that have executed any transaction identified by the developer transaction filter are removed.
-3. **Count Remaining Accounts:** The active accounts that remain—having performed successful transactions without any developer-related actions—are classified as retail accounts.
-
-In other words, the retail accounts metric is derived by filtering the active accounts to exclude those involved in developer-oriented activities or those representing smart contracts.
+1. **Exclude Smart Contracts**: We ignore any account whose `entity.type` is `CONTRACT`.  
+2. **Exclude Developer Transactions**: We exclude any account that performed specific “developer” transaction types.  
+3. **Count Remaining Accounts**: The remaining active accounts (those with *successful* transactions but none of the developer transaction types) are considered “retail.”
 
 Formally: 
 
 ```
-Active Retail Accounts = [Active Accounts excluding accounts with developer transactions or that are smart contracts]
+Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contract Accounts)
 ```
 
 ## SQL Implementation
 
-Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Active Retail Accounts** statistic outlined in this methodology.
+Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL functions that calculate the **Active Retail Accounts** statistic outlined in this methodology.
 
-SQL Function: `ecosystem.dashboard_active_retail_accounts`
+SQL Functions: `ecosystem.dashboard_active_accounts`, `ecosystem.dashboard_active_contracts` and `ecosystem.dashboard_active_developer_accounts`
 
 **[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
