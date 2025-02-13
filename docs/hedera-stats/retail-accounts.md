@@ -35,7 +35,7 @@ Active Retail Accounts = [Active Accounts excluding accounts with developer tran
 
 ## SQL Implementation
 
-Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Active Accounts** statistic outlined in this methodology.
+Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Active Retail Accounts** statistic outlined in this methodology.
 
 SQL Function: `ecosystem.dashboard_active_retail_accounts`
 
