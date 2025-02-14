@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Time to consensus
+# Time to Consensus
 
 Below is a methodology based on the SecC2RC metric, which stands for measuring the elapsed time from when a transaction reaches consensus until its corresponding record is created and available. In practice, this statistic is used as a proxy for "time to consensus" or "network latency" on the Hedera network.
 

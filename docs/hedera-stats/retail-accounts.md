@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Active Retail accounts
+# Active Retail Accounts
 
 Active retail accounts is a composite statistic calculated using the data from *Active Accounts*, *Active Developer Accounts* and *Active Smart Contracts*. This composite statistic exposes a sub-group of *Active Accounts* which are accounts that display no developer related transactions and are not smart contracts.
 
