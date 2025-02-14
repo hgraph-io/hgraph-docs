@@ -40,11 +40,6 @@ Once the difference is calculated for individual transactions, these values are:
 - Averaged over a 24 hour time window to provide a stable metric.
 - Indexed for querying via Hgraph's GraphQL API
 
-### SQL Code
-
-This is the SQL code required to run these calculations.
-
-
-
 ## Dependencies
-* Hedera mirror node
+- Hedera mirror node
+- Hedera telemetry data
