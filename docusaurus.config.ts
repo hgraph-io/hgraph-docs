@@ -73,7 +73,7 @@ const config: Config = {
         },
         {to: '/overview/contact', label: 'Contact', position: 'left'},
         {
-          href: 'https://console.hgraph.io',
+          href: 'https://dashboard.hgraph.com',
           label: 'Account Dashboard',
           position: 'right',
         },
@@ -130,7 +130,7 @@ const config: Config = {
           items: [
             {
               label: 'Account dashboard',
-              href: 'https://console.hgraph.io',
+              href: 'https://dashboard.hgraph.com',
             },
             {
               label: 'Newsletter',
