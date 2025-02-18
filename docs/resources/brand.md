@@ -20,6 +20,10 @@ Our logo comes in various formats, arrangements and colors. The files are availa
 * **Logomark only:** [PNG](https://drive.google.com/drive/folders/146B_YTITzrevBEEPEBDPD_kMIsXqQ_GL?usp=drive_link) / [SVG](https://drive.google.com/drive/folders/13j4jUQnKKp4wHbkD-ZGyaKmSvCEH6Ci_?usp=drive_link)
 * **[Download all (.zip) ↓](Hgraph-Brand-Logos.zip)**
 
+## Profile picture
+
+**[Download Hgraph PFP (PNG)](Hgraph-PFP-V6-Square.jpg)**
+
 ## Color Palette
 
 ![image](Colors.png)
