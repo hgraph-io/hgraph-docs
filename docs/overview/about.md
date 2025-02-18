@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ![image](sweater.jpg)
 
-Hgraph is a trusted technology partner for developers, startups and enterprises looking to take advantage of web3 technologies. Major brands rely on Hgraph’s expert consultation, software development services, project risk management and custom solutions to accelerate their digital transformations and discover new opportunities! We’re proud to work with incredible teams.
+Hgraph is a company focused on custom startup and enterprise solutions as well as APIs and infrastructure for the Hedera ecosystem and beyond. Our core offerings include Hedera mirror node APIs (GraphQL, JSON-RPC relay & REST), bare metal infrastructure, SDKs, and bespoke software engineering services.
 
 Learn more about Hgraph on our [official website](https://hgraph.com).
 
@@ -18,7 +18,7 @@ The mission for Hgraph is simple: to make data access on the Hedera network (and
 
 ## What’s next for Hgraph?
 
-After years serving the Hedera community and developing robust mirror node capabilities, Hgraph is well positioned for a new phase of discovery and innovation. We’re focused on data analytics, infrastructure management and tooling for web3 ecosystems.
+After years serving the Hedera community and developing robust node infrastructure, Hgraph is well positioned for a new phase of discovery and innovation. We’re focused on AI, infrastructure management, blockchain and tooling for web3 ecosystems.
 
 [**Work with us →**](contact)
 

@@ -8,30 +8,30 @@ Hgraph provides data infrastructure for web3 applications. Current services and 
 
 ## Overview
 
-- Bare metal infrastructure
-- Hedera mirror node:
-    - GraphQL API
-    - REST API
-    - JSON-RPC
-- 3rd party integrations
-- Custom data tooling
-- Account dashboard
-    - Easy signup
-    - API playground
-    - Schema explorer
-- Software engineering support
-- Enterprise SLAs
-- Helpful SDKs
-- More
+### Custom solutions
+- Enterprise, startup & government
+- Blockchain, AI, data, consulting
+- Nodes and infrastructure
+- Software development
+- APIs and data access
+- Hedera integration
+- **[Learn more](https://hgraph.com/enterprise)**
+
+### Hedera APIs:
+- GraphQL, REST, JSON-RPC relay
+- 3rd party integrations & tooling
+- Account dashboard, playground
+- Helpful SDKs, documentation
+- **[Learn more](https://hgraph.com/hedera)**
 
 ## Subscription pricing
 
-Hgraph offers affordable susbcription plans for API access and a high value subscription plan for premium service. Feel free to contact sales@hgraph.com with your questions.
+Hgraph offers affordable susbcription plans for API access and a high value subscription plan for premium service. Feel free to contact us with your questions.
 
-**[Hgraph pricing details →](https://hgraph.com/pricing)**
+**[Hgraph pricing details →](/overview/pricing)**
 
 ## Enterprise
 
 Hgraph offers bespoke software engineering services and enterprise-grade support, powered by our advanced infrastructure and APIs. We provide comprehensive, customized solutions for companies integrating Web3 technologies into their digital transformation strategies.
 
-**[Work with us →](https://form.typeform.com/to/LUnKkmRL)**
+**[Work with us →](https://hgraph.com/contact)**

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Hedera API FAQ
 
-Welcome to the Hedera API FAQ. Below, you'll find answers to common questions about our APIs, including GraphQL, REST, and JSON-RPC. Whether you're a developer or new to blockchain technology, this FAQ provides clarity on how to integrate, authenticate, and use Hgraph’s APIs effectively.
+Welcome to the Hedera network API FAQ. Below, you'll find answers to common questions about Hgraph's APIs, including GraphQL, REST, and JSON-RPC relay. Whether you're a developer or new to blockchain technology, this FAQ provides clarity on how to integrate, authenticate, and use Hgraph’s APIs effectively.
 
 ---
 
@@ -30,15 +30,17 @@ Hedera mirror nodes process and store historical transaction data, enabling appl
 ## Getting Started
 
 ### How do I sign up and get API keys?
-1. Sign up [using this form](https://www.hgraph.com/hedera/signup-temp).
-2. Pay for your accoint via Stripe.
-3. We deliver your API key.
+1. Create an Hgraph account.
+2. Get a free API key.
+3. Upgrade to a plan later.
+
+**[Get a free APi key →](https://dashboard.hgraph.com)**
 
 ### Where can I find example queries and integration guides?
 Hgraph’s documentation includes:
 - [GraphQL](/category/graphql-api)
 - [REST API](/category/rest-api)
-- JSON-RPC
+- [JSON-RPC relay](/category/json-rpc)
 
 ---
 
@@ -70,7 +72,7 @@ Learn more: [GraphQL Subscriptions](/graphql-api/subscriptions)
 ## Authentication & Security
 
 ### How do I authenticate API requests?
-Each API request must include an API key in the `Authorization` header or in the URL, depending on which API you are using. Instructions: [GraphQL](/graphql-api/authorization), [REST](/rest-api/endpoints).
+We offer multiple ways to authenticate API requests for our JSON-RPC relay, GraphQL & REST APIs. [Get all the details on this page](/hgraph-sdk/endpoints-authorization).
 
 ### How can I protect my API key?
 - Keep your API key private.

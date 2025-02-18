@@ -4,15 +4,9 @@ sidebar_position: 3
 
 # Hgraph pricing
 
-:::info Community notice
-
-Our new account dashboard will be launching very soon. When you're ready to [get started](https://hgraph.com/hedera), our team will set up your account and API key for you. When our account dashboard launches, you'll be able to easily log in. 
-
-:::
-
 Easy access to our powerful and flexible Hedera network APIs including GraphQL, REST and JSON-RPC relay. Our plans are structured to ensure every developer and startup has room to grow. This page contains all the details regarding our subscription pricing plans.
 
-Ready to get started? [Sign up now →](https://hgraph.com/hedera)
+Ready to get started? [Sign up now →](https://dashboard.hgraph.com)
 
 Have Questions? [See FAQ →](#pricing-faq)
 
@@ -32,7 +26,7 @@ Have Questions? [See FAQ →](#pricing-faq)
 | **Hedera APIs**         |                                                                                      |                                                                               |                                                                             |                                                                            |                                                                                       |
 | GraphQL                 | Yes                                                                                  | Yes                                                                           | Yes                                                                         | Yes                                                                        | Yes                                                                                   |
 | REST                    | Yes                                                                                  | Yes                                                                           | Yes                                                                         | Yes                                                                        | Yes                                                                                   |
-| JSON-RPC*              | No                                                                                   | No                                                                            | Yes                                                                         | Yes                                                                        | Yes                                                                                   |
+| JSON-RPC              | No                                                                                   | No                                                                            | Yes                                                                         | Yes                                                                        | Yes                                                                                   |
 | Requests/mo             | 45k                                                                                  | 1M                                                                            | 3M                                                                          | 25M                                                                        | 125M                                                                                  |
 | Monthly cap             | Hard cap                                                                             | Hard cap                                                                      | Soft cap                                                                    | Soft cap                                                                   | Soft cap                                                                              |
 | Max RPS                 | 1 RPS                                                                                | 2 RPS                                                                         | 6 RPS                                                                       | 60 RPS                                                                     | 250 RPS                                                                               |
@@ -41,7 +35,7 @@ Have Questions? [See FAQ →](#pricing-faq)
 | Logging                 | No                                                                                   | No                                                                            | No                                                                          | No                                                                         | Yes                                                                                   |
 | Uptime                  | -                                                                                    | -                                                                             | Target 99%                                                                  | Target 99%                                                                 | Target 99.9%                                                                          |
 | Overages                | -                                                                                  | $3.75/100k                                                                   | $3.25/100k                                                                 | $3/100k                                                                   | $2.5/100k                                                                            |
-| Analytics               | None                                                                                 | Basic                                                                         | Basic                                                                       | Basic                                                                      | Advanced*                                                                            |
+| Analytics*               | None                                                                                 | Basic                                                                         | Basic                                                                       | Basic                                                                      | Advanced*                                                                            |
 | Integrations            | No                                                                                   | No                                                                            | No                                                                          | No                                                                         | Yes                                                                                   |
 
 > **Feature coming soon*
@@ -54,9 +48,7 @@ Commonly asked questions regarding our pricing. You can view [additional FAQs he
 Yes. Tailored enterprise-grade API access with custom usage limits, SLAs, and premium support. Hgraph also offers additional, bespoke consulting solutions. [Learn more here](https://hgraph.com/enterprise).
 
 **How do I sign up and get my API key?**\
-Create an account on our Account Dashboard and then click "view API keys" and you should see a pop-up with your keys. You can also manage your subscription and use our other tools. [Create your account](https://hgraph.com/hedera).
-
-> *Account dashboard coming soon...*
+Create an account on our [Account Dashboard](https://dashboard.hgraph.com) and then click "view API keys" and you should see a pop-up with your keys. You can also manage your subscription and use our other tools. [Login to the account dashboard](https://dashboard.hgraph.com).
 
 **How do I pay for my subscription plan?**\
 We use Stripe for billing and all pricing is in USD. We plan to add more payment methods in the future.

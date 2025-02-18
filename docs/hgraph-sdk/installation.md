@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Installation & usage
+# Installation & Usage
 
 To install the `@hgraph.io/sdk`, run the following command:
 

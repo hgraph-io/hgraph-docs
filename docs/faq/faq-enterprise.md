@@ -2,17 +2,18 @@
 sidebar_position: 3
 ---
 
-# Enterprise FAQ
+# Enterprise & Startup FAQ
 
-Welcome to the Enterprise FAQ for Hgraph. This section covers common questions about our enterprise solutions, including custom APIs, SLAs, consulting, security, and scalability. If you have further questions, [reach out to our team](https://www.hgraph.com/contact).
+Welcome to the Hgraph FAQ pagefor startups and enterprise. This section covers common questions about our custom solutions, including custom APIs, SLAs, consulting, security, and scalability. If you have further questions, [reach out to our team](https://www.hgraph.com/contact).
 
 ---
 
 ## General Questions
 
-### What is Hgraph's Enterprise offering?
+### What is Hgraph's Enterprise/Startup offering?
 Hgraph provides enterprise-grade APIs, consulting, and infrastructure solutions tailored for businesses and governments. We offer:
 - Custom API access (GraphQL, REST, JSON-RPC)
+- Direct SQL data access
 - 3rd party integrations like Grafana
 - Priority support with SLAs
 - Enterprise-grade infrastructure
@@ -20,16 +21,16 @@ Hgraph provides enterprise-grade APIs, consulting, and infrastructure solutions 
 - Security and compliance solutions
 - Dedicated nodes
 
-### Who should use Hgraph's Enterprise services?
+### Who should use Hgraph's Custom services?
 Hgraph is ideal for:
 - Businesses requiring custom SLAs and priority support
-- Enterprises with high API usage needs
+- Organizations with high API usage needs
 - Government agencies and regulatory bodies needing blockchain solutions
 - Companies looking for dedicated consulting and software engineering
 
 ---
 
-## Enterprise Consulting & Support
+## Consulting & Support
 
 ### What are the consulting and API support options?
 
@@ -44,6 +45,7 @@ Hgraph offers tailored plans for Enterprise API and Consulting services which ar
 Hgraph provides expert consulting in:
 - Blockchain & DLT – Smart contracts, tokenization, and enterprise blockchain integration
 - Artificial Intelligence – Working with both commercial and open source solutions
+- Custom Nodes & Infrastructure – Bare metal solutions for distributed systems
 - Data Access & Analytics – Advanced data engineering for blockchain insights
 - Smart Contracts & DeFi – Secure and efficient contract deployment
 - Government & Compliance – Risk-mitigated applications for the public sector
@@ -54,8 +56,8 @@ Yes. Hgraph can function as an extension of your engineering team, providing:
 - API and backend development
 - Ongoing project management and optimization
 
-### What support options are available for enterprise clients?
-Enterprise clients receive:
+### What support options are available for enterprise & startup clients?
+Clients receive:
 - Priority support & SLAs
 - Dedicated account managers
 - VIP onboarding & integration assistance
@@ -94,7 +96,7 @@ Enterprise plans include high API call limits with a soft-cap system to prevent 
 
 ## Getting Started
 
-### How do I sign up for Enterprise services?
+### How do I sign up for Custom services?
 1. Explore our services [here](https://www.hgraph.com/enterprise).
 2. Contact us [using this form](https://www.hgraph.com/contact).
 3. We'll respond quickly.
