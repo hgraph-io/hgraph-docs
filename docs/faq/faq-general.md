@@ -16,10 +16,10 @@ Welcome to the Hgraph FAQ! Below, you'll find answers to the most common questio
 ## **General Questions**
 
 ### What is Hgraph?
-Hgraph is a company that provides hosting solutions, and APIs (REST, GraphQL, and JSON-RPC) for developers, startups, and enterprises.
+Hgraph is a company that provides custom solutions for startups, enterprise and government as well as blazing fast Hedera API access.
 
 ### Who uses Hgraph?
-Our services cater to developers, startups, and enterprises in AI, blockchain, data and other exciting spaces. We work with builders looking for reliable data access, custom tooling, consulting services and a strong technology partner.
+Our services cater to developers, startups, and enterprises in AI, blockchain, data and other exciting spaces. We work with builders looking for reliable data access, custom tooling, consulting services, infrastructure and a strong technology partner.
 
 ### Is Hgraph cloud-based?
 
@@ -32,14 +32,14 @@ Yes. Hgraph can help you save on cloud costs, manage your CDN and host your back
 ### How do I get started with Hgraph?
 
 For Hedera APIs:
-1. Sign up [using this form](https://www.hgraph.com/hedera/signup-temp).
-2. Pay for your accoint via Stripe.
-3. We deliver your API key.
+1. [Create an Hgraph account](https://dashboard.hgraph.com)
+2. Get your free API key
+3. Upgrade to a plan
 
 For enterprise:
-1. Explore our services [here](https://www.hgraph.com/enterprise).
-2. Contact us [using this form](https://www.hgraph.com/contact).
-3. We'll respond quickly.
+1. Explore our services [here](https://www.hgraph.com/enterprise)
+2. Contact us [using this form](https://www.hgraph.com/contact)
+3. We'll respond quickly
 
 ### How can I stay updated?
 

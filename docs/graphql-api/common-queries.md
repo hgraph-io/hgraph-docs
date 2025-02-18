@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Common queries
+# Common Queries
 
 ## Get the latest transaction timestamp
 
