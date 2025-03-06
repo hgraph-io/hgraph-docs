@@ -30,21 +30,17 @@ A contract is considered "active" if it has executed at least one successful (st
 
 ## Fetching Active Contracts via GraphQL
 
-To retrieve the number of hourly active contracts for the last day:
+To retrieve the number of active contracts within the last hour, use this query:
 
 ```graphql
-query ActiveSmartContracts24hrs {
+query ActiveSmartContracts1hr {
   ecosystem_metric(
     where: { name: { _eq: "active_smart_contracts" }, period: { _eq: "hour" } }
-    order_by: { start_date: desc }
-    limit: 24
+    limit: 1
   ) {
-    start_date
-    end_date
     total
   }
 }
-
 ```
 
 ## Available Time Periods

@@ -82,6 +82,8 @@ query TotalNetworkRevenue2025 {
 
 ```
 
+> Note: The results are in tinybar.
+
 ## Available Time Periods
 
 - `hour`

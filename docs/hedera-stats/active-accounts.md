@@ -40,10 +40,10 @@ Suppose you are measuring weekly active accounts. You look at all transactions o
 
 ## Fetching Active Accounts via GraphQL
 
-To retrieve the total number of active accounts over a specific period, use the following query:
+To retrieve the average hourly active accounts in January 2025, use the following query:
 
 ```graphql
-query TotalActiveAccountsPeriod {
+query TotalActiveAccountsAvg {
   ecosystem_metric_aggregate(
     where: {
       name: { _eq: "active_accounts" },
@@ -52,13 +52,12 @@ query TotalActiveAccountsPeriod {
     }
   ) {
     aggregate {
-      sum {
+      avg {
         total
       }
     }
   }
 }
-
 ```
 
 ## Available Time Periods
