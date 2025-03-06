@@ -43,3 +43,29 @@ Once the difference is calculated for individual transactions, these values are:
 ## Dependencies
 - Hedera mirror node
 - Hedera telemetry data
+
+### **Fetching Time to Consensus via GraphQL**
+To retrieve the average time to consensus on March 1st 2025, use the following query:
+
+```graphql
+query AvgTimeToConsensus {
+  ecosystem_metric_aggregate(
+    where: {
+      name: { _eq: "avg_time_to_consensus" },
+      period: { _eq: "hour" },
+      start_date: { _gte: "2025-03-01T00:00:00", _lte: "2025-03-02T00:00:00" }
+    }
+  ) {
+    aggregate {
+      avg {
+        total
+      }
+    }
+  }
+}
+```
+
+The result will be in nanoseconds.
+
+## Dependencies
+- Prometheus telemetry data

@@ -31,6 +31,29 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 Monitoring TVL helps gauge overall network health by reflecting the amount of capital engaged in Hedera's DeFi ecosystem. For example, a rising TVL indicates increasing liquidity and user confidence.
 
+## Fetching Total Value Locked (TVL) via GraphQL
+
+To retrieve daily TVL for the last 90 days, utilizing `timestamp_range` instead of `start_date` and `end_date`:
+
+```graphql
+query TVLOverTime {
+  ecosystem_metric(
+    where: {name: {_eq: "network_tvl"}, period: {_eq: "day"}}
+    order_by: {start_date: desc}
+    limit: 90
+  ) {
+    total
+    timestamp_range
+  }
+}
+```
+
+## Available Time Periods
+
+- `day`
+
+TVL is aggregated from DeFi protocols and updates daily. If values seem incorrect, check the most recent transactions affecting locked assets.
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Total Value Locked** statistic outlined in this methodology.

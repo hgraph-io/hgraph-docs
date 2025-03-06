@@ -38,6 +38,35 @@ Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. A
 
 Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
 
+## Fetching Active Accounts via GraphQL
+
+To retrieve the total number of active accounts over a specific period, use the following query:
+
+```graphql
+query TotalActiveAccountsPeriod {
+  ecosystem_metric_aggregate(
+    where: {
+      name: { _eq: "active_accounts" },
+      period: { _eq: "hour" },
+      start_date: { _gte: "2025-01-01T00:00:00", _lt: "2025-02-01T00:00:00" }
+    }
+  ) {
+    aggregate {
+      sum {
+        total
+      }
+    }
+  }
+}
+
+```
+
+## Available Time Periods
+
+The `period` field supports the following values:
+
+- `hour`
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Active Accounts** statistic outlined in this methodology.

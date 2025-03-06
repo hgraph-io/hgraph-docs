@@ -5,13 +5,18 @@ title: Endpoints & Authorization
 
 # Endpoints & Authorization
 
-:::note Hgraph Account Dashboard
-Our new account dashboard is available now. It's easy to create an Hgraph account, access your free API key, and subscribe to one of our plans. [Sign up for an account here](https://dashboard.hgraph.com).
-:::
-
 This page explains how to authenticate and access the different API endpoints, including GraphQL, REST, and JSON-RPC. All endpoints support the same authentication methods.
 
+Hgraph provides two main API environments:
+
+| Endpoint     | Purpose                                                      |
+| ------------ | ------------------------------------------------------------ |
+| `hgraph.dev` | Staging/testing environment. May contain incomplete or outdated data. |
+| `hgraph.io`  | Production environment. Requires an API key for access.      |
+
 **[Obtaining an API key →](#obtaining-an-api-key)**
+
+## 
 
 ---
 
@@ -191,6 +196,10 @@ You can also pass your API key using the X-API-KEY header if preferred.
 ## Obtaining an API Key
 
 [Learn about our plans](https://hgraph.com/hedera) and pricing and [create your account here](https://dashboard.hgraph.com). For enterprise needs or custom solutions, please [contact us here](https://hgraph.com/contact).
+
+:::info Hgraph Account Dashboard
+Our new account dashboard is available now. It's easy to create an Hgraph account, access your free API key, and subscribe to one of our plans. [Sign up for an account here](https://dashboard.hgraph.com).
+:::
 
 :::warning
 Never expose your API key in publicly accessible repositories or frontend applications. Use environment variables to store keys securely.
