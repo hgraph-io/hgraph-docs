@@ -31,6 +31,29 @@ Formally:
 Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contract Accounts)
 ```
 
+## Fetching Retail Accounts via GraphQL
+
+To get the number of hourly active retail accounts for the last 7 days:
+
+```graphql
+query RetailAccountsHourly {
+  ecosystem_metric(
+    where: {name: {_eq: "active_retail_accounts"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc}
+    limit: 168
+  ) {
+    start_date
+    total
+  }
+}
+```
+
+## Available Time Periods
+
+- `hour`
+
+Retail accounts exclude smart contracts and developer accounts. Ensure that the queried period contains active transactions from non-developer users.
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL functions that calculate the **Active Retail Accounts** statistic outlined in this methodology.

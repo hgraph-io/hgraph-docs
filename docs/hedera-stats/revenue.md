@@ -60,6 +60,32 @@ Hedera offers multiple services, and transactions can be grouped based on the ty
 
 Network revenue serves as a proxy for overall transaction volume and network adoption, indicating that a healthy network sees consistent fee generation from active use. Sudden fluctuations in this metric can quickly alert operators to potential performance issues or shifts in user behavior.
 
+## Fetching Network Revenue via GraphQL
+To retrieve Hedera's network revenue for 2025, use the following query:
+
+```graphql
+query TotalNetworkRevenue2025 {
+  ecosystem_metric_aggregate(
+    where: {
+      name: { _in: ["network_fee", "transaction_fees"] }, 
+      period: { _eq: "hour" },
+      start_date: { _gte: "2025-01-01T00:00:00" } # Adjust as needed
+    }
+  ) {
+    aggregate {
+      sum {
+        total
+      }
+    }
+  }
+}
+
+```
+
+## Available Time Periods
+
+- `hour`
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Network Revenue** statistic outlined in this methodology.

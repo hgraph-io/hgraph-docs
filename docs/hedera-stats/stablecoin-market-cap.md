@@ -34,6 +34,27 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 This statistic helps gauge network health by tracking the liquidity and adoption of stablecoins, which are vital for smooth financial transactions. A sustained increase in stablecoin market cap can indicate growing confidence in the network's financial ecosystem.
 
+## GraphQL Query Example
+To retrieve the daily Stablecoin Market Cap over the last 30 days, use the following query:
+
+```graphql
+query StablecoinMarketCapDaily {
+  ecosystem_metric(
+    where: { name: { _eq: "stablecoin_marketcap" }, period: { _eq: "day" } }
+    order_by: { start_date: desc }
+    limit: 30
+  ) {
+    start_date
+    end_date
+    total
+  }
+}
+```
+
+## Available Time Periods
+
+- `day`
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Stablecoin Market Cap** statistic outlined in this methodology.

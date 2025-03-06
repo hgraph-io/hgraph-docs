@@ -43,6 +43,34 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 If you are measuring weekly developer accounts, review all transactions in the past seven days. If an account created a token, minted a new batch of tokens, or deployed a smart contract during that week, it is classified as a developer account for that period.
 
+## Fetching Developer Accounts via GraphQL
+
+Total active developer accounts in 2025:
+
+```graphql
+query DeveloperAccounts2025 {
+  ecosystem_metric_aggregate(
+    where: {
+      name: { _eq: "active_developer_accounts" },
+      period: { _eq: "hour" },
+      start_date: { _gte: "2025-01-28T00:00:00" }
+    }
+  ) {
+    aggregate {
+      sum {
+        total
+      }
+    }
+  }
+}
+```
+
+## Available Time Periods
+
+- `hour`
+
+Developer accounts are identified based on contract creation, token minting, and other advanced operations. If no results are found, check for missing transactions in the period.
+
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Active Developer Accounts** statistic outlined in this methodology.
