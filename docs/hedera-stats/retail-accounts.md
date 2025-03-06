@@ -33,16 +33,14 @@ Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contract 
 
 ## Fetching Retail Accounts via GraphQL
 
-To get the number of hourly active retail accounts for the last 7 days:
+To get the number of active retail accounts for the last 1 hour, use this query:
 
 ```graphql
-query RetailAccountsHourly {
+query RetailAccounts1hr {
   ecosystem_metric(
     where: {name: {_eq: "active_retail_accounts"}, period: {_eq: "hour"}}
-    order_by: {start_date: desc}
-    limit: 168
+    limit: 1
   ) {
-    start_date
     total
   }
 }

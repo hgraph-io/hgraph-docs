@@ -45,25 +45,27 @@ If you are measuring weekly developer accounts, review all transactions in the p
 
 ## Fetching Developer Accounts via GraphQL
 
-Total active developer accounts in 2025:
+To retrieve the hourly Active Developer Accounts over the last 1 day, use the following query:
 
 ```graphql
-query DeveloperAccounts2025 {
-  ecosystem_metric_aggregate(
+query DeveloperAccounts24hrs {
+  ecosystem_metric(
     where: {
-      name: { _eq: "active_developer_accounts" },
-      period: { _eq: "hour" },
-      start_date: { _gte: "2025-01-28T00:00:00" }
+      name: {_eq: "active_developer_accounts"},
+      period: {_eq: "hour"},
+      end_date: {_is_null: false}
     }
+    order_by: {start_date: desc}
+    limit: 24
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    start_date
+    end_date
   }
 }
 ```
+
+> Note: We are using `end_date: {_is_null: false}` to avoid double counting.
 
 ## Available Time Periods
 
