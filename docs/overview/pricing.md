@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# Hgraph pricing
+# API Subcription Pricing
 
 Easy access to our powerful and flexible Hedera network APIs including GraphQL, REST and JSON-RPC relay. Our plans are structured to ensure every developer and startup has room to grow. This page contains all the details regarding our subscription pricing plans.
 
