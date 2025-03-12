@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Services & features
+# Services & Features
 
 Hgraph provides data infrastructure for web3 applications. Current services and features cater to the *Hedera network* and leverage Hgraph's *mirror node* and APIs. Signing up for Hgraph is easy and subscription plans range from affordable developer options to full scale enterprise solutions. No matter how big your idea is, there's a home for it at Hgraph.
 
