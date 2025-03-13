@@ -59,6 +59,12 @@ The demand for real-time Hedera data is increasing. Both businesses and develope
 
 Ultimately, we try our very best to build the things our customers and partners want most. We hope you enjoy the new account dashboard, [feedback is always welcome!](/overview/contact)
 
+:::info New → Hgraph AI Assistant (Alpha)
+
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+
+:::
+
 ---
 
 ## Getting Started

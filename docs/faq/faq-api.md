@@ -6,6 +6,12 @@ sidebar_position: 2
 
 Welcome to the Hedera network API FAQ. Below, you'll find answers to common questions about Hgraph's APIs, including GraphQL, REST, and JSON-RPC relay. Whether you're a developer or new to blockchain technology, this FAQ provides clarity on how to integrate, authenticate, and use Hgraph’s APIs effectively.
 
+:::info New → Hgraph AI Assistant (Alpha)
+
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+
+:::
+
 ---
 
 ## Introduction to Hgraph APIs
@@ -30,11 +36,16 @@ Hedera mirror nodes process and store historical transaction data, enabling appl
 ## Getting Started
 
 ### How do I sign up and get API keys?
-1. Create an Hgraph account.
+1. Create an [Hgraph account](https://dashboard.hgraph.com).
 2. Get a free API key.
 3. Upgrade to a plan later.
 
 **[Get a free APi key →](https://dashboard.hgraph.com)**
+
+### How do I get support?
+- Use our [Hgraph AI Assistant](/graphql-assistant)
+- Send a question [in our Discord](https://discord.gg/dwxpRHHVWX)
+- Get support info [here](/support).
 
 ### Where can I find example queries and integration guides?
 Hgraph’s documentation includes:

@@ -3,7 +3,7 @@ sidebar_position: 11
 title: AI Assistant
 ---
 
-# Hgraph Assistant (Alpha)
+# Hgraph AI Assistant (Alpha)
 
 ## Overview
 

@@ -4,6 +4,12 @@ sidebar_position: 4
 
 # Common Queries
 
+:::info New → Hgraph AI Assistant (Alpha)
+
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+
+:::
+
 ## Get the latest transaction timestamp
 
 **Note:** A `consensus_timestamp` is in nano-seconds. You can use online tools such as https://www.epochconverter.com to convert to a human readable date.
