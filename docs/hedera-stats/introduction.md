@@ -7,7 +7,13 @@ sidebar_position: 1
 Hgraph offers API access to various quantitative statistical measurements for the Hedera network based on open-sourced methodologies outlined in this documentation. These statistics leverage Hedera mirror node data, data computation, 3rd party data sources and Hgraph's GraphQL API and can be used for analysis in various metrics and KPIs. If you're looking to access the "Hedera Stats" via Hgraph's APIs, you can [get started here](https://hgraph.com/hedera). If you're looking to contribute to the "Hedera Stats" project on GitHub, [check out the repository](https://github.com/hgraph-io/hedera-stats).
 
 :::note Hedera Data Access
-To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
+To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, **[get started here](https://www.hgraph.com/hedera)**.
+:::
+
+:::info New → Hgraph AI Assistant (Alpha)
+
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+
 :::
 
 ## Why create Hedera Stats?
@@ -37,6 +43,8 @@ Hgraph provides access to various Hedera network statistics via the GraphQL API.
 - **Top 50 fungible tokens** (in development)
 - **Transaction volume** (in development)
 - **HBAR Price** (in development)
+
+---
 
 ## Available Network Statistics
 

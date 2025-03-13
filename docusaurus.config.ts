@@ -64,10 +64,10 @@ const config: Config = {
         srcDark: 'img/Hgraph-Logomark_White.svg'
       },
       items: [
-        {to: 'https://hgraph.com/enterprise', label: 'Enterprise', position: 'left'},
-        {to: 'https://hgraph.com/hedera', label: 'Hedera APIs', position: 'left'},
+        {to: 'https://hgraph.com/', label: 'Features', position: 'left'},
         {to: '/overview/pricing', label: 'Pricing', position: 'left'},
-        {to: 'https://www.hgraph.com/contact', label: 'Contact', position: 'left'},
+        {to: '/graphql-assistant', label: 'AI Assistant', position: 'left'},
+        {to: '/overview/contact', label: 'Contact', position: 'left'},
         {
           href: 'https://dashboard.hgraph.com',
           label: 'Account',

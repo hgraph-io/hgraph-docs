@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+
+
 # GraphQL API Overview
 
 Hgraph provides GraphQL API endpoints for accessing our Hedera mirror node and various [subscription plans](https://hgraph.com/pricing) for production access (including free access for experimenting). If you're new to GraphQL, the [official documentation](https://graphql.org/) is a good starting point.
@@ -9,6 +11,12 @@ Hgraph provides GraphQL API endpoints for accessing our Hedera mirror node and v
 ## What is the GraphQL API?
 
 GraphQL is a query language for APIs that allows precise data fetching with a single endpoint, reducing unnecessary data transfer. Its strong type system enables efficient, flexible queries and real-time updates, making it ideal for complex web and mobile applications. This self-documenting approach simplifies development, allowing for rapid frontend changes without backend adjustments, streamlining the creation of responsive, data-driven applications.
+
+:::info New → Hgraph AI Assistant (Alpha)
+
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+
+:::
 
 ## GraphQL vs REST
 

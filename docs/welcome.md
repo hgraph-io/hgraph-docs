@@ -7,20 +7,25 @@ slug: /
 
 ![image](../static/img/Hgraph-Docs-Card.png)
 
-Welcome to the official documentation for [Hgraph](https://hgraph.com), an infrastructure, data services and software engineering company focused on AI, blockchain and more. Core offerings include Hedera APIs (GraphQL, JSON-RPC relay & REST), customn node infrastructure, SDKs, and bespoke software engineering services.
+Welcome to the official documentation for **[Hgraph](https://hgraph.com)**, an infrastructure, data services and software engineering company focused on AI, blockchain and more. Core offerings include Hedera APIs ([GraphQL](/category/graphql-api), [REST](/category/rest-api), and [JSON-RPC](/category/json-rpc), custom node infrastructure, SDKs, and bespoke software engineering services.
 
 The purpose of this documentation is to help developers fully leverage the capabilities of Hgraph's data tooling and APIs, and to help first-time users easily get started.
 
-## Quick links:
-1. [Frequently asked questions](/faq/faq-general)
-2. [Services and features](/overview/services)
-3. [Contact Hgraph](/overview/contact)
+:::info New → Hgraph AI Assistant (Alpha)
 
-## Getting started
-* [Pricing](/overview/pricing)
-* [GraphQL API](/category/graphql-api)
-* [Hgraph SDK](/category/hgraph-sdk)
-* [REST API](/category/rest-api)
-* [Support](/support)
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
 
-**[Create an Hgraph account.](https://dashboard.hgraph.com)** Get a free API key, upgrade later.
+:::
+
+## Quick links
+
+- **[Dashboard](https://dashboard.hgraph.com)** - Sign up and manage your account.
+- **[AI Assistant](https://dashboard.hgraph.com)** - Create queries and troubleshoot issues.
+- **[Pricing](/overview/pricing)** - Start for free, upgrade later (starting at $18/mo).
+- [GraphQL API](/category/graphql-api) - Access data on the Hedera mirror nodes.
+- [Hgraph SDK](/category/hgraph-sdk) - Build data-rich apps and experiences.
+- [GitHub](https://github.com/hgraph-io) - Follow Hgraph on GitHub and contribute.
+- [Support](/support) - Get assistance from our team & community.
+- [Contact & follow](/overview/contact) - Reach out and stay in touch!
+
+### [Create an Hgraph account 🚀](https://dashboard.hgraph.com)

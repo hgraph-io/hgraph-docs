@@ -6,6 +6,12 @@ sidebar_position: 2
 
 How does the API format data in comparison to the mirror node REST api?
 
+:::info New → Hgraph AI Assistant (Alpha)
+
+Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+
+:::
+
 ## Data Formats
 
 ### Entity Id Format
