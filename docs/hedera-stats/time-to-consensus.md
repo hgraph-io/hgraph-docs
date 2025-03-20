@@ -67,5 +67,28 @@ query AvgTimeToConsensus {
 
 The result will be in nanoseconds.
 
-## Dependencies
-- Prometheus telemetry data
+---
+
+## Incremental update setup
+
+### 1. Install prometheus to use promtool cli
+
+This downloads the Prometheus archive, extracts it, and copies the promtool binary to your `PATH` for easy command-line access.
+
+```bash
+curl -L -O https://github.com/prometheus/prometheus/releases/download/v3.1.0/prometheus-3.1.0.linux-amd64.tar.gz
+tar -xvf prometheus-3.1.0.linux-amd64.tar.gz
+# one way to add the tool to the PATH
+cp prometheus-3.1.0.linux-amd64/promtool /usr/bin
+```
+
+### 2. Add a cron job
+
+This opens your `crontab` to schedule a job that runs a script every hour and logs its output for monitoring purposes.
+
+```bash
+crontab -e
+1 * * * * cd /path/to/hedera-stats/src/time-to-consensus && bash ./run.sh >> ./.raw/cron.log 2>&1
+```
+
+[View the GitHub repository](https://github.com/hgraph-io/hedera-stats) for more information.
