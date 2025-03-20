@@ -4,9 +4,19 @@ sidebar_position: 1
 
 # JSON-RPC Relay (Beta Testing)
 
-:::note Beta Testing Phase
-Hgraph's new Hedera JSON-RPC relay brings new levels of EVM compatibility to the ecosystem. If you're interested in becoming an early tester, [follow the steps below](#want-to-be-an-early-tester).
+:::warning Beta Testing Note (Write Transactions)
+
+Hgraph's JSON-RPC relay endpoints are for beta testing only at this current time. **If you plan on making many *write transactions*** (transactions that get sent to consensus nodes), [please reach out to us before testing](/overview/contact). For questions, [join our Discord](https://discord.gg/dwxpRHHVWX).
+
 :::
+
+:::info Paid Plans Only
+
+We are encouraging developer feedback during our small testing phase. When our beta testing phase is over, **the JSON-RPC relay will be available on the "Developer" plan** and up. [View our subscription pricing plans](https://hgraph.com/hedera).
+
+:::
+
+Hgraph's new Hedera JSON-RPC relay brings new levels of EVM compatibility to the ecosystem. If you're interested in becoming an early tester, **[follow the steps below](#become-an-early-beta-tester)**.
 
 The Hedera JSON-RPC Relay enables developers to interact with the Hedera network using Ethereum-compatible JSON-RPC methods. This allows seamless integration of Ethereum-based tools, such as wallets and developer frameworks, with the Hedera blockchain.
 
