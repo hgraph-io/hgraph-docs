@@ -9,6 +9,12 @@ title: AI Assistant
 
 The **[Hgraph Assistant](https://hgraph.com/assistant)** is a specialized, finely-tuned AI assistant designed to help developers easily interact with the Hgraph GraphQL API for querying Hedera Mirror Node Data. It is built to assist users with constructing, troubleshooting, and optimizing GraphQL queries, ensuring seamless access to Hedera's transaction history, token data, smart contract results, and more.
 
+:::note Provide your feedback
+
+Share ideas, report bugs and ask us questions. The more feedback we get, the better we can improve our Hgraph AI Assistant. Please **[fill out this form to submit feedback](https://forms.gle/FwNZGzmqe7PAtmHfA)**.
+
+:::
+
 ## Why the Assistant Was Created
 
 Our friendly, helpful assistant was developed to:
@@ -76,6 +82,12 @@ Follow these do's and dont's below to most effectively interact with the Hgraph 
 
 By following these best practices, you’ll get faster, clearer, and more effective assistance when working with the Hgraph Assistant.
 
+:::note Provide your feedback
+
+Share ideas, report bugs and ask us questions. The more feedback we get, the better we can improve our Hgraph AI Assistant. Please **[fill out this form to submit feedback](https://forms.gle/FwNZGzmqe7PAtmHfA)**.
+
+:::
+
 ---
 
 ## What is Hgraph?
@@ -120,5 +132,5 @@ Some queries require additional processing and should be optimized:
 Some queries will require further compute or additional database management.
 
 :::info Hgraph Assistant is in Alpha
-We are still building and testing the Hgraph Assistant, more things are planned! Please help us by [providing feedback](/overview/contact) so we can improve the Hgraph assistant.
+Share ideas, report bugs and ask us questions. The more feedback we get, the better we can improve our Hgraph AI Assistant. Please **[fill out this form to submit feedback](https://forms.gle/FwNZGzmqe7PAtmHfA)**.
 :::
