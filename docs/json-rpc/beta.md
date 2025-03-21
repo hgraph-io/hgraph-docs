@@ -37,11 +37,11 @@ See more information [on our pricing page](/overview/pricing).
 ## API Endpoints
 Beta testers can interact with the JSON-RPC relay through the following endpoints:
 
-### Testnet Endpoint (Recommended for Testing)
+### Testnet Endpoint (For Testing Only)
 ```
 https://testnet.hedera.api.hgraph.io/rpc
 ```
-### Mainnet Endpoint (For Production Testing)
+### Mainnet Endpoint (For Testing Only)
 ```
 https://mainnet.hedera.api.hgraph.io/rpc
 ```
@@ -49,12 +49,13 @@ https://mainnet.hedera.api.hgraph.io/rpc
 
 ## Authentication
 - API requests require an API key for authentication.
-- You can obtain an API key by [visiting our website and signing up](https://hgraph.com/hedera)!
+- You can obtain an API key by [creating an account](https://dashboard.hgraph.com)!
 
 ### How to Use the API Key
-Include the API key in your request headers:
-```bash
--H "X-API-KEY: <YOUR_API_KEY>"
+Include the API key in your URL for path-based authentication:
+
+```
+https://testnet.hedera.api.hgraph.io/<API-KEY>/rpc
 ```
 
 ## Testing the Relay
@@ -64,9 +65,9 @@ You can test the JSON-RPC relay by making a simple `curl` request to check the n
 ```bash
 curl --verbose -X POST \
 -H "Content-Type: application/json" \
--H "X-API-KEY: <YOUR_API_KEY>" \
 -d '{"jsonrpc":"2.0","id":"2","method":"eth_chainId","params":[null]}' \
-https://testnet.hedera.api.hgraph.io/rpc
+https://testnet.hedera.api.hgraph.io/<YOUR_API_KEY>/rpc
+
 ```
 
 ### Expected Response
@@ -90,11 +91,6 @@ The relay supports a subset of Ethereum JSON-RPC methods for interacting with th
 | `eth_sendRawTransaction` | Sends a signed transaction to the network. |
 
 For a full list of supported methods, refer to the [Hedera JSON-RPC Relay API documentation](https://github.com/hashgraph/hedera-json-rpc-relay/blob/main/docs/rpc-api.md).
-
-## Notes & Considerations
-- Test with the Testnet Endpoint: Before deploying on mainnet, test your integrations using `https://testnet.hedera.api.hgraph.io/rpc`.
-- API Key Protection: Do not share your API key. Use environment variables to store it securely.
-- Feedback Needed: The `/rpc` endpoint is in its early stages, and user feedback will shape its future structure.
 
 ---
 
