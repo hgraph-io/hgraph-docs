@@ -55,19 +55,19 @@ https://mainnet.hedera.api.hgraph.io/rpc
 Include the API key in your URL for path-based authentication:
 
 ```
-https://testnet.hedera.api.hgraph.io/<API-KEY>/rpc
+https://testnet.hedera.api.hgraph.io/v1/<YOUR_API_KEY>/rpc
 ```
 
 ## Testing the Relay
 You can test the JSON-RPC relay by making a simple `curl` request to check the network chain ID.
 
 ### Example: Get Network Chain ID
+
 ```bash
 curl --verbose -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","id":"2","method":"eth_chainId","params":[null]}' \
-https://testnet.hedera.api.hgraph.io/<YOUR_API_KEY>/rpc
-
+https://testnet.hedera.api.hgraph.io/v1/<YOUR_API_KEY>/rpc
 ```
 
 ### Expected Response
