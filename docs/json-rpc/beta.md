@@ -10,12 +10,6 @@ Hgraph's JSON-RPC relay endpoints are for beta testing only at this current time
 
 :::
 
-:::info Paid Plans Only
-
-We are encouraging developer feedback during our small testing phase. When our beta testing phase is over, **the JSON-RPC relay will be available on the "Developer" plan** and up. [View our subscription pricing plans](https://hgraph.com/hedera).
-
-:::
-
 Hgraph's new Hedera JSON-RPC relay brings new levels of EVM compatibility to the ecosystem. If you're interested in becoming an early tester, **[follow the steps below](#become-an-early-beta-tester)**.
 
 The Hedera JSON-RPC Relay enables developers to interact with the Hedera network using Ethereum-compatible JSON-RPC methods. This allows seamless integration of Ethereum-based tools, such as wallets and developer frameworks, with the Hedera blockchain.
@@ -25,6 +19,12 @@ The relay follows the [JSON-RPC 2.0 Specification](https://www.jsonrpc.org/speci
 Hgraph offers reliable, fast acces to the Hedera JSON-RPC relay and will select some customers to be early beta testers. 
 
 ## Requirements
+
+:::info Paid Plans Only After Beta
+
+We are encouraging developer feedback during our small testing phase. When our beta testing phase is over, **the JSON-RPC relay will be available on the "Developer" plan** and up. [View our subscription pricing plans](https://hgraph.com/hedera).
+
+:::
 
 The Hedera JSON-RPC relay will be available on the following Hgraph susbcription plans at launch:
 - Developer
@@ -105,6 +105,12 @@ For a full list of supported methods, refer to the [Hedera JSON-RPC Relay API do
    - Let us know you're interested in becoming a beta tester!
 
 For further details and technical insights, refer to the official [Hedera JSON-RPC Relay GitHub repository](https://github.com/hashgraph/hedera-json-rpc-relay/blob/main/docs/rpc-api.md).
+
+:::warning Important Note
+
+Hgraph's JSON-RPC relay endpoints are for beta testing only at this current time. **If you plan on making many *write transactions*** (transactions that get sent to consensus nodes), [please reach out to us before testing](/overview/contact). For questions, [join our Discord](https://discord.gg/dwxpRHHVWX).
+
+:::
 
 ### Support
 For any issues or questions, [contact support](/support).
