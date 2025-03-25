@@ -12,7 +12,7 @@ Hgraph's JSON-RPC relay endpoints are for beta testing only at this current time
 
 Hgraph's new Hedera JSON-RPC relay brings new levels of EVM compatibility to the ecosystem. If you're interested in becoming an early tester, **[follow the steps below](#become-an-early-beta-tester)**.
 
-The Hedera JSON-RPC Relay enables developers to interact with the Hedera network using Ethereum-compatible JSON-RPC methods. This allows seamless integration of Ethereum-based tools, such as wallets and developer frameworks, with the Hedera blockchain.
+The Hedera JSON-RPC Relay enables developers to interact with the Hedera network using Ethereum-compatible JSON-RPC methods. This allows seamless integration of Ethereum-based tools, such as wallets and developer frameworks, with the Hedera blockchain. [View the official repository on Hiero](https://github.com/hiero-ledger/hiero-json-rpc-relay).
 
 The relay follows the [JSON-RPC 2.0 Specification](https://www.jsonrpc.org/specification) and implements a subset of the [Ethereum JSON-RPC APIs](https://ethereum.github.io/execution-apis/api-documentation/) to facilitate smart contract interactions and transaction execution.
 
@@ -90,7 +90,7 @@ The relay supports a subset of Ethereum JSON-RPC methods for interacting with th
 | `eth_call` | Executes a smart contract read operation. |
 | `eth_sendRawTransaction` | Sends a signed transaction to the network. |
 
-For a full list of supported methods, refer to the [Hedera JSON-RPC Relay API documentation](https://github.com/hashgraph/hedera-json-rpc-relay/blob/main/docs/rpc-api.md).
+For a full list of supported methods, refer to the [Hedera JSON-RPC Relay API documentation](https://github.com/hiero-ledger/hiero-json-rpc-relay/blob/main/docs/rpc-api.md).
 
 ---
 
@@ -100,7 +100,7 @@ For a full list of supported methods, refer to the [Hedera JSON-RPC Relay API do
 3. Submit a ticket in [Discord](https://discord.gg/dwxpRHHVWX).
    - Let us know you're interested in becoming a beta tester!
 
-For further details and technical insights, refer to the official [Hedera JSON-RPC Relay GitHub repository](https://github.com/hashgraph/hedera-json-rpc-relay/blob/main/docs/rpc-api.md).
+For further details and technical insights, refer to the official [Hedera JSON-RPC Relay GitHub repository](https://github.com/hiero-ledger/hiero-json-rpc-relay).
 
 :::warning Important Note
 
