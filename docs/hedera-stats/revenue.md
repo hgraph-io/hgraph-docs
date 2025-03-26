@@ -1,8 +1,9 @@
 ---
-sidebar_position: 7
+sidebar_position: 4
+title: Network Revenue
 ---
 
-# Network Revenue
+# Network Revenue via Fees
 
 Hedera’s revenue is calculated by summing the total transaction fees collected across the mainnet. Every transaction pays fees to various recipients: consensus nodes, the staking account (`0.0.800`), the node rewards account (`0.0.801`), and the Hedera treasury (`0.0.98`). By examining each transaction, determining the total fee paid, and identifying which portions go to these accounts, Hedera can determine its total network revenue. This total can then be categorized by service type—Hedera Token Service (HTS), Hedera Smart Contract Service (HSCS), Hedera Consensus Service (HCS), and Other (including file and account operations)—to provide a detailed breakdown of revenue sources.
 
