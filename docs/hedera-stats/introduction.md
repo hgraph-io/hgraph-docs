@@ -61,10 +61,13 @@ Create new GraphQL queries and troubleshoot problems with our new expert AI assi
 
 :::
 
-## Additional Links
+## Additional Resources
 
+- [Hedera Mirror Node Docs](https://docs.hedera.com/hedera/core-concepts/mirror-nodes)
 - [Hedera Transaction Result Codes](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionResult.js)
 - [Hedera Transaction Types](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js)
+- [DeFiLlama API Documentation](https://defillama.com/docs/api)
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/current/)
 
 ## Key Terms
 
