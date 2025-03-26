@@ -1,5 +1,6 @@
 ---
-sidebar_position: 14
+sidebar_position: 6
+title: Transactions Per Second
 ---
 
 # Transactions Per Second (TPS)

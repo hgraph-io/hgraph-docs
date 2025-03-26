@@ -1,8 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 9
+title: Active Accounts
 ---
 
-# Active Accounts
+# All Active Accounts
 
 An active account is any account that pays for at least one transaction during a given timeframe. Unlike accounts that only receive value or tokens, active accounts must initiate an operation—such as sending a payment or interacting with a service—thus demonstrating direct network engagement.
 

@@ -1,5 +1,6 @@
 ---
-sidebar_position: 5
+sidebar_position: 11
+title: Retail Accounts
 ---
 
 # Active Retail Accounts

@@ -1,8 +1,9 @@
 ---
-sidebar_position: 13
+sidebar_position: 3
+title: HBAR Price
 ---
 
-# HBAR Price
+# HBAR Price: Average USD Conversion
 
 > *Note: Documentation for these "Hedera Stats" are currently being developed.*
 

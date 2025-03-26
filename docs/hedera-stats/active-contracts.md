@@ -1,8 +1,9 @@
 ---
-sidebar_position: 6
+sidebar_position: 12
+title: Active Contracts
 ---
 
-# Active Contracts
+# Active Smart Contracts
 
 The Active Contracts statistic shows the number of unique smart contracts that have been successfully invoked at least once in a state-changing (gas-consuming) transaction within a specified time window. This highlights real engagement with the network, rather than just counting deployed but idle contracts.
 

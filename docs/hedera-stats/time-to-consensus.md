@@ -1,13 +1,18 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
+title: Time to Consensus
 ---
 
-# Time to Consensus
+# Network Time to Consensus
 
 Below is a methodology based on the SecC2RC metric, which stands for measuring the elapsed time from when a transaction reaches consensus until its corresponding record is created and available. In practice, this statistic is used as a proxy for "time to consensus" or "network latency" on the Hedera network.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
+:::
+
+:::info Incremental update setup
+This Hedera Stat requires Prometheus and access to Hedera telemetry data. Please refer to the [installation guide](installation) for more information.
 :::
 
 ## Methodology
@@ -44,7 +49,7 @@ Once the difference is calculated for individual transactions, these values are:
 - Hedera mirror node
 - Hedera telemetry data
 
-### **Fetching Time to Consensus via GraphQL**
+## Fetching Time to Consensus via GraphQL
 To retrieve the average time to consensus on March 1st 2025, use the following query:
 
 ```graphql
@@ -67,28 +72,18 @@ query AvgTimeToConsensus {
 
 The result will be in nanoseconds.
 
----
+## Available Time Periods
 
-## Incremental update setup
+- `hour`
 
-### 1. Install prometheus to use promtool cli
+## SQL Implementation
 
-This downloads the Prometheus archive, extracts it, and copies the promtool binary to your `PATH` for easy command-line access.
+Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Time to Consensus** statistic outlined in this methodology.
 
-```bash
-curl -L -O https://github.com/prometheus/prometheus/releases/download/v3.1.0/prometheus-3.1.0.linux-amd64.tar.gz
-tar -xvf prometheus-3.1.0.linux-amd64.tar.gz
-# one way to add the tool to the PATH
-cp prometheus-3.1.0.linux-amd64/promtool /usr/bin
-```
+SQL Function: `ecosystem.dashboard_avg_time_to_consensus`
 
-### 2. Add a cron job
+**[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
-This opens your `crontab` to schedule a job that runs a script every hour and logs its output for monitoring purposes.
-
-```bash
-crontab -e
-1 * * * * cd /path/to/hedera-stats/src/time-to-consensus && bash ./run.sh >> ./.raw/cron.log 2>&1
-```
-
-[View the GitHub repository](https://github.com/hgraph-io/hedera-stats) for more information.
+## Dependencies
+* Hedera mirror node
+* Prometheus (**[see installation](installation)**)
