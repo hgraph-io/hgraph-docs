@@ -32,21 +32,62 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 Monitoring TVL helps gauge overall network health by reflecting the amount of capital engaged in Hedera's DeFi ecosystem. For example, a rising TVL indicates increasing liquidity and user confidence.
 
-## Fetching Total Value Locked (TVL) via GraphQL
+## GraphQL API Examples
 
-To retrieve daily TVL for the last 90 days, utilizing `timestamp_range` instead of `start_date` and `end_date`:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch most recent Hedera TVL
 
 ```graphql
-query TVLOverTime {
-  ecosystem_metric(
-    where: {name: {_eq: "network_tvl"}, period: {_eq: "day"}}
-    order_by: {start_date: desc}
-    limit: 90
+query GetLatestTVL {
+  metric: ecosystem_metric(
+    where: {name: {_eq: "network_tvl"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
   ) {
     total
-    timestamp_range
+    end_date
   }
 }
+```
+
+### Fetch daily TVL (timeseries)
+
+```graphql
+query DailyTVL {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "network_tvl"}, period: {_eq: "day"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### 7 day percentage change
+
+```graphql
+query TVL7DayChange {
+  current: ecosystem_metric(
+    where: {name: {_eq: "network_tvl"}, period: {_eq: "day"}}
+    order_by: {start_date: desc}
+    limit: 1
+    offset: 0
+  ) {
+    total
+  }
+  previous: ecosystem_metric(
+    where: {name: {_eq: "network_tvl"}, period: {_eq: "day"}}
+    order_by: {start_date: desc}
+    limit: 1
+    offset: 7
+  ) {
+    total
+  }
+}
+
 ```
 
 ## Available Time Periods

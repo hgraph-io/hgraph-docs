@@ -44,23 +44,38 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 If you are measuring weekly developer accounts, review all transactions in the past seven days. If an account created a token, minted a new batch of tokens, or deployed a smart contract during that week, it is classified as a developer account for that period.
 
-## Fetching Developer Accounts via GraphQL
+## GraphQL API Examples
 
-To retrieve the hourly Active Developer Accounts over the last 1 day, use the following query:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch current active developer accounts (hourly average)
 
 ```graphql
-query DeveloperAccounts24hrs {
-  ecosystem_metric(
-    where: {
-      name: {_eq: "active_developer_accounts"},
-      period: {_eq: "hour"},
-      end_date: {_is_null: false}
+query ActiveAccountsNow {
+  metric: ecosystem_metric_aggregate(
+    where: {name: {_eq: "active_developer_accounts"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
+  ) {
+    aggregate {
+      sum {
+        total
+      }
     }
-    order_by: {start_date: desc}
-    limit: 24
+  }
+}
+```
+
+### Fetch hourly active developer accounts (timeseries)
+
+```graphql
+query HourlyActiveAccounts {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "active_developer_accounts"}, period: {_eq: "hour"}}
   ) {
     total
-    start_date
     end_date
   }
 }

@@ -29,17 +29,39 @@ A contract is considered "active" if it has executed at least one successful (st
 - Any data retrieval operations or RPC queries that do not modify state.
 - Failed transactions that do not lead to state changes (i.e., `transaction_result != 22`).
 
-## Fetching Active Contracts via GraphQL
+## GraphQL API Examples
 
-To retrieve the number of active contracts within the last hour, use this query:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch current active smart contracts (hourly average)
 
 ```graphql
-query ActiveSmartContracts1hr {
-  ecosystem_metric(
-    where: { name: { _eq: "active_smart_contracts" }, period: { _eq: "hour" } }
+query ActiveSmartContracts {
+  metric: ecosystem_metric_aggregate(
+    where: {name: {_eq: "active_smart_contracts"}}
+    order_by: {end_date: desc_nulls_last}
     limit: 1
   ) {
+    aggregate {
+      sum {
+        total
+      }
+    }
+  }
+}
+```
+
+### Fetch hourly active smart contracts (timeseries)
+
+```graphql
+query HourlyActiveSmartContracts {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "active_smart_contracts"}, period: {_eq: "hour"}}
+  ) {
     total
+    end_date
   }
 }
 ```
@@ -47,9 +69,6 @@ query ActiveSmartContracts1hr {
 ## Available Time Periods
 
 - `hour`
-- `day`
-- `month`
-- `year` (coming soon)
 
 If the query returns missing data, verify that contract execution transactions exist for the given period and check for potential API delays.
 

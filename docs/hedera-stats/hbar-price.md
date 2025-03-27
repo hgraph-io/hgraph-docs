@@ -27,19 +27,59 @@ Each period represents the latest available HBAR price at the given timestamp. T
 - HBAR price fluctuations can be influenced by market conditions, trading volume, and broader crypto trends.
 - Future enhancements may include price history tracking, moving averages, and volatility analysis.
 
-## Fetching HBAR Price via GraphQL
+## GraphQL API Examples
 
-To retrieve the current HBAR price:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch most recent HBAR price
 
 ```graphql
 query GetHBARPrice {
-  ecosystem_metric(
-    where: {name: {_eq: "avg_usd_conversion"}, period: {_eq: "hour"}}
-    order_by: {start_date: desc}
+  metric: ecosystem_metric(
+    where: {name: {_eq: "avg_usd_conversion"}}
+    order_by: {end_date: desc_nulls_last}
     limit: 1
   ) {
     total
-    start_date
+    end_date
+  }
+}
+```
+
+### Fetch hourly HBAR price (timeseries)
+
+```graphql
+query HourlyHBARPrice {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "avg_usd_conversion"}, period: {_eq: "hour"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### 7 day percentage change (168 hours)
+
+```graphql
+query HBAR7DayChange {
+  current: ecosystem_metric(
+    where: {name: {_eq: "avg_usd_conversion"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc}
+    limit: 1
+    offset: 0
+  ) {
+    total
+  }
+  previous: ecosystem_metric(
+    where: {name: {_eq: "avg_usd_conversion"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc}
+    limit: 1
+    offset: 168
+  ) {
+    total
   }
 }
 ```
