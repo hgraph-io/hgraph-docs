@@ -34,18 +34,58 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 
 This statistic helps gauge network health by tracking the liquidity and adoption of stablecoins, which are vital for smooth financial transactions. A sustained increase in stablecoin market cap can indicate growing confidence in the network's financial ecosystem.
 
-## GraphQL Query Example
-To retrieve the daily Stablecoin Market Cap over the last 30 days, use the following query:
+## GraphQL API Examples
+
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch most recent Stablecoin Marketcap
 
 ```graphql
-query StablecoinMarketCapDaily {
-  ecosystem_metric(
-    where: { name: { _eq: "stablecoin_marketcap" }, period: { _eq: "day" } }
-    order_by: { start_date: desc }
-    limit: 30
+query GetLatestSCMC {
+  metric: ecosystem_metric(
+    where: {name: {_eq: "stablecoin_marketcap"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
   ) {
-    start_date
+    total
     end_date
+  }
+}
+```
+
+### Fetch daily Stablecoin Marketcap (timeseries)
+
+```graphql
+query DailyStablecoinMarketCap {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "stablecoin_marketcap"}, period: {_eq: "day"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### 30 day percentage change
+
+```graphql
+query SCMC7DayChange {
+  current: ecosystem_metric(
+    where: {name: {_eq: "stablecoin_marketcap"}, period: {_eq: "day"}}
+    order_by: {start_date: desc}
+    limit: 1
+    offset: 0
+  ) {
+    total
+  }
+  previous: ecosystem_metric(
+    where: {name: {_eq: "stablecoin_marketcap"}, period: {_eq: "day"}}
+    order_by: {start_date: desc}
+    limit: 1
+    offset: 7
+  ) {
     total
   }
 }

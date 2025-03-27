@@ -39,24 +39,39 @@ Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. A
 
 Suppose you are measuring weekly active accounts. You look at all transactions over the past seven days. Any unique account number that appears as the “payer” or “initiator” in at least one transaction during that seven-day window is counted as an active account for that week.
 
-## Fetching Active Accounts via GraphQL
+## GraphQL API Examples
 
-To retrieve the average hourly active accounts in January 2025, use the following query:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch current active accounts (hourly average)
 
 ```graphql
-query TotalActiveAccountsAvg {
-  ecosystem_metric_aggregate(
-    where: {
-      name: { _eq: "active_accounts" },
-      period: { _eq: "hour" },
-      start_date: { _gte: "2025-01-01T00:00:00", _lt: "2025-02-01T00:00:00" }
-    }
+query ActiveAccountsNow {
+  metric: ecosystem_metric_aggregate(
+    where: {name: {_eq: "active_accounts"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
   ) {
     aggregate {
-      avg {
+      sum {
         total
       }
     }
+  }
+}
+```
+
+### Fetch hourly active accounts (timeseries)
+
+```graphql
+query HourlyActiveAccounts {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "active_accounts"}, period: {_eq: "hour"}}
+  ) {
+    total
+    end_date
   }
 }
 ```

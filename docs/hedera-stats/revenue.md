@@ -61,17 +61,65 @@ Hedera offers multiple services, and transactions can be grouped based on the ty
 
 Network revenue serves as a proxy for overall transaction volume and network adoption, indicating that a healthy network sees consistent fee generation from active use. Sudden fluctuations in this metric can quickly alert operators to potential performance issues or shifts in user behavior.
 
-## Fetching Network Revenue via GraphQL
-To retrieve Hedera's network revenue for 2025, use the following query:
+## GraphQL API Examples
+
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+> Note: The results for `total` are stored in `tinybar` (devide by `100,000,000`).
+
+### Fetch total revenue for the last 24hrs
 
 ```graphql
-query TotalNetworkRevenue2025 {
-  ecosystem_metric_aggregate(
-    where: {
-      name: { _in: ["network_fee", "transaction_fees"] }, 
-      period: { _eq: "hour" },
-      start_date: { _gte: "2025-01-01T00:00:00" } # Adjust as needed
+query RevenueLast24hrs {
+  metric: ecosystem_metric_aggregate(
+    where: {name: {_eq: "network_fee"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 24
+  ) {
+    aggregate {
+      sum {
+        total
+      }
     }
+  }
+}
+```
+
+### Fetch hourly revenue (timeseries)
+
+```graphql
+query HourlyNetworkRevenue {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "transaction_fees"}, period: {_eq: "hour"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### 7 day percentage change (period comparison)
+
+```graphql
+query Change7Days {
+  current: ecosystem_metric_aggregate(
+    where: {name: {_eq: "network_fee"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc_nulls_last}
+    limit: 168
+  ) {
+    aggregate {
+      sum {
+        total
+      }
+    }
+  }
+  previous: ecosystem_metric_aggregate(
+    where: {name: {_eq: "network_fee"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc_nulls_last}
+    offset: 168
+    limit: 168
   ) {
     aggregate {
       sum {
@@ -81,9 +129,8 @@ query TotalNetworkRevenue2025 {
   }
 }
 
+# Percent Change = ((current - previous) / previous) * 100
 ```
-
-> Note: The results are in tinybar.
 
 ## Available Time Periods
 

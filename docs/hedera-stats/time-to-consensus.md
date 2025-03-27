@@ -45,21 +45,60 @@ Once the difference is calculated for individual transactions, these values are:
 - Averaged over a 24 hour time window to provide a stable metric.
 - Indexed for querying via Hgraph's GraphQL API
 
-## Dependencies
-- Hedera mirror node
-- Hedera telemetry data
+## GraphQL API Examples
 
-## Fetching Time to Consensus via GraphQL
-To retrieve the average time to consensus on March 1st 2025, use the following query:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch most recent network time to consensus
 
 ```graphql
-query AvgTimeToConsensus {
-  ecosystem_metric_aggregate(
-    where: {
-      name: { _eq: "avg_time_to_consensus" },
-      period: { _eq: "hour" },
-      start_date: { _gte: "2025-03-01T00:00:00", _lte: "2025-03-02T00:00:00" }
+query GetRecentNetworkTTC {
+  metric: ecosystem_metric(
+    where: {name: {_eq: "avg_time_to_consensus"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### Fetch hourly average TTC (timeseries)
+
+```graphql
+query HourlyNetworkTTC {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "hour"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### 7 day percentage change (period comparison)
+
+```graphql
+query TTC7DayChange {
+  current: ecosystem_metric_aggregate(
+    where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc_nulls_last}
+    limit: 168
+  ) {
+    aggregate {
+      avg {
+        total
+      }
     }
+  }
+  previous: ecosystem_metric_aggregate(
+    where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc_nulls_last}
+    offset: 168
+    limit: 168
   ) {
     aggregate {
       avg {
@@ -69,8 +108,6 @@ query AvgTimeToConsensus {
   }
 }
 ```
-
-The result will be in nanoseconds.
 
 ## Available Time Periods
 

@@ -33,19 +33,66 @@ The TPS info comes as a list where each entry has:
 - If the start and end times you pick don’t cover a full chunk, we still use the whole chunk’s seconds to calculate TPS. This can make the TPS look a bit lower for incomplete chunks.  
 - You can zoom in on specific time ranges by picking your own start and end times, measured in nanoseconds.
 
-## Fetching Average Hourly TPS
+## GraphQL API Examples
 
-To fetch hourly transactions per second for the last day:
+Test out these queries using our [developer playground](https://dashboard.hgraph.com).
+
+### Fetch most recent network TPS
 
 ```graphql
-query Get24hrTPS {
-  ecosystem_metric(
-    where: {name: {_eq: "network_tps"}, period: {_eq: "hour"}}
-    order_by: {start_date: desc}
-    limit: 24
+query GetRecentNetworkTPS {
+  metric: ecosystem_metric(
+    where: {name: {_eq: "network_tps"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
   ) {
     total
-    start_date
+    end_date
+  }
+}
+```
+
+### Fetch hourly average TPS (timeseries)
+
+```graphql
+query HourlyNetworkTPS {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 8760
+    where: {name: {_eq: "network_tps"}, period: {_eq: "hour"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### 7 day percentage change (period comparison)
+
+```graphql
+query TPS7DayAvgChange {
+  current: ecosystem_metric_aggregate(
+    where: {name: {_eq: "network_tps"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc_nulls_last}
+    limit: 168
+  ) {
+    aggregate {
+      avg {
+        total
+      }
+    }
+  }
+  previous: ecosystem_metric_aggregate(
+    where: {name: {_eq: "network_tps"}, period: {_eq: "hour"}}
+    order_by: {start_date: desc_nulls_last}
+    offset: 168
+    limit: 168
+  ) {
+    aggregate {
+      avg {
+        total
+      }
+    }
   }
 }
 ```
