@@ -11,6 +11,8 @@ Hedera’s revenue is calculated by summing the total transaction fees collected
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`network_fee`**
+
 ## Methodology
 
 ### Transaction-Level Fee Analysis
@@ -71,7 +73,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 
 ```graphql
 query RevenueLast24hrs {
-  metric: ecosystem_metric_aggregate(
+  ecosystem_metric_aggregate(
     where: {name: {_eq: "network_fee"}}
     order_by: {end_date: desc_nulls_last}
     limit: 24
@@ -89,10 +91,10 @@ query RevenueLast24hrs {
 
 ```graphql
 query HourlyNetworkRevenue {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
-    where: {name: {_eq: "transaction_fees"}, period: {_eq: "hour"}}
+    where: {name: {_eq: "network_fee"}, period: {_eq: "hour"}}
   ) {
     total
     end_date

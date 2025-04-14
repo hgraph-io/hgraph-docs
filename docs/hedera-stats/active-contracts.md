@@ -11,6 +11,8 @@ The Active Contracts statistic shows the number of unique smart contracts that h
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`active_smart_contracts`**
+
 ## Methodology
 
 ### Identify Smart Contract Accounts
@@ -33,11 +35,11 @@ A contract is considered "active" if it has executed at least one successful (st
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current active smart contracts (hourly average)
+### Fetch current active smart contracts (hourly)
 
 ```graphql
 query ActiveSmartContracts {
-  metric: ecosystem_metric_aggregate(
+  ecosystem_metric_aggregate(
     where: {name: {_eq: "active_smart_contracts"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -55,7 +57,7 @@ query ActiveSmartContracts {
 
 ```graphql
 query HourlyActiveSmartContracts {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "active_smart_contracts"}, period: {_eq: "hour"}}

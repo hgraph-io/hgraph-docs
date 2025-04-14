@@ -12,6 +12,8 @@ Transactions Per Second (TPS) measures the number of transactions processed by t
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`network_tps`**
+
 ## Methodology
 - **Where the Data Comes From:**  
   Every transaction on the Hedera network gets a timestamp showing the exact moment the network agreed it happened. These timestamps are like a logbook of everything the network does.
@@ -41,7 +43,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 
 ```graphql
 query GetRecentNetworkTPS {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     where: {name: {_eq: "network_tps"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -56,7 +58,7 @@ query GetRecentNetworkTPS {
 
 ```graphql
 query HourlyNetworkTPS {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "network_tps"}, period: {_eq: "hour"}}

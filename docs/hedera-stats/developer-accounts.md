@@ -11,6 +11,8 @@ An active developer account is any account that performs at least one “creativ
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`active_developer_accounts`**
+
 ## Methodology
 
 ### Qualifying Transaction Types
@@ -48,11 +50,11 @@ If you are measuring weekly developer accounts, review all transactions in the p
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current active developer accounts (hourly average)
+### Fetch current active developer accounts (hourly)
 
 ```graphql
 query ActiveAccountsNow {
-  metric: ecosystem_metric_aggregate(
+  ecosystem_metric_aggregate(
     where: {name: {_eq: "active_developer_accounts"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -70,7 +72,7 @@ query ActiveAccountsNow {
 
 ```graphql
 query HourlyActiveAccounts {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "active_developer_accounts"}, period: {_eq: "hour"}}

@@ -10,6 +10,8 @@ The Stablecoin Market Cap metric tracks the market capitalization of stablecoins
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`stablecoin_marketcap`**
+
 ## Methodology
 
 ### Data Source
@@ -42,7 +44,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 
 ```graphql
 query GetLatestSCMC {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     where: {name: {_eq: "stablecoin_marketcap"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -57,7 +59,7 @@ query GetLatestSCMC {
 
 ```graphql
 query DailyStablecoinMarketCap {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "stablecoin_marketcap"}, period: {_eq: "day"}}

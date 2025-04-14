@@ -11,6 +11,8 @@ Total Value Locked (TVL) represents the total amount of assets locked within dec
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`network_tvl`**
+
 ## Methodology
 
 1. **Data Source**  
@@ -40,7 +42,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 
 ```graphql
 query GetLatestTVL {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     where: {name: {_eq: "network_tvl"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -55,7 +57,7 @@ query GetLatestTVL {
 
 ```graphql
 query DailyTVL {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "network_tvl"}, period: {_eq: "day"}}
