@@ -5,14 +5,14 @@ title: HBAR Price
 
 # HBAR Price: Average USD Conversion
 
-> *Note: Documentation for these "Hedera Stats" are currently being developed.*
-
 ## Overview
 The HBAR Price statistic provides the latest price of HBAR, aggregated from multiple sources. This statistic is essential for tracking the value of HBAR in real time and analyzing price trends over different timeframes.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
+
+GraphQL API Endpoint: **`avg_usd_conversion`**
 
 ## Methodology
 - **Data Sources:** Binance, Bybit, OKX, Bitget and MEXC
@@ -46,7 +46,7 @@ query GetHBARPrice {
 }
 ```
 
-### Fetch hourly HBAR price (timeseries)
+### Fetch hourly HBAR price (timeseries, 365 days)
 
 ```graphql
 query HourlyHBARPrice {

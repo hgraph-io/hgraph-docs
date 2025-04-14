@@ -13,6 +13,8 @@ This means that before “retail accounts” are identified, any smart contract 
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`active_retail_accounts`**
+
 ## Methodology
 
 ### Prerequisites
@@ -40,7 +42,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 
 ```graphql
 query ActiveRetailAccounts {
-  metric: ecosystem_metric_aggregate(
+  ecosystem_metric_aggregate(
     where: {name: {_eq: "active_retail_accounts"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -58,7 +60,7 @@ query ActiveRetailAccounts {
 
 ```graphql
 query HourlyActiveRetailAccounts {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "active_retail_accounts"}, period: {_eq: "hour"}}

@@ -15,6 +15,8 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 This Hedera Stat requires Prometheus and access to Hedera telemetry data. Please refer to the [installation guide](installation) for more information.
 :::
 
+GraphQL API Endpoint: **`avg_time_to_consensus`**
+
 ## Methodology
 
 ### Identify the Relevant Timestamps:
@@ -53,7 +55,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 
 ```graphql
 query GetRecentNetworkTTC {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     where: {name: {_eq: "avg_time_to_consensus"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -68,7 +70,7 @@ query GetRecentNetworkTTC {
 
 ```graphql
 query HourlyNetworkTTC {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "hour"}}

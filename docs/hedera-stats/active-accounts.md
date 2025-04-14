@@ -11,6 +11,8 @@ An active account is any account that pays for at least one transaction during a
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
+GraphQL API Endpoint: **`active_accounts`**
+
 ## Methodology
 
 ### Definition of an Active Account:
@@ -43,11 +45,11 @@ Suppose you are measuring weekly active accounts. You look at all transactions o
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current active accounts (hourly average)
+### Fetch current active accounts (hourly)
 
 ```graphql
 query ActiveAccountsNow {
-  metric: ecosystem_metric_aggregate(
+  ecosystem_metric_aggregate(
     where: {name: {_eq: "active_accounts"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
@@ -65,7 +67,7 @@ query ActiveAccountsNow {
 
 ```graphql
 query HourlyActiveAccounts {
-  metric: ecosystem_metric(
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "active_accounts"}, period: {_eq: "hour"}}
