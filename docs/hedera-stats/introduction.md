@@ -17,6 +17,19 @@ Hgraph offers API access to various quantitative statistical measurements for th
 See these Hedera Stats in action using **[Hgraph's new Grafana dashboard](https://hgraph.com/hedera/stats)** demo! A dynamic layout, customizations, visualizations and more.
 :::
 
+## Hedera Stats Demo Walkthrough Video
+
+Brandon Davenport, Director of Communications at Hgraph, gives a detailed walkthrough of the Hedera Stats demo Grafana dashboard, explains the documentation and methodology, and answers frequently asked questions.
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/8yWw7wZ0H64"
+  title="Hedera Stats Demo Grafana Dashboard Walkthrough"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+
 ## Why create Hedera Stats?
 
 Understanding the health of the Hedera network is important. To measure this, we use things like TVL, revenue, active accounts, time to consensus and more. What's most important is ensuring the methodology used for these calculations are transparent and comprehensive to maintain consistency. It's also vital to ensure easy access to these data feeds via APIs. Hgraph's data infrastructure makes this possible.
