@@ -26,6 +26,19 @@ The **[Hgraph Account Dashboard](https://dashboard.hgraph.com)** provides an int
 
 Also, [learn more about our plans](https://hgraph.com/hedera) and [services for enterprise & startups](https://hgraph.com/enterprise).
 
+## Dashboard Walkthrough Video
+
+Brandon Davenport, Director of Communications at Hgraph, gives a detailed walkthrough of our new API pricing plans, the Account Dashboard and other tools.
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/S1HWji93YsI"
+  title="Hgraph API Pricing and Dashboard Walkthrough"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+
 ---
 
 ## Features
