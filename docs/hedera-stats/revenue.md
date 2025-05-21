@@ -134,6 +134,31 @@ query Change7Days {
 # Percent Change = ((current - previous) / previous) * 100
 ```
 
+### Fetch hourly revenue in USD (timeseries)
+
+```graphql
+query NetworkRevenueUSD {
+  revenue: ecosystem_metric(
+    where: {name: {_eq: "network_fee"}, period: {_eq: "hour"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 720
+  ) {
+    total
+    end_date
+  }
+  hbar: ecosystem_metric(
+    where: {name: {_eq: "avg_usd_conversion"}, period: {_eq: "hour"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 720
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+> **Note:** Divide `network_fee` by `100,000,000` and `avg_usd_conversion` by `100,000`, then multiply the results to get revenue in USD. Example: `network_fee = 26216238387` (262.16 HBAR) and `avg_usd_conversion = 18215` ($0.18) gives **$47.75**.
+
 ## Available Time Periods
 
 - `hour`
