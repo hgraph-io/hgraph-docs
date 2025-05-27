@@ -41,6 +41,18 @@ This subset of active accounts represents users relying on Ethereum‑style keys
 
 *Coming soon:* SQL logic for joining `entity` and `transaction` tables based on ECDSA key encoding and result filtering.
 
+```sql
+SELECT COUNT(DISTINCT e.id) AS active_ecdsa_keyed_accounts
+FROM entity e
+JOIN transaction t
+  ON t.payer_account_id = e.id
+WHERE e.type = 'ACCOUNT'
+  -- skip the first two bytes of the serialized Key and check the actual key prefix
+  AND encode(substring(e.key FROM 3 FOR 1), 'hex') IN ('02', '03')
+  AND t.result = 22                        -- SUCCESS
+  AND t.consensus_timestamp >= (EXTRACT(EPOCH FROM NOW() - INTERVAL '90 days') * 1e9)::BIGINT;
+```
+
 ## Dependencies
 
 - Hedera mirror node
