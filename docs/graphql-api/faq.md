@@ -38,11 +38,7 @@ All amount values returned are in tiny bars. Be sure to convert the tinybars to 
 const HBAR = amountReturnedFromQuery / 100000000
 ```
 
-## Timestamps
-
-
-
-### Why does the timestamp return as a string when the schema is defined as `bigint`?
+## Why does the timestamp return as a string when the schema is defined as `bigint`?
 
 Although timestamps are defined as `bigint` in the schema and returned numerically, JavaScript's built-in `Number` type cannot precisely represent integers beyond a certain size, particularly at nanosecond precision. When such large numbers are parsed directly in JavaScript, they may become rounded or truncated due to precision limitations.
 
