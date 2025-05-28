@@ -40,9 +40,26 @@ const HBAR = amountReturnedFromQuery / 100000000
 
 ## Timestamps
 
-Timestamps are returned in numeric form, `bigint`, and do not fit into the standard javascript `Number` type. One has to take explicit care in conserving the precision of nanoseconds.
 
-The adjacent example demonstrates getting the latest transaction from and fetching a corresponding REST API endpoint utilizing the `json-bigint` library.
+
+### Why does the timestamp return as a string when the schema is defined as `bigint`?
+
+Although timestamps are defined as `bigint` in the schema and returned numerically, JavaScript's built-in `Number` type cannot precisely represent integers beyond a certain size, particularly at nanosecond precision. When such large numbers are parsed directly in JavaScript, they may become rounded or truncated due to precision limitations.
+
+To preserve full numeric precision, especially at nanosecond accuracy, frontend applications typically convert these `bigint` timestamps to strings. This approach ensures accurate and lossless representation of timestamp values. Our API intentionally uses `bigint` numeric types internally because the JSON specification does not impose limits on integer precision. Consequently, applications should explicitly handle conversion to strings on the frontend to maintain precision.
+
+If you run the **below example**, you will see that in some applications, including our [GraphQL Query Playground](/overview/dashboard#graphql-playground), the `consensus_timestamp` has quotes placed in the reponse: 
+
+```graphql
+query LatestConsensusTimestamp {
+  transaction(limit: 1, order_by: {consensus_timestamp: desc}) {
+    consensus_timestamp
+    consensus_timestamp_iso8601
+  }
+}
+```
+
+**This example** demonstrates getting the latest transaction from and fetching a corresponding REST API endpoint utilizing the `json-bigint` library.
 
 ```javascript
 import fetch from 'isomorphic-fetch'
@@ -119,7 +136,7 @@ main()
 
 :::warning
 
-Without special care, timestamps will be silently rounded!
+Without explicitly handling large timestamps, precision will be lost due to silent rounding.
 
 :::
 
