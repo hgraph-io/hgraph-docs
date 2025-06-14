@@ -9,7 +9,7 @@ The **[Hgraph GQL Assistant](https://hgraph.com/assistant)** is a specialized, f
 
 Have questions or feedback? **[Let us know here](https://forms.gle/FwNZGzmqe7PAtmHfA)**.
 
-![image](../static/img/Hgraph-AI-Docs-Hero.png)
+![image](../static/img/Hgraph-AI-Docs-Hero.jpg)
 
 ## Why the Assistant Was Created
 
