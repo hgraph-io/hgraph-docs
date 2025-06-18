@@ -188,3 +188,8 @@ transactions {
   sender_account_id
 }
 ```
+### What is the enum of `airdrop_state` in `token_airdrop`?
+
+- **CANCELLED**: The airdrop was terminated before completion.
+- **CLAIMED**: The airdrop has been successfully claimed by the user.
+- **PENDING**: The airdrop is scheduled or awaiting claim.
