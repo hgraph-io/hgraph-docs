@@ -70,7 +70,14 @@ query HourlyActiveSmartContracts {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `hour`
+- `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
 
 If the query returns missing data, verify that contract execution transactions exist for the given period and check for potential API delays.
 

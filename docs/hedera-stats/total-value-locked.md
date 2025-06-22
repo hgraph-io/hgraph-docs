@@ -94,6 +94,8 @@ query TVL7DayChange {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `day`
 
 TVL is aggregated from DeFi protocols and updates daily. If values seem incorrect, check the most recent transactions affecting locked assets.

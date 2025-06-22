@@ -83,6 +83,11 @@ query HourlyActiveAccounts {
 The `period` field supports the following values:
 
 - `hour`
+- `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
 
 ## SQL Implementation
 

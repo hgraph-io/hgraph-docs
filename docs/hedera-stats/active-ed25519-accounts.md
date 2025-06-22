@@ -80,7 +80,14 @@ query HourlyActiveED25519Accounts {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `hour`
+- `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
 
 ## SQL Implementation
 

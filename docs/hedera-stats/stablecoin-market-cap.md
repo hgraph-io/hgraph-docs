@@ -95,6 +95,8 @@ query SCMC7DayChange {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `day`
 
 ## SQL Implementation

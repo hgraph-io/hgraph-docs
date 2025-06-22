@@ -87,7 +87,14 @@ query HourlyActiveAccounts {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `hour`
+- `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
 
 Developer accounts are identified based on contract creation, token minting, and other advanced operations. If no results are found, check for missing transactions in the period.
 

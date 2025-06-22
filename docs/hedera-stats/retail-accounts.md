@@ -73,7 +73,14 @@ query HourlyActiveRetailAccounts {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `hour`
+- `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
 
 Retail accounts exclude smart contracts and developer accounts. Ensure that the queried period contains active transactions from non-developer users.
 

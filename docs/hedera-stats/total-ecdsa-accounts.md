@@ -69,7 +69,13 @@ query DailyTotalECDSAAccounts {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
 
 ## SQL Implementation
 

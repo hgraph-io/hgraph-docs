@@ -161,7 +161,10 @@ query NetworkRevenueUSD {
 
 ## Available Time Periods
 
+The `period` field supports the following values:
+
 - `hour`
+- `day`
 
 ## SQL Implementation
 
