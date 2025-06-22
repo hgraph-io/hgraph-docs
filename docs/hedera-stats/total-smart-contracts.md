@@ -15,11 +15,20 @@ GraphQL API Endpoint: **`total_smart_contracts`**
 
 ## Methodology
 
-This SQL function sums all contract creations to produce the latest total.
+### Identifying Smart Contract Creations
 
-```sql
-SELECT * FROM ecosystem.dashboard_total_smart_contracts('day');
-```
+The **Total Smart Contracts** metric is calculated by identifying all smart contract creation events within the Hedera ledger. The function performs the following steps to determine the cumulative total:
+
+- **Entity Type Filter**: Only entities with `type = 'CONTRACT'` are included in the calculation, ensuring that only genuine smart contract creation events are counted. Other entity types, such as accounts or tokens, are excluded.
+- **Creation Timestamp Range**: Smart contracts are considered only if their `created_timestamp` falls within the user-specified `start_timestamp` and `end_timestamp` boundaries. This enables calculation over custom or pre-defined time windows and guarantees that only contracts created within the requested period are considered.
+
+This filtering produces a list of all new smart contract entities deployed within the specified timeframe.
+
+### Processing Logic
+
+- **Extraction**: Each qualifying row from the entity table represents a single smart contract creation, as determined by its `created_timestamp`.
+- **Aggregation Preparation**: The set of creation timestamps generated in the previous step is prepared for further processing, such as grouping or period assignment, in downstream logic.
+- **Resulting Set**: The resulting dataset is a time-bounded collection of all contract creation events. Each entry corresponds to a unique contract deployment and serves as the atomic unit for aggregation and cumulative calculations downstream.
 
 ## GraphQL API Examples
 

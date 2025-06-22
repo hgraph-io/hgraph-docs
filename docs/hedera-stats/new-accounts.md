@@ -15,12 +15,28 @@ GraphQL API Endpoint: **`new_accounts`**
 
 ## Methodology
 
-The SQL function counts accounts whose `created_timestamp` falls within each time bucket.
+### Defining a "New Account"
 
-```sql
--- Example invocation
-SELECT * FROM ecosystem.dashboard_new_accounts('hour');
-```
+- **Account Type Identification:**
+  - Only entities with `type = 'ACCOUNT'` are considered for this metric.
+  - Other entity types are ignored.
+
+- **Creation Timestamp:**
+  - Each qualifying account must have a `created_timestamp`—the point in time when the account was first registered on the Hedera network.
+
+### Filtering by Time Window
+
+- **User-Specified Time Range:**
+  - The metric is calculated over a time window defined by the function parameters:
+    - `start_timestamp`: The lower bound of the window (inclusive).
+    - `end_timestamp`: The upper bound (inclusive; defaults to the current time if not specified).
+  - Only accounts created **between** these timestamps are included in the calculation.
+
+### Data Source
+
+- **Entity Table:**
+  - The source of truth for account creation events is the `entity` table, which records all entities (accounts, contracts, tokens, etc.) observed on the Hedera network.
+  - Only rows where `type = 'ACCOUNT'` are selected in this process.
 
 ## GraphQL API Examples
 

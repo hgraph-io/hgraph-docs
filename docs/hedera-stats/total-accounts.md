@@ -15,11 +15,23 @@ GraphQL API Endpoint: **`total_accounts`**
 
 ## Methodology
 
-The SQL function returns the latest count of accounts by summing all account creation events.
+### Identifying Account Creation Events
 
-```sql
-SELECT * FROM ecosystem.dashboard_total_accounts('day');
-```
+- **Entity Table Filtering:**  
+  Only rows from the `entity` table where the entity `type` is `'ACCOUNT'` are included. This step ensures that the statistic exclusively counts newly created Hedera accounts and excludes other entities such as contracts or tokens.
+
+### Event Selection Logic
+
+- **Qualifying Records:**  
+  Each qualifying record represents a unique Hedera account created within the defined interval. No other entity types or account lifecycle events (such as updates or deletions) are considered—only original account creation timestamps are included.
+
+- **Resulting Dataset:**  
+  The resulting dataset consists of all Hedera account creation events occurring within the target time range. This serves as the foundational data for all downstream calculations in the metric.
+
+### Calculation Process
+
+- The filtered list of account creation timestamps is used to aggregate and report the total number of accounts created, as well as to compute cumulative totals for each reporting period.
+- Only successful account creation events that meet both the entity type and timestamp requirements contribute to the reported statistics.
 
 ## GraphQL API Examples
 

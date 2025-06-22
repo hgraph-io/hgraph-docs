@@ -15,11 +15,28 @@ GraphQL API Endpoint: **`new_ecdsa_accounts`**
 
 ## Methodology
 
-The SQL function filters new accounts by key type and groups them by time bucket.
+### Identifying New ECDSA Accounts
 
-```sql
-SELECT * FROM ecosystem.dashboard_new_ecdsa_accounts('hour');
-```
+The metric counts newly created Hedera accounts that use an ECDSA public key, with precise filters applied to ensure accuracy.
+
+#### Qualifying Criteria for Accounts
+
+To be included in the count, each account must meet **all** of the following requirements:
+
+- **Entity Type:** The account must have `type = 'ACCOUNT'`.
+- **Key Field:** The `key` field must be present (`key IS NOT NULL`), indicating the account is cryptographically controlled.
+- **Creation Timestamp:** The account must have a valid creation timestamp (`created_timestamp IS NOT NULL`).
+- **ECDSA Key Identification:**  
+  - The account’s `public_key` must begin with either `02` or `03`.  
+  - These hexadecimal prefixes correspond to compressed ECDSA public keys, as specified in common cryptographic standards.  
+  - Accounts with public keys starting with other values are excluded.
+- **Time Window:**  
+  - Only accounts created within the requested time period are included.  
+  - This is enforced by ensuring `created_timestamp` falls between the given `start_timestamp` and `end_timestamp` parameters (expressed in nanoseconds since epoch).
+
+#### Extraction Process
+
+All rows in the `entity` table are evaluated against the criteria above. Accounts that match **every** filter are included as "new ECDSA accounts" for subsequent counting and aggregation.
 
 ## GraphQL API Examples
 

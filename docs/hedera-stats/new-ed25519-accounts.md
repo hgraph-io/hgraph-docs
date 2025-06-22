@@ -15,11 +15,27 @@ GraphQL API Endpoint: **`new_ed25519_accounts`**
 
 ## Methodology
 
-The SQL function selects accounts with ED25519 keys and tallies creations per time bucket.
+### Identifying New ED25519 Accounts
 
-```sql
-SELECT * FROM ecosystem.dashboard_new_ed25519_accounts('hour');
-```
+This metric quantifies new Hedera accounts established with an ED25519 cryptographic key during the chosen time period.
+
+#### Qualifying Criteria for Accounts
+
+To be counted as a "new ED25519 account," each entity must satisfy **all** of the following conditions:
+
+- **Entity Type:** The entity record must have `type = 'ACCOUNT'`, ensuring only account creations are considered.
+- **Presence of a Key:** The account must include a non-null cryptographic `key` field (`key IS NOT NULL`). This confirms the account is controlled by a cryptographic key and is not a system or non-custodial entity.
+- **ED25519 Key Identification:**  
+  - The hexadecimal representation of the `key` field must begin with the prefix `0x1220` (expressed as the byte sequence `\x1220`).  
+  - This prefix is the unique marker for ED25519 public keys as stored on Hedera, following protobuf serialization conventions.
+  - Accounts whose `key` field begins with any other value are excluded from this metric.
+- **Creation Timestamp Within Period:**  
+  - The account’s `created_timestamp` (expressed in nanoseconds since the Unix epoch) must fall within the specified `start_timestamp` and `end_timestamp` parameters.  
+  - Only accounts created during the requested window are included in the count.
+
+#### Extraction Process
+
+Every row in the `entity` table is evaluated against the full set of qualifying criteria above. Only accounts that match **all** filters are selected as new ED25519 accounts for the requested measurement interval.
 
 ## GraphQL API Examples
 

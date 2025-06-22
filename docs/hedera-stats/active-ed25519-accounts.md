@@ -15,11 +15,31 @@ GraphQL API Endpoint: **`active_ed25519_accounts`**
 
 ## Methodology
 
-The SQL function counts successful transactions by ED25519 payer accounts for each period.
+### Identifying Active ED25519 Accounts
 
-```sql
-SELECT * FROM ecosystem.dashboard_active_ed25519_accounts('hour');
-```
+This statistic measures the count of unique Hedera accounts that use ED25519 public keys and act as payers in at least one transaction within each reporting period.
+
+#### Account and Transaction Qualification
+
+To determine which accounts are included in this metric, the following filters are applied:
+
+- **Transaction Inclusion:** Only transactions with a consensus timestamp that falls within the specified measurement window are considered.
+- **Payer Account Selection:** For each transaction, the `payer_account_id` is used to look up the associated entity, ensuring the payer is a valid account.
+- **ED25519 Key Requirement:** The account’s public key must begin with the byte sequence `0x1220`, which is the canonical prefix for ED25519 keys in Hedera. This ensures that only accounts secured with an ED25519 key type are included.
+- **Account Validity Checks:** Accounts must have a non-null key and a non-null creation timestamp to ensure they are valid, initialized accounts present on the network.
+
+Only transactions paid for by accounts passing all these filters are considered in the calculation.
+
+#### Unique Account Counting per Period
+
+For each defined period, the function counts the number of unique payer accounts that qualified in the above steps. Each account is counted at most once per period, regardless of how many transactions it paid for within that interval.
+
+#### Output Construction
+
+The final output, for each period, includes:
+
+- The time interval corresponding to the start and end of the period.
+- The total count of distinct active ED25519 accounts that paid for at least one transaction in that period.
 
 ## GraphQL API Examples
 

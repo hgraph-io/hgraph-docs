@@ -15,11 +15,38 @@ GraphQL API Endpoint: **`new_smart_contracts`**
 
 ## Methodology
 
-Contracts created within each time bucket are aggregated using their creation timestamps.
+### Qualifying Contract Creations
 
-```sql
-SELECT * FROM ecosystem.dashboard_new_smart_contracts('hour');
-```
+To be counted as a **new smart contract**, an event must satisfy **all** the following criteria:
+
+- **Entity Type:** The entity must be a smart contract (`entity.type = 'CONTRACT'`).
+- **Direct Transaction Match:** The entity’s `created_timestamp` must exactly match the `consensus_timestamp` of a transaction (`entity.created_timestamp = transaction.consensus_timestamp`).
+- **Transaction Type:** The transaction must be a `CONTRACTCREATEINSTANCE` operation (`transaction.type = 8`). See [Hedera Mirror Node transaction codes](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-rest/model/transactionType.js) for all type and result definitions.
+- **Transaction Success:** The transaction must have completed successfully (`transaction.result = 22`).
+
+### Data Selection Process
+
+1. **Join entity and transaction tables:**  
+   - For each contract entity, find the matching transaction by equating the contract’s `created_timestamp` to the transaction’s `consensus_timestamp`.
+
+2. **Apply Qualification Filters:**  
+   - Only include records where:
+     - The entity is of type `CONTRACT`.
+     - The transaction type is `8` (`CONTRACTCREATEINSTANCE`).
+     - The transaction result is `22` (success).
+     - The timestamp is within the desired range.
+
+3. **Output:**  
+   - The result is a filtered list of all smart contracts **successfully created** in the specified time window.
+
+### Metric Calculation
+
+Once all qualifying contract creation events have been selected, they are **passed to downstream logic for time-based aggregation**. The *all_entries* step ensures only valid, direct, and successful smart contract creations are counted for each interval.
+
+#### Example
+
+If a smart contract is created at timestamp `T`, and there is a transaction at `T` of type `8` and result `22`, this contract is included in the metric.  
+Contracts without a matching successful creation transaction, or created outside the window, are excluded.
 
 ## GraphQL API Examples
 

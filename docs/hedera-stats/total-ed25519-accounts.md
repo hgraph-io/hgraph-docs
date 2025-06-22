@@ -15,11 +15,21 @@ GraphQL API Endpoint: **`total_ed25519_accounts`**
 
 ## Methodology
 
-The SQL function aggregates all ED25519 account creations to produce a cumulative count.
+### Identifying ED25519 Accounts
 
-```sql
-SELECT * FROM ecosystem.dashboard_total_ed25519_accounts('day');
-```
+To determine the number of Hedera accounts that utilize ED25519 cryptographic keys, the calculation begins by scanning the canonical entity table for all accounts that meet the following criteria:
+
+- **Account Type**: Only rows where `type = 'ACCOUNT'` are included, ensuring that non-account entities (e.g., contracts, tokens) are excluded.
+- **Time Window**: Only accounts whose `created_timestamp` falls within the user-specified `start_timestamp` and `end_timestamp` range are included in the calculation.
+- **ED25519 Key Filter**: Accounts must have a key field whose byte pattern matches the expected prefix for ED25519 public keys. Specifically, the key must start with the hex sequence `1220` (interpreted as `substring(key from 1 for 2) = E'\\x1220'`), which is a network-standard identifier for ED25519 key encoding.
+
+This filtering results in a collection of all account creation events for ED25519-backed accounts within the desired period.
+
+### Processing Logic
+
+- **Account Extraction**: Each qualifying row from the entity table yields a single ED25519 account creation event, as determined by the `created_timestamp`.
+- **Period Assignment**: Each creation timestamp is mapped to the corresponding reporting period (e.g., daily) as specified by the function argument.
+- **Resulting Set**: The final dataset represents all new ED25519 accounts created within each time window, ready for further aggregation and reporting.
 
 ## GraphQL API Examples
 
