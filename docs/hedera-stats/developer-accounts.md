@@ -1,6 +1,6 @@
 ---
 sidebar_position: 18
-title: Developer Accounts
+title: Active Developer Accounts
 ---
 
 # Active Developer Accounts

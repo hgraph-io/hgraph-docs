@@ -1,6 +1,6 @@
 ---
 sidebar_position: 22
-title: Active Contracts
+title: Active Smart Contracts
 ---
 
 # Active Smart Contracts

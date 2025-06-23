@@ -1,13 +1,13 @@
 ---
 sidebar_position: 23
-title: Misc
+title: Other (Unofficial)
 ---
 
-# Un-official Endpoints
+# Un-official Stats
 
 These are all other Hedera network statistics available using Hgraph's GraphQL API. These network statistics do not have an official documentation or methodology.
 
-## Query Endpoints
+## Query Stats
 
 You can dynamically fetch all available metrics using the following GraphQL query:
 
