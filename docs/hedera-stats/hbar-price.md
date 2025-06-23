@@ -12,7 +12,7 @@ The HBAR Price statistic provides the latest price of HBAR, aggregated from mult
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`avg_usd_conversion`**
+Hedera Stat Name: **`avg_usd_conversion`**
 
 ## Methodology
 - **Data Sources:** Binance, Bybit, OKX, Bitget and MEXC

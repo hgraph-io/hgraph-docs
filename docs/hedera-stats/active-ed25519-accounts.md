@@ -5,13 +5,13 @@ title: Active ED25519 Accounts
 
 # Active ED25519 Accounts
 
-This metric counts unique ED25519 accounts that pay transaction fees within the chosen timeframe.
+This statistic counts unique ED25519 accounts that pay transaction fees within the chosen timeframe.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`active_ed25519_accounts`**
+Hedera Stat Name: **`active_ed25519_accounts`**
 
 ## Methodology
 
@@ -33,13 +33,6 @@ Only transactions paid for by accounts passing all these filters are considered 
 #### Unique Account Counting per Period
 
 For each defined period, the function counts the number of unique payer accounts that qualified in the above steps. Each account is counted at most once per period, regardless of how many transactions it paid for within that interval.
-
-#### Output Construction
-
-The final output, for each period, includes:
-
-- The time interval corresponding to the start and end of the period.
-- The total count of distinct active ED25519 accounts that paid for at least one transaction in that period.
 
 ## GraphQL API Examples
 

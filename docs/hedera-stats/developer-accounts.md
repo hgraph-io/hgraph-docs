@@ -11,7 +11,7 @@ An active developer account is any account that performs at least one “creativ
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`active_developer_accounts`**
+Hedera Stat Name: **`active_developer_accounts`**
 
 ## Methodology
 

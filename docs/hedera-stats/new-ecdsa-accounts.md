@@ -11,7 +11,7 @@ Counts newly created Hedera accounts that use an ECDSA key during the selected p
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`new_ecdsa_accounts`**
+Hedera Stat Name: **`new_ecdsa_accounts`**
 
 ## Methodology
 

@@ -5,13 +5,13 @@ title: Total ED25519 Accounts
 
 # Total ED25519 Accounts
 
-This metric reports the total number of Hedera accounts that use ED25519 keys.
+This statistic reports the total number of Hedera accounts that use ED25519 keys.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`total_ed25519_accounts`**
+Hedera Stat Name: **`total_ed25519_accounts`**
 
 ## Methodology
 
@@ -24,12 +24,6 @@ To determine the number of Hedera accounts that utilize ED25519 cryptographic ke
 - **ED25519 Key Filter**: Accounts must have a key field whose byte pattern matches the expected prefix for ED25519 public keys. Specifically, the key must start with the hex sequence `1220` (interpreted as `substring(key from 1 for 2) = E'\\x1220'`), which is a network-standard identifier for ED25519 key encoding.
 
 This filtering results in a collection of all account creation events for ED25519-backed accounts within the desired period.
-
-### Processing Logic
-
-- **Account Extraction**: Each qualifying row from the entity table yields a single ED25519 account creation event, as determined by the `created_timestamp`.
-- **Period Assignment**: Each creation timestamp is mapped to the corresponding reporting period (e.g., daily) as specified by the function argument.
-- **Resulting Set**: The final dataset represents all new ED25519 accounts created within each time window, ready for further aggregation and reporting.
 
 ## GraphQL API Examples
 

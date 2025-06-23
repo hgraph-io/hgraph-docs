@@ -11,7 +11,7 @@ Active ECDSA Accounts counts unique accounts with ECDSA keys that pay for at lea
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`active_ecdsa_accounts`**
+Hedera Stat Name: **`active_ecdsa_accounts`**
 
 ## Methodology
 

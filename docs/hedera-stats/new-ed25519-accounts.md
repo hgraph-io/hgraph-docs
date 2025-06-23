@@ -5,13 +5,13 @@ title: New ED25519 Accounts
 
 # New ED25519 Accounts
 
-This metric counts new Hedera accounts that use an ED25519 key during the specified period.
+This stat counts new Hedera accounts that use an ED25519 key during the specified period.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`new_ed25519_accounts`**
+Hedera Stat Name: **`new_ed25519_accounts`**
 
 ## Methodology
 

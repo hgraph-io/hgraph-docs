@@ -13,7 +13,7 @@ This means that before “retail accounts” are identified, any smart contract 
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`active_retail_accounts`**
+Hedera Stat Name: **`active_retail_accounts`**
 
 ## Methodology
 

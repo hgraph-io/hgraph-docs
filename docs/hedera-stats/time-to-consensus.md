@@ -15,7 +15,7 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 This Hedera Stat requires Prometheus and access to Hedera telemetry data. Please refer to the [installation guide](installation) for more information.
 :::
 
-GraphQL API Endpoint: **`avg_time_to_consensus`**
+Hedera Stat Name: **`avg_time_to_consensus`**
 
 ## Methodology
 

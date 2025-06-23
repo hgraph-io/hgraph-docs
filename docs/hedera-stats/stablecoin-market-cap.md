@@ -10,7 +10,7 @@ The Stablecoin Market Cap metric tracks the market capitalization of stablecoins
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`stablecoin_marketcap`**
+Hedera Stat Name: **`stablecoin_marketcap`**
 
 ## Methodology
 

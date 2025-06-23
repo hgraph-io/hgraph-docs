@@ -5,13 +5,13 @@ title: New Accounts
 
 # New Accounts
 
-The **New Accounts** metric tracks the number of Hedera accounts created within a specific time period.
+New Accounts tracks the number of Hedera accounts created within a specific time period.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`new_accounts`**
+Hedera Stat Name: **`new_accounts`**
 
 ## Methodology
 
@@ -30,13 +30,7 @@ GraphQL API Endpoint: **`new_accounts`**
   - The metric is calculated over a time window defined by the function parameters:
     - `start_timestamp`: The lower bound of the window (inclusive).
     - `end_timestamp`: The upper bound (inclusive; defaults to the current time if not specified).
-  - Only accounts created **between** these timestamps are included in the calculation.
-
-### Data Source
-
-- **Entity Table:**
-  - The source of truth for account creation events is the `entity` table, which records all entities (accounts, contracts, tokens, etc.) observed on the Hedera network.
-  - Only rows where `type = 'ACCOUNT'` are selected in this process.
+  - Only accounts created between these timestamps are included in the calculation.
 
 ## GraphQL API Examples
 

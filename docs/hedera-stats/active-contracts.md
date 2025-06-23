@@ -11,7 +11,7 @@ The Active Contracts statistic shows the number of unique smart contracts that h
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`active_smart_contracts`**
+Hedera Stat Name: **`active_smart_contracts`**
 
 ## Methodology
 

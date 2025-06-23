@@ -11,7 +11,7 @@ This statistic shows the cumulative number of Hedera accounts secured with ECDSA
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`total_ecdsa_accounts`**
+Hedera Stat Name: **`total_ecdsa_accounts`**
 
 ## Methodology
 
@@ -24,11 +24,6 @@ To determine the total number of Hedera accounts created with ECDSA cryptographi
 - **ECDSA Key Filter**: The account’s `public_key` field must begin with either `02` or `03` (i.e., `public_key LIKE '02%' OR public_key LIKE '03%'`). These hexadecimal prefixes indicate compressed ECDSA public keys on the Hedera network.
 
 This filtering isolates all account creation events specifically for ECDSA-backed accounts within the requested time window.
-
-### Processing Logic
-
-- **Account Extraction**: Each qualifying row from the `entity` table represents a single ECDSA account creation event, identified by its unique `created_timestamp`.
-- **Data Preparation**: The resulting set—`all_entries`—is composed of all such creation timestamps that match the ECDSA filter and fall within the specified time range. This collection serves as the foundation for subsequent aggregation and period-based analysis in the function’s later stages.
 
 ## GraphQL API Examples
 

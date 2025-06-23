@@ -11,7 +11,7 @@ Hedera’s revenue is calculated by summing the total transaction fees collected
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`network_fee`**
+Hedera Stat Name: **`network_fee`**
 
 ## Methodology
 

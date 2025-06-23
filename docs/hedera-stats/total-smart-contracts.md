@@ -5,19 +5,19 @@ title: Total Smart Contracts
 
 # Total Smart Contracts
 
-The **Total Smart Contracts** metric represents the cumulative number of contract entities deployed on Hedera.
+Total Smart Contracts represents the cumulative number of contract entities deployed on Hedera.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`total_smart_contracts`**
+Hedera Stat Name: **`total_smart_contracts`**
 
 ## Methodology
 
 ### Identifying Smart Contract Creations
 
-The **Total Smart Contracts** metric is calculated by identifying all smart contract creation events within the Hedera ledger. The function performs the following steps to determine the cumulative total:
+The Total Smart Contracts stat is calculated by identifying all smart contract creation events within the Hedera ledger. The function performs the following steps to determine the cumulative total:
 
 - **Entity Type Filter**: Only entities with `type = 'CONTRACT'` are included in the calculation, ensuring that only genuine smart contract creation events are counted. Other entity types, such as accounts or tokens, are excluded.
 - **Creation Timestamp Range**: Smart contracts are considered only if their `created_timestamp` falls within the user-specified `start_timestamp` and `end_timestamp` boundaries. This enables calculation over custom or pre-defined time windows and guarantees that only contracts created within the requested period are considered.

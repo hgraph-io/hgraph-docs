@@ -11,7 +11,7 @@ An active account is any account that pays for at least one transaction during a
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
 :::
 
-GraphQL API Endpoint: **`active_accounts`**
+Hedera Stat Name: **`active_accounts`**
 
 ## Methodology
 
