@@ -41,32 +41,29 @@ Every row in the `entity` table is evaluated against the full set of qualifying 
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current new ED25519 accounts (hourly)
+### Fetch current new Ed25519 accounts (hourly)
 
 ```graphql
-query NewED25519AccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "new_ed25519_accounts"}}
+query NewEd25519AccountsHour {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "new_ed25519_accounts"}, period: {_eq: "hour"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch hourly new ED25519 accounts (timeseries)
+### Fetch daily new Ed25519 accounts for 1 month (timeseries)
 
 ```graphql
-query HourlyNewED25519Accounts {
+query DailyNewEd25519Accounts {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "new_ed25519_accounts"}, period: {_eq: "hour"}}
+    limit: 30
+    where: {name: {_eq: "new_ed25519_accounts"}, period: {_eq: "day"}}
   ) {
     total
     end_date

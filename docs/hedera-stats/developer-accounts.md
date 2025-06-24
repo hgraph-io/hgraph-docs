@@ -53,29 +53,26 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 ### Fetch current active developer accounts (hourly)
 
 ```graphql
-query ActiveAccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "active_developer_accounts"}}
+query ActiveDeveloperAccountsNow {
+  ecosystem_metric(
+    where: {name: {_eq: "active_developer_accounts"}, period: {_eq: "hour"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    end_date
+    total
   }
 }
 ```
 
-### Fetch hourly active developer accounts (timeseries)
+### Fetch daily active developer accounts for 1 month (timeseries)
 
 ```graphql
-query HourlyActiveAccounts {
+query DailyActiveDeveloperAccounts {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "active_developer_accounts"}, period: {_eq: "hour"}}
+    limit: 30
+    where: {name: {_eq: "active_developer_accounts"}, period: {_eq: "day"}}
   ) {
     total
     end_date

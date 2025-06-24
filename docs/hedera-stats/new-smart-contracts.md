@@ -35,29 +35,26 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 ### Fetch current new smart contracts (hourly)
 
 ```graphql
-query NewSmartContractsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "new_smart_contracts"}}
+query NewContractsHour {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "new_smart_contracts"}, period: {_eq: "hour"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch hourly new smart contracts (timeseries)
+### Fetch daily new smart contracts for 1 month (timeseries)
 
 ```graphql
-query HourlyNewSmartContracts {
+query DailyNewContracts {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "new_smart_contracts"}, period: {_eq: "hour"}}
+    limit: 30
+    where: {name: {_eq: "new_smart_contracts"}, period: {_eq: "day"}}
   ) {
     total
     end_date

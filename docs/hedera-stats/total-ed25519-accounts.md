@@ -29,32 +29,29 @@ This filtering results in a collection of all account creation events for ED2551
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current total ED25519 accounts
+### Fetch current total ECDSA accounts (day)
 
 ```graphql
-query TotalED25519AccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "total_ed25519_accounts"}}
+query TotalEd25519AccountsDay {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "total_ed25519_accounts"}, period: {_eq: "day"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch daily total ED25519 accounts (timeseries)
+### Fetch monthly total Ed25519 accounts for 1 year (timeseries)
 
 ```graphql
-query DailyTotalED25519Accounts {
+query TotalEd25519AccountsMonthly {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "total_ed25519_accounts"}, period: {_eq: "day"}}
+    limit: 12
+    where: {name: {_eq: "total_ed25519_accounts"}, period: {_eq: "month"}}
   ) {
     total
     end_date

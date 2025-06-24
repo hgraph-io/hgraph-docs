@@ -45,7 +45,7 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 ```graphql
 query GetLatestSCMC {
   ecosystem_metric(
-    where: {name: {_eq: "stablecoin_marketcap"}}
+    where: {name: {_eq: "stablecoin_marketcap"}, period: {_eq: "day"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
   ) {

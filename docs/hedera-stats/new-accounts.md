@@ -39,29 +39,26 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 ### Fetch current new accounts (hourly)
 
 ```graphql
-query NewAccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "new_accounts"}}
+query NewAccountsHour {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "new_accounts"}, period: {_eq: "hour"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch hourly new accounts (timeseries)
+### Fetch daily new accounts for 1 month (timeseries)
 
 ```graphql
-query HourlyNewAccounts {
+query DailyNewAccounts {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "new_accounts"}, period: {_eq: "hour"}}
+    limit: 30
+    where: {name: {_eq: "new_accounts"}, period: {_eq: "day"}}
   ) {
     total
     end_date

@@ -35,32 +35,29 @@ A contract is considered "active" if it has executed at least one successful (st
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current active smart contracts (hourly)
+### Fetch current active contracts (hourly)
 
 ```graphql
-query ActiveSmartContracts {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "active_smart_contracts"}}
+query CurrentActiveContracts {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "active_smart_contracts"}, period: {_eq: "hour"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch hourly active smart contracts (timeseries)
+### Fetch weekly active accounts for 1 quarter (timeseries)
 
 ```graphql
-query HourlyActiveSmartContracts {
+query WeeklyActiveContracts {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "active_smart_contracts"}, period: {_eq: "hour"}}
+    limit: 12
+    where: {name: {_eq: "active_smart_contracts"}, period: {_eq: "week"}}
   ) {
     total
     end_date

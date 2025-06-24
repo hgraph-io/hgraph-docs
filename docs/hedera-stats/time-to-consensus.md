@@ -51,12 +51,12 @@ Once the difference is calculated for individual transactions, these values are:
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch most recent network time to consensus
+### Fetch most recent network time to consensus (hour)
 
 ```graphql
 query GetRecentNetworkTTC {
   ecosystem_metric(
-    where: {name: {_eq: "avg_time_to_consensus"}}
+    where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "hour"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
   ) {

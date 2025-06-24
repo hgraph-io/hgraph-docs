@@ -41,29 +41,26 @@ Test out these queries using our [developer playground](https://dashboard.hgraph
 ### Fetch current active ED25519 accounts (hourly)
 
 ```graphql
-query ActiveED25519AccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "active_ed25519_accounts"}}
+query ActiveEd25519AccountsNow {
+  ecosystem_metric(
+    where: {name: {_eq: "active_ed25519_accounts"}, period: {_eq: "hour"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch hourly active ED25519 accounts (timeseries)
+### Fetch daily active Ed25519 accounts for 1 year (timeseries)
 
 ```graphql
-query HourlyActiveED25519Accounts {
+query DailyActiveEd25519Accounts {
   ecosystem_metric(
+    where: {name: {_eq: "active_ed25519_accounts"}, period: {_eq: "day"}}
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "active_ed25519_accounts"}, period: {_eq: "hour"}}
+    limit: 365
   ) {
     total
     end_date

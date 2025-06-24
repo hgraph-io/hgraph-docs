@@ -28,32 +28,29 @@ Only rows from the `entity` table where the entity `type` is `'ACCOUNT'` are inc
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current total accounts
+### Fetch current total accounts (day)
 
 ```graphql
-query TotalAccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "total_accounts"}}
+query TotalAccountsDay {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "total_accounts"}, period: {_eq: "day"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch daily total accounts (timeseries)
+### Fetch monthly total accounts for 1 year (timeseries)
 
 ```graphql
-query DailyTotalAccounts {
+query TotalAccountsMonthly {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "total_accounts"}, period: {_eq: "day"}}
+    limit: 12
+    where: {name: {_eq: "total_accounts"}, period: {_eq: "month"}}
   ) {
     total
     end_date

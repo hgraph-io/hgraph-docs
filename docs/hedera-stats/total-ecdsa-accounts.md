@@ -29,32 +29,29 @@ This filtering isolates all account creation events specifically for ECDSA-backe
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current total ECDSA accounts
+### Fetch current total ECDSA accounts (day)
 
 ```graphql
-query TotalECDSAAccountsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "total_ecdsa_accounts"}}
+query TotalECDSAAccountsDay {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "total_ecdsa_accounts"}, period: {_eq: "day"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch daily total ECDSA accounts (timeseries)
+### Fetch monthly total ECDSA accounts for 1 year (timeseries)
 
 ```graphql
-query DailyTotalECDSAAccounts {
+query TotalECDSAAccountsMonthly {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "total_ecdsa_accounts"}, period: {_eq: "day"}}
+    limit: 12
+    where: {name: {_eq: "total_ecdsa_accounts"}, period: {_eq: "month"}}
   ) {
     total
     end_date

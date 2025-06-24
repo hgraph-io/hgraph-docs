@@ -115,4 +115,5 @@ SQL Function: `ecosystem.dashboard_network_tps`
 **[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
 ## Dependencies
-* Hedera mirror node
+
+- Hedera mirror node

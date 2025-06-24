@@ -34,32 +34,29 @@ This filtering produces a list of all new smart contract entities deployed withi
 
 Test out these queries using our [developer playground](https://dashboard.hgraph.com).
 
-### Fetch current total smart contracts
+### Fetch current total ECDSA accounts (day)
 
 ```graphql
-query TotalSmartContractsNow {
-  ecosystem_metric_aggregate(
-    where: {name: {_eq: "total_smart_contracts"}}
+query TotalSmartContractsDay {
+  ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
     limit: 1
+    where: {name: {_eq: "total_smart_contracts"}, period: {_eq: "day"}}
   ) {
-    aggregate {
-      sum {
-        total
-      }
-    }
+    total
+    end_date
   }
 }
 ```
 
-### Fetch daily total smart contracts (timeseries)
+### Fetch monthly total Ed25519 accounts for 1 year (timeseries)
 
 ```graphql
-query DailyTotalSmartContracts {
+query TotalSmartContractsMonthly {
   ecosystem_metric(
     order_by: {end_date: desc_nulls_last}
-    limit: 8760
-    where: {name: {_eq: "total_smart_contracts"}, period: {_eq: "day"}}
+    limit: 12
+    where: {name: {_eq: "total_smart_contracts"}, period: {_eq: "month"}}
   ) {
     total
     end_date
