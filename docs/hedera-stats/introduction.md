@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
-title: About
+title: Intro & About
+slug: /hedera-stats
 ---
 
 # About Hedera Stats
