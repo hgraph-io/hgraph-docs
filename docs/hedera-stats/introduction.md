@@ -43,20 +43,46 @@ Hgraph provides access to various Hedera network statistics via the GraphQL API.
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, **[get started here](https://www.hgraph.com/hedera)**.
 :::
 
-### Available Now
+## Mainnet Hedera Stats
 
-- **[HBAR Price](hbar-price)**
-- **[Network Revenue](revenue)**
-- **[Time to consensus](time-to-consensus)**
-- **[Transactions Per Second](transactions-per-second)**
-- **[Total Value Locked](total-value-locked)**
-- **[Stablecoin Market Cap](stablecoin-market-cap)**
-- **[All Active Accounts](active-accounts)**
-- **[Active Developer Accounts](developer-accounts)**
-- **[Active Retail Accounts](retail-accounts)**
-- **[Active Smart Contracts](active-contracts)**
+A breakdown of all available Hedera Stats on mainnet. Each link will take you to the methodology and the code snippit is the `name` of the stat in the `ecosystem_metric` table (utilized in GraphQL queries).
 
-*See these statistics in action on the [Hgraph Hedera Stats demo Grafana dashboard](https://hgraph.com/hedera/stats).*
+### HBAR & DeFi
+
+- [HBAR Price](hbar-price): `avg_usd_conversion`
+- [Total Value Locked](total-value-locked): `network_tvl`
+- [Stablecoin Market Cap](stablecoin-market-cap): `stablecoin_marketcap`
+
+### Network Performance
+
+- [Network Fees](revenue): `network_fees`
+- [Time to consensus](time-to-consensus): `avg_time_to_consensus`
+- [Transactions Per Second](transactions-per-second): `network_tps`
+
+### Activity & Engagement
+
+- Active Accounts:
+  - [All Accounts](active-accounts): `active_accounts`
+  - [Developer Accounts](developer-accounts): `active_developer_accounts`
+  - [Retail Accounts](retail-accounts): `active_retail_accounts`
+  - [ECDSA Accounts](active-ecdsa-accounts): `active_ecdsa_accounts`
+  - [Ed25519 Accounts](active-ed25519-accounts): `active_ed25519_accounts`
+- New Accounts:
+  - [All Accounts](new-accounts): `new_accounts`
+  - [ECDSA Accounts](new-ecdsa-accounts): `new_ecdsa_accounts`
+  - [Ed25519 Accounts](new-ed25519-accounts): `new_ed25519_accounts`
+- Total Accounts:
+  - [All Accounts](total-accounts): `total_accounts`
+  - [ECDSA Accounts](total-ecdsa-accounts): `total_ecdsa_accounts`
+  - [Ed25519 Accounts](total-ed25519-accounts): `total_ed25519_accounts`
+
+### EVM
+
+- [Active Smart Contracts](active-contracts)
+- [New Smart Contracts](new-smart-contracts)
+- [Total Smart Contracts](total-smart-contracts)
+
+> *See these statistics in action on the [Hgraph Hedera Stats demo Grafana dashboard](https://hgraph.com/hedera/stats).*
 
 ### Roadmap
 
