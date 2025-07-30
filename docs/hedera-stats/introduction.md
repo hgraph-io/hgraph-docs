@@ -49,38 +49,43 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
 
 ### HBAR & DeFi
 
-- [HBAR Price](hbar-price): `avg_usd_conversion`
-- [Total Value Locked](total-value-locked): `network_tvl`
-- [Stablecoin Market Cap](stablecoin-market-cap): `stablecoin_marketcap`
+- [HBAR Price](/hedera-stats/hbar-price): `avg_usd_conversion`
+- [Total Value Locked](/hedera-stats/total-value-locked): `network_tvl`
+- [Stablecoin Market Cap](/hedera-stats/stablecoin-market-cap): `stablecoin_marketcap`
 
 ### Network Performance
 
-- [Network Fees](revenue): `network_fees`
-- [Time to consensus](time-to-consensus): `avg_time_to_consensus`
-- [Transactions Per Second](transactions-per-second): `network_tps`
+- [Network Fees](/hedera-stats/revenue): `network_fees`
+- [Time to consensus](/hedera-stats/time-to-consensus): `avg_time_to_consensus`
+- [Transactions Per Second](/hedera-stats/transactions-per-second): `network_tps`
 
 ### Activity & Engagement
 
 - Active Accounts:
-  - [All Accounts](active-accounts): `active_accounts`
-  - [Developer Accounts](developer-accounts): `active_developer_accounts`
-  - [Retail Accounts](retail-accounts): `active_retail_accounts`
-  - [ECDSA Accounts](active-ecdsa-accounts): `active_ecdsa_accounts`
-  - [Ed25519 Accounts](active-ed25519-accounts): `active_ed25519_accounts`
+  - [All Accounts](/hedera-stats/active-accounts): `active_accounts`
+  - [Developer Accounts](/hedera-stats/developer-accounts): `active_developer_accounts`
+  - [Retail Accounts](/hedera-stats/retail-accounts): `active_retail_accounts`
+  - [ECDSA Accounts](/hedera-stats/active-ecdsa-accounts): `active_ecdsa_accounts`
+  - [Ed25519 Accounts](/hedera-stats/active-ed25519-accounts): `active_ed25519_accounts`
 - New Accounts:
-  - [All Accounts](new-accounts): `new_accounts`
-  - [ECDSA Accounts](new-ecdsa-accounts): `new_ecdsa_accounts`
-  - [Ed25519 Accounts](new-ed25519-accounts): `new_ed25519_accounts`
+  - [All Accounts](/hedera-stats/new-accounts): `new_accounts`
+  - [ECDSA Accounts](/hedera-stats/new-ecdsa-accounts): `new_ecdsa_accounts`
+  - [Ed25519 Accounts](/hedera-stats/new-ed25519-accounts): `new_ed25519_accounts`
 - Total Accounts:
-  - [All Accounts](total-accounts): `total_accounts`
-  - [ECDSA Accounts](total-ecdsa-accounts): `total_ecdsa_accounts`
-  - [Ed25519 Accounts](total-ed25519-accounts): `total_ed25519_accounts`
+  - [All Accounts](/hedera-stats/total-accounts): `total_accounts`
+  - [ECDSA Accounts](/hedera-stats/total-ecdsa-accounts): `total_ecdsa_accounts`
+  - [Ed25519 Accounts](/hedera-stats/total-ed25519-accounts): `total_ed25519_accounts`
 
 ### EVM
 
-- [Active Smart Contracts](active-contracts)
-- [New Smart Contracts](new-smart-contracts)
-- [Total Smart Contracts](total-smart-contracts)
+- [Active Smart Contracts](/hedera-stats/active-contracts)
+- [New Smart Contracts](/hedera-stats/new-smart-contracts)
+- [Total Smart Contracts](/hedera-stats/total-smart-contracts)
+
+### NFTs
+
+- [NFT Collection Sales Volume](/hedera-stats/nft-collection-sales-volume)
+- [NFT Collection Sales Volume (Total)](/hedera-stats/nft-collection-sales-volume-total)
 
 > *See these statistics in action on the [Hgraph Hedera Stats demo Grafana dashboard](https://hgraph.com/hedera/stats).*
 
