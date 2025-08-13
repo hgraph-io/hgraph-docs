@@ -1,5 +1,5 @@
 ---
-sidebar_position: 19
+sidebar_position: 11
 title: Active Retail Accounts
 ---
 
@@ -19,8 +19,8 @@ Hedera Stat Name: **`active_retail_accounts`**
 
 ### Prerequisites
 1. **[Active Accounts](active-accounts):** The number of unique accounts that initiate *successful* transactions within a timeframe.
-2. **[Developer Accounts](developer-accounts):** The number of unique accounts that perform developer-oriented transactions (e.g., creating/updating contracts, tokens, or topics).
-3. **[Active Smart Contracts](active-contracts):** The number of unique contract entities that perform at least one action (such as contract calls) during the same timeframe.
+2. **[Developer Accounts](active-developer-accounts):** The number of unique accounts that perform developer-oriented transactions (e.g., creating/updating contracts, tokens, or topics).
+3. **[Active Smart Contracts](../evm/active-smart-contracts):** The number of unique contract entities that perform at least one action (such as contract calls) during the same timeframe.
 
 ### Calculation Overview
 
@@ -30,7 +30,7 @@ Hedera Stat Name: **`active_retail_accounts`**
 
 Formally: 
 
-```
+```text
 Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contract Accounts)
 ```
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 3
 title: Time to Consensus
 ---
 
@@ -34,7 +34,7 @@ Hedera Stat Name: **`avg_time_to_consensus`**
 
 The basic formula is:
 
-```
+```text
 Time to Consensus (SecC2RC) = Record Creation Timestamp - Consensus Timestamp
 ```
 
@@ -127,5 +127,6 @@ SQL Function: `ecosystem.dashboard_avg_time_to_consensus`
 **[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
 ## Dependencies
-* Hedera mirror node
-* Prometheus (**[see installation](installation)**)
+
+- Hedera mirror node
+- Prometheus (**[see installation](installation)**)

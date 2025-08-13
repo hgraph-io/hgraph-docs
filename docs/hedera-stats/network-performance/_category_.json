@@ -1,0 +1,8 @@
+{
+  "label": "Network Performance",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Core network performance metrics including transaction throughput (TPS), consensus time, and network revenue from transaction fees."
+  }
+}

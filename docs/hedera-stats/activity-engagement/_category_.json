@@ -1,0 +1,8 @@
+{
+  "label": "Activity & Engagement",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Statistics measuring network engagement through account activity, including active accounts, new account creation, and total account metrics across different signature types (ECDSA and Ed25519)."
+  }
+}

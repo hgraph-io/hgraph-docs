@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 24
 title: Installation
 ---
 
@@ -19,6 +19,7 @@ This documentation contains the information needed to re-create Hedera Stats usi
 - **DeFiLlama API** for decentralized finance metrics ([view docs](https://defillama.com/docs/api)).
 
 ### Installation
+
 Clone the [Hedera Stats repository](https://github.com/hgraph-io/hedera-stats):
 
 ```bash
@@ -38,6 +39,7 @@ cp prometheus-3.1.0.linux-amd64/promtool /usr/bin
 ### Initial Configuration
 
 Set up your database:
+
 - Execute `src/up.sql` to create necessary database schema and tables.
 - Load initial data using SQL scripts from the `src/jobs` directory.
 
@@ -58,11 +60,13 @@ crontab -e
 ## Troubleshooting & FAQs
 
 ### Missing data or discrepancies?
+
 - Verify you're querying the correct API endpoint:
   - Staging environment (`hgraph.dev`) may have incomplete data.
   - Production endpoint (`hgraph.io`) requires an API key.
 
 ### Improve query performance:
+
 - Use broader granularity (day/month) for extensive periods.
 - Limit result size with `limit` and `order_by`.
 - Cache frequently accessed data.
