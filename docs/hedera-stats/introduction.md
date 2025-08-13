@@ -70,10 +70,12 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
 - New Accounts:
   - [All Accounts](/hedera-stats/activity-engagement/new-accounts): `new_accounts`
   - [ECDSA Accounts](/hedera-stats/activity-engagement/new-ecdsa-accounts): `new_ecdsa_accounts`
+  - [ECDSA Accounts (Real EVM)](/hedera-stats/activity-engagement/new-ecdsa-accounts#identifying-new-ecdsa-accounts-with-real-evm-addresses): `new_ecdsa_accounts_real_evm`
   - [Ed25519 Accounts](/hedera-stats/activity-engagement/new-ed25519-accounts): `new_ed25519_accounts`
 - Total Accounts:
   - [All Accounts](/hedera-stats/activity-engagement/total-accounts): `total_accounts`
   - [ECDSA Accounts](/hedera-stats/activity-engagement/total-ecdsa-accounts): `total_ecdsa_accounts`
+  - [ECDSA Accounts (Real EVM)](/hedera-stats/activity-engagement/total-ecdsa-accounts#identifying-ecdsa-accounts-with-real-evm-addresses): `total_ecdsa_accounts_real_evm`
   - [Ed25519 Accounts](/hedera-stats/activity-engagement/total-ed25519-accounts): `total_ed25519_accounts`
 
 ### EVM
