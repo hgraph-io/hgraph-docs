@@ -30,7 +30,7 @@ Hedera Stat Name: **`active_retail_accounts`**
 
 Formally: 
 
-```
+```text
 Retail Accounts = Active Accounts - (Developer Accounts + Active Smart Contract Accounts)
 ```
 
