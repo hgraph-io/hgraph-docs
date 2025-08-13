@@ -1,0 +1,8 @@
+{
+  "label": "HBAR & DeFi",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "HBAR pricing data and decentralized finance (DeFi) metrics including Total Value Locked (TVL) and stablecoin market capitalization on the Hedera network."
+  }
+}

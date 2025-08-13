@@ -1,0 +1,8 @@
+{
+  "label": "EVM & Smart Contracts",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Ethereum Virtual Machine (EVM) statistics tracking smart contract activity on Hedera, including active contracts, new deployments, and total contract counts."
+  }
+}
