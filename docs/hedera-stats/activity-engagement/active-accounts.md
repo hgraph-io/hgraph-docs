@@ -30,9 +30,9 @@ An account is considered “active” if it pays for at least one transaction wi
 
 ## Categories of Active Accounts
 Hgraph tracks active accounts in three main categories:
-- [Developer Accounts](developer-accounts)
-- [Retail Accounts](retail-accounts)
-- [Smart Contracts](active-contracts) 
+- [Developer Accounts](active-developer-accounts)
+- [Retail Accounts](active-retail-accounts)
+- [Smart Contracts](../evm/active-smart-contracts)
 
 ## Timeframe Consideration:
 Determine a specific timeframe (e.g., daily, weekly, monthly) for measurement. An account must initiate at least one qualifying transaction within that period to be considered active for that timeframe.
