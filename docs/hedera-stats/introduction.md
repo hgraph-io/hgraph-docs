@@ -78,16 +78,35 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
   - [ECDSA Accounts (Real EVM)](/hedera-stats/activity-engagement/total-ecdsa-accounts#identifying-ecdsa-accounts-with-real-evm-addresses): `total_ecdsa_accounts_real_evm`
   - [Ed25519 Accounts](/hedera-stats/activity-engagement/total-ed25519-accounts): `total_ed25519_accounts`
 
+### Transactions
+
+- New Transactions:
+  - [All Transactions](/hedera-stats/transactions/new-transactions): `new_transactions`
+  - [Crypto Transactions](/hedera-stats/transactions/new-transactions#crypto-transactions): `new_crypto_transactions`
+  - [HCS Transactions](/hedera-stats/transactions/new-transactions#hcs-hedera-consensus-service-transactions): `new_hcs_transactions`
+  - [HFS Transactions](/hedera-stats/transactions/new-transactions#hfs-hedera-file-service-transactions): `new_hfs_transactions`
+  - [HSCS Transactions](/hedera-stats/transactions/new-transactions#hscs-hedera-smart-contract-service-transactions): `new_hscs_transactions`
+  - [HTS Transactions](/hedera-stats/transactions/new-transactions#hts-hedera-token-service-transactions): `new_hts_transactions`
+  - [Other Transactions](/hedera-stats/transactions/new-transactions#other-transactions): `new_other_transactions`
+- Total Transactions:
+  - [All Transactions](/hedera-stats/transactions/total-transactions): `total_transactions`
+  - [Crypto Transactions](/hedera-stats/transactions/total-transactions#crypto-transactions): `total_crypto_transactions`
+  - [HCS Transactions](/hedera-stats/transactions/total-transactions#hcs-hedera-consensus-service-transactions): `total_hcs_transactions`
+  - [HFS Transactions](/hedera-stats/transactions/total-transactions#hfs-hedera-file-service-transactions): `total_hfs_transactions`
+  - [HSCS Transactions](/hedera-stats/transactions/total-transactions#hscs-hedera-smart-contract-service-transactions): `total_hscs_transactions`
+  - [HTS Transactions](/hedera-stats/transactions/total-transactions#hts-hedera-token-service-transactions): `total_hts_transactions`
+  - [Other Transactions](/hedera-stats/transactions/total-transactions#other-transactions): `total_other_transactions`
+
 ### EVM
 
-- [Active Smart Contracts](/hedera-stats/evm/active-smart-contracts)
-- [New Smart Contracts](/hedera-stats/evm/new-smart-contracts)
-- [Total Smart Contracts](/hedera-stats/evm/total-smart-contracts)
+- [Active Smart Contracts](/hedera-stats/evm/active-smart-contracts): `active_smart_contracts`
+- [New Smart Contracts](/hedera-stats/evm/new-smart-contracts): `new_smart_contracts`
+- [Total Smart Contracts](/hedera-stats/evm/total-smart-contracts): `total_smart_contracts`
 
 ### NFTs
 
-- [NFT Collection Sales Volume](/hedera-stats/non-fungible-tokens/nft-collection-sales-volume)
-- [NFT Collection Sales Volume (Total)](/hedera-stats/non-fungible-tokens/nft-collection-sales-volume-total)
+- [NFT Collection Sales Volume](/hedera-stats/non-fungible-tokens/nft-collection-sales-volume): `nft_collection_sales_volume`
+- [NFT Collection Sales Volume (Total)](/hedera-stats/non-fungible-tokens/nft-collection-sales-volume-total): `nft_collection_sales_volume_total`
 
 > *See these statistics in action on the [Hgraph Hedera Stats demo Grafana dashboard](https://hgraph.com/hedera/stats).*
 
@@ -99,7 +118,6 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
 - Top 50 contracts, NFTs and fungible tokens
 - Additional HBAR related statistics
 - More 3rd party data sources
-- Granular transaction breakdowns
 - More examples and demos
 
 ---
