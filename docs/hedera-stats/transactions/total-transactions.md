@@ -276,3 +276,15 @@ SQL Functions:
 ## Dependencies
 
 - Hedera mirror node
+
+## Light Functions (Performance)
+
+Because of the high compute cost, three “light” functions were created for HCS, Crypto and "All" functions. Instead of recalculating the entire transaction history each time the table is updated, these functions perform cumulative additions starting from the most recent row. To ensure accuracy, the full function can still be run periodically (for example, once a month) to catch any unlikely errors.
+
+These "light" versions are stored in the `light/` subfolder:
+
+- `ecosystem.new_transactions` - Light version: Total of all new transactions
+- `ecosystem.new_hcs_transactions` - Light version: New Hedera Consensus Service transactions
+- `ecosystem.new_crypto_transactions` - Light version: New cryptocurrency transfer transactions
+
+*Make note: They have the same name as the regular functions.*
