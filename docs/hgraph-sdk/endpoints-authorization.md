@@ -166,7 +166,7 @@ curl -s \
 
 ## JSON-RPC Authentication
 
-Our Hedera JSON-RPC relay is coming soon. [Get notified here](https://hgraph.beehiiv.com/subscribe).
+The Hedera JSON-RPC relay is now available! [View the full documentation](/category/json-rpc) for setup instructions and examples.
 
 <!-- ### Endpoint Format
 
