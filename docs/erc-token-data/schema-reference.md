@@ -1,10 +1,69 @@
 ---
 sidebar_position: 3
+title: Schema Overview
 ---
 
 # Schema Reference
 
 The GraphQL API provides access to ERC token data through three main tables. This page details the available fields, data types, and relationships.
+
+:::info In Beta → Hgraph's Hedera ERC Token Data
+
+This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
+
+:::
+
+## Entity Relationship Diagram
+
+### ERD Mermaid Chart
+
+```mermaid
+erDiagram
+    TOKEN {
+        bigint token_id PK "Hedera contract ID"
+        string evm_address UK "Contract EVM address"
+        string contract_type "ERC_20 or ERC_721"
+        string name "Token name (RPC)"
+        string symbol "Token symbol"
+        bigint decimals "ERC-20 decimals"
+        decimal total_supply "Total supply"
+        decimal reliability_score "Quality (0 to 1)"
+        timestamp created_timestamp "Creation time"
+        bigint transfer_count "Transfer events"
+        timestamp processing_timestamp "Last updated"
+    }
+
+    TOKEN_ACCOUNT {
+        bigint account_id PK "Hedera account ID (resolved)"
+        bigint token_id PK, FK "References token"
+        decimal balance "Amount or count"
+        timestamp balance_timestamp "Last update"
+        timestamp created_timestamp "First seen"
+        boolean associated "Always true"
+    }
+
+    NFT {
+        bigint token_id PK, FK "References token"
+        numeric serial_number PK "NFT tokenId (uint256)"
+        bigint account_id "Current owner"
+        boolean deleted "Burn status"
+        bytes metadata "URI or JSON"
+        timestamp created_timestamp "Mint time"
+        timestamp processing_timestamp "Processing time"
+    }
+
+    TOKEN ||--o{ TOKEN_ACCOUNT : "ERC token has balances"
+    TOKEN ||--o{ NFT : "ERC token contains NFTs"
+```
+
+### Notation Guide
+
+- **PK** = Primary Key (unique identifier for each record)
+- **FK** = Foreign Key (references another table's primary key)
+- **UK** = Unique Key (indexed field for fast lookups)
+- **PK, FK** = Field serving as both primary key and foreign key (composite
+  keys)
+- **||--o{** = One-to-many relationship (one TOKEN can have many TOKEN_ACCOUNTs)
 
 ## erc_beta_token
 
@@ -12,19 +71,19 @@ Stores metadata for pure ERC-20 and ERC-721 token contracts deployed to Hedera's
 
 ### Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `token_id` | bigint | Hedera entity ID for the contract |
-| `evm_address` | string | Contract's EVM address (0x format) |
-| `contract_type` | string | Token type: `ERC_20`, `ERC_721`, `UNKNOWN`, or `FAILED_DEPLOYMENT` |
-| `name` | string | Token name |
-| `symbol` | string | Token symbol |
-| `decimals` | bigint | Decimal places (ERC-20 only, NULL for ERC-721) |
-| `total_supply` | numeric | Total token supply (handles uint256 values) |
-| `metadata_reliability_score` | decimal | Quality score from 0.00 to 1.00 |
-| `created_timestamp` | bigint | Contract creation time (nanoseconds since epoch) |
-| `transfer_count` | bigint | Total number of Transfer events |
-| `processing_timestamp` | bigint | Last processing time (seconds since epoch) |
+| Field                        | Type    | Description                                                        |
+| ---------------------------- | ------- | ------------------------------------------------------------------ |
+| `token_id`                   | bigint  | Hedera entity ID for the contract                                  |
+| `evm_address`                | string  | Contract's EVM address (0x format)                                 |
+| `contract_type`              | string  | Token type: `ERC_20`, `ERC_721`, `UNKNOWN`, or `FAILED_DEPLOYMENT` |
+| `name`                       | string  | Token name                                                         |
+| `symbol`                     | string  | Token symbol                                                       |
+| `decimals`                   | bigint  | Decimal places (ERC-20 only, NULL for ERC-721)                     |
+| `total_supply`               | numeric | Total token supply (handles uint256 values)                        |
+| `metadata_reliability_score` | decimal | Quality score from 0.00 to 1.00                                    |
+| `created_timestamp`          | bigint  | Contract creation time (nanoseconds since epoch)                   |
+| `transfer_count`             | bigint  | Total number of Transfer events                                    |
+| `processing_timestamp`       | bigint  | Last processing time (seconds since epoch)                         |
 
 ### Token Features
 
@@ -39,14 +98,14 @@ Tracks ERC-20 balances and ERC-721 ownership counts with unified account trackin
 
 ### Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `account_id` | bigint | Hedera account ID (resolved from EVM addresses) |
-| `token_id` | bigint | References erc_beta_token |
-| `balance` | numeric | Token balance (wei for ERC-20, NFT count for ERC-721) |
-| `balance_timestamp` | bigint | Last balance update (nanoseconds since epoch) |
-| `created_timestamp` | bigint | First association time (nanoseconds since epoch) |
-| `associated` | boolean | Always true for pure ERC tokens |
+| Field               | Type    | Description                                           |
+| ------------------- | ------- | ----------------------------------------------------- |
+| `account_id`        | bigint  | Hedera account ID (resolved from EVM addresses)       |
+| `token_id`          | bigint  | References erc_beta_token                             |
+| `balance`           | numeric | Token balance (wei for ERC-20, NFT count for ERC-721) |
+| `balance_timestamp` | bigint  | Last balance update (nanoseconds since epoch)         |
+| `created_timestamp` | bigint  | First association time (nanoseconds since epoch)      |
+| `associated`        | boolean | Always true for pure ERC tokens                       |
 
 ### Account Features
 
@@ -63,15 +122,15 @@ Tracks individual NFTs within ERC-721 collections.
 
 ### Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `token_id` | bigint | References the ERC-721 contract in erc_beta_token |
-| `serial_number` | numeric | The individual NFT's tokenId (supports full uint256 range) |
-| `account_id` | bigint | Current owner's Hedera account ID (NULL for unresolved addresses) |
-| `deleted` | boolean | Burn status (true if NFT was burned) |
-| `metadata` | bytea | Metadata URI (e.g., ipfs://... or https://...) |
-| `created_timestamp` | bigint | When NFT was first minted (nanoseconds since epoch) |
-| `processing_timestamp` | bigint | When this record was processed (seconds since epoch) |
+| Field                  | Type    | Description                                                       |
+| ---------------------- | ------- | ----------------------------------------------------------------- |
+| `token_id`             | bigint  | References the ERC-721 contract in erc_beta_token                 |
+| `serial_number`        | numeric | The individual NFT's tokenId (supports full uint256 range)        |
+| `account_id`           | bigint  | Current owner's Hedera account ID (NULL for unresolved addresses) |
+| `deleted`              | boolean | Burn status (true if NFT was burned)                              |
+| `metadata`             | bytea   | Metadata URI (e.g., ipfs://... or https://...)                    |
+| `created_timestamp`    | bigint  | When NFT was first minted (nanoseconds since epoch)               |
+| `processing_timestamp` | bigint  | When this record was processed (seconds since epoch)              |
 
 ### NFT Features
 
@@ -102,35 +161,6 @@ Valid values for `contract_type` field:
 - `ERC_721`: Standard ERC-721 NFT collection
 - `UNKNOWN`: Contract type could not be determined
 - `FAILED_DEPLOYMENT`: Contract deployment failed
-
-## Metadata Reliability Score
-
-The `metadata_reliability_score` field indicates the quality of extracted metadata:
-
-### ERC-20 Tokens (4 fields)
-
-Scoring based on: name, symbol, decimals, totalSupply
-
-- **1.00**: All 4 fields extracted successfully
-- **0.75**: 3 of 4 fields extracted
-- **0.50**: 2 of 4 fields extracted
-- **0.25**: 1 of 4 fields extracted
-- **0.00**: No metadata extracted
-
-### ERC-721 NFTs (3 fields)
-
-Scoring based on: name, symbol, totalSupply
-
-- **1.00**: All 3 fields extracted successfully
-- **0.67**: 2 of 3 fields extracted
-- **0.33**: 1 of 3 fields extracted
-- **0.00**: No metadata extracted
-
-### Unknown/Failed Deployments
-
-- **1.00**: Both name and symbol extracted
-- **0.50**: Either name OR symbol extracted
-- **0.00**: No metadata extracted
 
 ## Relationships
 

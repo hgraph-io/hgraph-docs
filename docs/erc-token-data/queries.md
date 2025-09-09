@@ -1,10 +1,17 @@
 ---
 sidebar_position: 2
+title: Query Examples
 ---
 
 # Query Examples
 
 This page provides a comprehensive collection of GraphQL queries for accessing ERC token data.
+
+:::info In Beta → Hgraph's Hedera ERC Token Data
+
+This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
+
+:::
 
 ## Prerequisites
 
@@ -139,7 +146,7 @@ query GetAccountPortfolio($accountId: bigint!) {
 
 # Variables:
 # { "accountId": 924713 }
-# 
+#
 # Note: To get token details, make a separate query with the token_ids from above:
 # query GetTokenDetails($tokenIds: [bigint!]) {
 #   erc_beta_token(where: { token_id: { _in: $tokenIds } }) {
@@ -160,7 +167,7 @@ query GetAccountPortfolio($accountId: bigint!) {
 ```graphql
 query GetNFTsInCollection($tokenId: bigint!, $limit: Int = 50, $offset: Int = 0) {
   erc_beta_nft(
-    where: { 
+    where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: false }
     }
@@ -173,10 +180,10 @@ query GetNFTsInCollection($tokenId: bigint!, $limit: Int = 50, $offset: Int = 0)
     metadata
     created_timestamp
   }
-  
+
   # Get total count for pagination
   erc_beta_nft_aggregate(
-    where: { 
+    where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: false }
     }
@@ -197,7 +204,7 @@ query GetNFTsInCollection($tokenId: bigint!, $limit: Int = 50, $offset: Int = 0)
 query GetAccountNFTs($accountId: bigint!) {
   # Get individual NFTs
   nfts: erc_beta_nft(
-    where: { 
+    where: {
       account_id: { _eq: $accountId }
       deleted: { _eq: false }
     }
@@ -208,10 +215,10 @@ query GetAccountNFTs($accountId: bigint!) {
     metadata
     created_timestamp
   }
-  
+
   # Get total count of NFTs owned
   nft_count: erc_beta_nft_aggregate(
-    where: { 
+    where: {
       account_id: { _eq: $accountId }
       deleted: { _eq: false }
     }
@@ -277,13 +284,13 @@ query PlatformStatistics {
 ```graphql
 query ReliableTokens($minScore: numeric = 0.75) {
   erc_beta_token(
-    where: { 
+    where: {
       metadata_reliability_score: { _gte: $minScore }
       contract_type: { _in: ["ERC_20", "ERC_721"] }
     }
-    order_by: { 
+    order_by: {
       metadata_reliability_score: desc,
-      transfer_count: desc 
+      transfer_count: desc
     }
   ) {
     token_id
@@ -318,7 +325,7 @@ query TokenDeepDive($tokenId: bigint!) {
     transfer_count
     processing_timestamp
   }
-  
+
   # Holder statistics
   holder_stats: erc_beta_token_account_aggregate(
     where: { token_id: { _eq: $tokenId } }
@@ -336,7 +343,7 @@ query TokenDeepDive($tokenId: bigint!) {
       }
     }
   }
-  
+
   # Top 10 holders
   top_holders: erc_beta_token_account(
     where: { token_id: { _eq: $tokenId } }
@@ -347,7 +354,7 @@ query TokenDeepDive($tokenId: bigint!) {
     balance
     balance_timestamp
   }
-  
+
   # Recent holders
   recent_holders: erc_beta_token_account(
     where: { token_id: { _eq: $tokenId } }
@@ -374,7 +381,7 @@ Track all DeFi positions for an account:
 query DeFiPortfolio($accountId: bigint!) {
   # ERC-20 holdings with balances
   erc20_holdings: erc_beta_token_account(
-    where: { 
+    where: {
       account_id: { _eq: $accountId }
       balance: { _gt: "0" }
     }
@@ -383,10 +390,10 @@ query DeFiPortfolio($accountId: bigint!) {
     balance
     balance_timestamp
   }
-  
+
   # Portfolio summary
   portfolio_summary: erc_beta_token_account_aggregate(
-    where: { 
+    where: {
       account_id: { _eq: $accountId }
       balance: { _gt: "0" }
     }
@@ -413,7 +420,7 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
     total_supply
     transfer_count
   }
-  
+
   # Holder distribution
   holder_distribution: erc_beta_token_account_aggregate(
     where: { token_id: { _eq: $tokenId } }
@@ -428,7 +435,7 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
       }
     }
   }
-  
+
   # Top collectors
   top_collectors: erc_beta_token_account(
     where: { token_id: { _eq: $tokenId } }
@@ -438,10 +445,10 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
     account_id
     balance
   }
-  
+
   # Total NFTs (minted minus burned)
   total_nfts: erc_beta_nft_aggregate(
-    where: { 
+    where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: false }
     }
@@ -450,10 +457,10 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
       count
     }
   }
-  
+
   # Burned NFTs count
   burned_nfts: erc_beta_nft_aggregate(
-    where: { 
+    where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: true }
     }
@@ -514,7 +521,7 @@ query WhaleActivity($minBalance: numeric = "1000000000000000000") {
     balance
     balance_timestamp
   }
-  
+
   # Aggregate whale statistics
   whale_stats: erc_beta_token_account_aggregate(
     where: {
@@ -545,7 +552,7 @@ query AccountCrossTokenAnalysis($accountId: bigint!) {
     balance
     created_timestamp
   }
-  
+
   # First and latest activities
   activity_timeline: erc_beta_token_account_aggregate(
     where: { account_id: { _eq: $accountId } }
@@ -559,7 +566,7 @@ query AccountCrossTokenAnalysis($accountId: bigint!) {
       }
     }
   }
-  
+
   # Activity timeline
   activity_timeline: erc_beta_token_account_aggregate(
     where: { account_id: { _eq: $accountId } }

@@ -1,10 +1,32 @@
 ---
 sidebar_position: 5
+title: Technical
 ---
 
 # Technical Details
 
 This page covers technical specifications for working with ERC token data on Hedera, including account identifiers, event signatures, and data formats.
+
+:::info In Beta → Hgraph's Hedera ERC Token Data
+
+This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
+
+:::
+
+## Data Pipeline Overview
+
+The Hedera ERC Indexer processes token data through an eight-stage pipeline:
+
+### Key Pipeline Stages
+
+1. **Discovery**: Scans Hedera mirror node for contracts emitting Transfer events
+2. **Extraction**: Retrieves token metadata (name, symbol, decimals) via JSON-RPC
+3. **Balance Calculation**: Processes all Transfer events to compute current balances
+4. **NFT Tracking**: For ERC-721 tokens, tracks individual NFT ownership and metadata
+5. **Storage**: Persists data to `erc_beta` schema tables
+6. **Stream Processing**: Continuously polls for new data and updates
+7. **API Layer**: Exposes data through Hasura GraphQL endpoint
+8. **Query Interface**: Provides real-time access to token data via GraphQL
 
 ## Account Identifiers and Aliases
 
@@ -52,6 +74,7 @@ event Transfer(address indexed from, address indexed to, uint256 value_or_tokenI
 ```
 
 **Event Signature Hash:**
+
 ```
 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
 ```
@@ -65,6 +88,7 @@ event Approval(address indexed owner, address indexed spender, uint256 value)
 ```
 
 **Event Signature Hash:**
+
 ```
 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925
 ```
@@ -74,11 +98,13 @@ event Approval(address indexed owner, address indexed spender, uint256 value)
 The indexer distinguishes token types by analyzing event structure:
 
 #### ERC-20 Detection
-- **Characteristic**: `topic3 IS NULL` 
+
+- **Characteristic**: `topic3 IS NULL`
 - **Reason**: Transfer value is stored in the event's data section
 - **Structure**: Transfer(from, to, amount) - amount goes in data section
 
 #### ERC-721 Detection
+
 - **Characteristic**: `topic3 IS NOT NULL`
 - **Reason**: Unique tokenId is indexed and gets its own topic slot
 - **Structure**: Transfer(from, to, tokenId) - tokenId becomes topic3
@@ -122,34 +148,34 @@ The `metadata_reliability_score` field indicates how many standard methods retur
 
 Fields checked: `name`, `symbol`, `decimals`, `totalSupply`
 
-| Score | Fields Extracted | Meaning |
-|-------|-----------------|---------|
-| 1.00 | 4 of 4 | Fully compliant ERC-20 |
-| 0.75 | 3 of 4 | Mostly compliant |
-| 0.50 | 2 of 4 | Partial implementation |
-| 0.25 | 1 of 4 | Minimal implementation |
-| 0.00 | 0 of 4 | No metadata available |
+| Score | Fields Extracted | Meaning                |
+| ----- | ---------------- | ---------------------- |
+| 1.00  | 4 of 4           | Fully compliant ERC-20 |
+| 0.75  | 3 of 4           | Mostly compliant       |
+| 0.50  | 2 of 4           | Partial implementation |
+| 0.25  | 1 of 4           | Minimal implementation |
+| 0.00  | 0 of 4           | No metadata available  |
 
 #### ERC-721 NFTs (3 fields)
 
 Fields checked: `name`, `symbol`, `totalSupply` (decimals not applicable)
 
-| Score | Fields Extracted | Meaning |
-|-------|-----------------|---------|
-| 1.00 | 3 of 3 | Fully compliant ERC-721 |
-| 0.67 | 2 of 3 | Mostly compliant |
-| 0.33 | 1 of 3 | Minimal implementation |
-| 0.00 | 0 of 3 | No metadata available |
+| Score | Fields Extracted | Meaning                 |
+| ----- | ---------------- | ----------------------- |
+| 1.00  | 3 of 3           | Fully compliant ERC-721 |
+| 0.67  | 2 of 3           | Mostly compliant        |
+| 0.33  | 1 of 3           | Minimal implementation  |
+| 0.00  | 0 of 3           | No metadata available   |
 
 #### Unknown/Failed Deployments
 
 For contracts that couldn't be identified as ERC-20 or ERC-721:
 
-| Score | Fields Extracted | Meaning |
-|-------|-----------------|---------|
-| 1.00 | name AND symbol | Basic token interface |
-| 0.50 | name OR symbol | Partial interface |
-| 0.00 | Neither | No standard interface |
+| Score | Fields Extracted | Meaning               |
+| ----- | ---------------- | --------------------- |
+| 1.00  | name AND symbol  | Basic token interface |
+| 0.50  | name OR symbol   | Partial interface     |
+| 0.00  | Neither          | No standard interface |
 
 ### Using Reliability Scores
 
@@ -158,7 +184,7 @@ Filter for high-quality tokens in your queries:
 ```graphql
 query ReliableTokens {
   erc_beta_token(
-    where: { 
+    where: {
       metadata_reliability_score: { _gte: 0.75 }
       contract_type: { _in: ["ERC_20", "ERC_721"] }
     }
@@ -191,16 +217,11 @@ Large numbers (balances, token supplies) are returned as strings to preserve pre
 
 Two timestamp formats are used:
 
-| Field Type | Format | Example | Description |
-|------------|--------|---------|-------------|
-| created_timestamp | Nanoseconds | `1698765432100000000` | Hedera consensus time |
-| balance_timestamp | Nanoseconds | `1698765432100000000` | Last balance update |
-| processing_timestamp | Seconds | `1698765432` | Unix timestamp |
-
-To convert nanoseconds to a readable date:
-```javascript
-const date = new Date(nanoseconds / 1000000);
-```
+| Field Type           | Format      | Example               | Description           |
+| -------------------- | ----------- | --------------------- | --------------------- |
+| created_timestamp    | Nanoseconds | `1698765432100000000` | Hedera consensus time |
+| balance_timestamp    | Nanoseconds | `1698765432100000000` | Last balance update   |
+| processing_timestamp | Seconds     | `1698765432`          | Unix timestamp        |
 
 ## Working with Token Balances
 
@@ -231,46 +252,5 @@ query NFTCount($accountId: bigint!, $tokenId: bigint!) {
   ) {
     balance  # This is the NFT count, not wei
   }
-}
-```
-
-## Best Practices
-
-### Query Optimization
-
-1. **Use indexes**: Filter by indexed fields like `token_id`, `account_id`
-2. **Limit results**: Always use `limit` for large result sets
-3. **Select only needed fields**: Don't query unnecessary data
-
-### Handling Large Numbers
-
-Always use appropriate libraries for handling uint256 values:
-
-```javascript
-// JavaScript with BigInt
-const balance = BigInt("1000000000000000000");
-
-// ethers.js
-import { BigNumber } from "ethers";
-const balance = BigNumber.from("1000000000000000000");
-```
-
-### Account Resolution
-
-When working with addresses:
-
-1. Check if it's a long-zero address (12 leading zeros)
-2. If yes, extract the account ID directly
-3. If no, it's an EVM alias that needs resolution
-
-```javascript
-function isLongZeroAddress(address) {
-  return address.startsWith("0x000000000000000000000000");
-}
-
-function extractAccountId(longZeroAddress) {
-  // Extract last 8 bytes and convert to account number
-  const hex = longZeroAddress.slice(-8);
-  return parseInt(hex, 16);
 }
 ```

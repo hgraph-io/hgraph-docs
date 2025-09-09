@@ -1,11 +1,17 @@
 ---
 sidebar_position: 1
-title: Overview
+title: Introduction
 ---
 
-# Hedera ERC Token Data
+# Hgraph's Hedera ERC Token Data
 
 Hgraph's Hedera ERC Indexer provides comprehensive access to pure ERC-20 and ERC-721 token data on the Hedera network through our GraphQL API. The indexer discovers and tracks tokens deployed directly to Hedera's EVM, analyzes Transfer events, extracts metadata, and calculates token balances for fast queries.
+
+:::info In Beta → Hgraph's Hedera ERC Token Data
+
+This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
+
+:::
 
 ## Token Types on Hedera
 
@@ -42,6 +48,7 @@ Hgraph's Hedera ERC Indexer continuously tracks pure ERC token contracts deploye
 ### API Access
 
 To access the ERC token data, you'll need:
+
 1. An Hgraph API key - [See authentication documentation](/hgraph-sdk/endpoints-authorization)
 2. GraphQL endpoint:
    - Testnet: `https://testnet.hedera.api.hgraph.io/v1/graphql`
@@ -52,16 +59,23 @@ To access the ERC token data, you'll need:
 ```graphql
 query GetERC20Tokens {
   erc_beta_token(
-    where: { contract_type: { _eq: "ERC_20" } }
+    where: {contract_type: {_eq: "ERC_20"}}
     limit: 10
+    order_by: {transfer_count: desc_nulls_last}
   ) {
     token_id
     name
     symbol
     decimals
     evm_address
+    metadata_reliability_score
+    processing_timestamp
+    total_supply
+    transfer_count
+    created_timestamp
+    contract_type
   }
-}
+}}
 ```
 
 For more query examples, see our [comprehensive query library](./queries).
@@ -76,7 +90,7 @@ The GraphQL API provides access to three main data types:
 
 For detailed schema information, see the [Schema Reference](./schema-reference).
 
-## Understanding Token Types on Hedera
+## ERC vs HTS (Understanding Token Types)
 
 Hedera has two types of ERC-compatible tokens:
 
@@ -84,8 +98,6 @@ Hedera has two types of ERC-compatible tokens:
 2. **HTS Tokens with ERC Facades** - Native Hedera Token Service tokens (not included in this data)
 
 For a detailed explanation of the differences, see [Token Types](./token-types).
-
-
 
 ## Additional Resources
 
