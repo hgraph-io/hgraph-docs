@@ -25,7 +25,6 @@ Hedera's EVM, NOT Hedera Token Service (HTS) tokens with ERC facades.
 - Smart contracts deployed directly to the EVM
 - Generate real Transfer events from contract code
 - NOT in the `public.token` table (only in `public.entity` as CONTRACT)
-- Examples: amWHBAR, amUSDC, Aave-style tokens
 
 #### HTS Tokens with ERC Facades (Excluded)
 
