@@ -112,20 +112,6 @@ query GetPureERC20Tokens {
 }
 ```
 
-### Common Pure ERC Tokens on Hedera
-
-| Token   | Contract Address                             | Type   |
-| ------- | -------------------------------------------- | ------ |
-| amWHBAR | `0x00000000000000000000000000000000002cc823` | ERC-20 |
-| amUSDC  | `0x00000000000000000000000000000000002cc824` | ERC-20 |
-
-### Common HTS Tokens (Not in this dataset)
-
-| Token | Hedera ID   | Long-zero Address                            | Type                |
-| ----- | ----------- | -------------------------------------------- | ------------------- |
-| USDC  | 0.0.456858  | `0x0000000000000000000000000000000006f89a`   | HTS with ERC facade |
-| WHBAR | 0.0.1456986 | `0x000000000000000000000000000000000016375a` | HTS with ERC facade |
-
 ## Topic Format Variations
 
 When analyzing Transfer events, Hedera account IDs can appear in different formats:
