@@ -23,6 +23,7 @@ Create new GraphQL queries and troubleshoot problems with our new expert AI assi
 - **[AI Assistant](https://dashboard.hgraph.com)** - Create queries and troubleshoot issues.
 - **[Pricing](/overview/pricing)** - Start for free, upgrade later (starting at $18/mo).
 - [GraphQL API](/category/graphql-api) - Access data on the Hedera mirror nodes.
+- [ERC Token Data](/category/erc-token-data) - Access pure ERC-20 and ERC-721 token data on Hedera.
 - [Hgraph SDK](/category/hgraph-sdk) - Build data-rich apps and experiences.
 - [GitHub](https://github.com/hgraph-io) - Follow Hgraph on GitHub and contribute.
 - [Support](/support) - Get assistance from our team & community.

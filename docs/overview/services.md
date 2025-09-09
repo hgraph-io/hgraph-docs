@@ -19,6 +19,7 @@ Hgraph provides data infrastructure for web3 applications. Current services and 
 
 ### Hedera APIs:
 - GraphQL, REST, JSON-RPC relay
+- ERC-20 & ERC-721 token data
 - 3rd party integrations & tooling
 - Account dashboard, playground
 - Helpful SDKs, documentation
