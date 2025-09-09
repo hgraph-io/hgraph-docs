@@ -13,58 +13,6 @@ This new data service is currently in beta and we encourage all users to provide
 
 :::
 
-## Entity Relationship Diagram
-
-### ERD Mermaid Chart
-
-```mermaid
-erDiagram
-    TOKEN {
-        bigint token_id PK "Hedera contract ID"
-        string evm_address UK "Contract EVM address"
-        string contract_type "ERC_20 or ERC_721"
-        string name "Token name (RPC)"
-        string symbol "Token symbol"
-        bigint decimals "ERC-20 decimals"
-        decimal total_supply "Total supply"
-        decimal reliability_score "Quality (0 to 1)"
-        timestamp created_timestamp "Creation time"
-        bigint transfer_count "Transfer events"
-        timestamp processing_timestamp "Last updated"
-    }
-
-    TOKEN_ACCOUNT {
-        bigint account_id PK "Hedera account ID (resolved)"
-        bigint token_id PK, FK "References token"
-        decimal balance "Amount or count"
-        timestamp balance_timestamp "Last update"
-        timestamp created_timestamp "First seen"
-        boolean associated "Always true"
-    }
-
-    NFT {
-        bigint token_id PK, FK "References token"
-        numeric serial_number PK "NFT tokenId (uint256)"
-        bigint account_id "Current owner"
-        boolean deleted "Burn status"
-        bytes metadata "URI or JSON"
-        timestamp created_timestamp "Mint time"
-        timestamp processing_timestamp "Processing time"
-    }
-
-    TOKEN ||--o{ TOKEN_ACCOUNT : "ERC token has balances"
-    TOKEN ||--o{ NFT : "ERC token contains NFTs"
-```
-
-### Notation Guide
-
-- **PK** = Primary Key (unique identifier for each record)
-- **FK** = Foreign Key (references another table's primary key)
-- **UK** = Unique Key (indexed field for fast lookups)
-- **PK, FK** = Field serving as both primary key and foreign key (composite
-  keys)
-- **||--o{** = One-to-many relationship (one TOKEN can have many TOKEN_ACCOUNTs)
-
 ## erc_beta_token
 
 Stores metadata for pure ERC-20 and ERC-721 token contracts deployed to Hedera's EVM.
