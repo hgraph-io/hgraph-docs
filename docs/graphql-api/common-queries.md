@@ -148,6 +148,10 @@ A very common piece of data needed by developers is knowing whether a certain ac
 
 This function allows developers to easily determine association by passing in the account id and token id in question.
 
+:::tip ERC Token Queries
+For comprehensive queries specific to ERC-20 and ERC-721 tokens deployed on Hedera's EVM, see our dedicated [ERC Token Data queries](/erc-token-data/queries) section which includes portfolio tracking, NFT collections, and token analytics.
+:::
+
 ```javascript
 // Sense if an account has associated the token id.
 // If not, create transactions and send to client

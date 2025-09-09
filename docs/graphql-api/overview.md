@@ -25,3 +25,7 @@ REST APIs use multiple endpoints and standard HTTP methods, with the server dete
 ## Playground access
 
 To explore the API schema and try out different queries, you can [access our playground console here](https://console.hgraph.io/).
+
+## Specialized Data Access
+
+For comprehensive ERC-20 and ERC-721 token data on Hedera, see our dedicated [ERC Token Data](/category/erc-token-data) section which provides specialized queries and schemas for pure ERC token contracts.

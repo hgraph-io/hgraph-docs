@@ -5,7 +5,7 @@ title: Introduction
 
 # Hgraph's Hedera ERC Token Data
 
-Hgraph's Hedera ERC Indexer provides comprehensive access to pure ERC-20 and ERC-721 token data on the Hedera network through our GraphQL API. The indexer discovers and tracks tokens deployed directly to Hedera's EVM, analyzes Transfer events, extracts metadata, and calculates token balances for fast queries.
+Hgraph's Hedera ERC Indexer provides comprehensive access to pure **ERC-20** and **ERC-721** token data on the Hedera network through our GraphQL API. The indexer discovers and tracks tokens deployed directly to Hedera's EVM, analyzes Transfer events, extracts metadata, and calculates token balances for fast queries.
 
 :::info In Beta → Hgraph's Hedera ERC Token Data
 
