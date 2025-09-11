@@ -16,7 +16,7 @@ Easy access to our powerful and flexible Hedera network APIs including GraphQL, 
 ## Pricing Plan Details
 
 
-|                         | Free API                                                                             | Basic API                                                                     | Developer API                                                               | Startup API                                                                | Premium API+                                                                          |
+|                         | Free API                                                                             | Basic API                                                                     | Developer API                                                               | Startup API                                                                | Premium                                                                          |
 |-------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 |                         | Get started with the Hedera network at no cost, perfect for exploration and testing. | Essential tools for developers to build and launch basic Hedera applications. | Robust API access and support tailored for small production-ready projects. | Scalable throughput and enhanced support for startups building on Hedera. | Dedicated VIP support, custom tooling and high-performance access.                     |
 | **Cost** |                                                                                      |                                                                                |                                                                             |                                                                            |                                                                                        |
@@ -73,11 +73,11 @@ GraphQL subscriptions allow for real-time continuous steaming via Websockets usi
 **What's the difference between annual/monthly plans?**\
 Annual plans include a 15% discount and are billed annually. Monthly plans are billed monthly.
 
-**What makes the "Premium API+" plan unique?**\
-Beyond high-performance API access, the Premium API+ plan includes dedicated support, regular calls and custom tooling. Growing companies find this plan incredibly valuable as they scale their infrastructure to the next stage. The "+" represents that extra level of service and customization.
+**What makes the "Premium" plan unique?**\
+Beyond high-performance API access, the Premium plan includes dedicated support, regular calls and custom tooling. Growing companies find this plan incredibly valuable as they scale their infrastructure to the next stage. The "+" represents that extra level of service and customization.
 
 **What does "Custom Tooling" mean?**\
-In our Premium API+ plan, Hgraph can provide custom GraphQL query development, SQL scheduled jobs, database optimization and more for your project - in addition to 3rd party integrations.
+In our Premium plan, Hgraph can provide custom GraphQL query development, SQL scheduled jobs, database optimization and more for your project - in addition to 3rd party integrations.
 
 **What does "Monthly Cap" mean?**\
 A "Hard Cap" means that when your requests have been used for the month, you won't be able to make new requests. A "Soft Cap" means that when you have used all of your requests for the month, you will be able to continue making requests (within reason) without service disruption. There are also overage fees that can be applied.
