@@ -168,6 +168,43 @@ Supporting documentation:
 - https://docs.hedera.com/guides/core-concepts/transactions-and-queries
 - https://docs.hedera.com/guides/docs/mirror-node-api/rest-api#transaction-by-transaction-id
 
+## How do I perform fuzzy or pattern matching searches?
+Hgraph's GraphQL API supports PostgreSQL-style pattern matching for flexible querying, including fuzzy searches, case-insensitive matching, and regular expressions. This is particularly useful for searching entity names, metadata, or other string fields without exact matches.
+
+You can use these operators in the `where` clause of your queries:
+- **LIKE**: Case-sensitive pattern matching with wildcards (`%` for any sequence of characters, `_` for a single character).
+- **ILIKE**: Case-insensitive version of LIKE.
+- **SIMILAR TO**: Supports SQL regular expressions for more complex patterns.
+- **~ (POSIX regex)**: Full POSIX regular expression matching (case-sensitive). Use `~*` for case-insensitive, `!~` to negate (does not match), or `!~*` for case-insensitive negation.
+
+:::note Why these operators?
+These are powered by PostgreSQL's pattern matching functions under the hood, allowing efficient searches directly in the database without additional processing. For more details, refer to the [PostgreSQL documentation on pattern matching](https://www.postgresql.org/docs/current/functions-matching.html).
+:::
+
+### Examples
+Here's a basic fuzzy search for token names containing "123Abc" (case-insensitive):
+```graphql
+query FuzzyTokenSearch {
+  token(limit: 100, where: {name: {_ilike: "%aAbc%"}}) {
+    name
+    decoded_metadata_key
+  }
+}
+```
+
+For regex matching, such as names starting with "ABC" followed by any digits:
+```graphql
+query RegexTokenSearch {
+  token(where: {name: {_similar: "ABC[0-9]*"}}) {
+    name
+  }
+}
+```
+
+:::warning
+Pattern matching can be resource-intensive for large datasets. Use limits and specific filters to optimize query performance. Wildcards at the beginning of patterns (e.g., `%Abc`) may lead to slower full-table scans.
+:::
+
 ## Query tips
 
 ### Getting Transaction Values
