@@ -40,7 +40,6 @@ Hgraph's Hedera ERC Indexer continuously tracks pure ERC token contracts deploye
 - ERC-721 NFT collections and individual NFTs
 - Token holder information
 - Account portfolios across all tokens
-- Historical and statistical data
 
 ## Getting Started
 
