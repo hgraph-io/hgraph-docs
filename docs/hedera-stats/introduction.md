@@ -50,6 +50,8 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
 ### HBAR & DeFi
 
 - [HBAR Price](/hedera-stats/hbar-defi/hbar-price): `avg_usd_conversion`
+- [HBAR Total Supply](/hedera-stats/hbar-defi/hbar-total-supply): `hbar_total_supply`
+- [HBAR Total Released](/hedera-stats/hbar-defi/hbar-total-released): `hbar_total_released`
 - [Total Value Locked](/hedera-stats/hbar-defi/total-value-locked): `network_tvl`
 - [Stablecoin Market Cap](/hedera-stats/hbar-defi/stablecoin-market-cap): `stablecoin_marketcap`
 
