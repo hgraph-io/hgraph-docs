@@ -32,7 +32,7 @@ The total supply metric is stored with entries for all time periods (minute, hou
 Since this is a constant value, all queries will return the same result regardless of the time period or date range specified.
 
 ## Additional Notes
-- The total supply is a cornerstone metric for calculating circulating supply, market capitalization, and other economic indicators
+- The total supply is a cornerstone metric for calculating released supply (see [hbar_total_released](/hedera-stats/hbar-defi/hbar-total-released)), market capitalization, and other economic indicators
 - The value is represented in tinybars in the database (1 HBAR = 100,000,000 tinybars)
 - Future protocol changes requiring unanimous Hedera Council approval could theoretically modify this value, though this is extremely unlikely
 
