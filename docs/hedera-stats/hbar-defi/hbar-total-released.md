@@ -16,11 +16,12 @@ Hedera Stat Name: **`hbar_total_released`**
 
 ## Methodology
 
-- **Calculation Formula:** Released Supply = Total Supply (50B HBAR) - Unreleased Supply
-- **Alternative Formula:** Released Supply = Total Supply + Cumulative Net Treasury Flows
+- **Calculation Formula:** Released Supply = Calibration Constant - Cumulative Treasury Flows
+- **Calibration Constant:** 351,871,530,222,399,283 tinybars (~3.52B HBAR) - accounts for distributions before mirror node data begins
 - **Implementation:**
-  - Tracks cumulative net flows from 548 designated treasury/system accounts since genesis
-  - Uses the `crypto_transfer` table to maintain complete historical accuracy
+  - Tracks cumulative net flows from 548 designated treasury/system accounts since Sept 13, 2019 22:00 UTC
+  - Uses the `crypto_transfer` table from when mirror node data collection began
+  - Note: ~3.52B HBAR were already released when mirror node data starts
   - Negative flows from treasury accounts represent releases into circulation
   - Positive flows to treasury accounts represent returns from circulation
 
@@ -36,19 +37,19 @@ Hedera Stat Name: **`hbar_total_released`**
 - **Flow Mechanics:**
   - Outflows (negative amounts) from treasury = HBAR releases into circulation
   - Inflows (positive amounts) to treasury = HBAR removed from circulation
-  - Cumulative calculation ensures historical accuracy from genesis
+  - Cumulative calculation ensures historical accuracy from Sept 13, 2019
 
 ## Data Representation
 
-The released supply metric provides a time-series view of HBAR circulation from network genesis (September 16, 2019) to present. Each data point represents the total released supply at that moment in time, calculated as the cumulative sum of all treasury flows up to that point.
+The released supply metric provides a time-series view of HBAR circulation from September 13, 2019 22:00 UTC (when mirror node data begins) to present. Each data point represents the total released supply at that moment in time, calculated as the cumulative sum of all treasury flows up to that point.
 
 The metric is stored for multiple time periods (day, week, month, quarter, year) to support various analysis needs. Values are stored in tinybars for precision (1 HBAR = 100,000,000 tinybars).
 
 ## Additional Notes
 
 - The released supply is essential for calculating accurate market capitalization and understanding true token circulation
-- At genesis (Sept 16, 2019), approximately 46.95 billion HBAR were initially released
-- As of late 2024, approximately 42.39 billion HBAR are in circulation
+- True genesis (Aug 24, 2018): ALL 50B HBAR were unreleased
+- First mirror node hour (Sept 13, 2019 22:00 UTC): ~3.52B HBAR already released
 - The metric updates automatically via scheduled job procedures
 - Processing the full history from genesis takes approximately 3-5 seconds
 - Results can be cross-referenced with the Mirror Node API endpoint `/api/v1/network/supply`
@@ -124,7 +125,7 @@ query GetSupplyPercentage {
 }
 ```
 
-> **Note:** Divide the `total` response by `100000000` to convert from tinybars to HBAR. For example, a value of 4239292654349979588 tinybars equals approximately 42,392,926,543.50 HBAR.
+> **Note:** Divide the `total` response by `100000000` to convert from tinybars to HBAR.
 
 ## Available Time Periods
 
