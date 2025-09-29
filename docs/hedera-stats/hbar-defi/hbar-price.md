@@ -18,7 +18,7 @@ Hedera Stat Name: **`avg_usd_conversion`**
 - **Data Sources:** Binance, Bybit, OKX, Bitget and MEXC
 - **Aggregation:**
   - The average of candlestick closing prices for a given period for the HBAR/USDT pair on the five major exchanges by trading volume was calculated.
-  - The price is multiplied by 10,000 for integer representation for each time period.
+  - The price is multiplied by 100,000 for integer representation for each time period.
 
 ## Data Representation
 Each period represents the latest available HBAR price at the given timestamp. This metric is useful for tracking price fluctuations and market trends.
