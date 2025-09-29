@@ -6,7 +6,7 @@ title: HBAR Total Released
 # HBAR Total Released
 
 ## Overview
-The HBAR Total Released statistic represents the circulating (released) supply of HBAR tokens on the Hedera network. This metric tracks the amount of HBAR that has been released from treasury accounts into circulation since network genesis. Unlike the fixed total supply of 50 billion HBAR, the released supply changes over time as treasury accounts distribute or reclaim HBAR, providing a dynamic view of the actual circulating tokens available in the ecosystem.
+The HBAR Total Released statistic represents the circulating (released) supply of HBAR tokens on the Hedera network. This metric tracks the amount of HBAR that has been released from treasury accounts into circulation since mirror node data collection began. Unlike the fixed total supply of 50 billion HBAR, the released supply changes over time as treasury accounts distribute or reclaim HBAR, providing a dynamic view of the actual circulating tokens available in the ecosystem.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
@@ -34,11 +34,6 @@ Hedera Stat Name: **`hbar_total_released`**
   - 0.0.200-349: 150 reserved accounts
   - 0.0.400-750: 351 reserved accounts
 
-- **Flow Mechanics:**
-  - Outflows (negative amounts) from treasury = HBAR releases into circulation
-  - Inflows (positive amounts) to treasury = HBAR removed from circulation
-  - Cumulative calculation ensures historical accuracy from Sept 13, 2019
-
 ## Data Representation
 
 The released supply metric provides a time-series view of HBAR circulation from September 13, 2019 22:00 UTC (when mirror node data begins) to present. Each data point represents the total released supply at that moment in time, calculated as the cumulative sum of all treasury flows up to that point.
@@ -51,7 +46,7 @@ The metric is stored for multiple time periods (day, week, month, quarter, year)
 - True genesis (Aug 24, 2018): ALL 50B HBAR were unreleased
 - First mirror node hour (Sept 13, 2019 22:00 UTC): ~3.52B HBAR already released
 - The metric updates automatically via scheduled job procedures
-- Processing the full history from genesis takes approximately 3-5 seconds
+- Processing the full history takes approximately 3-5 seconds
 - Results can be cross-referenced with the Mirror Node API endpoint `/api/v1/network/supply`
 
 ## GraphQL API Examples
