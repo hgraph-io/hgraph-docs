@@ -6,7 +6,7 @@ title: HBAR Price
 # HBAR Price: Average USD Conversion
 
 ## Overview
-The HBAR Price statistic provides the latest price of HBAR, aggregated from multiple sources. This statistic is essential for tracking the value of HBAR in real time and analyzing price trends over different timeframes.
+The HBAR Price statistic provides the latest price of HBAR, aggregated from multiple sources. This statistic is essential for tracking the value of HBAR in real time and analyzing price trends over different timeframes. Minute-level granularity is now available for high-frequency price tracking.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
@@ -25,6 +25,7 @@ Each period represents the latest available HBAR price at the given timestamp. T
 
 ## Additional Notes
 - HBAR price fluctuations can be influenced by market conditions, trading volume, and broader crypto trends.
+- Minute-level data provides real-time price tracking and is retained for 72 hours to balance data freshness with storage efficiency.
 - Future enhancements may include price history tracking, moving averages, and volatility analysis.
 
 ## GraphQL API Examples
@@ -39,6 +40,21 @@ query GetHBARPrice {
     where: {name: {_eq: "avg_usd_conversion"}}
     order_by: {end_date: desc_nulls_last}
     limit: 1
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### Fetch minute-level HBAR price (last 2 hours)
+
+```graphql
+query MinuteHBARPrice {
+  metric: ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 120
+    where: {name: {_eq: "avg_usd_conversion"}, period: {_eq: "minute"}}
   ) {
     total
     end_date
@@ -90,14 +106,15 @@ query HBAR7DayChange {
 
 The `period` field supports the following values:
 
-- `hour`
-- `day`
+- `minute` - High-frequency data updated every minute (retained for 72 hours)
+- `hour` - Hourly aggregated data
+- `day` - Daily aggregated data
 
 ## SQL Implementation
 
 Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **HBAR Price** statistic outlined in this methodology.
 
-SQL Function: `ecosystem.dashboard_avg_usd_conversion`
+SQL Function: `ecosystem.avg_usd_conversion`
 
 **[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
