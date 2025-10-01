@@ -14,7 +14,7 @@ This documentation contains the information needed to re-create Hedera Stats usi
 - **[Hedera Stats GitHub Repository](https://github.com/hgraph-io/hedera-stats)**
 - **Hedera Mirror Node** or access to **Hgraph's GraphQL API**
   - [Create a free account](https://hgraph.com/hedera)
-- **Prometheus** (`promtool`) for `avg_time_to_consensus` ([view docs](https://prometheus.io/docs/introduction/overview/))
+- **Prometheus** (`promtool`) for `avg_time_to_consensus` ETL pipeline ([view docs](https://prometheus.io/docs/introduction/overview/))
 - **PostgreSQL database** needed for SQL script execution ([view docs](https://www.postgresql.org/docs/current/))
 - **DeFiLlama API** for decentralized finance metrics ([view docs](https://defillama.com/docs/api)).
 
@@ -48,13 +48,19 @@ Configure environment variables (example `.env`):
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/hedera_stats"
 HGRAPH_API_KEY="your_api_key"
+# Required for avg_time_to_consensus ETL pipeline
+PROMETHEUS_ENDPOINT="https://your-prometheus-endpoint"
+POSTGRES_CONNECTION_STRING="postgresql://user:password@localhost:5432/hedera_stats"
 ```
 
 Schedule incremental updates:
 
 ```bash
 crontab -e
+# Time-to-consensus (hourly)
 1 * * * * cd /path/to/hedera-stats/src/time-to-consensus && bash ./run.sh >> ./.raw/cron.log 2>&1
+# Time-to-consensus (daily)
+2 0 * * * cd /path/to/hedera-stats/src/time-to-consensus && bash ./run_day.sh >> ./.raw/cron_day.log 2>&1
 ```
 
 ## Troubleshooting & FAQs

@@ -68,4 +68,4 @@ These stats provide insight into the overall network activity and economic indic
 | `network_tvl`              | Total value locked (TVL) in USD within Hedera's ecosystem. |
 | `stablecoin_marketcap`            | Total market capitalization (USD) of all stablecoins on Hedera (e.g., USDC, USDT). |
 | `avg_usd_conversion`              | Average HBAR to USD conversion rate (multiplied by 100,000 for integer representation). |
-| `avg_time_to_consensus`       | Average time (in nanoseconds) for transactions to reach consensus. |
+| `avg_time_to_consensus`       | Average SecC2RC time (in nanoseconds) - elapsed time from consensus to record creation. |

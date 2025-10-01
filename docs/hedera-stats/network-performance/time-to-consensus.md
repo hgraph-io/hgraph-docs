@@ -5,7 +5,7 @@ title: Time to Consensus
 
 # Network Time to Consensus
 
-Below is a methodology based on the SecC2RC metric, which stands for measuring the elapsed time from when a transaction reaches consensus until its corresponding record is created and available. In practice, this statistic is used as a proxy for "time to consensus" or "network latency" on the Hedera network.
+This metric measures the SecC2RC (Seconds from Consensus to Record Creation) time, which represents the elapsed time from when a transaction reaches consensus until its corresponding record is created and made available. This statistic serves as a proxy for network post-consensus processing efficiency and overall system latency on the Hedera network.
 
 :::note Hedera Data Access
 To access this Hedera network statistic ([and others](/category/hedera-stats/)) via Hgraph's GraphQL & REST APIs, [get started here](https://www.hgraph.com/hedera).
@@ -19,33 +19,46 @@ Hedera Stat Name: **`avg_time_to_consensus`**
 
 ## Methodology
 
-### Identify the Relevant Timestamps:
+### Data Source
 
-    - **Consensus Timestamp:** This is the timestamp assigned to a transaction at the moment the network finalizes its order and deems the transaction valid. This timestamp comes from the consensus layer of the Hedera network.
-    - **Record Creation Timestamp:** After consensus is achieved, a transaction record is generated that details the outcome of the transaction (e.g., success, cost, updated balances). The time at which this final record is fully formed and made available is the Record Creation Timestamp.
+The `avg_time_to_consensus` metric is derived from the Hedera network's Prometheus telemetry system, specifically using the `platform_secC2RC{environment="mainnet"}` metric. This provides real-time measurements of the SecC2RC (Seconds from Consensus to Record Creation) timing.
 
-### Data Source for Timestamps:
+### ETL Pipeline Architecture
 
-    - The SecC2RC (Seconds from Consensus to Record Creation) metric is derived from Hedera network telemetry data.
-    - Consensus timestamps are obtained from the consensus topic stream or from the transaction's consensus status in the mirror node database.
-    - Record creation timestamps are obtained from the same data source once the mirror node has received and processed the finalized transaction record.
+The metric collection follows a three-stage ETL (Extract, Transform, Load) pipeline:
 
-### Calculating the Metric:
+1. **Extract**: Queries Prometheus using `promtool` to retrieve `platform_secC2RC` data
+2. **Transform**: Processes JSON response to CSV format with proper timestamp handling
+3. **Load**: Bulk inserts data into PostgreSQL `ecosystem.metric` table
 
-The basic formula is:
+### Data Processing
+
+#### Time Period Support
+
+- **Hourly**: Collects data every hour using `--step=1h` in Prometheus queries
+- **Daily**: Collects daily aggregates using `--step=1d` in Prometheus queries
+
+#### Timestamp Precision
+
+- Maintains Hedera's nanosecond precision by converting Unix timestamps to nanoseconds
+- Uses PostgreSQL's `int8range` type for timestamp intervals
+- Handles proper time boundary alignment (hour/day boundaries)
+
+#### Calculation Formula
 
 ```text
-Time to Consensus (SecC2RC) = Record Creation Timestamp - Consensus Timestamp
+SecC2RC Time = Record Creation Timestamp - Consensus Timestamp
 ```
 
-Both timestamps should be expressed in a common unit (e.g., seconds since epoch) to allow for a straightforward subtraction.
+The raw Prometheus metric provides this calculation; the ETL pipeline aggregates these values over the specified time periods (hourly or daily averages).
 
-### Aggregation and Reporting:
+### Automated Collection
 
-Once the difference is calculated for individual transactions, these values are:
+Data collection is automated via system cron jobs:
 
-- Averaged over a 24 hour time window to provide a stable metric.
-- Indexed for querying via Hgraph's GraphQL API
+- **Hourly**: Runs every hour to collect recent data
+- **Daily**: Runs daily at 00:02 UTC for daily aggregates
+- **Backfill**: Supports historical data collection in yearly chunks (2023-2025)
 
 ## GraphQL API Examples
 
@@ -74,6 +87,36 @@ query HourlyNetworkTTC {
     order_by: {end_date: desc_nulls_last}
     limit: 8760
     where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "hour"}}
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### Fetch most recent network time to consensus (day)
+
+```graphql
+query GetRecentNetworkTTCDaily {
+  ecosystem_metric(
+    where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "day"}}
+    order_by: {end_date: desc_nulls_last}
+    limit: 1
+  ) {
+    total
+    end_date
+  }
+}
+```
+
+### Fetch daily average TTC (timeseries)
+
+```graphql
+query DailyNetworkTTC {
+  ecosystem_metric(
+    order_by: {end_date: desc_nulls_last}
+    limit: 365
+    where: {name: {_eq: "avg_time_to_consensus"}, period: {_eq: "day"}}
   ) {
     total
     end_date
@@ -118,11 +161,17 @@ The `period` field supports the following values:
 - `hour`
 - `day`
 
-## SQL Implementation
+## ETL Implementation
 
-Below is a link to the **Hedera Stats** GitHub repository. The repo contains the SQL function that calculates the **Time to Consensus** statistic outlined in this methodology.
+The **Time to Consensus** metric is implemented using an ETL pipeline rather than SQL functions. The implementation files are located in the **Hedera Stats** GitHub repository:
 
-SQL Function: `ecosystem.dashboard_avg_time_to_consensus`
+**ETL Pipeline Components:**
+
+- **Extract**: `src/time-to-consensus/etl/extract.sh` (hourly) and `src/time-to-consensus/etl/extract_day.sh` (daily)
+- **Transform**: `src/time-to-consensus/etl/transform.sh` (hourly) and `src/time-to-consensus/etl/transform_day.sh` (daily)
+- **Load**: `src/time-to-consensus/etl/load.sh` and `src/time-to-consensus/etl/load.sql`
+- **Orchestration**: `src/time-to-consensus/run.sh` (hourly) and `src/time-to-consensus/run_day.sh` (daily)
+- **Documentation**: `src/time-to-consensus/CRON_SETUP.md`
 
 **[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
