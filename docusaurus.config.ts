@@ -57,7 +57,7 @@ const config: Config = {
     image: 'img/hgraph_docs_social_image.jpg',
     navbar: {
       hideOnScroll: true,
-      title: 'Hgraph Docs',
+      title: '',
       logo: {
         alt: 'Hgraph Logo',
         src: 'img/hgraph_docs_dark.svg',
