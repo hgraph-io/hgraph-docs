@@ -42,6 +42,13 @@ body {
   display: none !important;
 }
 
+/* Navbar alignment - desktop only */
+@media (min-width: 997px) {
+  .navbar__logo {
+    margin-top: -12px;
+  }
+}
+
 /* Pricing Tables */
 
 .docs-doc-id-overview\/pricing {

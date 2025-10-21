@@ -54,14 +54,14 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/Hgraph-Docs-Card.png',
+    image: 'img/hgraph_docs_social_image.jpg',
     navbar: {
       hideOnScroll: true,
-      title: 'Hgraph Docs',
+      title: '',
       logo: {
         alt: 'Hgraph Logo',
-        src: 'img/Hgraph-Logomark_Dark.svg',
-        srcDark: 'img/Hgraph-Logomark_White.svg'
+        src: 'img/hgraph_docs_dark.svg',
+        srcDark: 'img/hgraph_docs_light.svg'
       },
       items: [
         {to: 'https://hgraph.com/', label: 'Features', position: 'left'},

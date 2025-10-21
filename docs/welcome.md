@@ -5,7 +5,7 @@ slug: /
 
 # Welcome
 
-![image](../static/img/Hgraph-Docs-Card.png)
+![image](../static/img/hgraph_docs_social_image.jpg)
 
 Welcome to the official documentation for **[Hgraph](https://hgraph.com)**, an infrastructure, data services and software engineering company focused on AI, blockchain and more. Core offerings include Hedera APIs ([GraphQL](/category/graphql-api), [REST](/category/rest-api), and [JSON-RPC](/category/json-rpc), custom node infrastructure, SDKs, and bespoke software engineering services.
 
