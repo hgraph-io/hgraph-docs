@@ -14,7 +14,7 @@ Learn more about Hgraph on our [official website](https://hgraph.com).
 
 The mission for Hgraph is simple: to make data access on the Hedera network (and beyond) as easy, flexible, and affordable as possible. This is achieved by focusing on the unique needs of customers and sharing those innovations with the broader ecosystem. This illustration showcases that vision:
 
-![image](../../static/img/Hgraph_Bento-Box_July-2025.png)
+![image](../../static/img/hgraph_bento_box_V6-comp.png)
 
 ## What’s next for Hgraph?
 
