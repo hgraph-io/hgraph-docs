@@ -1,0 +1,8 @@
+{
+  "label": "Hgraph MCP Server",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Model Context Protocol server for Hedera blockchain data access"
+  }
+}
