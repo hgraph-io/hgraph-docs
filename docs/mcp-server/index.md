@@ -5,6 +5,8 @@ description: Connect AI assistants like Claude and ChatGPT to Hedera blockchain 
 keywords: [MCP, Model Context Protocol, Hedera, blockchain, AI, Claude, ChatGPT, Hgraph]
 ---
 
+![Hgraph MCP Server](./hgraph-mcp-docs-hero.jpg)
+
 ## Unlock Hedera Blockchain Data in Your AI Assistant
 
 The Hgraph MCP Server is a powerful bridge that connects AI assistants like Claude and ChatGPT directly to [Hedera](https://hedera.com) network data. Built by [Hgraph](https://hgraph.com), a company focused on accelerating blockchain data access, this Model Context Protocol (MCP) server enables natural language queries to instantly retrieve on-chain information from Hedera—one of the fastest, most decentralized networks with a rapidly growing DeFi ecosystem.
@@ -104,6 +106,8 @@ Replace `<YOUR-HGRAPH-API-KEY>` with your actual API key from the [Hgraph dashbo
 
 Claude offers the smoothest MCP experience with native support and flexible configuration.
 
+![Claude MCP Setup](./claude.png)
+
 1. Sign in to [Claude web](https://claude.ai) or open Claude Desktop
 2. Click your profile icon (bottom left) and select "Settings"
 3. Navigate to the "Connectors" tab in the left sidebar
@@ -127,6 +131,8 @@ Claude offers the smoothest MCP experience with native support and flexible conf
 ### Set up in ChatGPT Web & Mobile
 
 ChatGPT requires [Developer Mode](https://platform.openai.com/docs/guides/developer-mode) for MCP support. This is a beta feature that provides powerful integration capabilities.
+
+![ChatGPT MCP Setup](./chatgpt.png)
 
 1. Sign in to [ChatGPT web](https://chat.openai.com)
 2. Click your profile icon (bottom left) → "Settings"
@@ -163,6 +169,8 @@ ChatGPT requires [Developer Mode](https://platform.openai.com/docs/guides/develo
 ### Set Up in Claude Code CLI
 
 Claude Code provides the most powerful MCP experience for developers and technical users.
+
+![Claude Code MCP Setup](./claudecode.png)
 
 1. Install Claude Code ([installation guide](https://docs.claude.com/en/docs/claude-code/getting-started))
 2. Complete any IDE-specific configurations
