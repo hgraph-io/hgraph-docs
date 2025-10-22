@@ -7,7 +7,7 @@ keywords: [ChatGPT, MCP setup, Developer Mode, OpenAI, Hedera]
 
 # ChatGPT Setup Guide
 
-ChatGPT requires [Developer Mode](https://platform.openai.com/docs/guides/developer-mode) for MCP support. This is a beta feature that provides powerful integration capabilities.
+ChatGPT supports MCP through its [Developer Mode](https://platform.openai.com/docs/guides/developer-mode) feature, enabling integration with external data sources like the Hgraph MCP Server. While this beta feature requires additional setup steps, it provides full access to Hedera blockchain data through natural language queries.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Replace `<YOUR-HGRAPH-API-KEY>` with your actual API key from the [Hgraph dashbo
 
 ## Set up in ChatGPT Web
 
-![ChatGPT MCP Setup](./chatgpt.png)
+![ChatGPT MCP Setup Screenshot - Developer Mode settings page with Create connector dialog](./chatgpt.png)
 
 ### Enable Developer Mode
 
@@ -81,6 +81,7 @@ If the connector doesn't appear, refresh the page and ensure Developer Mode is s
 - MCP servers do **not** work in ChatGPT's Deep Research mode
 - MCP servers do **not** currently work in ChatGPT Desktop app
 - Only web version fully supports MCP at this time
+- For native MCP support, consider using [Claude](./setup-claude) instead
 :::
 
 :::tip Mobile Support

@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
-title: Hgraph MCP Server (Beta) - Overview
+title: Overview
 description: Connect AI assistants like Claude and ChatGPT to Hedera blockchain data
 keywords: [MCP, Model Context Protocol, Hedera, blockchain, AI, Claude, ChatGPT, Hgraph]
 ---
 
-![Hgraph MCP Server](./hgraph-mcp-docs-hero.jpg)
+![Hgraph MCP Server Hero Image](./hgraph-mcp-docs-hero.jpg)
 
 ## Unlock Hedera Blockchain Data in Your AI Assistant
 
@@ -38,7 +38,7 @@ Whether you're an analyst generating reports, a developer building complex queri
 
 ## What is MCP?
 
-The Model Context Protocol (MCP) is an open standard created by Anthropic and announced in November 2024. MCP standardizes how AI assistants connect to external data sources and tools, replacing fragmented integrations with a universal protocol. [Learn more about MCP →](https://modelcontextprotocol.io/docs/getting-started/intro)
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard created by Anthropic and announced in November 2024. MCP standardizes how AI assistants connect to external data sources and tools, replacing fragmented integrations with a universal protocol. [Learn more about MCP →](https://modelcontextprotocol.io/docs/getting-started/intro)
 
 Think of MCP as a universal translator between AI and data. Before MCP, each AI platform needed custom integrations for every data source. Now, any MCP-compliant server works with any MCP-enabled AI assistant, creating an ecosystem of interoperable tools.
 
@@ -50,7 +50,7 @@ Hgraph chose to implement MCP because it aligns perfectly with our mission: maki
   <div className="col col--6">
     <div className="card">
       <div className="card__header">
-        <h3>🚀 Setup Guides</h3>
+        <h3>Setup Guides</h3>
       </div>
       <div className="card__body">
         <p>Platform-specific installation instructions</p>
@@ -64,7 +64,7 @@ Hgraph chose to implement MCP because it aligns perfectly with our mission: maki
   <div className="col col--6">
     <div className="card">
       <div className="card__header">
-        <h3>📖 Learn & Explore</h3>
+        <h3>Learn & Explore</h3>
       </div>
       <div className="card__body">
         <p>Examples, tips, and best practices</p>

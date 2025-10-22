@@ -7,7 +7,7 @@ keywords: [Claude, MCP setup, Claude Desktop, Claude Code, Hedera]
 
 # Claude Setup Guide
 
-Claude offers the smoothest MCP experience with native support and flexible configuration across all Claude platforms.
+Claude provides native MCP support, making it the recommended platform for accessing Hedera blockchain data through natural language. With seamless integration across web, desktop, and mobile platforms, Claude delivers the most reliable and feature-rich experience for the Hgraph MCP Server.
 
 ## Prerequisites
 
@@ -21,6 +21,7 @@ Before setting up the MCP connector, you'll need:
 2. **Claude Account**
    - Claude Pro subscription required for custom connectors
    - Available at [claude.ai](https://claude.ai)
+   - Claude Desktop app: [Download here](https://claude.ai/download)
 
 ## Official Hgraph MCP URL
 
@@ -34,7 +35,7 @@ Replace `<YOUR-HGRAPH-API-KEY>` with your actual API key from the [Hgraph dashbo
 
 ## Set up in Claude Web & Desktop
 
-![Claude MCP Setup](./claude.png)
+![Claude MCP Setup Screenshot - Shows the Connectors settings page with the Add custom connector dialog](./claude.png)
 
 1. Sign in to [Claude web](https://claude.ai) or open Claude Desktop
 2. Click your profile icon (bottom left) and select "Settings"
@@ -65,7 +66,7 @@ Once configured in Claude web or desktop, the Hgraph MCP will automatically appe
 
 Claude Code provides the most powerful MCP experience for developers and technical users.
 
-![Claude Code MCP Setup](./claudecode.png)
+![Claude Code MCP Setup Screenshot - Terminal showing the claude mcp add command](./claudecode.png)
 
 ### Installation Steps
 

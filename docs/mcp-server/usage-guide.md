@@ -11,9 +11,9 @@ Maximize your experience with the Hgraph MCP Server by following these guideline
 
 ## Usage Tips
 
-### 🎯 Be Specific with Your Queries
+### Be Specific with Your Queries
 
-Use entity IDs (like `0.0.XYZ` for accounts), time ranges, and clear metrics for best results. The more specific your prompt, the more accurate the data.
+Use [entity IDs](./examples#tips-for-better-results) (like `0.0.XYZ` for accounts), time ranges, and clear metrics for best results. The more specific your prompt, the more accurate the data.
 
 **Good prompt:**
 ```
@@ -26,7 +26,7 @@ in the past 24 hours
 Show me large transfers
 ```
 
-### 🔍 Explore the Underlying Queries
+### Explore the Underlying Queries
 
 Ask the AI to show you the GraphQL or SQL queries it's using. This transparency helps you understand the data and learn query patterns.
 
@@ -36,7 +36,7 @@ Show me the top 5 token holders for USDC and display
 the GraphQL query you used
 ```
 
-### 📊 Combine with AI Capabilities
+### Combine with AI Capabilities
 
 Request charts, dashboards, CSV exports, or markdown tables. The AI can transform raw blockchain data into any format you need.
 
@@ -46,7 +46,7 @@ Request charts, dashboards, CSV exports, or markdown tables. The AI can transfor
 - "Build a dashboard showing network metrics"
 - "Create a pie chart of token distribution"
 
-### 🚀 Start with Context
+### Start with Context
 
 The MCP automatically loads essential schemas, but you can ask for additional examples or explore specific data types for deeper insights.
 
@@ -55,7 +55,7 @@ The MCP automatically loads essential schemas, but you can ask for additional ex
 - "Show me available metrics for DeFi protocols"
 - "What transaction types can I query?"
 
-### 📚 Follow Prompting Best Practices
+### Follow Prompting Best Practices
 
 For optimal results, refer to platform-specific guides:
 - [Claude's prompting guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
@@ -200,14 +200,14 @@ Over the past quarter
 
 ## Best Practices Summary
 
-✅ **DO:**
+**DO:**
 - Use specific entity IDs and time ranges
 - Verify critical information independently
 - Request structured output formats
 - Break complex queries into steps
 - Save useful query patterns for reuse
 
-❌ **DON'T:**
+**DON'T:**
 - Share API keys or sensitive information
 - Rely on AI for transaction signing
 - Trust hallucinated entity IDs
