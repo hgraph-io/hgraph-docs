@@ -79,7 +79,7 @@ Claude Code provides the most powerful MCP experience for developers and technic
 3. Add the Hgraph MCP connector via terminal:
 
    ```bash
-   claude mcp add --transport http hgraph https://mainnet.hedera.api.hgraph.io/v1/<YOUR-HGRAPH-API-KEY>/mcp
+   claude mcp add --scope user --transport http hgraph https://mainnet.hedera.api.hgraph.io/v1/<HGRAPH-API-KEY>/mcp
    ```
 
 4. Restart Claude Code:
