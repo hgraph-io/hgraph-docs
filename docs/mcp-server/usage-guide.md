@@ -5,6 +5,10 @@ description: Get the most from your Hgraph MCP Server with tips, verification, a
 keywords: [MCP usage, best practices, safety, verification, troubleshooting]
 ---
 
+:::caution Service Maintenance
+We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
+:::
+
 # Usage Tips & Best Practices
 
 Maximize your experience with the Hgraph MCP Server by following these guidelines and best practices.
@@ -12,7 +16,7 @@ Maximize your experience with the Hgraph MCP Server by following these guideline
 ## Usage Tips
 
 ### Be Specific with Your Queries
-Use [entity IDs](./examples#tips-for-better-results) (like `0.0.XYZ` for accounts), time ranges, and clear metrics for best results. The more specific your prompt, the more accurate the data.
+Use [entity IDs](/mcp-server/examples#tips-for-better-results) (like `0.0.XYZ` for accounts), time ranges, and clear metrics for best results. The more specific your prompt, the more accurate the data.
 
 ### Explore the Underlying Queries
 Ask the AI to show you the GraphQL or SQL queries it's using. This transparency helps you understand the data and learn query patterns.
@@ -57,14 +61,14 @@ We **never** request or handle private keys, seed phrases, wallet passwords, or 
 We value your feedback as we continue to improve the Hgraph MCP Server during beta:
 
 - **Discord Community**: Join discussions at [discord.gg/dwxpRHHVWX](https://discord.gg/dwxpRHHVWX)
-- **Support Documentation**: Visit [docs.hgraph.com/support](https://docs.hgraph.com/support)
+- **Support Documentation**: Visit [our support page](/support)
 - **Email Support**: Reach out to [support@hgraph.com](mailto:support@hgraph.com)
 
 ## Next Steps
 
-- [View Examples & Use Cases →](./examples)
-- [Claude Setup Guide →](./setup-claude)
-- [ChatGPT Setup Guide →](./setup-chatgpt)
+- [View Examples & Use Cases →](/mcp-server/examples)
+- [Claude Setup Guide →](/mcp-server/setup-claude)
+- [ChatGPT Setup Guide →](/mcp-server/setup-chatgpt)
 
 ---
 

@@ -5,6 +5,10 @@ description: Set up Hgraph MCP Server with ChatGPT using Developer Mode
 keywords: [ChatGPT, MCP setup, Developer Mode, OpenAI, Hedera]
 ---
 
+:::caution Service Maintenance
+We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
+:::
+
 # ChatGPT Setup Guide
 
 ChatGPT supports MCP through its [Developer Mode](https://platform.openai.com/docs/guides/developer-mode) feature, enabling integration with external data sources like the Hgraph MCP Server. While this beta feature requires additional setup steps, it provides full access to Hedera blockchain data through natural language queries.
@@ -81,7 +85,7 @@ If the connector doesn't appear, refresh the page and ensure Developer Mode is s
 - MCP servers do **not** work in ChatGPT's Deep Research mode
 - MCP servers do **not** currently work in ChatGPT Desktop app
 - Only web version fully supports MCP at this time
-- For native MCP support, consider using [Claude](./setup-claude) instead
+- For native MCP support, consider using [Claude](/mcp-server/setup-claude) instead
 :::
 
 :::tip Mobile Support
@@ -118,10 +122,10 @@ Once configured in ChatGPT web, the Hgraph MCP will work on the ChatGPT mobile a
 
 ## Next Steps
 
-- [View Examples & Use Cases →](./examples)
-- [Learn Usage Tips & Best Practices →](./usage-guide)
-- [Claude Setup Guide →](./setup-claude)
+- [View Examples & Use Cases →](/mcp-server/examples)
+- [Learn Usage Tips & Best Practices →](/mcp-server/usage-guide)
+- [Claude Setup Guide →](/mcp-server/setup-claude)
 
 ---
 
-*Need help? Visit [docs.hgraph.com/support](https://docs.hgraph.com/support) or join our [Discord community](https://discord.gg/dwxpRHHVWX)*
+*Need help? Visit [our support page](/support) or join our [Discord community](https://discord.gg/dwxpRHHVWX)*

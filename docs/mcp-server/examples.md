@@ -5,6 +5,10 @@ description: Real-world examples and prompts for the Hgraph MCP Server
 keywords: [MCP examples, Hedera queries, blockchain prompts, use cases]
 ---
 
+:::caution Service Maintenance
+We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
+:::
+
 # Examples & Use Cases
 
 Discover what's possible with the Hgraph MCP Server through real-world examples and use cases.
@@ -50,13 +54,13 @@ When using the Hgraph MCP Server, remember to:
 - **Request specific formats**: Ask for tables, CSVs, or markdown for structured data
 - **Use proper terminology**: "Treasury account", "consensus timestamp", "token association"
 
-For more detailed guidance, see our [comprehensive usage guide](./usage-guide).
+For more detailed guidance, see our [comprehensive usage guide](/mcp-server/usage-guide).
 
 ## Next Steps
 
-- [Learn Usage Tips & Best Practices →](./usage-guide)
-- [Claude Setup Guide →](./setup-claude)
-- [ChatGPT Setup Guide →](./setup-chatgpt)
+- [Learn Usage Tips & Best Practices →](/mcp-server/usage-guide)
+- [Claude Setup Guide →](/mcp-server/setup-claude)
+- [ChatGPT Setup Guide →](/mcp-server/setup-chatgpt)
 
 ---
 

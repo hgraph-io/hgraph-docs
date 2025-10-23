@@ -5,6 +5,10 @@ description: Set up Hgraph MCP Server with Claude AI assistants
 keywords: [Claude, MCP setup, Claude Desktop, Claude Code, Hedera]
 ---
 
+:::caution Service Maintenance
+We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
+:::
+
 # Claude Setup Guide
 
 Claude provides native MCP support, making it the recommended platform for accessing Hedera blockchain data through natural language. With seamless integration across web, desktop, and mobile platforms, Claude delivers the most reliable and feature-rich experience for the Hgraph MCP Server.
@@ -122,10 +126,10 @@ claude config set allowlist "mcp__hgraph__*"
 
 ## Next Steps
 
-- [View Examples & Use Cases →](./examples)
-- [Learn Usage Tips & Best Practices →](./usage-guide)
-- [ChatGPT Setup Guide →](./setup-chatgpt)
+- [View Examples & Use Cases →](/mcp-server/examples)
+- [Learn Usage Tips & Best Practices →](/mcp-server/usage-guide)
+- [ChatGPT Setup Guide →](/mcp-server/setup-chatgpt)
 
 ---
 
-*Need help? Visit [docs.hgraph.com/support](https://docs.hgraph.com/support) or join our [Discord community](https://discord.gg/dwxpRHHVWX)*
+*Need help? Visit [our support page](/support) or join our [Discord community](https://discord.gg/dwxpRHHVWX)*

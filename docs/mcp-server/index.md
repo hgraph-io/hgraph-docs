@@ -5,13 +5,17 @@ description: Connect AI assistants like Claude and ChatGPT to Hedera blockchain 
 keywords: [MCP, Model Context Protocol, Hedera, blockchain, AI, Claude, ChatGPT, Hgraph]
 ---
 
+:::caution Service Maintenance
+We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
+:::
+
 ![Hgraph MCP Server Hero Image](./hgraph-mcp-docs-hero.jpg)
 
 ## Unlock Hedera Blockchain Data in Your AI Assistant
 
 The Hgraph MCP Server is a powerful bridge that connects AI assistants like Claude and ChatGPT directly to [Hedera](https://hedera.com) network data. Built by [Hgraph](https://hgraph.com), a company focused on accelerating blockchain data access, this Model Context Protocol (MCP) server enables natural language queries to instantly retrieve on-chain information from Hedera—one of the fastest, most decentralized networks with a rapidly growing DeFi ecosystem.
 
-Hgraph operates bare metal Hedera mirror nodes for lightning-fast data access, serving all mirror node data back to genesis with real-time updates. We provide enriched data through [Hedera Stats](https://docs.hgraph.com/hedera-stats) for comprehensive network analytics and KPIs, plus our [ERC Token Indexer](https://docs.hgraph.com/erc-token-data/overview) for real-time ERC-20 and ERC-721 token data. This means your AI assistant has access to the most reliable and comprehensive Hedera data available.
+Hgraph operates bare metal Hedera mirror nodes for lightning-fast data access, serving all mirror node data back to genesis with real-time updates. We provide enriched data through [Hedera Stats](/hedera-stats) for comprehensive network analytics and KPIs, plus our [ERC Token Indexer](/erc-token-data/overview) for real-time ERC-20 and ERC-721 token data. This means your AI assistant has access to the most reliable and comprehensive Hedera data available.
 
 Whether you're an analyst generating reports, a developer building complex queries, or a Hedera enthusiast exploring the ecosystem, the Hgraph MCP Server transforms how you interact with blockchain data—no coding required, just conversation.
 
@@ -56,8 +60,8 @@ Hgraph chose to implement MCP because it aligns perfectly with our mission: maki
         <p>Platform-specific installation instructions</p>
       </div>
       <div className="card__footer">
-        <a href="./setup-claude" className="button button--primary button--block">Claude Setup</a>
-        <a href="./setup-chatgpt" className="button button--secondary button--block margin-top--sm">ChatGPT Setup</a>
+        <a href="/mcp-server/setup-claude" className="button button--primary button--block">Claude Setup</a>
+        <a href="/mcp-server/setup-chatgpt" className="button button--secondary button--block margin-top--sm">ChatGPT Setup</a>
       </div>
     </div>
   </div>
@@ -70,8 +74,8 @@ Hgraph chose to implement MCP because it aligns perfectly with our mission: maki
         <p>Examples, tips, and best practices</p>
       </div>
       <div className="card__footer">
-        <a href="./examples" className="button button--primary button--block">View Examples</a>
-        <a href="./usage-guide" className="button button--secondary button--block margin-top--sm">Usage Guide</a>
+        <a href="/mcp-server/examples" className="button button--primary button--block">View Examples</a>
+        <a href="/mcp-server/usage-guide" className="button button--secondary button--block margin-top--sm">Usage Guide</a>
       </div>
     </div>
   </div>
@@ -81,10 +85,10 @@ Hgraph chose to implement MCP because it aligns perfectly with our mission: maki
 
 Choose your platform to begin:
 
-- **[Claude Setup Guide →](./setup-claude)** - Recommended for best experience
-- **[ChatGPT Setup Guide →](./setup-chatgpt)** - Requires Developer Mode
-- **[Examples & Use Cases →](./examples)** - See what's possible
-- **[Usage Tips & Best Practices →](./usage-guide)** - Get the most from your MCP
+- **[Claude Setup Guide →](/mcp-server/setup-claude)** - Recommended for best experience
+- **[ChatGPT Setup Guide →](/mcp-server/setup-chatgpt)** - Requires Developer Mode
+- **[Examples & Use Cases →](/mcp-server/examples)** - See what's possible
+- **[Usage Tips & Best Practices →](/mcp-server/usage-guide)** - Get the most from your MCP
 
 ---
 
