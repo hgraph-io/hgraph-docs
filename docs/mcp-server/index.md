@@ -5,10 +5,6 @@ description: Connect AI assistants like Claude and ChatGPT to Hedera blockchain 
 keywords: [MCP, Model Context Protocol, Hedera, blockchain, AI, Claude, ChatGPT, Hgraph]
 ---
 
-:::caution Service Maintenance
-We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
-:::
-
 ![Hgraph MCP Server Hero Image](./hgraph-mcp-docs-hero.jpg)
 
 ## Unlock Hedera Blockchain Data in Your AI Assistant

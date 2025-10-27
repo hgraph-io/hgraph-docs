@@ -5,10 +5,6 @@ description: Real-world examples and prompts for the Hgraph MCP Server
 keywords: [MCP examples, Hedera queries, blockchain prompts, use cases]
 ---
 
-:::caution Service Maintenance
-We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
-:::
-
 # Examples & Use Cases
 
 Discover what's possible with the Hgraph MCP Server through real-world examples and use cases.

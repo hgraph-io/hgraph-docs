@@ -5,10 +5,6 @@ description: Get the most from your Hgraph MCP Server with tips, verification, a
 keywords: [MCP usage, best practices, safety, verification, troubleshooting]
 ---
 
-:::caution Service Maintenance
-We are currently performing backend maintenance to enhance the MCP Server experience. Some features may be temporarily unavailable. We apologize for any inconvenience and appreciate your patience. Please check back soon for updates.
-:::
-
 # Usage Tips & Best Practices
 
 Maximize your experience with the Hgraph MCP Server by following these guidelines and best practices.
