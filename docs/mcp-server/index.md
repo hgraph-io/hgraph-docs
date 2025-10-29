@@ -15,10 +15,10 @@ Built by [Hgraph](https://hgraph.com), we provide enriched data from bare metal 
 
 **What you can do:**
 
-- ❌ **Before**: "Give me a portfolio breakdown of my Hedera account" → *"I don't have access to current network data"*
+- ❌ **Before**: "Give me a portfolio breakdown of my Hedera account" → "I don't have access to current network data"
 - ✅ **After**: "Give me a portfolio breakdown of my Hedera account" → *Real-time answer with current metrics, activity and holdings*
 
-Ask questions in plain English, get live blockchain data—no APIs, no manual queries, no complexity. Just talk to the Hedera network using Hgraph's MCP!
+Ask questions in plain English, get live blockchain data—no APIs, no manual queries, no complexity.
 
 ## Quick Start {#quick-start}
 
@@ -59,7 +59,7 @@ Ask questions in plain English, get live blockchain data—no APIs, no manual qu
 
 ### 1. Paid Subscription to Claude or ChatGPT
 
-*Pick one of these paid plans:*
+Pick one of these paid plans:
 
 - **Claude Pro** ($20/month) - [Subscribe →](https://claude.ai)
 - **OR ChatGPT Plus** ($20/month) - [Subscribe →](https://chat.openai.com)
