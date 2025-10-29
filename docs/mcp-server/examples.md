@@ -11,11 +11,26 @@ Discover what's possible with the Hgraph MCP Server through real-world examples 
 
 ## Quick Start - Try Your First Query
 
-Once your MCP connector is configured, test the connection with this simple query:
+Once your MCP connector is configured, test the connection with this query:
 
-**"What is the current total supply of HBAR?"**
+**"Could you provide an overview of token 0.0.1055459?"**
 
-If successful, you'll see Hedera network data returned directly in your chat. This confirms your MCP is working correctly!
+<details>
+<summary>What should I see if it's working?</summary>
+
+When your MCP is working correctly, you'll see:
+
+1. Your AI assistant (Claude or ChatGPT) will indicate it's using the Hgraph connector/tools
+2. You'll receive real Hedera token data in the response
+3. The response will include specific details about the token (name, symbol, supply, etc.)
+
+**Success indicator:** You see real, current Hedera token data with specific numbers and details.
+
+**If not working:** You see generic information or an error message. Check the troubleshooting sections in your setup guide ([Claude](/mcp-server/setup-claude#troubleshooting) | [ChatGPT](/mcp-server/setup-chatgpt#troubleshooting)).
+
+</details>
+
+If successful, you'll see Hedera blockchain data returned directly in your chat. This confirms your MCP is working correctly!
 
 ## Prompt Examples
 

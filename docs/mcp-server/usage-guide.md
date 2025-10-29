@@ -9,6 +9,10 @@ keywords: [MCP usage, best practices, safety, verification, troubleshooting]
 
 Maximize your experience with the Hgraph MCP Server by following these guidelines and best practices.
 
+:::tip Need Help Understanding These Tips?
+You can share this page with your AI assistant (Claude or ChatGPT) and ask: "Help me understand these best practices and how to apply them to my Hedera queries."
+:::
+
 ## Usage Tips
 
 ### Be Specific with Your Queries
