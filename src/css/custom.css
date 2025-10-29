@@ -50,17 +50,54 @@ body {
 }
 
 /* Pricing Tables */
+.docs-doc-id-overview\/pricing .docMainContainer_TBSr table tbody tr {
+  background: none;
+}
 
-.docs-doc-id-overview\/pricing {
+.docs-doc-id-overview\/pricing .docMainContainer_TBSr table {
+  font-size: 0.9em;
+}
 
-.docMainContainer_TBSr table tbody tr { background: none; }
+/* .docs-doc-id-overview\/pricing .docMainContainer_TBSr tr:nth-child(2),
+   .docs-doc-id-overview\/pricing .docMainContainer_TBSr tr:nth-child(6),
+   .docs-doc-id-overview\/pricing .docMainContainer_TBSr tr:nth-child(10) {
+     background-color: var(--ifm-table-stripe-background) !important;
+   }
 
-.docMainContainer_TBSr table {font-size: 0.9em; }
+.docs-doc-id-overview\/pricing .docMainContainer_TBSr tbody tr:nth-child(1) {
+  font-size: 0.8em !important;
+} */
 
+/* Details/Summary Collapsible Sections - Remove colored styling */
+details.alert {
+  --ifm-alert-border-color: var(--ifm-color-emphasis-200);
+  --ifm-alert-background-color: transparent;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 1rem;
+}
 
-/* .docMainContainer_TBSr tr:nth-child(2), .docMainContainer_TBSr tr:nth-child(6), .docMainContainer_TBSr tr:nth-child(10) { background-color: var(--ifm-table-stripe-background) !important; }
+details.alert > summary {
+  --docusaurus-details-decoration-color: currentColor;
+  color: var(--ifm-font-color-base) !important;
+  cursor: pointer;
+  font-weight: normal;
+}
 
-.docMainContainer_TBSr tbody tr:nth-child(1) { font-size: 0.8em !important; } */
+details.alert > summary:hover {
+  color: var(--ifm-font-color-base) !important;
+}
 
-} 
+details.alert > summary:focus {
+  outline: none;
+}
 
+details.alert > summary:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] details.alert {
+  --ifm-alert-border-color: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-300);
+}
