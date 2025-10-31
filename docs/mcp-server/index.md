@@ -1,9 +1,11 @@
 ---
 sidebar_position: 1
-title: Hgraph Beta MCP & AI App Connectors
+title: Hgraph Beta MCP
 description: Connect AI assistants like Claude and ChatGPT to Hedera blockchain data
 keywords: [MCP, Model Context Protocol, Hedera, blockchain, AI, Claude, ChatGPT, Hgraph]
 ---
+
+# Hgraph Beta MCP & AI App Connectors  
 
 ![Hgraph MCP Server Hero Image](./hgraph-mcp-docs-hero.jpg)
 
@@ -15,17 +17,17 @@ Built by [Hgraph](https://hgraph.com), we provide enriched data from bare metal 
 
 **What you can do:**
 
-- ❌ **Before**: "Give me a portfolio breakdown of my Hedera account" → "I don't have access to current network data"
-- ✅ **After**: "Give me a portfolio breakdown of my Hedera account" → *Real-time answer with current metrics, activity and holdings*
+- **✘ Before** - "Give me a portfolio breakdown of my Hedera account" → "I don't have access to current Hedera network mirror node data"
+- **✓ After** - "Give me a portfolio breakdown of my Hedera account" → *Real-time answer with current metrics, activity and holdings*
 
-Ask questions in plain English, get live blockchain data—no APIs, no manual queries, no complexity.
+Ask questions in plain English, get live blockchain data. No APIs, no manual queries, no coding, no complexity.
 
 ## Quick Start {#quick-start}
 
-**Choose your platform:**
+Choose your platform (or see a [comparison](#platforms) further down).
 
 <div className="row">
-  <div className="col col--6">
+  <div className="col col--6" style={{marginBottom: '20px'}}>
     <div className="card">
       <div className="card__header">
         <h3>Claude Setup</h3>
@@ -38,7 +40,7 @@ Ask questions in plain English, get live blockchain data—no APIs, no manual qu
       </div>
     </div>
   </div>
-  <div className="col col--6">
+  <div className="col col--6" style={{marginBottom: '20px'}}>
     <div className="card">
       <div className="card__header">
         <h3>ChatGPT Setup</h3>
@@ -53,20 +55,14 @@ Ask questions in plain English, get live blockchain data—no APIs, no manual qu
   </div>
 </div>
 
-**Not sure which?** See [platform comparison](#platforms) below.
-
-## What You'll Need (Two Things)
+## What You'll Need
 
 ### 1. Paid Subscription to Claude or ChatGPT
 
-Pick one of these paid plans:
+Pick one of these paid plans. AI a
 
 - **Claude Pro** ($20/month) - [Subscribe →](https://claude.ai)
 - **OR ChatGPT Plus** ($20/month) - [Subscribe →](https://chat.openai.com)
-
-:::warning Paid Subscription Required
-The free versions of Claude and ChatGPT cannot connect to external MCP servers. You need a paid subscription.
-:::
 
 ### 2. Free Hgraph Account
 
@@ -76,11 +72,7 @@ Create a free Hgraph account to get your API key:
 - No credit card required
 - Takes 2 minutes
 
-:::tip Two Separate Accounts
-You'll have two accounts: your paid Claude/ChatGPT account + your free Hgraph account. These are separate and you don't need any other API keys.
-:::
-
-**That's it!** One paid subscription + one free Hgraph account = you're ready to go!
+**You'll have two accounts:** your paid Claude/ChatGPT account + your free Hgraph account. These are separate and you don't need any other API keys.
 
 ## Platform Comparison {#platforms}
 
@@ -88,7 +80,11 @@ You'll have two accounts: your paid Claude/ChatGPT account + your free Hgraph ac
 
 **ChatGPT**: Requires Developer Mode (beta feature), web and mobile supported, slightly more setup steps.
 
-**More platforms coming**: We're working on support for additional AI platforms and custom solutions. [Join our Discord](https://discord.gg/dwxpRHHVWX) for updates.
+**More platforms coming**: We're working on support for additional AI platforms and custom solutions.
+
+:::note Technical Requirement for Other Clients
+The Hgraph MCP Server requires clients that support **Streamable HTTP transport** (MCP spec 2025-06-18). This server does not support the deprecated dual-endpoint SSE transport. All major LLM platforms (Claude, ChatGPT) support Streamable HTTP by default.
+:::
 
 ## Learn More
 

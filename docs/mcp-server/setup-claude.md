@@ -11,7 +11,7 @@ Claude provides native MCP support, making it the recommended platform for acces
 
 ![Claude MCP integration showing Hgraph connector in action](./claude.png)
 
-:::tip Need Help? Ask Your AI to Guide You
+:::note Need Help? Ask Your AI to Guide You
 You can paste this page into Claude or ChatGPT and ask: "Help me follow these setup instructions step-by-step." Your AI assistant can walk you through each step!
 :::
 
@@ -30,9 +30,7 @@ Before setting up the MCP connector, you'll need:
    - Available at [claude.ai](https://claude.ai)
    - Claude Desktop app: [Download here](https://claude.ai/download)
 
-:::warning Use Your Publishable API Key
-Make sure you're using your **Publishable Key** (starts with `pk_prod_`), NOT your Secret Key. The Publishable Key is safe to use in MCP connector URLs.
-:::
+---
 
 ## Set up in Claude Web & Desktop
 
@@ -43,7 +41,7 @@ Follow these 5 steps to connect Hgraph to Claude:
 Sign in to the [Hgraph dashboard](https://dashboard.hgraph.com), navigate to the API Keys section, and copy your Publishable API Key (starts with `pk_prod_`).
 
 <details>
-<summary>Show me where to find my Publishable API Key</summary>
+<summary>**Show me where to find my Publishable API Key**</summary>
 
 Navigate to the API Keys section in your Hgraph dashboard and look for your Publishable Key (starts with `pk_prod_`).
 
@@ -60,7 +58,7 @@ In Claude web or Claude Desktop, click your profile icon in the bottom left corn
 In Settings, click "Connectors" in the left sidebar.
 
 <details>
-<summary>Show me the Connectors page</summary>
+<summary>**Show me the Connectors page**</summary>
 
 On the left sidebar of the Settings page, you'll see several options. Click "Connectors".
 
@@ -75,7 +73,7 @@ Click "Add custom connector" and fill in the form:
 - **URL:** `https://mainnet.hedera.api.hgraph.io/v1/YOUR_PUBLISHABLE_KEY/mcp`
 
 <details>
-<summary>Show me step-by-step with screenshots</summary>
+<summary>**Show me step-by-step with screenshots**</summary>
 
 **Finding the button:**
 
@@ -111,7 +109,7 @@ Start a new chat, enable the Hgraph connector, and try this test query:
 **"Could you provide an overview of token 0.0.1055459?"**
 
 <details>
-<summary>Show me what success looks like</summary>
+<summary>**Show me what success looks like**</summary>
 
 When your MCP is working correctly, you'll see:
 
@@ -129,16 +127,16 @@ For more example queries, see our [Examples & Use Cases page](/mcp-server/exampl
 
 </details>
 
-:::tip Mobile Support
-Once configured in Claude web or desktop, the connector syncs to mobile apps automatically.
-Note: Mobile apps inherit settings but may have limited features compared to desktop.
-:::
-
 ### Understanding What Just Happened
 
 Behind the scenes, your AI assistant called the Hgraph MCP Server, which queried the Hedera mirror node database to retrieve live token data. This same pattern works for any Hedera entity, metric, or blockchain query you request.
 
 The MCP automatically selected the optimal data source (GraphQL, SQL, or RPC) based on your question type—no manual configuration needed.
+
+:::note Mobile Support
+Once configured in Claude web or desktop, the connector syncs to mobile apps automatically.
+Note: Mobile apps inherit settings but may have limited features compared to desktop.
+:::
 
 ---
 
@@ -158,6 +156,8 @@ Claude Code provides advanced MCP integration for developers and technical users
 
    Replace `YOUR_PUBLISHABLE_KEY` with your actual Publishable API Key (starts with `pk_prod_`)
 
+   The `--transport http` parameter uses modern Streamable HTTP transport (not deprecated SSE), providing a single endpoint with better reliability and session resumability.
+
 4. Restart Claude Code:
    - **VS Code**: Reload window (Cmd/Ctrl+R)
    - **Terminal**: Exit and restart your session
@@ -176,7 +176,8 @@ Simply start a conversation and ask questions about Hedera data. Claude Code aut
 
 **Example prompt:** "Show me the top 5 ERC-20 tokens on Hedera by market cap"
 
-:::tip Auto-approval Configuration
+### Auto-approval Configuration
+
 To avoid manually approving every Hgraph tool call, configure auto-approval by adding Hgraph tools to your allowlist:
 
 ```bash
@@ -184,7 +185,7 @@ claude config set allowlist "mcp__hgraph__*"
 ```
 
 This allows Claude Code to automatically use Hgraph MCP tools without asking for permission each time.
-:::
+
 
 ---
 
