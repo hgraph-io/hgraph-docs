@@ -9,7 +9,7 @@ keywords: [MCP usage, best practices, safety, verification, troubleshooting]
 
 Maximize your experience with the Hgraph MCP Server by following these guidelines and best practices.
 
-:::tip Need Help Understanding These Tips?
+:::note Need Help Understanding These Tips?
 You can share this page with your AI assistant (Claude or ChatGPT) and ask: "Help me understand these best practices and how to apply them to my Hedera queries."
 :::
 
@@ -51,7 +51,7 @@ The Hgraph MCP Server prioritizes security through multiple layers of protection
 The server **cannot** write data to the Hedera network, sign transactions, modify blockchain state, access private keys, or execute smart contracts. All operations are strictly read-only queries.
 
 ### Security Features
-Input validation on all queries using strict schemas, rate limiting to prevent abuse, query timeouts for resource protection, SQL injection prevention through prepared statements, automatic redaction of sensitive data in logs, and allowlisted RPC methods only.
+Input validation on all queries using strict schemas, rate limiting to prevent abuse, query timeouts for resource protection, SQL injection prevention through prepared statements, automatic redaction of sensitive data in logs, allowlisted RPC methods only, and Streamable HTTP transport with session management for secure, resumable connections.
 
 ### Data Protection
 We **never** request or handle private keys, seed phrases, wallet passwords, or authentication credentials beyond your API key. The MCP server only accesses publicly available blockchain data.

@@ -11,7 +11,7 @@ ChatGPT supports MCP through its [Developer Mode](https://platform.openai.com/do
 
 ![ChatGPT MCP integration showing Hgraph connector in action](./chatgpt.png)
 
-:::tip Need Help? Ask Your AI to Guide You
+:::note Need Help? Ask Your AI to Guide You
 You can paste this page into Claude or ChatGPT and ask: "Help me follow these setup instructions step-by-step." Your AI assistant can walk you through each step!
 :::
 
@@ -29,9 +29,7 @@ Before setting up the MCP connector, you'll need:
    - ChatGPT Plus subscription required for Developer Mode
    - Available at [chat.openai.com](https://chat.openai.com)
 
-:::warning Use Your Publishable API Key
-Make sure you're using your **Publishable Key** (starts with `pk_prod_`), NOT your Secret Key. The Publishable Key is safe to use in MCP connector URLs.
-:::
+---
 
 ## Set up in ChatGPT Web
 
@@ -42,7 +40,7 @@ Follow these 5 steps to connect Hgraph to ChatGPT:
 Sign in to the [Hgraph dashboard](https://dashboard.hgraph.com), navigate to the API Keys section, and copy your Publishable API Key (starts with `pk_prod_`).
 
 <details>
-<summary>Show me where to find my Publishable API Key</summary>
+<summary>**Show me where to find my Publishable API Key**</summary>
 
 Navigate to the API Keys section in your Hgraph dashboard and look for your Publishable Key (starts with `pk_prod_`).
 
@@ -55,7 +53,7 @@ Navigate to the API Keys section in your Hgraph dashboard and look for your Publ
 In ChatGPT, navigate to Settings → Apps & Connectors → Advanced Settings and toggle Developer Mode ON.
 
 <details>
-<summary>Show me how to enable Developer Mode</summary>
+<summary>**Show me how to enable Developer Mode**</summary>
 
 **Opening Settings:**
 
@@ -86,7 +84,7 @@ Developer Mode is a beta feature required to add custom MCP connectors. It's ava
 Go to Settings → Apps & Connectors → Create to add a new connector.
 
 <details>
-<summary>Show me where to find the Create button</summary>
+<summary>**Show me where to find the Create button**</summary>
 
 **Finding Create Connector:**
 
@@ -111,7 +109,7 @@ Fill out the connector form with these exact details:
   - This is the correct setting for Hgraph MCP
 
 <details>
-<summary>Show me step-by-step with screenshots</summary>
+<summary>**Show me step-by-step with screenshots**</summary>
 
 **Filling out the form:**
 
@@ -146,7 +144,7 @@ Start a new chat, enable the Hgraph connector, and try this test query:
 **"Could you provide an overview of token 0.0.1055459?"**
 
 <details>
-<summary>Show me what success looks like</summary>
+<summary>**Show me what success looks like**</summary>
 
 When your MCP is working correctly, you'll see:
 
@@ -164,26 +162,24 @@ For more example queries, see our [Examples & Use Cases page](/mcp-server/exampl
 
 </details>
 
-:::tip Mobile Support
-Once configured in ChatGPT web, the connector syncs to mobile apps automatically.
-Note: Mobile apps inherit settings but may have limited features compared to desktop.
-:::
-
 ### Understanding What Just Happened
 
 Behind the scenes, your AI assistant called the Hgraph MCP Server, which queried the Hedera mirror node database to retrieve live token data. This same pattern works for any Hedera entity, metric, or blockchain query you request.
 
 The MCP automatically selected the optimal data source (GraphQL, SQL, or RPC) based on your question type—no manual configuration needed.
 
+:::note Mobile Support
+Once configured in ChatGPT web, the connector syncs to mobile apps automatically.
+Note: Mobile apps inherit settings but may have limited features compared to desktop.
+:::
+
 ---
 
 ## Important Notes
 
-:::warning Platform Limitations
+:::warning ChatGPT Platform Limitations
 - MCP connectors do **not** work in ChatGPT's Deep Research mode
 - MCP connectors do **not** currently work in the ChatGPT Desktop app
-- Only the web version fully supports MCP at this time
-- For native MCP support across all platforms, consider using [Claude](/mcp-server/setup-claude) instead
 :::
 
 ## Security Considerations

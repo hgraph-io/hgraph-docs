@@ -16,7 +16,7 @@ Once your MCP connector is configured, test the connection with this query:
 **"Could you provide an overview of token 0.0.1055459?"**
 
 <details>
-<summary>What should I see if it's working?</summary>
+<summary>**What should I see if it's working?**</summary>
 
 When your MCP is working correctly, you'll see:
 
