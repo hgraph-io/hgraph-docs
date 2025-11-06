@@ -9,11 +9,25 @@ keywords: [ChatGPT, MCP setup, Developer Mode, OpenAI, Hedera]
 
 ChatGPT supports MCP through its [Developer Mode](https://platform.openai.com/docs/guides/developer-mode) feature, enabling integration with external data sources like the Hgraph MCP Server. While this beta feature requires additional setup steps, it provides full access to Hedera blockchain data through natural language queries.
 
-![ChatGPT MCP integration showing Hgraph connector in action](./chatgpt.png)
+**Hgraph MCP URL**
 
-:::note Need Help? Ask Your AI to Guide You
-You can paste this page into Claude or ChatGPT and ask: "Help me follow these setup instructions step-by-step." Your AI assistant can walk you through each step!
-:::
+```text
+https://mainnet.hedera.api.hgraph.io/v1/YOUR_PUBLISHABLE_KEY/mcp
+```
+
+## Video Tutorial
+
+<iframe
+  width="100%"
+  style={{"aspect-ratio": "16 / 9"}}
+  src="https://www.youtube.com/embed/NUbwr05lA2E"
+  title="ChatGPT Hgraph MCP Setup Tutorial"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen>
+</iframe>
+
 
 ## Prerequisites
 

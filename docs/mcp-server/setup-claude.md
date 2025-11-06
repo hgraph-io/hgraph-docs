@@ -9,11 +9,24 @@ keywords: [Claude, MCP setup, Claude Desktop, Claude Code, Hedera]
 
 Claude provides native MCP support, making it the recommended platform for accessing Hedera blockchain data through natural language. With seamless integration across web, desktop, and mobile platforms, Claude delivers the most reliable and feature-rich experience for the Hgraph MCP Server.
 
-![Claude MCP integration showing Hgraph connector in action](./claude.png)
+**Hgraph MCP URL**
 
-:::note Need Help? Ask Your AI to Guide You
-You can paste this page into Claude or ChatGPT and ask: "Help me follow these setup instructions step-by-step." Your AI assistant can walk you through each step!
-:::
+```text
+https://mainnet.hedera.api.hgraph.io/v1/YOUR_PUBLISHABLE_KEY/mcp
+```
+
+## Video Tutorial
+
+<iframe
+  width="100%"
+  style={{"aspect-ratio": "16 / 9"}}
+  src="https://www.youtube.com/embed/4wa4q60MGHM"
+  title="Claude Hgraph MCP Setup Tutorial"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen>
+</iframe>
 
 ## Prerequisites
 
@@ -64,13 +77,15 @@ On the left sidebar of the Settings page, you'll see several options. Click "Con
 
 This will show you the Connectors management page where you can add custom connectors.
 
+![Claude Connectors page showing Add custom connector button](./claude-add-custom-connector.png)
+
 </details>
 
 ### Step 4: Add Hgraph Connector
 
 Click "Add custom connector" and fill in the form:
 - **Name:** `Hgraph`
-- **URL:** `https://mainnet.hedera.api.hgraph.io/v1/YOUR_PUBLISHABLE_KEY/mcp`
+- **MCP URL:** `https://mainnet.hedera.api.hgraph.io/v1/YOUR_PUBLISHABLE_KEY/mcp`
 
 <details>
 <summary>**Show me step-by-step with screenshots**</summary>
@@ -79,7 +94,7 @@ Click "Add custom connector" and fill in the form:
 
 Scroll to the bottom of the Connectors page and click "Add custom connector".
 
-![Claude Connectors page showing Add custom connector button](./claude-add-custom-connector.png)
+![Claude Connectors page showing Add custom connector form](./claude-add-custom-connector-form.png)
 
 **Filling out the form:**
 
