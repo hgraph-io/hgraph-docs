@@ -15,14 +15,14 @@ Our logo comes in various formats, arrangements and colors. The files are availa
 
 ### Download logos
 
-* **Horizontal:** [PNG](https://drive.google.com/drive/folders/144d2jfktm0QCNxDVVjxj4axeiOB5LLK4?usp=drive_link) / [SVG](https://drive.google.com/drive/folders/13gAPNjuKOTzVYQ9TC5kEAVa9g9WLg5Ds?usp=drive_link)
-* **Vertical:** [PNG](https://drive.google.com/drive/folders/141mPJ9MPpkrHesGSA9WP9Av9a2eOvoUd?usp=drive_link) / [SVG](https://drive.google.com/drive/folders/13kpHjIHcHoIEcbiP6I-AglV0VONz8esU?usp=drive_link)
-* **Logomark only:** [PNG](https://drive.google.com/drive/folders/146B_YTITzrevBEEPEBDPD_kMIsXqQ_GL?usp=drive_link) / [SVG](https://drive.google.com/drive/folders/13j4jUQnKKp4wHbkD-ZGyaKmSvCEH6Ci_?usp=drive_link)
-* **[Download all (.zip) ↓](Hgraph-Brand-Logos.zip)**
+* **Logo Only:** [PNG](https://drive.google.com/drive/folders/1Elet5NehEy8YVDtVTUfXK_oO9dZcHCQK?usp=drive_link) / [SVG](https://drive.google.com/drive/folders/1gUdRMw-uvnZbjGE6xxe7jT2UvXKxQFyD?usp=drive_link)
+* **Logo + Text:** [PNG](https://drive.google.com/drive/folders/1rf-Q1PA7LUtpq4qLwTz3gKi5kK3fGcf0?usp=drive_link) / [SVG](https://drive.google.com/drive/folders/1-r0h9wdCBxxgLycUw2dmNkT9QqFIRQgz?usp=drive_link)
+* **Sample Images:** [PNG](https://drive.google.com/drive/folders/1sjDBP5GJ0nkrRPmNifXKDbGHbbnLJRnK?usp=drive_link)
+* **[Download all (.zip) ↓](Hgraph-Logos-2025.zip)**
 
 ## Profile picture
 
-**[Download Hgraph PFP (PNG)](Hgraph-PFP-V6-Square.jpg)**
+**[Download Hgraph PFP (PNG)](hgraph-pfp.png)**
 
 ## Color Palette
 
