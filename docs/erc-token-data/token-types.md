@@ -7,12 +7,6 @@ title: ERC vs HTS (Token Types)
 
 Understanding the distinction between pure ERC tokens and HTS tokens is crucial when working with token data on Hedera.
 
-:::info In Beta → Hgraph's Hedera ERC Token Data
-
-This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
-
-:::
-
 ## What is HTS?
 
 Hedera Token Service (HTS) is a native token system that provides token functionality at the protocol level. HTS tokens have built-in features like KYC, freeze, and custom fees that don't require smart contract deployment.
@@ -96,7 +90,7 @@ Pure ERC tokens have these characteristics:
 
 ```graphql
 query GetPureERC20Tokens {
-  erc_beta_token(
+  erc_token(
     where: {
       contract_type: { _eq: "ERC_20" }
       # These are pure ERC tokens deployed as smart contracts
@@ -107,7 +101,7 @@ query GetPureERC20Tokens {
     name
     symbol
     decimals
-    evm_address
+    token_evm_address
   }
 }
 ```
