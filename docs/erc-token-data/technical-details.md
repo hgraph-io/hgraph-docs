@@ -7,26 +7,18 @@ title: Technical
 
 This page covers technical specifications for working with ERC token data on Hedera, including account identifiers, event signatures, and data formats.
 
-:::info In Beta → Hgraph's Hedera ERC Token Data
-
-This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
-
-:::
-
 ## Data Pipeline Overview
 
-The Hedera ERC Indexer processes token data through an eight-stage pipeline:
+The Hedera ERC Indexer processes token data through a six-stage pipeline:
 
 ### Key Pipeline Stages
 
 1. **Discovery**: Scans Hedera mirror node for contracts emitting Transfer events
 2. **Extraction**: Retrieves token metadata (name, symbol, decimals) via JSON-RPC
-3. **Balance Calculation**: Processes all Transfer events to compute current balances
-4. **NFT Tracking**: For ERC-721 tokens, tracks individual NFT ownership and metadata
-5. **Storage**: Persists data to `erc_beta` schema tables
-6. **Stream Processing**: Continuously polls for new data and updates
-7. **API Layer**: Exposes data through Hasura GraphQL endpoint
-8. **Query Interface**: Provides real-time access to token data via GraphQL
+3. **Balance Fetching**: Fetches current balances via RPC `balanceOf()` calls
+4. **Transfer History**: Extracts and indexes Transfer events to tables
+5. **NFT Tracking**: For ERC-721 tokens, tracks individual NFT ownership and metadata
+6. **Storage**: Persists data to `erc` schema tables exposed via Hasura GraphQL
 
 ## Account Identifiers and Aliases
 
@@ -93,6 +85,16 @@ event Approval(address indexed owner, address indexed spender, uint256 value)
 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925
 ```
 
+### ERC-1400 Events
+
+Security tokens use partition-based events for transfers:
+
+| Event | Signature Hash |
+|-------|----------------|
+| IssuedByPartition | `0x5af1c8f424b104b6ba4e3c0885f2ed9fef04a9b1ea39cd9ed362432105c0791a` |
+| TransferByPartition | `0xff4e9a26af4eb73b8bacfaa4abd4fea03d9448e7b912dc5ff4019048875aa2d4` |
+| RedeemedByPartition | `0xa4f62471c9bdf88115b97203943c74c59b655913ee5ee592706d84ef53fb6be2` |
+
 ### Token Type Detection
 
 The indexer distinguishes token types by analyzing event structure:
@@ -109,11 +111,18 @@ The indexer distinguishes token types by analyzing event structure:
 - **Reason**: Unique tokenId is indexed and gets its own topic slot
 - **Structure**: Transfer(from, to, tokenId) - tokenId becomes topic3
 
+#### ERC-1400 Detection
+
+- **Method**: RPC probing via `isIssuable()` and `isControllable()`
+- **Selectors**: `0x2f1cae85` (isIssuable), `0x4c783bf5` (isControllable)
+- **Characteristic**: Both methods must return `true` for positive detection
+- **Note**: ERC-165 `supportsInterface` is NOT used (returns false for valid ERC-1400 tokens)
+
 ## Standard ERC Methods
 
-Both ERC-20 and ERC-721 tokens implement standard methods that the indexer queries:
+ERC-20, ERC-721, and ERC-1400 tokens implement standard methods that the indexer queries:
 
-### Common Methods (Both Standards)
+### Common Methods (All Standards)
 
 ```solidity
 function name() external view returns (string memory);
@@ -167,6 +176,18 @@ Fields checked: `name`, `symbol`, `totalSupply` (decimals not applicable)
 | 0.33  | 1 of 3           | Minimal implementation  |
 | 0.00  | 0 of 3           | No metadata available   |
 
+#### ERC-1400 Security Tokens (4 fields)
+
+Fields checked: `name`, `symbol`, `decimals`, `totalSupply` (same as ERC-20)
+
+| Score | Fields Extracted | Meaning                 |
+| ----- | ---------------- | ----------------------- |
+| 1.00  | 4 of 4           | Fully compliant ERC-1400 |
+| 0.75  | 3 of 4           | Mostly compliant        |
+| 0.50  | 2 of 4           | Partial implementation  |
+| 0.25  | 1 of 4           | Minimal implementation  |
+| 0.00  | 0 of 4           | No metadata available   |
+
 #### Unknown/Failed Deployments
 
 For contracts that couldn't be identified as ERC-20 or ERC-721:
@@ -183,7 +204,7 @@ Filter for high-quality tokens in your queries:
 
 ```graphql
 query ReliableTokens {
-  erc_beta_token(
+  erc_token(
     where: {
       metadata_reliability_score: { _gte: 0.75 }
       contract_type: { _in: ["ERC_20", "ERC_721"] }
@@ -215,13 +236,15 @@ Large numbers (balances, token supplies) are returned as strings to preserve pre
 
 ### Timestamps
 
-Two timestamp formats are used:
+All timestamps use nanoseconds since epoch (Hedera format):
 
-| Field Type           | Format      | Example               | Description           |
-| -------------------- | ----------- | --------------------- | --------------------- |
-| created_timestamp    | Nanoseconds | `1698765432100000000` | Hedera consensus time |
-| balance_timestamp    | Nanoseconds | `1698765432100000000` | Last balance update   |
-| processing_timestamp | Seconds     | `1698765432`          | Unix timestamp        |
+| Field Type                   | Example               | Description             |
+| ---------------------------- | --------------------- | ----------------------- |
+| created_timestamp            | `1698765432100000000` | Entity creation time    |
+| balance_timestamp            | `1698765432100000000` | Last balance update     |
+| processing_timestamp         | `1698765432100000000` | Record processing time  |
+| transfers_indexed_timestamp  | `1698765432100000000` | Last transfer indexed   |
+| consensus_timestamp          | `1698765432100000000` | Transaction time        |
 
 ## Working with Token Balances
 
@@ -244,7 +267,7 @@ For NFTs, the balance represents the count of NFTs owned:
 
 ```graphql
 query NFTCount($accountId: bigint!, $tokenId: bigint!) {
-  erc_beta_token_account(
+  erc_token_account(
     where: {
       account_id: { _eq: $accountId }
       token_id: { _eq: $tokenId }
@@ -254,3 +277,33 @@ query NFTCount($accountId: bigint!, $tokenId: bigint!) {
   }
 }
 ```
+
+## Balance Fetching
+
+Balances are fetched via RPC `balanceOf()` calls rather than calculated from Transfer events. This ensures accuracy for:
+
+- **Standard ERC-20**: Exact match with on-chain state
+- **Rebasing tokens (aTokens)**: Accurate despite continuous interest accrual without Transfer events
+- **Debt tokens**: Accurate despite interest changes
+- **ERC-1400**: Standard `balanceOf()` works for most implementations
+
+:::note
+Some ERC-1400 security tokens use partition-only balance storage, where `balanceOf()` returns 0 and balances are tracked per-partition via `balanceOfByPartition()`. These tokens will show zero balances in the `erc_token_account` table even when holders have positions. This is a limitation of the standard `balanceOf()` approach.
+:::
+
+### Process
+
+1. **Account Discovery**: Extract unique addresses from Transfer event topics
+2. **Address Resolution**: Resolve EVM addresses to Hedera account IDs (two-pass strategy)
+3. **RPC Batch Calls**: Fetch current balances via `balanceOf(address)` method
+4. **Storage**: Persist balances to `erc_token_account` table
+
+### Why RPC Instead of Event Aggregation?
+
+Event-based balance calculation (summing Transfer amounts) fails for:
+
+- **Rebasing tokens**: Balance changes without Transfer events (e.g., Aave aTokens accrue interest continuously)
+- **Debt tokens**: Interest accrues without events
+- **Fee-on-transfer tokens**: Actual received amount differs from event amount
+
+RPC `balanceOf()` queries the contract's current state directly, providing exact balances for all token types.

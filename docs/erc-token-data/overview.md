@@ -5,13 +5,7 @@ title: Introduction
 
 # Hgraph's Hedera ERC Token Data
 
-Hgraph's Hedera ERC Indexer provides comprehensive access to pure **ERC-20** and **ERC-721** token data on the Hedera network through our GraphQL API. The indexer discovers and tracks tokens deployed directly to Hedera's EVM, analyzes Transfer events, extracts metadata, and calculates token balances for fast queries.
-
-:::info In Beta → Hgraph's Hedera ERC Token Data
-
-This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
-
-:::
+Hgraph's Hedera ERC Indexer provides comprehensive access to pure **ERC-20**, **ERC-721**, and **ERC-1400** token data on the Hedera network through our GraphQL API. The indexer discovers and tracks tokens deployed directly to Hedera's EVM, analyzes Transfer events, extracts metadata, and calculates token balances for fast queries.
 
 ## Token Types on Hedera
 
@@ -38,6 +32,8 @@ Hgraph's Hedera ERC Indexer continuously tracks pure ERC token contracts deploye
 
 - ERC-20 token metadata and balances
 - ERC-721 NFT collections and individual NFTs
+- ERC-1400 security token data
+- Token and NFT transfer history
 - Token holder information
 - Account portfolios across all tokens
 
@@ -56,35 +52,36 @@ To access the ERC token data, you'll need:
 
 ```graphql
 query GetERC20Tokens {
-  erc_beta_token(
+  erc_token(
     where: {contract_type: {_eq: "ERC_20"}}
     limit: 10
-    order_by: {transfer_count: desc_nulls_last}
+    order_by: {created_timestamp: desc_nulls_last}
   ) {
     token_id
     name
     symbol
     decimals
-    evm_address
+    token_evm_address
     metadata_reliability_score
     processing_timestamp
     total_supply
-    transfer_count
     created_timestamp
     contract_type
   }
-}}
+}
 ```
 
 For more query examples, see our [comprehensive query library](./queries).
 
 ## Available Data
 
-The GraphQL API provides access to three main data types:
+The GraphQL API provides access to five tables:
 
-- **Token Information** (`erc_beta_token`) - Token metadata, contract types, and statistics
-- **Token Balances** (`erc_beta_token_account`) - Account balances and holder information
-- **NFT Details** (`erc_beta_nft`) - Individual NFT ownership and metadata
+- **Token Information** (`erc_token`) - Token metadata, contract types, and statistics
+- **Token Balances** (`erc_token_account`) - Account balances and holder information
+- **NFT Details** (`erc_nft`) - Individual NFT ownership and metadata
+- **Token Transfers** (`erc_token_transfer`) - ERC-20 and ERC-1400 transfer history
+- **NFT Transfers** (`erc_nft_transfer`) - ERC-721 NFT transfer history
 
 For detailed schema information, see the [Schema Reference](./schema-reference).
 

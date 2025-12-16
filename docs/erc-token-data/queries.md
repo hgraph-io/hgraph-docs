@@ -7,12 +7,6 @@ title: Query Examples
 
 This page provides a comprehensive collection of GraphQL queries for accessing ERC token data.
 
-:::info In Beta → Hgraph's Hedera ERC Token Data
-
-This new data service is currently in beta and we encourage all users to provide feedback. Please [contact us to share your input](../overview/contact.md).
-
-:::
-
 ## Prerequisites
 
 ### API Endpoints
@@ -45,9 +39,9 @@ const response = await fetch('https://testnet.hedera.api.hgraph.io/v1/graphql', 
 
 ```graphql
 query GetERC20Tokens {
-  erc_beta_token(
+  erc_token(
     where: { contract_type: { _eq: "ERC_20" } }
-    order_by: { transfer_count: desc }
+    order_by: { total_supply: desc_nulls_last }
     limit: 10
   ) {
     token_id
@@ -55,8 +49,7 @@ query GetERC20Tokens {
     symbol
     decimals
     total_supply
-    evm_address
-    transfer_count
+    token_evm_address
     created_timestamp
     metadata_reliability_score
   }
@@ -67,16 +60,15 @@ query GetERC20Tokens {
 
 ```graphql
 query GetNFTCollections {
-  erc_beta_token(
+  erc_token(
     where: { contract_type: { _eq: "ERC_721" } }
-    order_by: { transfer_count: desc }
+    order_by: { created_timestamp: desc }
     limit: 10
   ) {
     token_id
     name
     symbol
-    evm_address
-    transfer_count
+    token_evm_address
     created_timestamp
     metadata_reliability_score
   }
@@ -87,7 +79,7 @@ query GetNFTCollections {
 
 ```graphql
 query SearchTokens($searchTerm: String!) {
-  erc_beta_token(
+  erc_token(
     where: {
       _or: [
         { name: { _ilike: $searchTerm } }
@@ -100,7 +92,7 @@ query SearchTokens($searchTerm: String!) {
     symbol
     contract_type
     decimals
-    evm_address
+    token_evm_address
     metadata_reliability_score
   }
 }
@@ -113,7 +105,7 @@ query SearchTokens($searchTerm: String!) {
 
 ```graphql
 query GetTokenHolders($tokenId: bigint!) {
-  erc_beta_token_account(
+  erc_token_account(
     where: { token_id: { _eq: $tokenId } }
     order_by: { balance: desc }
     limit: 20
@@ -133,7 +125,7 @@ query GetTokenHolders($tokenId: bigint!) {
 
 ```graphql
 query GetAccountPortfolio($accountId: bigint!) {
-  erc_beta_token_account(
+  erc_token_account(
     where: { account_id: { _eq: $accountId } }
     order_by: { balance: desc }
   ) {
@@ -149,13 +141,13 @@ query GetAccountPortfolio($accountId: bigint!) {
 #
 # Note: To get token details, make a separate query with the token_ids from above:
 # query GetTokenDetails($tokenIds: [bigint!]) {
-#   erc_beta_token(where: { token_id: { _in: $tokenIds } }) {
+#   erc_token(where: { token_id: { _in: $tokenIds } }) {
 #     token_id
 #     name
 #     symbol
 #     contract_type
 #     decimals
-#     evm_address
+#     token_evm_address
 #   }
 # }
 ```
@@ -166,7 +158,7 @@ query GetAccountPortfolio($accountId: bigint!) {
 
 ```graphql
 query GetNFTsInCollection($tokenId: bigint!, $limit: Int = 50, $offset: Int = 0) {
-  erc_beta_nft(
+  erc_nft(
     where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: false }
@@ -182,7 +174,7 @@ query GetNFTsInCollection($tokenId: bigint!, $limit: Int = 50, $offset: Int = 0)
   }
 
   # Get total count for pagination
-  erc_beta_nft_aggregate(
+  erc_nft_aggregate(
     where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: false }
@@ -203,7 +195,7 @@ query GetNFTsInCollection($tokenId: bigint!, $limit: Int = 50, $offset: Int = 0)
 ```graphql
 query GetAccountNFTs($accountId: bigint!) {
   # Get individual NFTs
-  nfts: erc_beta_nft(
+  nfts: erc_nft(
     where: {
       account_id: { _eq: $accountId }
       deleted: { _eq: false }
@@ -217,7 +209,7 @@ query GetAccountNFTs($accountId: bigint!) {
   }
 
   # Get total count of NFTs owned
-  nft_count: erc_beta_nft_aggregate(
+  nft_count: erc_nft_aggregate(
     where: {
       account_id: { _eq: $accountId }
       deleted: { _eq: false }
@@ -237,30 +229,35 @@ query GetAccountNFTs($accountId: bigint!) {
 
 ```graphql
 query PlatformStatistics {
-  erc20_count: erc_beta_token_aggregate(where: {contract_type: {_eq: "ERC_20"}}) {
+  erc20_count: erc_token_aggregate(where: {contract_type: {_eq: "ERC_20"}}) {
     aggregate {
       count
     }
   }
-  erc721_count: erc_beta_token_aggregate(where: {contract_type: {_eq: "ERC_721"}}) {
+  erc721_count: erc_token_aggregate(where: {contract_type: {_eq: "ERC_721"}}) {
     aggregate {
       count
     }
   }
-  most_active: erc_beta_token(
-    where: {contract_type: {_in: ["ERC_20", "ERC_721"]}}
-    order_by: {transfer_count: desc_nulls_last}
+  erc1400_count: erc_token_aggregate(where: {contract_type: {_eq: "ERC_1400"}}) {
+    aggregate {
+      count
+    }
+  }
+  largest_tokens: erc_token(
+    where: {contract_type: {_in: ["ERC_20", "ERC_721", "ERC_1400"]}}
+    order_by: {total_supply: desc_nulls_last}
     limit: 5
   ) {
     token_id
     name
     symbol
     contract_type
-    transfer_count
-    evm_address
+    total_supply
+    token_evm_address
   }
-  newest_tokens: erc_beta_token(
-    where: {contract_type: {_in: ["ERC_20", "ERC_721"]}}
+  newest_tokens: erc_token(
+    where: {contract_type: {_in: ["ERC_20", "ERC_721", "ERC_1400"]}}
     order_by: {created_timestamp: desc_nulls_last}
     limit: 5
   ) {
@@ -269,9 +266,9 @@ query PlatformStatistics {
     symbol
     contract_type
     created_timestamp
-    evm_address
+    token_evm_address
   }
-  total_holders: erc_beta_token_account_aggregate {
+  total_holders: erc_token_account_aggregate {
     aggregate {
       count(distinct: true, columns: account_id)
     }
@@ -279,18 +276,28 @@ query PlatformStatistics {
 }
 ```
 
+> **Note:** For transfer activity metrics, aggregate from the `erc_token_transfer` table:
+>
+> ```graphql
+> {
+>   erc_token_transfer_aggregate(where: {token_id: {_eq: $tokenId}}) {
+>     aggregate { count }
+>   }
+> }
+> ```
+
 ### 9. High-Quality Tokens Only
 
 ```graphql
 query ReliableTokens($minScore: numeric = 0.75) {
-  erc_beta_token(
+  erc_token(
     where: {
       metadata_reliability_score: { _gte: $minScore }
       contract_type: { _in: ["ERC_20", "ERC_721"] }
     }
     order_by: {
       metadata_reliability_score: desc,
-      transfer_count: desc
+      created_timestamp: desc
     }
   ) {
     token_id
@@ -298,8 +305,7 @@ query ReliableTokens($minScore: numeric = 0.75) {
     symbol
     contract_type
     metadata_reliability_score
-    evm_address
-    transfer_count
+    token_evm_address
   }
 }
 
@@ -312,9 +318,9 @@ query ReliableTokens($minScore: numeric = 0.75) {
 ```graphql
 query TokenDeepDive($tokenId: bigint!) {
   # Token details
-  token: erc_beta_token_by_pk(token_id: $tokenId) {
+  token: erc_token_by_pk(token_id: $tokenId) {
     token_id
-    evm_address
+    token_evm_address
     contract_type
     name
     symbol
@@ -322,12 +328,12 @@ query TokenDeepDive($tokenId: bigint!) {
     total_supply
     metadata_reliability_score
     created_timestamp
-    transfer_count
     processing_timestamp
+    transfers_indexed_timestamp  # Last indexed transfer time
   }
 
   # Holder statistics
-  holder_stats: erc_beta_token_account_aggregate(
+  holder_stats: erc_token_account_aggregate(
     where: { token_id: { _eq: $tokenId } }
   ) {
     aggregate {
@@ -345,7 +351,7 @@ query TokenDeepDive($tokenId: bigint!) {
   }
 
   # Top 10 holders
-  top_holders: erc_beta_token_account(
+  top_holders: erc_token_account(
     where: { token_id: { _eq: $tokenId } }
     order_by: { balance: desc }
     limit: 10
@@ -356,7 +362,7 @@ query TokenDeepDive($tokenId: bigint!) {
   }
 
   # Recent holders
-  recent_holders: erc_beta_token_account(
+  recent_holders: erc_token_account(
     where: { token_id: { _eq: $tokenId } }
     order_by: { created_timestamp: desc }
     limit: 5
@@ -371,6 +377,117 @@ query TokenDeepDive($tokenId: bigint!) {
 # { "tokenId": 7308509 }
 ```
 
+### 11. Get Token by EVM Address
+
+```graphql
+query GetTokenByAddress($evmAddress: String!) {
+  erc_token(where: { token_evm_address: { _eq: $evmAddress } }) {
+    token_id
+    name
+    symbol
+    contract_type
+    decimals
+    total_supply
+  }
+}
+
+# Variables:
+# { "evmAddress": "0x6e96a607f2f5657b39bf58293d1a006f9415af32" }
+```
+
+### 12. Get Token Transfer History
+
+```graphql
+query GetTokenTransfers($tokenId: bigint!, $limit: Int = 20) {
+  erc_token_transfer(
+    where: { token_id: { _eq: $tokenId } }
+    order_by: { consensus_timestamp: desc }
+    limit: $limit
+  ) {
+    consensus_timestamp
+    sender_account_id
+    receiver_account_id
+    amount
+    transfer_type
+    transaction_hash
+  }
+}
+
+# Variables:
+# { "tokenId": 7308509, "limit": 20 }
+```
+
+### 13. Get Account Transfer History
+
+```graphql
+query GetAccountTransfers($accountId: bigint!) {
+  erc_token_transfer(
+    where: {
+      _or: [
+        { sender_account_id: { _eq: $accountId } }
+        { receiver_account_id: { _eq: $accountId } }
+      ]
+    }
+    order_by: { consensus_timestamp: desc }
+    limit: 20
+  ) {
+    token_id
+    sender_account_id
+    receiver_account_id
+    amount
+    transfer_type
+    consensus_timestamp
+  }
+}
+
+# Variables:
+# { "accountId": 924713 }
+```
+
+### 14. Get ERC-1400 Security Tokens
+
+```graphql
+query GetSecurityTokens {
+  erc_token(
+    where: { contract_type: { _eq: "ERC_1400" } }
+    order_by: { created_timestamp: desc_nulls_last }
+    limit: 10
+  ) {
+    token_id
+    name
+    symbol
+    decimals
+    total_supply
+    token_evm_address
+    metadata_reliability_score
+  }
+}
+```
+
+> **Note:** ERC-1400 tokens also work with transfer history queries (12-13). The `erc_token_transfer` table includes a `partition_id` field for partition-aware transfers.
+
+### 15. Get NFT Transfer History
+
+```graphql
+query GetNFTTransfers($tokenId: bigint!, $limit: Int = 20) {
+  erc_nft_transfer(
+    where: { token_id: { _eq: $tokenId } }
+    order_by: { consensus_timestamp: desc }
+    limit: $limit
+  ) {
+    serial_number
+    consensus_timestamp
+    sender_account_id
+    receiver_account_id
+    transfer_type
+    transaction_hash
+  }
+}
+
+# Variables:
+# { "tokenId": 9799174, "limit": 20 }
+```
+
 ## Real-World Use Cases
 
 ### DeFi Portfolio Tracker
@@ -380,7 +497,7 @@ Track all DeFi positions for an account:
 ```graphql
 query DeFiPortfolio($accountId: bigint!) {
   # ERC-20 holdings with balances
-  erc20_holdings: erc_beta_token_account(
+  erc20_holdings: erc_token_account(
     where: {
       account_id: { _eq: $accountId }
       balance: { _gt: "0" }
@@ -392,7 +509,7 @@ query DeFiPortfolio($accountId: bigint!) {
   }
 
   # Portfolio summary
-  portfolio_summary: erc_beta_token_account_aggregate(
+  portfolio_summary: erc_token_account_aggregate(
     where: {
       account_id: { _eq: $accountId }
       balance: { _gt: "0" }
@@ -414,15 +531,14 @@ Analyze an NFT collection's distribution:
 
 ```graphql
 query NFTCollectionAnalytics($tokenId: bigint!) {
-  collection: erc_beta_token_by_pk(token_id: $tokenId) {
+  collection: erc_token_by_pk(token_id: $tokenId) {
     name
     symbol
     total_supply
-    transfer_count
   }
 
   # Holder distribution
-  holder_distribution: erc_beta_token_account_aggregate(
+  holder_distribution: erc_token_account_aggregate(
     where: { token_id: { _eq: $tokenId } }
   ) {
     aggregate {
@@ -437,7 +553,7 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
   }
 
   # Top collectors
-  top_collectors: erc_beta_token_account(
+  top_collectors: erc_token_account(
     where: { token_id: { _eq: $tokenId } }
     order_by: { balance: desc }
     limit: 10
@@ -447,7 +563,7 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
   }
 
   # Total NFTs (minted minus burned)
-  total_nfts: erc_beta_nft_aggregate(
+  total_nfts: erc_nft_aggregate(
     where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: false }
@@ -459,7 +575,7 @@ query NFTCollectionAnalytics($tokenId: bigint!) {
   }
 
   # Burned NFTs count
-  burned_nfts: erc_beta_nft_aggregate(
+  burned_nfts: erc_nft_aggregate(
     where: {
       token_id: { _eq: $tokenId }
       deleted: { _eq: true }
@@ -481,7 +597,7 @@ Find new tokens launched in the last 24 hours:
 
 ```graphql
 query NewTokens($hoursAgo: Int = 24) {
-  erc_beta_token(
+  erc_token(
     where: {
       # Calculate timestamp for N hours ago
       # Assuming current time - (hours * 3600 * 1e9) nanoseconds
@@ -494,9 +610,8 @@ query NewTokens($hoursAgo: Int = 24) {
     name
     symbol
     contract_type
-    evm_address
+    token_evm_address
     created_timestamp
-    transfer_count
     metadata_reliability_score
   }
 }
@@ -509,7 +624,7 @@ Monitor large holders across multiple tokens:
 ```graphql
 query WhaleActivity($minBalance: numeric = "1000000000000000000") {
   # Find whale positions
-  whale_positions: erc_beta_token_account(
+  whale_positions: erc_token_account(
     where: {
       balance: { _gte: $minBalance }
     }
@@ -523,7 +638,7 @@ query WhaleActivity($minBalance: numeric = "1000000000000000000") {
   }
 
   # Aggregate whale statistics
-  whale_stats: erc_beta_token_account_aggregate(
+  whale_stats: erc_token_account_aggregate(
     where: {
       balance: { _gte: $minBalance }
     }
@@ -545,7 +660,7 @@ Analyze an account's activity across all tokens:
 ```graphql
 query AccountCrossTokenAnalysis($accountId: bigint!) {
   # Get all token balances for the account
-  account_tokens: erc_beta_token_account(
+  account_tokens: erc_token_account(
     where: { account_id: { _eq: $accountId } }
   ) {
     token_id
@@ -554,21 +669,7 @@ query AccountCrossTokenAnalysis($accountId: bigint!) {
   }
 
   # First and latest activities
-  activity_timeline: erc_beta_token_account_aggregate(
-    where: { account_id: { _eq: $accountId } }
-  ) {
-    aggregate {
-      min {
-        created_timestamp
-      }
-      max {
-        balance_timestamp
-      }
-    }
-  }
-
-  # Activity timeline
-  activity_timeline: erc_beta_token_account_aggregate(
+  activity_timeline: erc_token_account_aggregate(
     where: { account_id: { _eq: $accountId } }
   ) {
     aggregate {

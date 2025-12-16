@@ -47,7 +47,7 @@ Easy access to our powerful and flexible Hedera network APIs including GraphQL, 
 
 ---
 
-## Hgraph Pricing Plans FAQ
+## Hgraph Pricing Plans FAQ {#pricing-faq}
 
 Commonly asked questions regarding our pricing. You can view [additional FAQs here](/category/faqs).
 
