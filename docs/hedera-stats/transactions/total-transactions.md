@@ -35,7 +35,7 @@ The result is a rolling total that represents the all-time cumulative count of t
 
 Similar to new transactions, total transactions are categorized by service type based on their transaction type IDs:
 
-#### Crypto Transactions (`total_crypto_transactions`)
+#### Crypto Transactions (`total_crypto_transactions`) {#crypto-transactions}
 
 Cryptocurrency-related operations including account management and HBAR transfers.
 
@@ -48,7 +48,7 @@ These types include:
 - Account deletion
 - System operations
 
-#### HCS (Hedera Consensus Service) Transactions (`total_hcs_transactions`)
+#### HCS (Hedera Consensus Service) Transactions (`total_hcs_transactions`) {#hcs-hedera-consensus-service-transactions}
 
 Operations related to consensus topics for decentralized ordering of messages.
 
@@ -61,7 +61,7 @@ These types include:
 - Topic deletion
 - Message submission to topics
 
-#### HFS (Hedera File Service) Transactions (`total_hfs_transactions`)
+#### HFS (Hedera File Service) Transactions (`total_hfs_transactions`) {#hfs-hedera-file-service-transactions}
 
 File storage and management operations on the Hedera network.
 
@@ -74,7 +74,7 @@ These types include:
 - File updates
 - File deletion
 
-#### HSCS (Hedera Smart Contract Service) Transactions (`total_hscs_transactions`)
+#### HSCS (Hedera Smart Contract Service) Transactions (`total_hscs_transactions`) {#hscs-hedera-smart-contract-service-transactions}
 
 Smart contract deployment and interaction operations.
 
@@ -88,7 +88,7 @@ These types include:
 - Contract deletion
 - Ethereum transactions
 
-#### HTS (Hedera Token Service) Transactions (`total_hts_transactions`)
+#### HTS (Hedera Token Service) Transactions (`total_hts_transactions`) {#hts-hedera-token-service-transactions}
 
 Token creation and management operations for both fungible and non-fungible tokens.
 
@@ -104,7 +104,7 @@ These types include:
 - Token fee schedule updates
 - NFT operations
 
-#### Other Transactions (`total_other_transactions`)
+#### Other Transactions (`total_other_transactions`) {#other-transactions}
 
 Miscellaneous operations not falling into the above categories.
 

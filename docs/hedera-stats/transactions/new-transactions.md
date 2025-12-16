@@ -34,7 +34,7 @@ This provides a count of all transactions occurring within each time period in t
 
 The Hedera network classifies transactions into different service categories based on their type ID. Each category represents a different set of operations available on the network:
 
-#### Crypto Transactions (`new_crypto_transactions`)
+#### Crypto Transactions (`new_crypto_transactions`) {#crypto-transactions}
 
 Cryptocurrency-related operations including account management and HBAR transfers.
 
@@ -47,7 +47,7 @@ These types include:
 - Account deletion
 - System operations
 
-#### HCS (Hedera Consensus Service) Transactions (`new_hcs_transactions`)
+#### HCS (Hedera Consensus Service) Transactions (`new_hcs_transactions`) {#hcs-hedera-consensus-service-transactions}
 
 Operations related to consensus topics for decentralized ordering of messages.
 
@@ -60,7 +60,7 @@ These types include:
 - Topic deletion
 - Message submission to topics
 
-#### HFS (Hedera File Service) Transactions (`new_hfs_transactions`)
+#### HFS (Hedera File Service) Transactions (`new_hfs_transactions`) {#hfs-hedera-file-service-transactions}
 
 File storage and management operations on the Hedera network.
 
@@ -73,7 +73,7 @@ These types include:
 - File updates
 - File deletion
 
-#### HSCS (Hedera Smart Contract Service) Transactions (`new_hscs_transactions`)
+#### HSCS (Hedera Smart Contract Service) Transactions (`new_hscs_transactions`) {#hscs-hedera-smart-contract-service-transactions}
 
 Smart contract deployment and interaction operations.
 
@@ -87,7 +87,7 @@ These types include:
 - Contract deletion
 - Ethereum transactions
 
-#### HTS (Hedera Token Service) Transactions (`new_hts_transactions`)
+#### HTS (Hedera Token Service) Transactions (`new_hts_transactions`) {#hts-hedera-token-service-transactions}
 
 Token creation and management operations for both fungible and non-fungible tokens.
 
@@ -103,7 +103,7 @@ These types include:
 - Token fee schedule updates
 - NFT operations
 
-#### Other Transactions (`new_other_transactions`)
+#### Other Transactions (`new_other_transactions`) {#other-transactions}
 
 Miscellaneous operations not falling into the above categories.
 

@@ -12,7 +12,7 @@ To access this Hedera network statistic ([and others](/category/hedera-stats/)) 
 :::
 
 :::info Incremental update setup
-This Hedera Stat requires Prometheus and access to Hedera telemetry data. Please refer to the [installation guide](installation) for more information.
+This Hedera Stat requires Prometheus and access to Hedera telemetry data. Please refer to the [installation guide](../installation) for more information.
 :::
 
 Hedera Stat Name: **`avg_time_to_consensus`**
@@ -178,4 +178,4 @@ The **Time to Consensus** metric is implemented using an ETL pipeline rather tha
 ## Dependencies
 
 - Hedera mirror node
-- Prometheus (**[see installation](installation)**)
+- Prometheus (**[see installation](../installation)**)

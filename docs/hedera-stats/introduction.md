@@ -10,7 +10,7 @@ Hgraph offers API access to various quantitative statistical measurements for th
 
 **Quick links:**
 
-- [Installation](installation)
+- [Installation](/hedera-stats/installation)
 - [GitHub repository](https://github.com/hgraph-io/hedera-stats)
 - [Demo dashboard](https://hgraph.com/hedera/stats)
 
