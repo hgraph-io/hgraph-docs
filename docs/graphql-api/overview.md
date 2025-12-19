@@ -12,9 +12,10 @@ Hgraph provides GraphQL API endpoints for accessing our Hedera mirror node and v
 
 GraphQL is a query language for APIs that allows precise data fetching with a single endpoint, reducing unnecessary data transfer. Its strong type system enables efficient, flexible queries and real-time updates, making it ideal for complex web and mobile applications. This self-documenting approach simplifies development, allowing for rapid frontend changes without backend adjustments, streamlining the creation of responsive, data-driven applications.
 
-:::info New → Hgraph AI Assistant (Alpha)
+:::info Hgraph AI Data Agent (Beta)
 
-Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+Explore Hedera data with natural language—no coding required.
+Powered by the Hgraph MCP Server. **[Try it free →](https://hgraph.ai)**
 
 :::
 
