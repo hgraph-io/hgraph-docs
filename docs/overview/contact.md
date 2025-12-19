@@ -14,11 +14,11 @@ At **[Hgraph](https://hgraph.com)**, our primary goal is to help our customers, 
 - [**Contribute on GitHub →**](https://github.com/hgraph-io)
 - [**Create an *Hgraph* account →**](https://dashboard.hgraph.com)
 
-## Hgraph AI Assistant
+## Hgraph AI Data Agent
 
-**Instant answers to most of your questions.** Create new GraphQL queries and troubleshoot issues with the help of our new expert AI assistant. This is the best way to get the support you need, fast!
+Explore Hedera data with natural language—no coding required. Powered by the Hgraph MCP Server, the AI Data Agent is the fastest way to get answers about the Hedera network.
 
-**[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+**[Try it free →](https://hgraph.ai)**
 
 ## Work with our team
 

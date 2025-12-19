@@ -69,6 +69,7 @@ We value your feedback as we continue to improve the Hgraph MCP Server during be
 - [View Examples & Use Cases →](/mcp-server/examples)
 - [Claude Setup Guide →](/mcp-server/setup-claude)
 - [ChatGPT Setup Guide →](/mcp-server/setup-chatgpt)
+- [Try the AI Data Agent →](https://hgraph.ai) - Zero setup alternative
 
 ---
 

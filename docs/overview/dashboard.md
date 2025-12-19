@@ -52,7 +52,7 @@ The Hgraph Dashboard includes the following capabilities:
 - Powerful GraphQL developer playground
 - Fullscreen editor and schema explorer mode
 - Light mode & dark mode
-- [Hgraph AI Assistant](/graphql-assistant) for building queries
+- [AI Data Agent](/agent) for exploring data with natural language
 - Mirror node schema explorer
 - 45k requests per month for free
 - *More features coming soon ([get notified](https://hgraph.beehiiv.com/subscribe))*
@@ -72,9 +72,10 @@ The demand for real-time Hedera data is increasing. Both businesses and develope
 
 Ultimately, we try our very best to build the things our customers and partners want most. We hope you enjoy the new account dashboard, [feedback is always welcome!](/overview/contact)
 
-:::info New → Hgraph AI Assistant (Alpha)
+:::info Hgraph AI Data Agent (Beta)
 
-Create new GraphQL queries and troubleshoot problems with our new expert AI assistant. Get instant answers to 90% of your questions. **[Learn more](/graphql-assistant)** and **[start a conversation](https://hgraph.com/assistant)**.
+Explore Hedera data with natural language—no coding required.
+Powered by the Hgraph MCP Server. **[Try it free →](https://hgraph.ai)**
 
 :::
 
@@ -126,7 +127,7 @@ Our Account Dashboard allows you to easily create and manage your account plus a
 
 ## GraphQL Playground
 
-The GraphQL Playground is an interactive tool that allows users to build, test, and run queries. It works very well with our [Hgraph AI Assistant](/graphql-assistant). This is what our GraphQL query playground looks like:
+The GraphQL Playground is an interactive tool that allows users to build, test, and run queries. It works very well with our [AI Data Agent](/agent). This is what our GraphQL query playground looks like:
 
 ![image](Hgraph_Account-Dashboard_Playground.png)
 
@@ -190,7 +191,7 @@ The GraphQL Playground is an interactive tool that allows users to build, test, 
    - Log out and back in.
    - Clear local storage.
 
-The **[Hgraph AI Assistant](/graphql-assistant)** can resolve 90% of issues instantly.
+The **[AI Data Agent](/agent)** can help you explore data and troubleshoot issues.
 
 ### Clear Local Storage
 

@@ -22,6 +22,13 @@ Built by [Hgraph](https://hgraph.com), we provide enriched data from bare metal 
 
 Ask questions in plain English, get live blockchain data. No APIs, no manual queries, no coding, no complexity.
 
+:::tip No Setup Required?
+
+Just want to explore Hedera data without any configuration?
+Try the **[Hgraph AI Data Agent](https://hgraph.ai)** — same powerful data, zero setup.
+
+:::
+
 ---
 
 ## Quick Start {#quick-start}

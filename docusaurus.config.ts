@@ -66,7 +66,7 @@ const config: Config = {
       items: [
         {to: 'https://hgraph.com/', label: 'Features', position: 'left'},
         {to: '/overview/pricing', label: 'Pricing', position: 'left'},
-        {to: '/graphql-assistant', label: 'AI Assistant', position: 'left'},
+        {to: '/agent', label: 'AI Data Agent', position: 'left'},
         {to: '/overview/contact', label: 'Contact', position: 'left'},
         {
           href: 'https://dashboard.hgraph.com',
