@@ -104,11 +104,15 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
 - [Active Smart Contracts](/hedera-stats/evm/active-smart-contracts): `active_smart_contracts`
 - [New Smart Contracts](/hedera-stats/evm/new-smart-contracts): `new_smart_contracts`
 - [Total Smart Contracts](/hedera-stats/evm/total-smart-contracts): `total_smart_contracts`
+- [Total ERC-1155 Accounts](/hedera-stats/evm/total-erc1155-accounts): `total_erc1155_accounts`
 
 ### NFTs
 
 - [NFT Collection Sales Volume](/hedera-stats/non-fungible-tokens/nft-collection-sales-volume): `nft_collection_sales_volume`
 - [NFT Collection Sales Volume (Total)](/hedera-stats/non-fungible-tokens/nft-collection-sales-volume-total): `nft_collection_sales_volume_total`
+- Top Ranked Collections:
+  - [Top ERC-721 Smart Contract Collections](/hedera-stats/non-fungible-tokens/top-erc-nfts): `top_non_fungible_tokens_erc`
+  - [Top HTS Native NFT Collections](/hedera-stats/non-fungible-tokens/top-hts-nfts): `top_non_fungible_tokens_hts`
 
 > *See these statistics in action on the [Hgraph Hedera Stats demo Grafana dashboard](https://hgraph.com/hedera/stats).*
 
