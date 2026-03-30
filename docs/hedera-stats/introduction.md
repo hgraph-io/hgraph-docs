@@ -57,7 +57,8 @@ A breakdown of all available Hedera Stats on mainnet. Each link will take you to
 
 ### Network Performance
 
-- [Network Fees](/hedera-stats/network-performance/revenue): `network_fees`
+- [Network Revenue](/hedera-stats/network-performance/revenue): `network_fee`
+- [Average Network Fee](/hedera-stats/network-performance/avg-network-fee): `avg_network_fee`
 - [Time to consensus](/hedera-stats/network-performance/time-to-consensus): `avg_time_to_consensus`
 - [Transactions Per Second](/hedera-stats/network-performance/transactions-per-second): `network_tps`
 
