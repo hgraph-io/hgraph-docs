@@ -150,7 +150,7 @@ Below is a link to the **Hedera Stats** GitHub repository. The repo contains the
 
 SQL Function: `ecosystem.avg_network_fee`
 
-**[View GitHub Repository ->](https://github.com/hgraph-io/hedera-stats)**
+**[View GitHub Repository →](https://github.com/hgraph-io/hedera-stats)**
 
 ## Dependencies
 
